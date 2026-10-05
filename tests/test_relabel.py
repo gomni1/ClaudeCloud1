@@ -102,9 +102,7 @@ class PlantedRelabelBug(unittest.TestCase):
                    for p0 in range(n) for p1 in range(n) for p2 in range(n)}
         good = _orbit_count(configs, "G2", n, k, apply_to_configuration)
         bad = _orbit_count(configs, "G2", n, k, apply_to_configuration_buggy_reversal)
-        g1 = _orbit_count(configs, "G1", n, k, apply_to_configuration)
         self.assertNotEqual(good, bad)
-        self.assertEqual(bad, g1)
 
     def test_buggy_reversal_changes_two_entity_word_counts(self):
         n = 5

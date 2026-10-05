@@ -64,15 +64,13 @@ class HandTraces(unittest.TestCase):
         self.assertEqual(o.cycle_length, 3)
 
     def test_sequential_trace(self):
-        # Order (A, B), CONTROL, word DRR, phases (1, 0):
-        # instant 0: A=1 R, B=0 D. A->B needs A=D: no.
-        # instant 1 (A advanced): A=2, B=0. no.
-        # instant 2 (B advanced): A=2, B=1. no.
-        # instant 3 (A advanced): A=0 D, B=1 R -> fires.
-        o = simulate("DRR", (1, 0), O1, CONTROL, schedule=(0, 1))
-        self.assertEqual(o.fired_at[0], 3)
-        # the sync run sees only offset -1 and never fires the first one
-        self.assertEqual(simulate("DRR", (1, 0), O1, CONTROL).fired, (False, False))
+        # Order (A, B), CONTROL, word DRR, phases (0, 0):
+        # instants: (0,0) (1,0) (1,1) (2,1) (2,2) (0,2): at instant 5 A=0 D,
+        # B=2 R -> A->B fires. Under SYNC the offset stays 0 and A, B always
+        # show the same letter, so nothing ever fires.
+        o = simulate("DRR", (0, 0), O1, CONTROL, schedule=(0, 1))
+        self.assertEqual(o.fired_at[0], 5)
+        self.assertEqual(simulate("DRR", (0, 0), O1, CONTROL).fired, (False, False))
 
     def test_sequential_pause_holds_own_advance(self):
         # Order (B, A), (MASK,PAUSE), DRR, phases (0, 1). Step boundaries are
