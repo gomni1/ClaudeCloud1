@@ -2,7 +2,7 @@ import unittest
 
 import _path  # noqa: F401
 from phys2_order.words import (
-    ANCHORS, achiral_words, anchor_counts, canonical, check_anchors,
+    ANCHORS, achiral_words, anchor_counts, representative, check_anchors,
     is_achiral, rev, rot, swap_rd, validate_word_set,
 )
 
@@ -46,7 +46,7 @@ class WordSet(unittest.TestCase):
             ws = achiral_words(n)
             self.assertTrue(validate_word_set(ws))
             for w in ws:
-                self.assertEqual(w, canonical(w))
+                self.assertEqual(w, representative(w))
                 self.assertTrue(is_achiral(w))
 
     def test_planted_chiral_word_rejected(self):

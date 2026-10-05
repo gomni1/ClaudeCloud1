@@ -30,7 +30,7 @@ def rotations(w):
     return [rot(w, k) for k in range(len(w))]
 
 
-def canonical(w):
+def representative(w):
     """Representative of the rotation class: lexicographically least rotation."""
     return min(rotations(w))
 
@@ -45,12 +45,12 @@ def all_words(n):
 
 
 def rotation_classes(n):
-    return sorted({canonical(w) for w in all_words(n)})
+    return sorted({representative(w) for w in all_words(n)})
 
 
 def reversal_classes(n):
     """Classes under rotation and reversal (bracelets)."""
-    return sorted({min(canonical(w), canonical(rev(w))) for w in all_words(n)})
+    return sorted({min(representative(w), representative(rev(w))) for w in all_words(n)})
 
 
 def chiral_rotation_classes(n):
@@ -77,7 +77,7 @@ def validate_word_set(words):
             raise ValueError("word %r lacks R or D" % (w,))
         if not is_achiral(w):
             raise ValueError("chiral word %r in word set" % (w,))
-        c = canonical(w)
+        c = representative(w)
         if c in seen:
             raise ValueError("duplicate rotation class for %r" % (w,))
         seen.add(c)

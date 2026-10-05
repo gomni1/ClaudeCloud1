@@ -189,8 +189,28 @@ def main(outdir="results"):
                         t += b
         unseen[arm] = [c, t]
 
+    # Stage 3 verdicts: zero / nonzero summed over cadences, per schedule
+    verdicts = {}
+    for label, cc, cads in (("stage1", c1, STAGE1_CADENCES), ("stage2", c2, STAGE2_CADENCES)):
+        for arm in ARM_NAMES:
+            for g in GROUPS:
+                for m in MODES:
+                    v = {s: total(cc, s, arm, g, m, cads)[0] > 0 for s in cc}
+                    verdicts.setdefault(label, {}).setdefault(arm, {}).setdefault(g, {})[m] = {
+                        "by_schedule": v,
+                        "schedule_dependent": len(set(v.values())) > 1}
+    for arm in ARM_NAMES:
+        for g in GROUPS:
+            for m in MODES:
+                v = {s: sum(d2[s][arm][g][m][n]["arm_only"] for n in STAGE2_CADENCES) > 0
+                     for s in d2}
+                verdicts.setdefault("stage2_S2DIFF", {}).setdefault(arm, {}).setdefault(g, {})[m] = {
+                    "by_schedule": v,
+                    "schedule_dependent": len(set(v.values())) > 1}
+
     res = {
         "status": "SANDBOX/DRAFT",
+        "stage3_verdicts": verdicts,
         "anchors": anchors,
         "stage1_counts": c1,
         "stage2_counts": c2,
@@ -261,6 +281,28 @@ def render(res):
                     v = d2[s][arm][g][LABELED][n]
                     cells.append("%d / %d / %d" % (v["arm_only"], v["control_only"], v["both"]))
                 L.append("| %s | %s | %s |" % (arm, g, " | ".join(cells)))
+        L.append("")
+    L.append("## Stage 3 verdicts (nonzero summed over cadences), labeled / positional")
+    L.append("")
+    for label, by_arm in res["stage3_verdicts"].items():
+        scheds = sorted(by_arm["CONTROL"]["G1"][LABELED]["by_schedule"])
+        scheds.remove("SYNC")
+        scheds = ["SYNC"] + scheds
+        L.append("### %s" % label)
+        L.append("")
+        L.append("| arm | group | " + " | ".join(scheds) + " | schedule-dependent |")
+        L.append("|---|---|" + "---|" * (len(scheds) + 1))
+        for arm in ARM_NAMES:
+            for g in GROUPS:
+                cells = []
+                for s in scheds:
+                    v = by_arm[arm][g]
+                    cells.append("%s / %s" % (
+                        "nonzero" if v[LABELED]["by_schedule"][s] else "zero",
+                        "nonzero" if v[POSITIONAL]["by_schedule"][s] else "zero"))
+                dep = "%s / %s" % ("YES" if by_arm[arm][g][LABELED]["schedule_dependent"] else "no",
+                                   "YES" if by_arm[arm][g][POSITIONAL]["schedule_dependent"] else "no")
+                L.append("| %s | %s | %s | %s |" % (arm, g, " | ".join(cells), dep))
         L.append("")
     return "\n".join(L)
 

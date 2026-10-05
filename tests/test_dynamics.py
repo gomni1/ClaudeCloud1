@@ -87,6 +87,29 @@ class HandTraces(unittest.TestCase):
         self.assertEqual(o.offsets, (1,))
 
 
+class Stage2ControlByHand(unittest.TestCase):
+    def test_blocked_head_makes_control_handed(self):
+        # README pre-run derivation: DRR, phases (0, 0, 1). A and B always show
+        # the same letter, so L blocks on A->B; LR fires A->C, C->B, then
+        # blocks on B->A. Fired counts 0 vs 2: handed under every group.
+        o1, o2, ineq = compare("DRR", (0, 0, 1), L, LR, CONTROL, SYNC)
+        self.assertEqual(o1.fired, (False, False, False))
+        self.assertEqual(o2.fired, (True, True, False))
+        self.assertTrue(all(ineq.values()))
+
+    def test_pause_pause_phase_lock_example(self):
+        # DRR, phases (0, 1, 2): CONTROL closes both loops; under
+        # (PAUSE,PAUSE) the first LR handoff pauses A and C, C lands on B's
+        # phase and C->B can never fire.
+        _, _, ctl = compare("DRR", (0, 1, 2), L, LR, CONTROL, SYNC)
+        o1, o2, arm = compare("DRR", (0, 1, 2), L, LR, PP, SYNC)
+        self.assertEqual(o1.fired, (True, True, True))
+        self.assertEqual(o2.fired, (True, False, False))
+        self.assertEqual(o2.offsets, (2, 2))
+        self.assertFalse(ctl[("G2", LABELED)])
+        self.assertTrue(arm[("G2", LABELED)])
+
+
 class PlantedInequivalence(unittest.TestCase):
     def test_hand_built_configuration_detected(self):
         # From the traces above: O1 fires one transaction, O2 fires two.
