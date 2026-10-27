@@ -16,8 +16,10 @@ A bounded investigation for PHYS2. It asks what continuity and closure alone for
 | `strata/proofs.py` | Exact sympy checks |
 | `strata/experiments.py` | H0–H2 constructions |
 | `strata/experiments_h34.py` | H3–H4 constructions |
+| `strata/audit.py` | Post-freeze constructions from the proof audit: the P6(c) retraced loop and the P7 free-passage witness |
 | `tests/test_planted.py` | The three planted failures |
 | `tests/test_core.py` | Regression tests for the main constructions |
+| `tests/test_audit.py` | Post-freeze tests from the proof audit |
 
 ## Run
 
