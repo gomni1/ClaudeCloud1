@@ -1,14 +1,15 @@
 # Grammar exit times: preregistered specification
 
-Status: SANDBOX / DRAFT. Not promoted. This file was written and frozen before any code was written or run. Its SHA-256 is recorded in `RESULTS.md`. After the freeze, no rate, threshold, target, start, grid, budget or criterion changes. A revision is a new claim and is logged as one. Any failure stays on the record.
+Status: SANDBOX / DRAFT. Not promoted. The original text was frozen before any code was written or run, and its SHA-256 is recorded in `RESULTS.md`. Revision 1 (§12) changes framing only, and its SHA-256 is recorded there too. After the freeze, no rate, threshold, target, start, grid, budget or criterion changes. A revision is a new claim and is logged as one. Any failure stays on the record.
 
-Date: 2026-10-28. Source: CC-PROMPT-Grammar-Exit-Time-2026-10-28. Map items: "Lifetimes: memoryless, ensemble-scaled, phase-structured when cycling" (a working consequence) and "What makes the integer's passage rare?" (an open gap). Nothing in this run adds a rule.
+Date: 2026-10-28. Source: CC-PROMPT-Grammar-Exit-Time-2026-10-28 (revised the same day; see §12). Map items: "Lifetimes: memoryless, ensemble-scaled, phase-structured when cycling" (a working consequence) and "Is the integer's passage forbidden or rare?" (an open gap). On that gap's rare branch, the cheapest path that changes the integer must cost well above the cheapest registration change, within one organisation. This run measures only an analogue: an expression change (switching between the two TH balances) against dissolution, in one ensemble. Nothing in this run adds a rule.
 
 ## 0. Register and walls
 
 - **Coarse-grained register.** The ODE and the Markov chain below are effective-register summaries of step processes. They are not a claim about the step processes themselves.
 - **No new rule.** The grammar, constants and rate laws are those on the map. The finite-size reading (§2, the Kurtz density-dependent chain) is the one modelling choice. R1 is its robustness check. If an item needs another rule, the run stops at that item and reports what it would need.
-- **Neutral labels.** Mechanical text uses C, V, L, P, "dissolution" and "expression switch". Particle names appear only in the single section of `RESULTS.md` headed "Observational register".
+- **Neutral labels.** Mechanical text uses C, V, L, P, "dissolution" and "expression switch". Particle names appear only in the single section of `RESULTS.md` headed "Observational register". That section is at most one paragraph, and it may say only that the run bears on the rare branch of the map gap "Is the integer's passage forbidden or rare?", and only by analogy.
+- **What this run can and cannot show.** The ensemble is well mixed, so every cost in it grows with Ω by construction. The run tests "Lifetimes: memoryless, ensemble-scaled…" for this grammar. It cannot see a localised path whose cost does not grow with the ensemble, such as nucleation or collapse at lattice scale. Literature on discrete media shows that such paths exist; for example, a lattice skyrmion's collapse keeps a finite cost as the lattice is refined. `RESULTS.md` states this limit beside every verdict (K1, K2, K3).
 - **Out of scope.** The closed level, other rate constants, coupling between levels, a spatial lattice, and any attempt to connect to the winding. The phase-structure part of the lifetimes item is out of scope, because no level cycles under MA. The link from this grammar to the architecture's integer invariant is a named gap and is not attempted.
 
 ## 1. Grammar (deterministic)
@@ -379,3 +380,21 @@ If gMAM fails for an item, a fallback is used, and the report says which:
 - Burn-in infeasibility is expected at TH Ω = 2 and at the smallest D0 sizes (§3).
 - Because switching is expected to be much faster than dissolution, the TH2 and TH4 dissolution series are expected to converge to the same values after burn-in. Their fitted W are expected to approach W_D,eff rather than each start's own W_D.
 - A rough one-dimensional estimate puts W_S at 10⁻³ to 10⁻², so the switching exponential regime may begin only near the top of the M3 grid.
+
+## 12. Revision log
+
+**Revision 1 (2026-10-28).** The source prompt was revised by its author after the original freeze. This revision follows it in three places, and in nothing else:
+
+1. The second map item is renamed from "What makes the integer's passage rare?" to "Is the integer's passage forbidden or rare?", with its rare-branch reading (header).
+2. The limit "What this run can and cannot show" is added, with the requirement to state it beside every verdict (§0).
+3. The observational-register scope is narrowed to the rare branch of the renamed gap (§0).
+
+No rate, threshold, target, start, grid, budget, estimator, fit, kill condition, planted failure or expected outcome changes.
+
+Code that ran between the original freeze and this revision:
+
+- the M0 balance and eigenvalue checks;
+- a simulator timing test from the balance with no burn-in (D at Ω = 4 and 8 for MA, TH v = 2 and TH v = 4, with 200 runs each; S↑ at Ω = 64, with 200 runs);
+- tests of the M6 exact solver at MA Ω = 2.
+
+None of these bears on the revised text. No production run of any series had started.
