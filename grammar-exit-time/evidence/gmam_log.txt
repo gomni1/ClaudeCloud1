@@ -23,3 +23,7 @@
 04:57:09   gMAM TH_W_D0_v2/straight N=200 S=0.37263535 cycles=47 end=[0.       3.054832 0.578538 0.289283] cpu=86s
 04:57:41   gMAM TH_W_D0_v2/straight N=400 S=0.37496329 cycles=14 end=[0.       3.052826 0.579062 0.289646] cpu=102s
 04:58:00   gMAM TH_W_D0_v2/via other balance N=100 S=0.34670136 cycles=400 end=[0.       3.239738 0.539722 0.270459] cpu=82s
+04:58:38   gMAM TH_W_D0_v4/straight N=50 S=0.35205714 cycles=400 end=[0.       3.193094 0.546764 0.274252] cpu=28s
+04:59:38   gMAM TH_W_D0_v2/via other balance N=200 S=0.3628195 cycles=400 end=[0.       3.135827 0.560185 0.280323] cpu=130s
+05:00:00   gMAM TH_W_D0_v4/straight N=100 S=0.36174745 cycles=400 end=[0.       3.090972 0.567483 0.28384 ] cpu=69s
+05:00:44   gMAM TH_W_D_v4/via other balance N=400 S=0.82021145 cycles=400 end=[0.       3.432005 0.       0.19775 ] cpu=259s
