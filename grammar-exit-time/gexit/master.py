@@ -90,7 +90,7 @@ def mfpt_D(law, om, n0, caps, tol=1e-10, method="auto"):
             if np.linalg.norm(r) / np.linalg.norm(b) <= tol * 0.1:
                 break
             resid = []
-            tau = tau + ml.solve(r, tol=1e-12, accel="gmres", maxiter=400, residuals=resid)
+            tau = tau + ml.solve(r, tol=1e-6, accel="gmres", maxiter=200, residuals=resid)
             its += len(resid)
             rounds += 1
         method = "RS-AMG + GMRES, %d refinement rounds, %d it" % (rounds, its)

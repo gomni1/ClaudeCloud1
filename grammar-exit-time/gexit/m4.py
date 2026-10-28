@@ -48,19 +48,31 @@ def items():
     return out
 
 
+LOGFILE = None
+
+
 def run_item(it):
     t0 = time.process_time()
     log = []
+
+    def logger(msg):
+        log.append(msg)
+        if LOGFILE:
+            with open(LOGFILE, "a") as f:
+                f.write("%s %s cpu=%.0fs\n" % (time.strftime("%H:%M:%S"), msg, time.process_time() - t0))
+
     net = gmam.grammar(it["law"])
     phi0 = polyline(it["init_pts"], 50)
-    r = gmam.gmam(net, it["start"], it["end"], it["free"], phi_init=phi0, log=log.append,
+    r = gmam.gmam(net, it["start"], it["end"], it["free"], phi_init=phi0, log=logger,
                   label="%s/%s" % (it["name"], it["init"]))
     r.update(name=it["name"], law=it["law"], init=it["init"], start=list(it["start"]), log=log,
              cpu=time.process_time() - t0)
     return r
 
 
-def run_all(path_out, workers=3):
+def run_all(path_out, workers=3, logfile=None):
+    global LOGFILE
+    LOGFILE = logfile
     its = items()
     with ProcessPoolExecutor(max_workers=workers) as ex:
         res = list(ex.map(run_item, its))
