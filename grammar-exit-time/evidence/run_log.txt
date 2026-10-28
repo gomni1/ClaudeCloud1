@@ -1,0 +1,38 @@
+04:25:59 run_all start: stages ['m0', 'planted']; SPEC sha256 1cfe3572da4515612b3c62d1b350304e5b6f628042161e2f955a932c76a0fd29
+04:25:59 stage m0 start
+04:26:16 run_all start: stages ['m0', 'planted']; SPEC sha256 1cfe3572da4515612b3c62d1b350304e5b6f628042161e2f955a932c76a0fd29
+04:26:16 stage m0 start
+04:26:26 M0 done: lambda_slow {'MA': (-0.18831726779686628+0j), 'TH2': (-0.1513989818961057+0j), 'TH4': (-0.1303061543300933+0j)}, t_b {'MA': np.float64(53.10187492092749), 'TH2': np.float64(66.0506423145057), 'TH4': np.float64(76.74234614174757)}, drift(b) {'MA': True, 'TH': True}, attraction {'MA': 0, 'TH': 0}
+04:26:26 stage m0 done in 11 s
+04:26:26 stage planted start
+04:26:26 [PF1] Omega=2 n=1000 X0 T=4.263 d=1000 cens=0 cpu=0s spent=0/inf wall=0s
+04:26:26 [PF1] Omega=4 n=1000 X0 T=17.74 d=1000 cens=0 cpu=0s spent=0/inf wall=0s
+04:26:26 [PF1] Omega=6 n=1000 X0 T=88.79 d=1000 cens=0 cpu=0s spent=0/inf wall=0s
+04:26:26 [PF1] Omega=8 n=1000 X0 T=420.7 d=1000 cens=0 cpu=0s spent=0/inf wall=0s
+04:26:28 [PF1] Omega=10 n=1000 X0 T=2377 d=1000 cens=0 cpu=2s spent=2/inf wall=1s
+04:26:35 [PF1] Omega=12 n=1000 X0 T=1.429e+04 d=1000 cens=0 cpu=11s spent=13/inf wall=7s
+04:26:35 [PF2] Omega=8 n=1000 XOUT T=1.01 d=1000 cens=0 cpu=0s spent=0/inf wall=0s
+04:26:35 [PF2] Omega=12 n=1000 XOUT T=1.505 d=1000 cens=0 cpu=0s spent=0/inf wall=0s
+04:26:35 [PF2] Omega=16 n=1000 XOUT T=2.04 d=1000 cens=0 cpu=0s spent=0/inf wall=0s
+04:26:35 [PF2] Omega=20 n=1000 XOUT T=2.679 d=1000 cens=0 cpu=0s spent=0/inf wall=0s
+04:26:35 [PF2] Omega=24 n=1000 XOUT T=3.147 d=1000 cens=0 cpu=0s spent=0/inf wall=0s
+04:26:35 [PF2] Omega=32 n=1000 XOUT T=4.248 d=1000 cens=0 cpu=0s spent=0/inf wall=0s
+04:26:35 [PF2] Omega=48 n=1000 XOUT T=6.182 d=1000 cens=0 cpu=0s spent=0/inf wall=0s
+04:26:35 [PF2] Omega=64 n=1000 XOUT T=8.105 d=1000 cens=0 cpu=0s spent=0/inf wall=0s
+04:26:35 PF3 {'Omega': 8, 'cap': 527.2365102359759, 'T_exact': 437.9139697687423, 'n': 1000, 'censored': 287, 'cens_frac': 0.287, 'T_mle': np.float64(424.7107304725552), 'chi2_lo': np.float64(394.64858887736017), 'chi2_hi': np.float64(457.6939542204776), 'naive_mean': 302.8187508269319, 'pass_mle': True, 'pass_naive_low': True, 'cpu': 0.15695347699999962}
+04:26:35 PF4 {'n': 1000, 'D': 0.2666258549957673, 'p': 9.999000099990002e-05, 'cv': 0.4941508535122819, 'B': 10000, 'pass': True}
+04:26:35 stage planted done in 9 s
+04:34:47 run_all start: stages ['m1_MA', 'm1_TH2', 'm1_TH4', 'r1', 'm3', 'm5']; SPEC sha256 1cfe3572da4515612b3c62d1b350304e5b6f628042161e2f955a932c76a0fd29
+04:34:47 stage m1_MA start
+04:34:59 [M1_MA_D] Omega=2 n=1000 D T=9.212 d=1000 cens=0 cpu=17s spent=17/6300 wall=12s
+04:35:00 [M1_MA_D] Omega=3 n=1000 D T=22.92 d=1000 cens=0 cpu=1s spent=18/6300 wall=1s
+04:35:01 [M1_MA_D] Omega=4 n=1000 D T=59.74 d=1000 cens=0 cpu=1s spent=19/6300 wall=1s
+04:35:02 [M1_MA_D] Omega=5 n=1000 D T=167 d=1000 cens=0 cpu=2s spent=21/6300 wall=1s
+04:35:06 [M1_MA_D] Omega=6 n=1000 D T=591.2 d=1000 cens=0 cpu=6s spent=27/6300 wall=4s
+04:36:13 [M1_MA_D] Omega=8 n=1000 D T=7756 d=1000 cens=0 cpu=97s spent=124/6300 wall=67s
+04:54:25 [M1_MA_D] Omega=10 n=1000 D T=1.076e+05 d=1008 cens=0 cpu=1639s spent=1763/6300 wall=1092s
+04:54:25 [M1_MA_D] stop before Omega=12: projection: spent 1763 + 300 x 27.2 s > budget 6300 s
+04:54:26 [M1_MA_D0] Omega=2 burn-in infeasible (acceptance {'D0': 0.0}), skipped
+04:54:31 [M1_MA_D0] Omega=3 burn-in infeasible (acceptance {'D0': 0.0}), skipped
+04:54:42 [M1_MA_D0] Omega=4 burn-in infeasible (acceptance {'D0': 0.0}), skipped
+04:55:16 [M1_MA_D0] Omega=5 burn-in infeasible (acceptance {'D0': 1e-06}), skipped
