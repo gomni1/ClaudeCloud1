@@ -36,3 +36,103 @@
 04:54:31 [M1_MA_D0] Omega=3 burn-in infeasible (acceptance {'D0': 0.0}), skipped
 04:54:42 [M1_MA_D0] Omega=4 burn-in infeasible (acceptance {'D0': 0.0}), skipped
 04:55:16 [M1_MA_D0] Omega=5 burn-in infeasible (acceptance {'D0': 1e-06}), skipped
+05:02:12 [M1_MA_D0] Omega=6 n=1000 D0 T=5.735 d=1008 cens=0 cpu=612s spent=684/1800 wall=416s
+05:02:18 [M1_MA_D0] Omega=8 n=1000 D0 T=14.41 d=1000 cens=0 cpu=10s spent=694/1800 wall=6s
+05:02:20 [M1_MA_D0] Omega=10 n=1000 D0 T=37.54 d=1000 cens=0 cpu=3s spent=697/1800 wall=2s
+05:02:22 [M1_MA_D0] Omega=12 n=1000 D0 T=105.2 d=1000 cens=0 cpu=3s spent=700/1800 wall=2s
+05:02:28 [M1_MA_D0] Omega=14 n=1000 D0 T=310.1 d=1000 cens=0 cpu=8s spent=707/1800 wall=5s
+05:02:43 [M1_MA_D0] Omega=16 n=1000 D0 T=957.7 d=1000 cens=0 cpu=23s spent=731/1800 wall=16s
+05:06:20 [M1_MA_D0] Omega=20 n=1000 D0 T=1.078e+04 d=1006 cens=0 cpu=315s spent=1046/1800 wall=216s
+05:06:20 [M1_MA_D0] stop before Omega=24: projection: spent 1046 + 300 x 4.19 s > budget 1800 s
+05:06:20 stage m1_MA done in 1893 s
+05:06:20 stage m1_TH2 start
+05:06:25 [M1_TH2_D] Omega=2 burn-in infeasible (acceptance {'D': 1e-06}), skipped
+05:06:33 [M1_TH2_D] Omega=3 n=1000 D T=12.2 d=1000 cens=0 cpu=11s spent=19/6300 wall=8s
+05:06:34 [M1_TH2_D] Omega=4 n=1000 D T=26.6 d=1000 cens=0 cpu=1s spent=20/6300 wall=1s
+05:06:34 [M1_TH2_D] Omega=5 n=1000 D T=59.39 d=1000 cens=0 cpu=1s spent=21/6300 wall=1s
+05:06:35 [M1_TH2_D] Omega=6 n=1000 D T=126.2 d=1000 cens=0 cpu=1s spent=23/6300 wall=1s
+05:06:40 [M1_TH2_D] Omega=8 n=1000 D T=855.4 d=1000 cens=0 cpu=7s spent=29/6300 wall=5s
+05:07:12 [M1_TH2_D] Omega=10 n=1000 D T=5048 d=1000 cens=0 cpu=46s spent=76/6300 wall=32s
+05:11:27 [M1_TH2_D] Omega=12 n=1000 D T=3.27e+04 d=1008 cens=0 cpu=373s spent=449/6300 wall=256s
+05:31:18 [M1_TH2_D] Omega=14 n=1000 D T=2.101e+05 d=1008 cens=0 cpu=2704s spent=3153/6300 wall=1190s
+05:31:18 [M1_TH2_D] stop before Omega=16: projection: spent 3153 + 300 x 19.4 s > budget 6300 s
+05:31:18 [M1_TH2_D0] Omega=2 burn-in infeasible (acceptance {'D0': 0.0}), skipped
+05:31:19 [M1_TH2_D0] Omega=3 burn-in infeasible (acceptance {'D0': 0.0}), skipped
+05:31:21 [M1_TH2_D0] Omega=4 burn-in infeasible (acceptance {'D0': 0.0}), skipped
+05:31:23 [M1_TH2_D0] Omega=5 burn-in infeasible (acceptance {'D0': 0.0}), skipped
+05:31:27 [M1_TH2_D0] Omega=6 burn-in infeasible (acceptance {'D0': 0.0}), skipped
+05:31:36 [M1_TH2_D0] Omega=8 burn-in infeasible (acceptance {'D0': 0.0}), skipped
+05:33:39 [M1_TH2_D0] Omega=10 n=1000 D0 T=9.473 d=1000 cens=0 cpu=360s spent=413/1800 wall=123s
+05:33:43 [M1_TH2_D0] Omega=12 n=1000 D0 T=17.76 d=1000 cens=0 cpu=11s spent=424/1800 wall=4s
+05:33:44 [M1_TH2_D0] Omega=14 n=1000 D0 T=38.97 d=1000 cens=0 cpu=3s spent=427/1800 wall=1s
+05:33:45 [M1_TH2_D0] Omega=16 n=1000 D0 T=81.92 d=1000 cens=0 cpu=3s spent=430/1800 wall=1s
+05:33:49 [M1_TH2_D0] Omega=20 n=1000 D0 T=411.9 d=1000 cens=0 cpu=9s spent=439/1800 wall=3s
+05:34:06 [M1_TH2_D0] Omega=24 n=1000 D0 T=2107 d=1000 cens=0 cpu=48s spent=487/1800 wall=17s
+05:36:51 [M1_TH2_D0] Omega=32 n=300 D0 T=5.685e+04 d=304 cens=0 cpu=503s spent=990/1800 wall=165s
+05:36:51 [M1_TH2_D0] stop before Omega=40: projection: spent 990 + 300 x 56.7 s > budget 1800 s
+05:36:51 stage m1_TH2 done in 1831 s
+05:36:51 stage m1_TH4 start
+05:36:55 [M1_TH4_D] Omega=2 burn-in infeasible (acceptance {'D': 5e-07}), skipped
+05:37:00 [M1_TH4_D] Omega=3 n=1000 D T=13.6 d=1000 cens=0 cpu=19s spent=36/6300 wall=5s
+05:37:01 [M1_TH4_D] Omega=4 n=1000 D T=27.3 d=1000 cens=0 cpu=2s spent=38/6300 wall=1s
+05:37:01 [M1_TH4_D] Omega=5 n=1000 D T=60.14 d=1000 cens=0 cpu=1s spent=39/6300 wall=0s
+05:37:02 [M1_TH4_D] Omega=6 n=1000 D T=135.3 d=1000 cens=0 cpu=1s spent=41/6300 wall=0s
+05:37:04 [M1_TH4_D] Omega=8 n=1000 D T=831.9 d=1000 cens=0 cpu=7s spent=47/6300 wall=2s
+05:37:17 [M1_TH4_D] Omega=10 n=1000 D T=4992 d=1000 cens=0 cpu=46s spent=94/6300 wall=13s
+05:38:52 [M1_TH4_D] Omega=12 n=1000 D T=3.2e+04 d=1000 cens=0 cpu=364s spent=458/6300 wall=96s
+05:42:39 run_all start: stages ['m6']; SPEC sha256 1cfe3572da4515612b3c62d1b350304e5b6f628042161e2f955a932c76a0fd29
+05:42:39 stage m6 start
+05:42:39 M6 MA Omega=2 exact=5.22102 (converged) sim=4.92951 +- 0.149 z=-1.96
+05:42:40 M6 MA Omega=3 exact=21.4893 (UNCONVERGED) sim=21.821 +- 0.506 z=0.66
+05:42:40 M6 MA Omega=4 exact=59.0797 (UNCONVERGED) sim=59.0954 +- 1.35 z=0.01
+05:42:40 M6 TH2 Omega=2 exact=2.60138 (converged) sim=2.55853 +- 0.0638 z=-0.67
+05:42:40 M6 TH2 Omega=3 exact=6.40032 (UNCONVERGED) sim=6.39138 +- 0.191 z=-0.05
+05:42:40 M6 TH2 Omega=4 exact=15.9622 (UNCONVERGED) sim=16.7694 +- 0.506 z=1.60
+05:42:40 M6 TH4 Omega=2 exact=4.18853 (converged) sim=4.29405 +- 0.102 z=1.04
+05:42:40 M6 TH4 Omega=3 exact=11.1241 (UNCONVERGED) sim=11.4599 +- 0.264 z=1.27
+05:42:40 M6 TH4 Omega=4 exact=26.2767 (UNCONVERGED) sim=26.9895 +- 0.602 z=1.18
+05:42:40 stage m6 done in 1 s
+05:53:59 [M1_TH4_D] Omega=14 n=1000 D T=2.143e+05 d=1008 cens=0 cpu=2766s spent=3224/6300 wall=907s
+05:53:59 [M1_TH4_D] stop before Omega=16: projection: spent 3224 + 300 x 20.7 s > budget 6300 s
+05:54:00 [M1_TH4_D0] Omega=2 burn-in infeasible (acceptance {'D0': 0.0}), skipped
+05:54:01 [M1_TH4_D0] Omega=3 burn-in infeasible (acceptance {'D0': 0.0}), skipped
+05:54:04 [M1_TH4_D0] Omega=4 burn-in infeasible (acceptance {'D0': 0.0}), skipped
+05:54:09 [M1_TH4_D0] Omega=5 burn-in infeasible (acceptance {'D0': 0.0}), skipped
+05:54:18 [M1_TH4_D0] Omega=6 burn-in infeasible (acceptance {'D0': 0.0}), skipped
+05:54:42 [M1_TH4_D0] Omega=8 burn-in infeasible (acceptance {'D0': 0.0}), skipped
+05:56:53 [M1_TH4_D0] Omega=10 n=1000 D0 T=9.379 d=1008 cens=0 cpu=370s spent=495/1800 wall=131s
+05:56:58 [M1_TH4_D0] Omega=12 n=1000 D0 T=19 d=1000 cens=0 cpu=13s spent=508/1800 wall=5s
+05:56:59 [M1_TH4_D0] Omega=14 n=1000 D0 T=37.72 d=1000 cens=0 cpu=4s spent=512/1800 wall=1s
+05:57:00 [M1_TH4_D0] Omega=16 n=1000 D0 T=79.73 d=1000 cens=0 cpu=3s spent=515/1800 wall=1s
+05:57:04 [M1_TH4_D0] Omega=20 n=1000 D0 T=422 d=1000 cens=0 cpu=9s spent=524/1800 wall=3s
+05:57:20 [M1_TH4_D0] Omega=24 n=1000 D0 T=2027 d=1000 cens=0 cpu=46s spent=570/1800 wall=16s
+06:00:21 [M1_TH4_D0] Omega=32 n=300 D0 T=5.874e+04 d=304 cens=0 cpu=515s spent=1085/1800 wall=181s
+06:00:21 [M1_TH4_D0] stop before Omega=40: projection: spent 1085 + 300 x 62.9 s > budget 1800 s
+06:00:21 stage m1_TH4 done in 1411 s
+06:00:21 stage r1 start
+06:00:24 [R1_MAC_D] Omega=2 n=1000 D T=11.2 d=1000 cens=0 cpu=7s spent=7/2700 wall=3s
+06:00:24 [R1_MAC_D] Omega=3 n=1000 D T=26.17 d=1000 cens=0 cpu=1s spent=8/2700 wall=0s
+06:00:24 [R1_MAC_D] Omega=4 n=1000 D T=72.39 d=1000 cens=0 cpu=1s spent=9/2700 wall=0s
+06:00:25 [R1_MAC_D] Omega=5 n=1000 D T=218.8 d=1000 cens=0 cpu=2s spent=11/2700 wall=1s
+06:00:27 [R1_MAC_D] Omega=6 n=1000 D T=693 d=1000 cens=0 cpu=7s spent=18/2700 wall=2s
+06:01:14 [R1_MAC_D] Omega=8 n=1000 D T=8473 d=1001 cens=0 cpu=101s spent=118/2700 wall=46s
+06:05:00 [R1_MAC_D] Omega=10 n=300 D T=1.341e+05 d=304 cens=0 cpu=593s spent=711/2700 wall=227s
+06:05:00 [R1_MAC_D] stop before Omega=12: projection: spent 711 + 300 x 37.8 s > budget 2700 s
+06:05:00 stage r1 done in 279 s
+06:05:00 stage m3 start
+06:05:00 [M3] Omega=4 n=1000 Sup T=2.794 d=1000 cens=0, Sdown T=1.767 d=1000 cens=0 cpu=0s spent=0/1800 wall=0s
+06:05:00 [M3] Omega=8 n=1000 Sup T=4.289 d=1000 cens=0, Sdown T=2.928 d=1000 cens=0 cpu=0s spent=0/1800 wall=0s
+06:05:00 [M3] Omega=16 n=1000 Sup T=6.723 d=1000 cens=0, Sdown T=4.448 d=1000 cens=0 cpu=0s spent=0/1800 wall=0s
+06:05:01 [M3] Omega=32 n=1000 Sup T=10.34 d=1000 cens=0, Sdown T=7.099 d=1000 cens=0 cpu=1s spent=1/1800 wall=0s
+06:05:01 [M3] Omega=64 n=1000 Sup T=15.5 d=1000 cens=0, Sdown T=11.72 d=1000 cens=0 cpu=2s spent=2/1800 wall=1s
+06:05:03 [M3] Omega=128 n=1000 Sup T=23.33 d=1000 cens=0, Sdown T=18.43 d=1000 cens=0 cpu=4s spent=7/1800 wall=2s
+06:05:08 [M3] Omega=256 n=1000 Sup T=33.43 d=1000 cens=0, Sdown T=27.16 d=1000 cens=0 cpu=14s spent=21/1800 wall=5s
+06:05:21 [M3] Omega=512 n=1000 Sup T=48.12 d=1000 cens=0, Sdown T=34.67 d=1000 cens=0 cpu=38s spent=59/1800 wall=13s
+06:05:55 [M3] Omega=1024 n=1000 Sup T=63.98 d=1000 cens=0, Sdown T=43.78 d=1000 cens=0 cpu=100s spent=158/1800 wall=34s
+06:07:27 [M3] Omega=2048 n=1000 Sup T=79.48 d=1000 cens=0, Sdown T=53.05 d=1001 cens=0 cpu=241s spent=399/1800 wall=92s
+06:11:24 [M3] Omega=4096 n=1000 Sup T=119.3 d=1008 cens=0, Sdown T=68.2 d=1010 cens=0 cpu=692s spent=1091/1800 wall=237s
+06:11:24 stage m3 done in 384 s
+06:11:24 stage m5 start
+06:11:24 M5 plan [(1024, 25594), (2048, 31792), (4096, 47701)] projected 256 s, scale 1.000
+06:14:36 M5 done: [(1024, 0.0003727663167939119, 0.0003590806182884248, 485), (2048, 0.0006369993582227925, 0.00046274228756550486, 440), (4096, 0.0005631144220815714, 0.0003794146721601112, 468)]
+06:14:36 stage m5 done in 192 s

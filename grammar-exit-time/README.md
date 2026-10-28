@@ -13,7 +13,15 @@ The ensemble is well mixed, so every cost in it grows with Ω by construction. T
 
 - `SPEC.md` holds the preregistered definitions, claims, kill conditions, planted failures and expected outcomes. It was frozen before any code; revision 1 changed framing only. Both SHA-256 hashes are in `RESULTS.md`.
 - `RESULTS.md` has the K1–K3 verdicts, the W table, the harness checks and every wall that bit.
-- `evidence/` holds the JSON outputs: raw runs per series, summaries and `analysis.json`.
+- `evidence/` holds the JSON outputs: raw runs per series (`M1_*.json`, `R1.json`, `M3.json`), `M5.json`, `m0.json`, `planted.json`, the exact solves (`m6_exact.json`, `M6.json`, `m6_supp*.json`), the gMAM runs (`gmam_raw.json`, `gmam_log.txt`), `analysis.json`, `tables.md` and the run log.
+
+**Verdicts in short:**
+
+- **K1:** underdetermined (harness). All three dissolution series pass K1's criteria, but the PF1 W recovery failed.
+- **K2:** survived.
+- **K3:** survived. W_D/W_S ≈ 2.4×10³; W_D ≈ 0.82 (TH) and 1.51 (MA), against W_S ≈ 3.4×10⁻⁴ and 1.8×10⁻⁴.
+
+Each verdict holds only for a well-mixed ensemble.
 
 ## Layout
 
@@ -28,8 +36,10 @@ The ensemble is well mixed, so every cost in it grows with Ω by construction. T
 | `gexit/gmam.py`, `gexit/gmam_nb.py` | gMAM: geometric action, inner Hamiltonian solve (numpy reference and numba kernel), L-BFGS-B outer loop, reparametrisation, N-doubling |
 | `gexit/m4.py` | All gMAM items and initial paths |
 | `gexit/planted.py` | PF1–PF4: exact comparators and harness runs |
+| `gexit/m6_supp.py` | Post-freeze supplementary M6 check: per-species truncation refinement (not preregistered) |
 | `run_all.py` | Runs every stage and writes `evidence/*.json` (resumable) |
 | `analysis.py` | F1, F2, M2, R1, K1–K3, W table and ratios, written to `evidence/analysis.json` |
+| `make_tables.py` | Markdown tables from `evidence/analysis.json` (written to `evidence/tables.md`) |
 | `tests/` | pytest for M0, M6, PF1–PF4 and the gMAM validations |
 
 ## Run
@@ -47,7 +57,15 @@ python -c "from gexit import m4; m4.run_all('evidence/gmam_raw.json')"
 ```
 
 ```bash
+python -m gexit.m6_supp evidence/m6_exact.json evidence/m6_supplementary.json
+```
+
+```bash
 python analysis.py
+```
+
+```bash
+python make_tables.py > evidence/tables.md
 ```
 
 ```bash

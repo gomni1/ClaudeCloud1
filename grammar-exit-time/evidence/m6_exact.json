@@ -1,0 +1,388 @@
+[
+ {
+  "converged": true,
+  "T": 5.221018545107856,
+  "levels": [
+   {
+    "T": 5.291025791070422,
+    "residual": 6.002544242476035e-12,
+    "states": 9801,
+    "method": "direct",
+    "solve_s": 1.131258487701416,
+    "caps": [
+     10,
+     8,
+     10,
+     8
+    ]
+   },
+   {
+    "T": 5.221018587440848,
+    "residual": 9.855153208333072e-12,
+    "states": 127449,
+    "method": "RS-AMG + GMRES, 4 refinement rounds, 184 it",
+    "solve_s": 7.601447105407715,
+    "caps": [
+     20,
+     16,
+     20,
+     16
+    ]
+   },
+   {
+    "T": 5.221018545107856,
+    "residual": 4.482217502415584e-11,
+    "states": 1830609,
+    "method": "RS-AMG + GMRES, 20 refinement rounds, 1986 it",
+    "solve_s": 2098.5741996765137,
+    "caps": [
+     40,
+     32,
+     40,
+     32
+    ]
+   }
+  ],
+  "start": "MA",
+  "Omega": 2,
+  "n0": [
+   2,
+   1,
+   2,
+   1
+  ]
+ },
+ {
+  "converged": false,
+  "levels": [
+   {
+    "T": 21.665909710947965,
+    "residual": 1.540560067566081e-11,
+    "states": 20449,
+    "method": "direct",
+    "solve_s": 12.043140411376953,
+    "caps": [
+     12,
+     10,
+     12,
+     10
+    ]
+   },
+   {
+    "T": 21.489295053110908,
+    "residual": 1.7576699919366544e-11,
+    "states": 275625,
+    "method": "RS-AMG + GMRES, 20 refinement rounds, 1063 it",
+    "solve_s": 112.59689164161682,
+    "caps": [
+     24,
+     20,
+     24,
+     20
+    ]
+   }
+  ],
+  "error": "lattice too large: 4036081",
+  "start": "MA",
+  "Omega": 3,
+  "n0": [
+   3,
+   2,
+   3,
+   2
+  ]
+ },
+ {
+  "converged": false,
+  "levels": [
+   {
+    "T": 60.844335935439226,
+    "residual": 3.4927043108670176e-11,
+    "states": 27225,
+    "method": "direct",
+    "solve_s": 24.307924270629883,
+    "caps": [
+     14,
+     10,
+     14,
+     10
+    ]
+   },
+   {
+    "T": 59.07969097349361,
+    "residual": 3.491807565423406e-11,
+    "states": 370881,
+    "method": "RS-AMG + GMRES, 20 refinement rounds, 1135 it",
+    "solve_s": 176.91639280319214,
+    "caps": [
+     28,
+     20,
+     28,
+     20
+    ]
+   }
+  ],
+  "error": "lattice too large: 5461569",
+  "start": "MA",
+  "Omega": 4,
+  "n0": [
+   4,
+   2,
+   4,
+   2
+  ]
+ },
+ {
+  "converged": true,
+  "T": 2.6013823666254203,
+  "levels": [
+   {
+    "T": 2.710628100685176,
+    "residual": 1.245865036366485e-12,
+    "states": 16335,
+    "method": "direct",
+    "solve_s": 6.13094425201416,
+    "caps": [
+     10,
+     14,
+     10,
+     8
+    ]
+   },
+   {
+    "T": 2.601385883487513,
+    "residual": 7.83169922651089e-13,
+    "states": 217413,
+    "method": "RS-AMG + GMRES, 3 refinement rounds, 45 it",
+    "solve_s": 3.7577202320098877,
+    "caps": [
+     20,
+     28,
+     20,
+     16
+    ]
+   },
+   {
+    "T": 2.6013823666254203,
+    "residual": 2.2875644676451565e-12,
+    "states": 3161961,
+    "method": "RS-AMG + GMRES, 3 refinement rounds, 70 it",
+    "solve_s": 134.2769594192505,
+    "caps": [
+     40,
+     56,
+     40,
+     32
+    ]
+   }
+  ],
+  "start": "TH2",
+  "Omega": 2,
+  "n0": [
+   2,
+   4,
+   2,
+   1
+  ]
+ },
+ {
+  "converged": false,
+  "levels": [
+   {
+    "T": 7.668377353005259,
+    "residual": 3.4225174423285396e-12,
+    "states": 35321,
+    "method": "direct",
+    "solve_s": 44.764179706573486,
+    "caps": [
+     12,
+     18,
+     12,
+     10
+    ]
+   },
+   {
+    "T": 6.400315611606332,
+    "residual": 1.4614473619668262e-12,
+    "states": 485625,
+    "method": "RS-AMG + GMRES, 3 refinement rounds, 53 it",
+    "solve_s": 11.35336184501648,
+    "caps": [
+     24,
+     36,
+     24,
+     20
+    ]
+   }
+  ],
+  "error": "lattice too large: 7186193",
+  "start": "TH2",
+  "Omega": 3,
+  "n0": [
+   3,
+   6,
+   3,
+   2
+  ]
+ },
+ {
+  "converged": false,
+  "levels": [
+   {
+    "T": 21.31947563296506,
+    "residual": 1.1437073710433004e-12,
+    "states": 56925,
+    "method": "RS-AMG + GMRES, 3 refinement rounds, 40 it",
+    "solve_s": 0.9262762069702148,
+    "caps": [
+     14,
+     22,
+     14,
+     10
+    ]
+   },
+   {
+    "T": 15.962155968062122,
+    "residual": 8.892659890052462e-12,
+    "states": 794745,
+    "method": "RS-AMG + GMRES, 2 refinement rounds, 41 it",
+    "solve_s": 17.637614965438843,
+    "caps": [
+     28,
+     44,
+     28,
+     20
+    ]
+   }
+  ],
+  "error": "lattice too large: 11855601",
+  "start": "TH2",
+  "Omega": 4,
+  "n0": [
+   4,
+   8,
+   4,
+   2
+  ]
+ },
+ {
+  "converged": true,
+  "T": 4.188528606480612,
+  "levels": [
+   {
+    "T": 4.191471455334508,
+    "residual": 1.2297253998673005e-12,
+    "states": 25047,
+    "method": "direct",
+    "solve_s": 13.245373010635376,
+    "caps": [
+     10,
+     22,
+     10,
+     8
+    ]
+   },
+   {
+    "T": 4.188528606480612,
+    "residual": 8.395713725657785e-13,
+    "states": 337365,
+    "method": "RS-AMG + GMRES, 3 refinement rounds, 56 it",
+    "solve_s": 7.934746742248535,
+    "caps": [
+     20,
+     44,
+     20,
+     16
+    ]
+   }
+  ],
+  "start": "TH4",
+  "Omega": 2,
+  "n0": [
+   2,
+   8,
+   2,
+   1
+  ]
+ },
+ {
+  "converged": false,
+  "levels": [
+   {
+    "T": 11.240537462509042,
+    "residual": 5.158884151470057e-13,
+    "states": 57629,
+    "method": "RS-AMG + GMRES, 3 refinement rounds, 40 it",
+    "solve_s": 0.886674165725708,
+    "caps": [
+     12,
+     30,
+     12,
+     10
+    ]
+   },
+   {
+    "T": 11.12409047750469,
+    "residual": 9.503578609851857e-12,
+    "states": 800625,
+    "method": "RS-AMG + GMRES, 2 refinement rounds, 42 it",
+    "solve_s": 18.544804096221924,
+    "caps": [
+     24,
+     60,
+     24,
+     20
+    ]
+   }
+  ],
+  "error": "lattice too large: 11911361",
+  "start": "TH4",
+  "Omega": 3,
+  "n0": [
+   3,
+   12,
+   3,
+   2
+  ]
+ },
+ {
+  "converged": false,
+  "levels": [
+   {
+    "T": 27.159000604775986,
+    "residual": 9.088618857273414e-12,
+    "states": 96525,
+    "method": "RS-AMG + GMRES, 2 refinement rounds, 33 it",
+    "solve_s": 1.0722532272338867,
+    "caps": [
+     14,
+     38,
+     14,
+     10
+    ]
+   },
+   {
+    "T": 26.2766922345345,
+    "residual": 9.440044536737072e-12,
+    "states": 1359897,
+    "method": "RS-AMG + GMRES, 2 refinement rounds, 46 it",
+    "solve_s": 36.12917947769165,
+    "caps": [
+     28,
+     76,
+     28,
+     20
+    ]
+   }
+  ],
+  "error": "lattice too large: 20380977",
+  "start": "TH4",
+  "Omega": 4,
+  "n0": [
+   4,
+   16,
+   4,
+   2
+  ]
+ }
+]
