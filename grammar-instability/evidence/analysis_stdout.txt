@@ -1,0 +1,274 @@
+{
+ "planted": {
+  "pfa1": true,
+  "pfa2": true,
+  "pfa3": true,
+  "pfa4": true
+ },
+ "M0": {
+  "open_cv": true,
+  "closed_cv": true,
+  "open_tot": false,
+  "closed_tot": false
+ },
+ "M1": {
+  "MA_open_all_positive": true,
+  "TH_open_cv_all_positive_for_h_pos": true
+ },
+ "M2": {
+  "draws": 41100,
+  "counts": {
+   "open-cv": {
+    "draws": 10275,
+    "cpu": 437.93141573500577,
+    "balance": 59619,
+    "periodic": 0,
+    "unresolved": 22581,
+    "draws_with_periodic": 0,
+    "draws_with_unresolved": 2935,
+    "draws_all_unresolved": 2708,
+    "multistable": 473
+   },
+   "closed-cv": {
+    "draws": 10275,
+    "cpu": 401.2470369919952,
+    "balance": 82113,
+    "periodic": 0,
+    "unresolved": 87,
+    "draws_with_periodic": 0,
+    "draws_with_unresolved": 36,
+    "draws_all_unresolved": 0,
+    "multistable": 461
+   },
+   "open-tot": {
+    "draws": 10275,
+    "cpu": 620.0117659710062,
+    "balance": 58179,
+    "periodic": 0,
+    "unresolved": 24021,
+    "draws_with_periodic": 0,
+    "draws_with_unresolved": 3097,
+    "draws_all_unresolved": 2885,
+    "multistable": 225
+   },
+   "closed-tot": {
+    "draws": 10275,
+    "cpu": 806.4025812630106,
+    "balance": 82042,
+    "periodic": 8,
+    "unresolved": 150,
+    "draws_with_periodic": 1,
+    "draws_with_unresolved": 29,
+    "draws_all_unresolved": 12,
+    "multistable": 155
+   }
+  },
+  "stop": "H-cyc stop rule (SPEC 7): periodic hit at draw 12051 verified by M4"
+ },
+ "M2_unresolved_notes": {
+  "slow drift": 28931,
+  "reached a balance after t_end (continuation)": 17772,
+  "step limit": 136
+ },
+ "M2_unresolved_notes_by_variant": {
+  "open-cv": {
+   "slow drift": 13687,
+   "reached a balance after t_end (continuation)": 8894
+  },
+  "open-tot": {
+   "slow drift": 15101,
+   "reached a balance after t_end (continuation)": 8872,
+   "step limit": 48
+  },
+  "closed-cv": {
+   "slow drift": 83,
+   "reached a balance after t_end (continuation)": 4
+  },
+  "closed-tot": {
+   "slow drift": 60,
+   "step limit": 88,
+   "reached a balance after t_end (continuation)": 2
+  }
+ },
+ "M2_balance_structure": {
+  "closed-cv n_bal=1 n_stable=1": 9814,
+  "closed-cv n_bal=3 n_stable=2": 461,
+  "closed-tot n_bal=1 n_stable=0": 12,
+  "closed-tot n_bal=1 n_stable=1": 10101,
+  "closed-tot n_bal=3 n_stable=1": 7,
+  "closed-tot n_bal=3 n_stable=2": 155,
+  "open-cv n_bal=1 n_stable=1": 9802,
+  "open-cv n_bal=3 n_stable=2": 473,
+  "open-tot n_bal=1 n_stable=0": 6,
+  "open-tot n_bal=1 n_stable=1": 10036,
+  "open-tot n_bal=3 n_stable=1": 8,
+  "open-tot n_bal=3 n_stable=2": 225
+ },
+ "M2_no_stable_balance": {
+  "open-tot": 6,
+  "closed-tot": 12
+ },
+ "M3": {
+  "n_jobs": 12328,
+  "n_done": 12328,
+  "cpu": 2556.7957497659927,
+  "summary": {
+   "TH-open-cv": {
+    "balances": 2607,
+    "not_P": 0,
+    "osc_hits": 0,
+    "stat_hits": 0,
+    "used_mp": 209,
+    "max_Gamma_rel": -0.00011410433611743333
+   },
+   "TH-closed-cv": {
+    "balances": 2612,
+    "not_P": 0,
+    "osc_hits": 0,
+    "stat_hits": 0,
+    "used_mp": 128,
+    "max_Gamma_rel": -5.6560296677437764e-05
+   },
+   "TH-open-tot": {
+    "balances": 2565,
+    "not_P": 18,
+    "osc_hits": 12,
+    "stat_hits": 17,
+    "used_mp": 201,
+    "max_Gamma_rel": 0.18953453032927017
+   },
+   "TH-closed-tot": {
+    "balances": 2546,
+    "not_P": 12,
+    "osc_hits": 6,
+    "stat_hits": 12,
+    "used_mp": 105,
+    "max_Gamma_rel": 0.12826113802545938
+   },
+   "MA-open-cv": {
+    "balances": 998,
+    "not_P": 0,
+    "osc_hits": 0,
+    "stat_hits": 0,
+    "used_mp": 156,
+    "max_Gamma_rel": -0.00024132384866994253
+   },
+   "MA-closed-cv": {
+    "balances": 1000,
+    "not_P": 0,
+    "osc_hits": 0,
+    "stat_hits": 0,
+    "used_mp": 42,
+    "max_Gamma_rel": -1.284881646149421e-05
+   }
+  },
+  "n_flagged": 30,
+  "flagged": [
+   {
+    "src": "TH",
+    "i": 2962,
+    "level": "open",
+    "den": "tot",
+    "is_P": false,
+    "failing": {
+     "C": -27.665692185313556,
+     "CL": -681.3337642158028
+    },
+    "Gamma_random": 9.354993441732155,
+    "Gamma_two": 8.6500689725871,
+    "osc_hit": true,
+    "stat_hit": true,
+    "scale": 49.3577261382405
+   },
+   {
+    "src": "TH",
+    "i": 5162,
+    "level": "open",
+    "den": "tot",
+    "is_P": false,
+    "failing": {
+     "C": -17.528834529356715
+    },
+    "Gamma_random": 4.514668056558948,
+    "Gamma_two": -5.962392846505539,
+    "osc_hit": true,
+    "stat_hit": true,
+    "scale": 166.05594580501605
+   },
+   {
+    "src": "TH",
+    "i": 7082,
+    "level": "open",
+    "den": "tot",
+    "is_P": false,
+    "failing": {
+     "C": -4.430593258700863,
+     "CL": -2227.428629525841
+    },
+    "Gamma_random": -18.793862563970897,
+    "Gamma_two": -33.04143742044019,
+    "osc_hit": false,
+    "stat_hit": true,
+    "scale": 500.75924521675734
+   },
+   {
+    "src": "TH",
+    "i": 25163,
+    "level": "closed",
+    "den": "tot",
+    "is_P": false,
+    "failing": {
+     "CL": -0.5861099255978715
+    },
+    "Gamma_random": 0.049037859390055866,
+    "Gamma_two": 0.047825616184507216,
+    "osc_hit": true,
+    "stat_hit": true,
+    "scale": 4.915225577426973
+   },
+   {
+    "src": "TH",
+    "i": 25922,
+    "level": "open",
+    "den": "tot",
+    "is_P": false,
+    "failing": {
+     "C": -1.3324868640516168,
+     "CP": -155.7978064158582
+    },
+    "Gamma_random": 0.07289969149849182,
+    "Gamma_two": -0.035016870906910184,
+    "osc_hit": true,
+    "stat_hit": true,
+    "scale": 116.93011680347774
+   },
+   {
+    "src": "TH",
+    "i": 29122,
+    "level": "open",
+    "den": "tot",
+    "is_P": false,
+    "failing": {
+     "C": -3.9582483107173885,
+     "CL": -862.2149994714341
+    },
+    "Gamma_random": 1.503790138889559,
+    "Gamma_two": 1.3235778599879562,
+    "osc_hit": true,
+    "stat_hit": true,
+    "scale": 217.82782622437784
+   },
+   {
+    "src": "TH",
+    "i": 32083,
+    "level": "closed",
+    "den": "tot",
+    "is_P": false,
+    "failing": {
+     "C": -1.573696033480191,
+     "CL": -71.18213825790652
+    },
+    "Gamma_random": -0.4041145243305775,
+    "Gamma_two": -0.5709286601405672,
+    "osc_hit": false,
+    "stat_hit": 

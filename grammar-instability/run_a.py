@@ -137,15 +137,33 @@ def stage_adaptive():
     log("adaptive done: best f=%s" % [round(r["f_best"], 8) for r in results])
 
 
+def m3_sub(i):
+    """Every tenth draw of each variant (draws are round-robin over the four variants, so i % 10 == 0
+    would select the two open variants only)."""
+    return (i // 4) % 10 == 0
+
+
 def m3_balance_jobs(recs):
     jobs = []
+    seen = set()
     for r in recs:
-        if r["i"] % 10 != 0:
+        seen.add(r["i"])
+        if not m3_sub(r["i"]):
             continue
         for b in r["bal"]:
             if b["stable"]:
                 jobs.append(dict(src="TH", i=r["i"], level=r["level"], den=r["den"], k=r["k"], m=r["m"], kr=r["kr"],
                                  kc=r["kc"], T=r["T"], b=b["b"]))
+    # M2 stopped early under the H-cyc stop rule; the remaining subsample draws get M2 step 1 (balances
+    # and their stability) only, so that M3 covers the planned 10^5-draw subsample.
+    for i in range(N_DRAWS):
+        if i in seen or not m3_sub(i):
+            continue
+        d = m2.draw_params(i)
+        for rb in model.classify_balances(m2.par_of(d)):
+            if rb["stable"]:
+                jobs.append(dict(src="TH", i=i, level=d["level"], den=d["den"], k=d["k"], m=d["m"], kr=d["kr"],
+                                 kc=d["kc"], T=d["T"], b=rb["b"].tolist(), m2_ran=False))
     for i in range(2000):
         d = m2.draw_params(10_000_000 + i, law="MA")
         d["level"] = "open" if i < 1000 else "closed"
@@ -247,7 +265,49 @@ def stage_m4cyc():
     save("m4_cycle.json", dict(hits=out, cycle_verified=any(h["verification"]["verified"] for h in out)))
 
 
-STAGES = dict(planted=stage_planted, m2=stage_m2, adaptive=stage_adaptive, m3=stage_m3, m4cyc=stage_m4cyc)
+def stage_m4ring():
+    """M4 ring for the M3 hits (SPEC §6).  Hits are taken in M3 job order; for each claim the first verified
+    hit stops that claim's verification (stop rule, SPEC §7).  M4 CPU cap for the ring: 0.5 h."""
+    from ginst import m4
+    m3s = json.load(open(os.path.join(EV, "m3_summary.json")))
+    runs = []
+    done = dict(stat=False, osc=False)
+    cpu = 0.0
+    for fl in m3s["flagged"]:
+        det, job = fl["detail"], fl["job"]
+        for kind in ("stat", "osc"):
+            if done[kind] or not det[kind + "_hit"] or cpu > 0.5 * H:
+                continue
+            # the D and s of the larger of the random-D and two-class hits
+            key = "maxre_real" if kind == "stat" else "Gamma"
+            src = max(("random", "two_class"), key=lambda nm: det[nm][kind][key])
+            r = det[src][kind]
+            d = dict(job)
+            d.setdefault("law", "TH")
+            par = m2.par_of(d)
+            # s*: the refined point if refinement improved on the grid, else the grid point
+            s_star = r["s_ref"] if ("s_ref" in r and r[key] > r[key + "_grid" if kind == "stat" else "Gamma_grid"]) else r["s"]
+            v = m4.verify_ring(par, job["b"], r["D"], s_star, kind)
+            cpu += v["cpu"]
+            row = dict(src=job["src"], i=job["i"], level=job["level"], den=job["den"], is_P=fl["is_P"], D_from=src,
+                       exact_rates=["%.17g" % x for x in job["k"]], exact_T="%.17g" % job["T"], m=job["m"],
+                       kr=job["kr"], kc=job["kc"], balance=job["b"], **v)
+            runs.append(row)
+            log("m4ring %s draw %d %s-%s: verified=%s pred=%.4g meas=%s pattern=%s cpu=%.0f" % (
+                kind, job["i"], job["level"], job["den"], v["verified"], v["predicted_rate"] or 0.0, v["measured_rate"],
+                v.get("pattern"), v["cpu"]))
+            if v["verified"]:
+                done[kind] = True
+            save("m4_lattice.json", dict(runs=runs, cpu=cpu,
+                                         stationary_verified=any(x["verified"] and x["kind"] == "stat" and not x["is_P"]
+                                                                 for x in runs),
+                                         oscillatory_verified=any(x["verified"] and x["kind"] == "osc" for x in runs)))
+        if (done["stat"] and done["osc"]) or cpu > 0.5 * H:
+            break
+    log("m4ring done: cpu=%.0f stat=%s osc=%s" % (cpu, done["stat"], done["osc"]))
+
+
+STAGES = dict(m4ring=stage_m4ring, planted=stage_planted, m2=stage_m2, adaptive=stage_adaptive, m3=stage_m3, m4cyc=stage_m4cyc)
 
 if __name__ == "__main__":
     os.makedirs(EV, exist_ok=True)

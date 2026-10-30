@@ -23,3 +23,23 @@
 06:09:28 stage m4cyc start
 06:09:38 m4cyc draw 12051: verified=True periods={'LSODA': {'period': 247.5288587336584}, 'Radau': {'period': 247.52885988003254}} nontrivial=[2.430572124786036e-16, 5.146069325186398e-17]
 06:09:38 stage m4cyc done
+06:13:11 stage m3 start
+06:14:58 m3 jobs=12328
+06:36:37 m3 done: {'TH-open-cv': {'balances': 2607, 'not_P': 0, 'osc_hits': 0, 'stat_hits': 0, 'used_mp': 209, 'max_Gamma_rel': -0.00011410433611743333}, 'TH-closed-cv': {'balances': 2612, 'not_P': 0, 'osc_hits': 0, 'stat_hits': 0, 'used_mp': 128, 'max_Gamma_rel': -5.6560296677437764e-05}, 'TH-open-tot': {'balances': 2565, 'not_P': 18, 'osc_hits': 12, 'stat_hits': 17, 'used_mp': 201, 'max_Gamma_rel': 0.18953453032927017}, 'TH-closed-tot': {'balances': 2546, 'not_P': 12, 'osc_hits': 6, 'stat_hits': 12, 'used_mp': 105, 'max_Gamma_rel': 0.12826113802545938}, 'MA-open-cv': {'balances': 998, 'not_P': 0, 'osc_hits': 0, 'stat_hits': 0, 'used_mp': 156, 'max_Gamma_rel': -0.00024132384866994253}, 'MA-closed-cv': {'balances': 1000, 'not_P': 0, 'osc_hits': 0, 'stat_hits': 0, 'used_mp': 42, 'max_Gamma_rel': -1.284881646149421e-05}}
+06:36:37 stage m3 done
+06:38:33 stage m4ring start
+06:38:40 m4ring stat draw 2962 open-tot: verified=True pred=27.52 meas=27.68893468951623 pattern=stationary cpu=7
+06:39:35 stage m4ring start
+06:39:43 m4ring stat draw 2962 open-tot: verified=True pred=27.52 meas=27.68893468951623 pattern=stationary cpu=7
+06:39:43 m4ring osc draw 2962 open-tot: verified=False pred=0 meas=None pattern=None cpu=0
+06:39:43 m4ring osc draw 5162 open-tot: verified=False pred=0 meas=None pattern=None cpu=0
+06:39:43 m4ring osc draw 25163 closed-tot: verified=False pred=0 meas=None pattern=None cpu=0
+06:40:35 m4ring osc draw 25922 open-tot: verified=True pred=0.0729 meas=0.07022311413742448 pattern=time-dependent, not a rigid travel (standing wave or irregular) cpu=52
+06:40:35 m4ring done: cpu=60 stat=True osc=True
+06:40:35 stage m4ring done
+06:41:22 stage planted start
+06:44:17 pfa1 pass=True
+06:44:56 pfa2 pass=True
+06:44:56 pfa3 pass=True
+06:44:56 pfa4 pass=True
+06:44:56 stage planted done

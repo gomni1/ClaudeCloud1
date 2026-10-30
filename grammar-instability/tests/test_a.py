@@ -28,7 +28,10 @@ def test_balances_are_zeros_and_jacobian_matches_fd(variant):
             if variant[0] == "closed":
                 assert b.sum() == pytest.approx(d["T"], rel=1e-10)
             J = model.J_np(b, par)
-            hh = 1e-7 * np.maximum(np.abs(b), 1e-12)
+            # step relative to each coordinate, floored at 1e-4 of the largest one: a relative step on a
+            # coordinate of 1e-8 (closed-tot draw 27) is ~1e-15 and the difference quotient is roundoff
+            # (first run, evidence/pytest_output_first_run.txt)
+            hh = 1e-7 * np.maximum(np.abs(b), 1e-4 * np.abs(b).max())
             Jf = np.column_stack([(model.f_np(b + hh[j] * np.eye(4)[j], par) - model.f_np(b - hh[j] * np.eye(4)[j], par))
                                   / (2 * hh[j]) for j in range(4)])
             assert np.allclose(J, Jf, rtol=1e-4, atol=1e-6 * np.abs(J).max())
@@ -64,3 +67,22 @@ def test_pfa3_schnakenberg():
 def test_pfa4_wave():
     r = planted.pfa4()
     assert r["hurwitz"] and r["pass_"]
+
+
+def test_jacobian_on_the_cycle_of_draw_12051():
+    """The analytic Jacobian matches central differences along the verified cycle (M4 multipliers use it)."""
+    import json
+    import os
+    from scipy.integrate import solve_ivp
+    h = json.load(open(os.path.join(os.path.dirname(__file__), "..", "evidence", "m4_cycle.json")))["hits"][0]
+    par = m2.par_of(h["draw"])
+    x0 = np.array(h["start_point"])
+    T = h["verification"]["periods"]["Radau"]["period"]
+    sol = solve_ivp(lambda t, z: model.f_np(z, par), (0, T), x0, method="Radau", rtol=1e-10, atol=1e-14,
+                    t_eval=np.linspace(0, T, 41))
+    for b in sol.y.T:
+        J = model.J_np(b, par)
+        hh = 1e-6 * np.abs(b).max() * np.ones(4)
+        Jf = np.column_stack([(model.f_np(b + hh[j] * np.eye(4)[j], par) - model.f_np(b - hh[j] * np.eye(4)[j], par))
+                              / (2 * hh[j]) for j in range(4)])
+        assert np.allclose(J, Jf, rtol=1e-5, atol=1e-7 * np.abs(J).max())

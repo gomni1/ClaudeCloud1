@@ -26,6 +26,7 @@ def main():
                        TH_open_cv_all_positive_for_h_pos=m01["M1"]["TH_open_cv"]["all_positive_for_h_positive"])
     s2 = load("m2_summary.json")
     A["M2"] = s2 and {k: v for k, v in s2.items() if k != "periodic_draws"}
+    counts = collections.defaultdict(lambda: collections.Counter())
     notes = collections.Counter()
     var_notes = collections.defaultdict(collections.Counter)
     unresolved_draws = collections.Counter()
@@ -37,6 +38,16 @@ def main():
             for line in f:
                 r = json.loads(line)
                 key = "%s-%s" % (r["level"], r["den"])
+                c = counts[key]
+                c["draws"] += 1
+                c["cpu"] += r["cpu"]
+                c["balance"] += r["n_balance"]
+                c["periodic"] += r["n_periodic"]
+                c["unresolved"] += r["n_unresolved"]
+                c["draws_with_periodic"] += r["n_periodic"] > 0
+                c["draws_with_unresolved"] += r["n_unresolved"] > 0
+                c["draws_all_unresolved"] += r["n_unresolved"] == len(r["kinds"])
+                c["multistable"] += r["n_stable"] > 1
                 nbal[(key, r["n_bal"], r["n_stable"])] += 1
                 if r["n_stable"] == 0:
                     n_unstable_only[key] += 1
@@ -47,6 +58,9 @@ def main():
                         note = note.split(":")[0]
                         notes[note] += 1
                         var_notes[key][note] += 1
+        if not s2:  # M2 stopped under the H-cyc stop rule before writing its summary
+            A["M2"] = dict(draws=sum(c["draws"] for c in counts.values()), counts={k: dict(v) for k, v in counts.items()},
+                           stop="H-cyc stop rule (SPEC 7): periodic hit at draw 12051 verified by M4")
         A["M2_unresolved_notes"] = dict(notes)
         A["M2_unresolved_notes_by_variant"] = {k: dict(v) for k, v in var_notes.items()}
         A["M2_balance_structure"] = {"%s n_bal=%d n_stable=%d" % k: v for k, v in sorted(nbal.items())}
@@ -63,16 +77,45 @@ def main():
                        flagged=[{k: v for k, v in f.items() if k in ("src", "i", "level", "den", "is_P", "failing",
                                                                        "osc_hit", "stat_hit", "Gamma_random",
                                                                        "Gamma_two", "scale")} for f in m3["flagged"]])
-    m4 = load("m4.json")
-    A["M4"] = m4
+    if m3:
+        # M3 oscillatory hits: is the leading 'complex' eigenvalue at (D, s*) a genuine pair, or two real
+        # eigenvalues at their collision (|Im| at roundoff)?  Uses the D and s* M4 would use.
+        from ginst import m2 as _m2, model as _model
+        rows = []
+        for fl in m3["flagged"]:
+            det, job = fl["detail"], fl["job"]
+            if not det["osc_hit"]:
+                continue
+            src = max(("random", "two_class"), key=lambda nm: det[nm]["osc"]["Gamma"])
+            r = det[src]["osc"]
+            s_star = r["s_ref"] if ("s_ref" in r and r["Gamma"] > r["Gamma_grid"]) else r["s"]
+            d = dict(job)
+            d.setdefault("law", "TH")
+            J = _model.J_np(np.array(job["b"]), _m2.par_of(d))
+            ev = np.linalg.eigvals(J - s_star * np.diag(r["D"]))
+            c = ev[np.abs(ev.imag) > 1e-9 * np.abs(ev).max()]
+            lead = c[np.argmax(c.real)] if len(c) else None
+            rows.append(dict(i=fl["i"], level=fl["level"], den=fl["den"], is_P=fl["is_P"], Gamma=r["Gamma"],
+                             im_over_re=None if lead is None else float(abs(lead.imag) / max(abs(lead.real), 1e-300)),
+                             stat_hit_too=bool(det["stat_hit"])))
+        A["M3_osc_hits"] = rows
+        A["M3_osc_hits_genuine_pair"] = sum(1 for r in rows if r["im_over_re"] is not None and r["im_over_re"] > 1e-3)
+        A["M3_osc_hits_at_P_balances"] = sum(1 for r in rows if r["is_P"])
+    m4c = load("m4_cycle.json") or {}
+    m4l = load("m4_lattice.json") or {}
+    m4 = dict(cycle_verified=m4c.get("cycle_verified"), stationary_verified=m4l.get("stationary_verified"),
+              oscillatory_verified=m4l.get("oscillatory_verified"))
+    A["M4"] = dict(m4, cycle_hits=[dict(i=h["draw"]["i"], level=h["draw"]["level"], den=h["draw"]["den"],
+                                        **{k: h["verification"][k] for k in ("periods", "agree", "nontrivial_moduli",
+                                                                             "verified")}) for h in m4c.get("hits", [])],
+                   lattice=m4l.get("runs"))
     # statuses (SPEC §7)
-    cyc_hits = (s2 or {}).get("periodic_draws", []) if s2 else []
     pf = A["planted"]
     cov_ok = bool(s2) and not s2.get("budget_stop", True)
     A["H-cyc"] = dict(
-        status="killed" if (m4 and m4.get("cycle_verified")) else
+        status="killed" if m4.get("cycle_verified") else
         ("underdetermined" if not (cov_ok and pf.get("pfa1") and pf.get("pfa2")) else "survived"),
-        periodic_end_states=sum(v["periodic"] for v in (s2 or {}).get("counts", {}).values()) if s2 else None,
+        periodic_end_states=sum(v["periodic"] for v in A["M2"]["counts"].values()),
         coverage_complete=cov_ok)
     stat_hits = sum(v["stat_hits"] for v in (m3 or {}).get("summary", {}).values()) if m3 else None
     osc_hits = sum(v["osc_hits"] for v in (m3 or {}).get("summary", {}).values()) if m3 else None
