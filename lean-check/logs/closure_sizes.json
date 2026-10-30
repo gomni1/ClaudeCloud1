@@ -1,0 +1,58 @@
+{
+ "MassAction": {
+  "closure": 8980,
+  "mathlib_modules": 8530,
+  "lines": 2397552,
+  "unbuilt": 4269,
+  "unbuilt_lines": 1026987,
+  "whole_mathlib": true
+ },
+ "SwitchChain": {
+  "closure": 9074,
+  "mathlib_modules": 8530,
+  "lines": 2412596,
+  "unbuilt": 4363,
+  "unbuilt_lines": 1042031,
+  "whole_mathlib": true
+ },
+ "SharpThreshold": {
+  "closure": 8987,
+  "mathlib_modules": 8530,
+  "lines": 2397496,
+  "unbuilt": 4276,
+  "unbuilt_lines": 1026931,
+  "whole_mathlib": true
+ },
+ "SecondKahnKalai": {
+  "closure": 3237,
+  "mathlib_modules": 2938,
+  "lines": 999925,
+  "unbuilt": 338,
+  "unbuilt_lines": 98938,
+  "whole_mathlib": false
+ },
+ "DirectionalBallisticity": {
+  "closure": 9422,
+  "mathlib_modules": 8530,
+  "lines": 2488246,
+  "unbuilt": 4711,
+  "unbuilt_lines": 1117681,
+  "whole_mathlib": true
+ },
+ "ThreeStateSupercritical": {
+  "closure": 8936,
+  "mathlib_modules": 8530,
+  "lines": 2397533,
+  "unbuilt": 4225,
+  "unbuilt_lines": 1026968,
+  "whole_mathlib": true
+ },
+ "ThreeStateTreeClauses": {
+  "closure": 8940,
+  "mathlib_modules": 8530,
+  "lines": 2397630,
+  "unbuilt": 4229,
+  "unbuilt_lines": 1027065,
+  "whole_mathlib": true
+ }
+}
