@@ -22,8 +22,9 @@ def clopper_pearson(d, n, level=0.95):
     return float(lo), float(hi)
 
 
-def switching_runs(k10, om, direction, max_pass=50, max_runs=1_000_000, seed=0):
-    """Runs until max_pass passages through D or max_runs runs.  Returns times, secD flags, censoring."""
+def switching_runs(k10, om, direction, max_pass=50, max_runs=1_000_000, seed=0, cpu_cap=None):
+    """Runs until max_pass passages through D or max_runs runs, or (between batches) until cpu_cap CPU-s,
+    the share of the stage budget (SPEC §5).  Returns times, secD flags, censoring."""
     k = family.kvec(k10)
     v0, tgt, ta = (2, "VGE", 4 * om) if direction == "up" else (4, "VLE", 2 * om)
     n0 = start_counts(om, v0)
@@ -32,8 +33,11 @@ def switching_runs(k10, om, direction, max_pass=50, max_runs=1_000_000, seed=0):
     batch = 2000
     b = 0
     Tm = 10.0
-    while sum(secd) < max_pass and len(times) < max_runs:
+    while sum(secd) < max_pass and len(times) < max_runs and (cpu_cap is None or cpu < cpu_cap):
         nr = min(batch, max_runs - len(times))
+        if cpu_cap is not None and len(times):
+            per_run = cpu / len(times)
+            nr = int(max(1, min(nr, 0.5 * (cpu_cap - cpu) / max(per_run, 1e-9))))
         r = sim.run_exits(dict(model="TH", omega=om, n0=n0, target=tgt, ta=ta, t_burn=0.0, cap=1e4 * Tm, nruns=nr,
                                seed=sim.seed_for("idsize-switch", k10, om, direction, seed, b), k=k))
         times += r["time"].tolist()
@@ -45,7 +49,9 @@ def switching_runs(k10, om, direction, max_pass=50, max_runs=1_000_000, seed=0):
         c = np.asarray(cens, bool)
         Tm = max(Tm, float(t[~c].mean())) if (~c).any() else Tm
         batch = min(200_000, batch * 2)
-    return dict(times=np.asarray(times), secD=np.asarray(secd, bool), cens=np.asarray(cens, bool), cpu=cpu)
+    return dict(times=np.asarray(times), secD=np.asarray(secd, bool), cens=np.asarray(cens, bool), cpu=cpu,
+                cpu_capped=bool(cpu_cap is not None and cpu >= cpu_cap and sum(secd) < max_pass
+                                and len(times) < max_runs))
 
 
 def td0_runs(k10, om, direction, cpu_cap=900.0, rel_se=0.05, min_runs=400, seed=0):

@@ -132,8 +132,18 @@ def run_ffs(model, om, k, n0, t_burn, seed, path=None, ncross=1000, trials=1000,
     return rec
 
 
-def run_size(model, om, k, n0, t_burn, seed0, path=None, replicates=8, **kw):
-    reps = [run_ffs(model, om, k, n0, t_burn, seed0 + r, path=path, **kw) for r in range(replicates)]
+def run_size(model, om, k, n0, t_burn, seed0, path=None, replicates=8, mapper=map, **kw):
+    """8 replicates (seeds seed0 + r); mapper lets the caller run them in parallel."""
+    reps = list(mapper(_rep, [(model, om, k, n0, t_burn, seed0 + r, path, kw) for r in range(replicates)]))
+    return combine(model, om, reps, path)
+
+
+def _rep(a):
+    model, om, k, n0, t_burn, seed, path, kw = a
+    return run_ffs(model, om, k, n0, t_burn, seed, path=path, **kw)
+
+
+def combine(model, om, reps, path=None):
     good = [r for r in reps if r.get("ok")]
     out = dict(Omega=om, model=model, replicates=reps, n_ok=len(good), cpu=sum(r["cpu"] for r in reps))
     if len(good) >= 2:

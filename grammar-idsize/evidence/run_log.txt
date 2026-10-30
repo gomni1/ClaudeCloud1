@@ -1,0 +1,69 @@
+06:58:34 stage m0 start
+06:58:34 stage m0 done in 0 s
+06:58:34 stage planted start
+06:58:36 PF5 pass=True PF6 pass=True
+06:58:36 stage planted done in 2 s
+06:58:36 stage gmam start
+07:23:31 stage harness start
+07:23:32 harness TH Omega=8 T_ffs=823.0267537991447 T_pr3=855.4 z=-0.4097208999437225
+07:23:33 harness TH Omega=10 T_ffs=5455.388496800204 T_pr3=5048 z=0.5261387726333798
+07:23:35 harness TH Omega=12 T_ffs=33936.699629480114 T_pr3=3.27e+04 z=0.297543620149331
+07:23:35 harness MA Omega=6 T_ffs=537.8694514336 T_pr3=591.2 z=-1.0008180341691886
+07:23:35 harness MA Omega=8 T_ffs=6096.743724770156 T_pr3=7756 z=-1.9217311352041975
+07:23:36 harness MA Omega=10 T_ffs=111279.08655571952 T_pr3=1.076e+05 z=0.3606637064662909
+07:23:36 harness PF1 via FFS: [(20, 25783354.01836694, 25615661.12772701, 0.006546498636274358), (30, 372913022558.7795, 366789388808.0746, 0.016695231480399052)]
+07:23:36 stage harness done in 5 s
+07:23:36 stage ffs start
+07:23:37 ffs Omega=8 T=738.6982752600649 lnT_se=0.07210556420528647 cpu=1 spent=1
+07:23:38 ffs Omega=10 T=5144.123069363111 lnT_se=0.13126126603037847 cpu=2 spent=3
+07:23:40 ffs Omega=12 T=38748.34877279889 lnT_se=0.11408701434875243 cpu=3 spent=5
+07:23:43 ffs Omega=14 T=193620.26128649624 lnT_se=0.1837126881659658 cpu=6 spent=11
+07:23:47 ffs Omega=16 T=1376607.0696724071 lnT_se=0.14342784899697397 cpu=8 spent=19
+07:24:01 ffs Omega=20 T=114944983.77593675 lnT_se=0.19396069890025877 cpu=24 spent=44
+07:24:35 ffs Omega=24 T=7715876563.079447 lnT_se=0.3051414045395657 cpu=66 spent=109
+07:25:31 ffs Omega=30 T=314978136879.05225 lnT_se=0.6876176378093802 cpu=109 spent=218
+07:25:31 stage ffs done in 114 s
+07:32:47 stage switch start
+07:32:48 switch k10=0.5 Omega=2 up {'n': 2000, 'passages': 696, 'cpu_capped': False} cpu=0 spent=0
+07:32:48 switch k10=0.5 Omega=2 down {'n': 2000, 'passages': 578, 'cpu_capped': False} cpu=0 spent=0
+07:32:48 switch k10=1.0 Omega=2 up {'n': 2000, 'passages': 755, 'cpu_capped': False} cpu=0 spent=0
+07:32:48 switch k10=1.0 Omega=2 down {'n': 2000, 'passages': 469, 'cpu_capped': False} cpu=0 spent=0
+07:32:48 switch k10=2.0 Omega=2 up {'n': 2000, 'passages': 763, 'cpu_capped': False} cpu=0 spent=0
+07:32:48 switch k10=2.0 Omega=2 down {'n': 2000, 'passages': 288, 'cpu_capped': False} cpu=0 spent=0
+07:32:48 switch k10=0.5 Omega=3 up {'n': 2000, 'passages': 396, 'cpu_capped': False} cpu=0 spent=0
+07:32:48 switch k10=0.5 Omega=3 down {'n': 2000, 'passages': 331, 'cpu_capped': False} cpu=0 spent=0
+07:32:48 switch k10=1.0 Omega=3 up {'n': 2000, 'passages': 408, 'cpu_capped': False} cpu=0 spent=0
+07:32:48 switch k10=1.0 Omega=3 down {'n': 2000, 'passages': 275, 'cpu_capped': False} cpu=0 spent=0
+07:32:48 switch k10=2.0 Omega=3 up {'n': 2000, 'passages': 428, 'cpu_capped': False} cpu=0 spent=0
+07:32:48 switch k10=2.0 Omega=3 down {'n': 2000, 'passages': 189, 'cpu_capped': False} cpu=0 spent=0
+07:32:48 switch k10=0.5 Omega=4 up {'n': 2000, 'passages': 262, 'cpu_capped': False} cpu=0 spent=0
+07:32:48 switch k10=0.5 Omega=4 down {'n': 2000, 'passages': 177, 'cpu_capped': False} cpu=0 spent=0
+07:32:48 switch k10=1.0 Omega=4 up {'n': 2000, 'passages': 316, 'cpu_capped': False} cpu=0 spent=0
+07:32:48 switch k10=1.0 Omega=4 down {'n': 2000, 'passages': 140, 'cpu_capped': False} cpu=0 spent=0
+07:32:48 switch k10=2.0 Omega=4 up {'n': 2000, 'passages': 309, 'cpu_capped': False} cpu=0 spent=0
+07:32:48 switch k10=2.0 Omega=4 down {'n': 2000, 'passages': 82, 'cpu_capped': False} cpu=0 spent=0
+07:32:48 switch k10=0.5 Omega=5 up {'n': 2000, 'passages': 146, 'cpu_capped': False} cpu=0 spent=0
+07:32:48 switch k10=0.5 Omega=5 down {'n': 2000, 'passages': 82, 'cpu_capped': False} cpu=0 spent=0
+07:32:48 switch k10=1.0 Omega=5 up {'n': 2000, 'passages': 162, 'cpu_capped': False} cpu=0 spent=0
+07:32:48 switch k10=1.0 Omega=5 down {'n': 2000, 'passages': 60, 'cpu_capped': False} cpu=0 spent=0
+07:32:48 switch k10=2.0 Omega=5 up {'n': 2000, 'passages': 169, 'cpu_capped': False} cpu=0 spent=0
+07:32:48 switch k10=2.0 Omega=5 down {'n': 6000, 'passages': 84, 'cpu_capped': False} cpu=0 spent=0
+07:32:48 switch k10=0.5 Omega=6 up {'n': 2000, 'passages': 76, 'cpu_capped': False} cpu=0 spent=0
+07:32:48 switch k10=0.5 Omega=6 down {'n': 6000, 'passages': 93, 'cpu_capped': False} cpu=0 spent=1
+07:32:48 switch k10=1.0 Omega=6 up {'n': 2000, 'passages': 79, 'cpu_capped': False} cpu=0 spent=1
+07:32:48 switch k10=1.0 Omega=6 down {'n': 6000, 'passages': 76, 'cpu_capped': False} cpu=0 spent=1
+07:32:48 switch k10=2.0 Omega=6 up {'n': 2000, 'passages': 105, 'cpu_capped': False} cpu=0 spent=1
+07:32:48 switch k10=2.0 Omega=6 down {'n': 14000, 'passages': 83, 'cpu_capped': False} cpu=0 spent=1
+07:32:49 switch k10=0.5 Omega=8 up {'n': 6000, 'passages': 64, 'cpu_capped': False} cpu=0 spent=1
+07:32:49 switch k10=0.5 Omega=8 down {'n': 30000, 'passages': 64, 'cpu_capped': False} cpu=1 spent=2
+07:32:49 switch k10=1.0 Omega=8 up {'n': 6000, 'passages': 64, 'cpu_capped': False} cpu=0 spent=2
+07:32:51 switch k10=1.0 Omega=8 down {'n': 62000, 'passages': 78, 'cpu_capped': False} cpu=2 spent=4
+07:32:51 switch k10=2.0 Omega=8 up {'n': 6000, 'passages': 83, 'cpu_capped': False} cpu=0 spent=4
+07:32:53 switch k10=2.0 Omega=8 down {'n': 126000, 'passages': 87, 'cpu_capped': False} cpu=3 spent=7
+07:32:55 switch k10=0.5 Omega=10 up {'n': 30000, 'passages': 80, 'cpu_capped': False} cpu=1 spent=8
+07:33:05 switch k10=0.5 Omega=10 down {'n': 254000, 'passages': 59, 'cpu_capped': False} cpu=11 spent=19
+07:33:05 switch k10=1.0 Omega=10 up {'n': 30000, 'passages': 74, 'cpu_capped': False} cpu=1 spent=21
+07:33:15 switch k10=1.0 Omega=10 down {'n': 454000, 'passages': 69, 'cpu_capped': False} cpu=18 spent=39
+07:33:15 switch k10=2.0 Omega=10 up {'n': 30000, 'passages': 83, 'cpu_capped': False} cpu=2 spent=41
+07:33:40 switch k10=2.0 Omega=10 down {'n': 854000, 'passages': 69, 'cpu_capped': False} cpu=31 spent=72
+07:33:48 switch k10=0.5 Omega=12 up {'n': 126000, 'passages': 71, 'cpu_capped': False} cpu=6 spent=78

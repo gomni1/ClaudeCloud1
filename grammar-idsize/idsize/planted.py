@@ -63,13 +63,13 @@ def pf6(n=1000, seed=6):
     return dict(sizes=list(PF6_SIZES), T=Ts, windows=win, exact_local_slope=exact, crossover_exact=20.0, pass_=ok)
 
 
-def pf1_ffs(sizes=(20, 30), seed=11, replicates=8):
+def pf1_ffs(sizes=(20, 30), seed=11, replicates=8, mapper=map):
     rows = []
     ok = True
     for om in sizes:
         ex = pr3planted.pf1_exact(om)["T_qsd"]
         r = ffs.run_size("ID", om, np.zeros(11), np.array([om, 0, 0, 0], np.int64), 10.0, seed * 1000 + om,
-                         replicates=replicates, basin_mult=1.0)
+                         replicates=replicates, basin_mult=1.0, mapper=mapper)
         rel = abs(r["T"] - ex) / ex if "T" in r else None
         good = rel is not None and rel <= 0.10
         ok &= good

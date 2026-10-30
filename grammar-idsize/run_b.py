@@ -89,22 +89,39 @@ def stage_gmam():
 
 
 def _switch_job(args):
-    k10, om, direction = args
-    sw = race.switching_runs(k10, om, direction)
+    k10, om, direction, cap = args
+    sw = race.switching_runs(k10, om, direction, cpu_cap=cap)
     return dict(k10=k10, Omega=om, direction=direction, n=len(sw["times"]), passages=int(sw["secD"].sum()),
-                capped=int(sw["cens"].sum()), cpu=sw["cpu"],
+                capped=int(sw["cens"].sum()), cpu=sw["cpu"], cpu_capped=sw["cpu_capped"], cpu_share=cap,
                 tau_S_nopass=sw["times"][(~sw["secD"]) & (~sw["cens"])].tolist())
 
 
-def stage_switch():
-    jobs = [(k10, om, d) for k10 in family.K10S for om in race.SIZES for d in ("up", "down")]
-    out = []
+def levelled(stage, fn, cap_total, per_job_max=None):
+    """SPEC §5 budget: sizes in increasing order, all (k10, direction) cells of a size together, each cell
+    capped at an equal share of the remaining stage budget (and at per_job_max); stop when it is spent."""
+    out, spent = [], 0.0
     with ProcessPoolExecutor(WORKERS) as ex:
-        for r in ex.map(_switch_job, jobs):
-            out.append(r)
-            log("switch k10=%s Omega=%d %s n=%d passages=%d cpu=%.0f" % (r["k10"], r["Omega"], r["direction"], r["n"],
-                                                                        r["passages"], r["cpu"]))
-    save("switch", dict(rows=out))
+        for om in race.SIZES:
+            remaining = cap_total - spent
+            cells = [(k10, om, d) for k10 in family.K10S for d in ("up", "down")]
+            if remaining <= 0.02 * cap_total:
+                log("%s budget stop before Omega=%d (spent %.0f s)" % (stage, om, spent))
+                break
+            share = remaining / len(cells)
+            if per_job_max is not None:
+                share = min(share, per_job_max)
+            for r in ex.map(fn, [c + (share,) for c in cells]):
+                out.append(r)
+                spent += r["cpu"]
+                log("%s k10=%s Omega=%d %s %s cpu=%.0f spent=%.0f" % (
+                    stage, r["k10"], r["Omega"], r["direction"],
+                    {k: r[k] for k in ("n", "passages", "T", "se", "cpu_capped") if k in r}, r["cpu"], spent))
+            save(stage, dict(rows=out, spent=spent, cap=cap_total))
+    return out, spent
+
+
+def stage_switch():
+    levelled("switch", _switch_job, 1.5 * H)
 
 
 def _td0_job(args):
@@ -113,18 +130,9 @@ def _td0_job(args):
 
 
 def stage_td0():
-    # Budget 1.5 CPU-h over 54 (k10, Omega, direction) cells: 900 s cap per cell is the SPEC value;
-    # the smaller sizes finish far below it.
-    jobs = [(k10, om, d, 900.0) for k10 in family.K10S for om in race.SIZES for d in ("up", "down")]
-    out = []
-    spent = 0.0
-    with ProcessPoolExecutor(WORKERS) as ex:
-        for r in ex.map(_td0_job, jobs):
-            out.append(r)
-            spent += r["cpu"]
-            log("td0 k10=%s Omega=%d %s T=%.4g se=%.3g n=%d cpu=%.0f spent=%.0f" % (
-                r["k10"], r["Omega"], r["direction"], r["T"], r["se"], r["n"], r["cpu"], spent))
-    save("td0", dict(rows=out, spent=spent))
+    # 900 CPU-s per cell is the SPEC value; 54 cells could take 13.5 h, so the 1.5 CPU-h stage cap binds:
+    # sizes in increasing order, each cell at most min(900 s, its share of the remaining budget).
+    levelled("td0", _td0_job, 1.5 * H, per_job_max=900.0)
 
 
 def _exact_job(args):
@@ -172,6 +180,9 @@ def gmam_path():
     return np.array(best["path"])
 
 
+_POOL = None
+
+
 def _ffs_job(args):
     model, om, seed = args
     from gexit_pr3 import model as pm
@@ -187,7 +198,7 @@ def _ffs_job(args):
         path = None
     n0 = race.start_counts(om, 2) if model == "TH" else np.array([om, int(math.floor(om / 2 + 0.5)), om,
                                                                     int(math.floor(om / 2 + 0.5))], np.int64)
-    r = ffs.run_size(model, om, k, n0, tb, seed, path=path)
+    r = ffs.run_size(model, om, k, n0, tb, seed, path=path, mapper=_POOL.map if _POOL is not None else map)
     r["t_burn"] = tb
     r["replicates"] = [{kk: vv for kk, vv in rep.items()} for rep in r["replicates"]]
     return r
@@ -195,9 +206,11 @@ def _ffs_job(args):
 
 def stage_harness():
     jobs = [("TH", om, 1000 + om) for om in (8, 10, 12)] + [("MA", om, 2000 + om) for om in (6, 8, 10)]
+    global _POOL
     out = []
-    with ProcessPoolExecutor(WORKERS) as ex:
-        for (model, om, _), r in zip(jobs, ex.map(_ffs_job, jobs)):
+    _POOL = ProcessPoolExecutor(WORKERS)
+    if True:
+        for (model, om, _), r in zip(jobs, map(_ffs_job, jobs)):
             ser = "M1_TH2" if model == "TH" else "M1_MA"
             T3, se3 = pr3_T(ser, om)
             comb = math.sqrt(r.get("T_se", float("inf")) ** 2 + se3 ** 2)
@@ -207,12 +220,15 @@ def stage_harness():
                        interfaces=r["replicates"][0].get("interfaces"))
             out.append(row)
             log("harness %s Omega=%d T_ffs=%s T_pr3=%.4g z=%s" % (model, om, r.get("T"), T3, z))
-    pf1 = planted.pf1_ffs()
+    pf1 = planted.pf1_ffs(mapper=_POOL.map)
+    _POOL.shutdown()
     log("harness PF1 via FFS: %s" % [(r["Omega"], r["T_ffs"], r["T_exact"], r["rel_err"]) for r in pf1["rows"]])
     save("harness", dict(rows=out, pf1=pf1, pass_=bool(all(r["pass_"] for r in out) and pf1["pass_"])))
 
 
 def stage_ffs():
+    global _POOL
+    _POOL = ProcessPoolExecutor(WORKERS)
     h = load("harness")
     sizes = (8, 10, 12, 14, 16, 20, 24, 30)
     out = []

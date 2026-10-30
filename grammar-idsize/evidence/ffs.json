@@ -1,0 +1,4861 @@
+{
+ "rows": [
+  {
+   "Omega": 8,
+   "model": "TH",
+   "n_ok": 8,
+   "cpu": 1.056011027,
+   "lnT_mean": 6.6048895497005935,
+   "lnT_se": 0.07210556420528647,
+   "T": 738.6982752600649,
+   "T_se": 53.26425591509898,
+   "mean_max_v": 4.9629445763630144,
+   "mean_dist": 0.8494764252986415,
+   "t_burn": 66.0506423145057,
+   "replicate_lnT": [
+    6.673276893743739,
+    6.969415792655717,
+    6.355664648309921,
+    6.697303242131778,
+    6.632519194129985,
+    6.395138559765719,
+    6.427954335800421,
+    6.687843731067463
+   ],
+   "replicate_stages": [
+    [
+     {
+      "M_from": 10,
+      "M_to": 9,
+      "trials": 1000,
+      "successes": 818,
+      "P": 0.818
+     },
+     {
+      "M_from": 9,
+      "M_to": 8,
+      "trials": 1000,
+      "successes": 817,
+      "P": 0.817
+     },
+     {
+      "M_from": 8,
+      "M_to": 7,
+      "trials": 1000,
+      "successes": 767,
+      "P": 0.767
+     },
+     {
+      "M_from": 7,
+      "M_to": 6,
+      "trials": 1000,
+      "successes": 737,
+      "P": 0.737
+     },
+     {
+      "M_from": 6,
+      "M_to": 5,
+      "trials": 1000,
+      "successes": 692,
+      "P": 0.692
+     },
+     {
+      "M_from": 5,
+      "M_to": 4,
+      "trials": 1000,
+      "successes": 639,
+      "P": 0.639
+     },
+     {
+      "M_from": 4,
+      "M_to": 3,
+      "trials": 1000,
+      "successes": 544,
+      "P": 0.544
+     },
+     {
+      "M_from": 3,
+      "M_to": 2,
+      "trials": 1000,
+      "successes": 452,
+      "P": 0.452
+     },
+     {
+      "M_from": 2,
+      "M_to": 1,
+      "trials": 1000,
+      "successes": 317,
+      "P": 0.317
+     },
+     {
+      "M_from": 1,
+      "M_to": 0,
+      "trials": 1000,
+      "successes": 154,
+      "P": 0.154
+     }
+    ],
+    [
+     {
+      "M_from": 10,
+      "M_to": 9,
+      "trials": 1000,
+      "successes": 760,
+      "P": 0.76
+     },
+     {
+      "M_from": 9,
+      "M_to": 8,
+      "trials": 1000,
+      "successes": 806,
+      "P": 0.806
+     },
+     {
+      "M_from": 8,
+      "M_to": 7,
+      "trials": 1000,
+      "successes": 772,
+      "P": 0.772
+     },
+     {
+      "M_from": 7,
+      "M_to": 6,
+      "trials": 1000,
+      "successes": 738,
+      "P": 0.738
+     },
+     {
+      "M_from": 6,
+      "M_to": 5,
+      "trials": 1000,
+      "successes": 679,
+      "P": 0.679
+     },
+     {
+      "M_from": 5,
+      "M_to": 4,
+      "trials": 1000,
+      "successes": 646,
+      "P": 0.646
+     },
+     {
+      "M_from": 4,
+      "M_to": 3,
+      "trials": 1000,
+      "successes": 519,
+      "P": 0.519
+     },
+     {
+      "M_from": 3,
+      "M_to": 2,
+      "trials": 1000,
+      "successes": 463,
+      "P": 0.463
+     },
+     {
+      "M_from": 2,
+      "M_to": 1,
+      "trials": 1000,
+      "successes": 310,
+      "P": 0.31
+     },
+     {
+      "M_from": 1,
+      "M_to": 0,
+      "trials": 1000,
+      "successes": 129,
+      "P": 0.129
+     }
+    ],
+    [
+     {
+      "M_from": 10,
+      "M_to": 9,
+      "trials": 1000,
+      "successes": 797,
+      "P": 0.797
+     },
+     {
+      "M_from": 9,
+      "M_to": 8,
+      "trials": 1000,
+      "successes": 797,
+      "P": 0.797
+     },
+     {
+      "M_from": 8,
+      "M_to": 7,
+      "trials": 1000,
+      "successes": 781,
+      "P": 0.781
+     },
+     {
+      "M_from": 7,
+      "M_to": 6,
+      "trials": 1000,
+      "successes": 737,
+      "P": 0.737
+     },
+     {
+      "M_from": 6,
+      "M_to": 5,
+      "trials": 1000,
+      "successes": 694,
+      "P": 0.694
+     },
+     {
+      "M_from": 5,
+      "M_to": 4,
+      "trials": 1000,
+      "successes": 686,
+      "P": 0.686
+     },
+     {
+      "M_from": 4,
+      "M_to": 3,
+      "trials": 1000,
+      "successes": 571,
+      "P": 0.571
+     },
+     {
+      "M_from": 3,
+      "M_to": 2,
+      "trials": 1000,
+      "successes": 464,
+      "P": 0.464
+     },
+     {
+      "M_from": 2,
+      "M_to": 1,
+      "trials": 1000,
+      "successes": 306,
+      "P": 0.306
+     },
+     {
+      "M_from": 1,
+      "M_to": 0,
+      "trials": 1000,
+      "successes": 188,
+      "P": 0.188
+     }
+    ],
+    [
+     {
+      "M_from": 10,
+      "M_to": 9,
+      "trials": 1000,
+      "successes": 797,
+      "P": 0.797
+     },
+     {
+      "M_from": 9,
+      "M_to": 8,
+      "trials": 1000,
+      "successes": 790,
+      "P": 0.79
+     },
+     {
+      "M_from": 8,
+      "M_to": 7,
+      "trials": 1000,
+      "successes": 767,
+      "P": 0.767
+     },
+     {
+      "M_from": 7,
+      "M_to": 6,
+      "trials": 1000,
+      "successes": 730,
+      "P": 0.73
+     },
+     {
+      "M_from": 6,
+      "M_to": 5,
+      "trials": 1000,
+      "successes": 688,
+      "P": 0.688
+     },
+     {
+      "M_from": 5,
+      "M_to": 4,
+      "trials": 1000,
+      "successes": 637,
+      "P": 0.637
+     },
+     {
+      "M_from": 4,
+      "M_to": 3,
+      "trials": 1000,
+      "successes": 564,
+      "P": 0.564
+     },
+     {
+      "M_from": 3,
+      "M_to": 2,
+      "trials": 1000,
+      "successes": 441,
+      "P": 0.441
+     },
+     {
+      "M_from": 2,
+      "M_to": 1,
+      "trials": 1000,
+      "successes": 306,
+      "P": 0.306
+     },
+     {
+      "M_from": 1,
+      "M_to": 0,
+      "trials": 1000,
+      "successes": 164,
+      "P": 0.164
+     }
+    ],
+    [
+     {
+      "M_from": 10,
+      "M_to": 9,
+      "trials": 1000,
+      "successes": 827,
+      "P": 0.827
+     },
+     {
+      "M_from": 9,
+      "M_to": 8,
+      "trials": 1000,
+      "successes": 819,
+      "P": 0.819
+     },
+     {
+      "M_from": 8,
+      "M_to": 7,
+      "trials": 1000,
+      "successes": 756,
+      "P": 0.756
+     },
+     {
+      "M_from": 7,
+      "M_to": 6,
+      "trials": 1000,
+      "successes": 771,
+      "P": 0.771
+     },
+     {
+      "M_from": 6,
+      "M_to": 5,
+      "trials": 1000,
+      "successes": 731,
+      "P": 0.731
+     },
+     {
+      "M_from": 5,
+      "M_to": 4,
+      "trials": 1000,
+      "successes": 625,
+      "P": 0.625
+     },
+     {
+      "M_from": 4,
+      "M_to": 3,
+      "trials": 1000,
+      "successes": 589,
+      "P": 0.589
+     },
+     {
+      "M_from": 3,
+      "M_to": 2,
+      "trials": 1000,
+      "successes": 438,
+      "P": 0.438
+     },
+     {
+      "M_from": 2,
+      "M_to": 1,
+      "trials": 1000,
+      "successes": 280,
+      "P": 0.28
+     },
+     {
+      "M_from": 1,
+      "M_to": 0,
+      "trials": 1000,
+      "successes": 155,
+      "P": 0.155
+     }
+    ],
+    [
+     {
+      "M_from": 10,
+      "M_to": 9,
+      "trials": 1000,
+      "successes": 802,
+      "P": 0.802
+     },
+     {
+      "M_from": 9,
+      "M_to": 8,
+      "trials": 1000,
+      "successes": 800,
+      "P": 0.8
+     },
+     {
+      "M_from": 8,
+      "M_to": 7,
+      "trials": 1000,
+      "successes": 790,
+      "P": 0.79
+     },
+     {
+      "M_from": 7,
+      "M_to": 6,
+      "trials": 1000,
+      "successes": 736,
+      "P": 0.736
+     },
+     {
+      "M_from": 6,
+      "M_to": 5,
+      "trials": 1000,
+      "successes": 685,
+      "P": 0.685
+     },
+     {
+      "M_from": 5,
+      "M_to": 4,
+      "trials": 1000,
+      "successes": 655,
+      "P": 0.655
+     },
+     {
+      "M_from": 4,
+      "M_to": 3,
+      "trials": 1000,
+      "successes": 573,
+      "P": 0.573
+     },
+     {
+      "M_from": 3,
+      "M_to": 2,
+      "trials": 1000,
+      "successes": 464,
+      "P": 0.464
+     },
+     {
+      "M_from": 2,
+      "M_to": 1,
+      "trials": 1000,
+      "successes": 335,
+      "P": 0.335
+     },
+     {
+      "M_from": 1,
+      "M_to": 0,
+      "trials": 1000,
+      "successes": 173,
+      "P": 0.173
+     }
+    ],
+    [
+     {
+      "M_from": 10,
+      "M_to": 9,
+      "trials": 1000,
+      "successes": 832,
+      "P": 0.832
+     },
+     {
+      "M_from": 9,
+      "M_to": 8,
+      "trials": 1000,
+      "successes": 816,
+      "P": 0.816
+     },
+     {
+      "M_from": 8,
+      "M_to": 7,
+      "trials": 1000,
+      "successes": 783,
+      "P": 0.783
+     },
+     {
+      "M_from": 7,
+      "M_to": 6,
+      "trials": 1000,
+      "successes": 771,
+      "P": 0.771
+     },
+     {
+      "M_from": 6,
+      "M_to": 5,
+      "trials": 1000,
+      "successes": 753,
+      "P": 0.753
+     },
+     {
+      "M_from": 5,
+      "M_to": 4,
+      "trials": 1000,
+      "successes": 677,
+      "P": 0.677
+     },
+     {
+      "M_from": 4,
+      "M_to": 3,
+      "trials": 1000,
+      "successes": 578,
+      "P": 0.578
+     },
+     {
+      "M_from": 3,
+      "M_to": 2,
+      "trials": 1000,
+      "successes": 448,
+      "P": 0.448
+     },
+     {
+      "M_from": 2,
+      "M_to": 1,
+      "trials": 1000,
+      "successes": 280,
+      "P": 0.28
+     },
+     {
+      "M_from": 1,
+      "M_to": 0,
+      "trials": 1000,
+      "successes": 161,
+      "P": 0.161
+     }
+    ],
+    [
+     {
+      "M_from": 10,
+      "M_to": 9,
+      "trials": 1000,
+      "successes": 795,
+      "P": 0.795
+     },
+     {
+      "M_from": 9,
+      "M_to": 8,
+      "trials": 1000,
+      "successes": 805,
+      "P": 0.805
+     },
+     {
+      "M_from": 8,
+      "M_to": 7,
+      "trials": 1000,
+      "successes": 769,
+      "P": 0.769
+     },
+     {
+      "M_from": 7,
+      "M_to": 6,
+      "trials": 1000,
+      "successes": 752,
+      "P": 0.752
+     },
+     {
+      "M_from": 6,
+      "M_to": 5,
+      "trials": 1000,
+      "successes": 700,
+      "P": 0.7
+     },
+     {
+      "M_from": 5,
+      "M_to": 4,
+      "trials": 1000,
+      "successes": 628,
+      "P": 0.628
+     },
+     {
+      "M_from": 4,
+      "M_to": 3,
+      "trials": 1000,
+      "successes": 550,
+      "P": 0.55
+     },
+     {
+      "M_from": 3,
+      "M_to": 2,
+      "trials": 1000,
+      "successes": 458,
+      "P": 0.458
+     },
+     {
+      "M_from": 2,
+      "M_to": 1,
+      "trials": 1000,
+      "successes": 306,
+      "P": 0.306
+     },
+     {
+      "M_from": 1,
+      "M_to": 0,
+      "trials": 1000,
+      "successes": 148,
+      "P": 0.148
+     }
+    ]
+   ],
+   "interfaces": [
+    10,
+    9,
+    8,
+    7,
+    6,
+    5,
+    4,
+    3,
+    2,
+    1,
+    0
+   ]
+  },
+  {
+   "Omega": 10,
+   "model": "TH",
+   "n_ok": 8,
+   "cpu": 1.670865795,
+   "lnT_mean": 8.545610190468569,
+   "lnT_se": 0.13126126603037847,
+   "T": 5144.123069363111,
+   "T_se": 675.2241067006784,
+   "mean_max_v": 4.857952319777684,
+   "mean_dist": 0.7709181157707559,
+   "t_burn": 66.0506423145057,
+   "replicate_lnT": [
+    8.52198606750544,
+    9.32618686990198,
+    8.377606474390896,
+    8.41554565977393,
+    8.130187426401427,
+    8.40959779503059,
+    8.8311498634479,
+    8.352621367296393
+   ],
+   "replicate_stages": [
+    [
+     {
+      "M_from": 13,
+      "M_to": 11,
+      "trials": 1000,
+      "successes": 661,
+      "P": 0.661
+     },
+     {
+      "M_from": 11,
+      "M_to": 9,
+      "trials": 1000,
+      "successes": 648,
+      "P": 0.648
+     },
+     {
+      "M_from": 9,
+      "M_to": 7,
+      "trials": 1000,
+      "successes": 561,
+      "P": 0.561
+     },
+     {
+      "M_from": 7,
+      "M_to": 5,
+      "trials": 1000,
+      "successes": 446,
+      "P": 0.446
+     },
+     {
+      "M_from": 5,
+      "M_to": 3,
+      "trials": 1000,
+      "successes": 278,
+      "P": 0.278
+     },
+     {
+      "M_from": 3,
+      "M_to": 1,
+      "trials": 1000,
+      "successes": 86,
+      "P": 0.086
+     },
+     {
+      "M_from": 1,
+      "M_to": 0,
+      "trials": 1000,
+      "successes": 131,
+      "P": 0.131
+     }
+    ],
+    [
+     {
+      "M_from": 13,
+      "M_to": 11,
+      "trials": 1000,
+      "successes": 695,
+      "P": 0.695
+     },
+     {
+      "M_from": 11,
+      "M_to": 9,
+      "trials": 1000,
+      "successes": 635,
+      "P": 0.635
+     },
+     {
+      "M_from": 9,
+      "M_to": 7,
+      "trials": 1000,
+      "successes": 560,
+      "P": 0.56
+     },
+     {
+      "M_from": 7,
+      "M_to": 5,
+      "trials": 1000,
+      "successes": 428,
+      "P": 0.428
+     },
+     {
+      "M_from": 5,
+      "M_to": 3,
+      "trials": 1000,
+      "successes": 233,
+      "P": 0.233
+     },
+     {
+      "M_from": 3,
+      "M_to": 1,
+      "trials": 1000,
+      "successes": 72,
+      "P": 0.072
+     },
+     {
+      "M_from": 1,
+      "M_to": 0,
+      "trials": 1000,
+      "successes": 86,
+      "P": 0.086
+     }
+    ],
+    [
+     {
+      "M_from": 13,
+      "M_to": 11,
+      "trials": 1000,
+      "successes": 710,
+      "P": 0.71
+     },
+     {
+      "M_from": 11,
+      "M_to": 9,
+      "trials": 1000,
+      "successes": 661,
+      "P": 0.661
+     },
+     {
+      "M_from": 9,
+      "M_to": 7,
+      "trials": 1000,
+      "successes": 557,
+      "P": 0.557
+     },
+     {
+      "M_from": 7,
+      "M_to": 5,
+      "trials": 1000,
+      "successes": 444,
+      "P": 0.444
+     },
+     {
+      "M_from": 5,
+      "M_to": 3,
+      "trials": 1000,
+      "successes": 281,
+      "P": 0.281
+     },
+     {
+      "M_from": 3,
+      "M_to": 1,
+      "trials": 1000,
+      "successes": 75,
+      "P": 0.075
+     },
+     {
+      "M_from": 1,
+      "M_to": 0,
+      "trials": 1000,
+      "successes": 150,
+      "P": 0.15
+     }
+    ],
+    [
+     {
+      "M_from": 13,
+      "M_to": 11,
+      "trials": 1000,
+      "successes": 675,
+      "P": 0.675
+     },
+     {
+      "M_from": 11,
+      "M_to": 9,
+      "trials": 1000,
+      "successes": 686,
+      "P": 0.686
+     },
+     {
+      "M_from": 9,
+      "M_to": 7,
+      "trials": 1000,
+      "successes": 593,
+      "P": 0.593
+     },
+     {
+      "M_from": 7,
+      "M_to": 5,
+      "trials": 1000,
+      "successes": 452,
+      "P": 0.452
+     },
+     {
+      "M_from": 5,
+      "M_to": 3,
+      "trials": 1000,
+      "successes": 279,
+      "P": 0.279
+     },
+     {
+      "M_from": 3,
+      "M_to": 1,
+      "trials": 1000,
+      "successes": 84,
+      "P": 0.084
+     },
+     {
+      "M_from": 1,
+      "M_to": 0,
+      "trials": 1000,
+      "successes": 123,
+      "P": 0.123
+     }
+    ],
+    [
+     {
+      "M_from": 13,
+      "M_to": 11,
+      "trials": 1000,
+      "successes": 681,
+      "P": 0.681
+     },
+     {
+      "M_from": 11,
+      "M_to": 9,
+      "trials": 1000,
+      "successes": 666,
+      "P": 0.666
+     },
+     {
+      "M_from": 9,
+      "M_to": 7,
+      "trials": 1000,
+      "successes": 589,
+      "P": 0.589
+     },
+     {
+      "M_from": 7,
+      "M_to": 5,
+      "trials": 1000,
+      "successes": 463,
+      "P": 0.463
+     },
+     {
+      "M_from": 5,
+      "M_to": 3,
+      "trials": 1000,
+      "successes": 295,
+      "P": 0.295
+     },
+     {
+      "M_from": 3,
+      "M_to": 1,
+      "trials": 1000,
+      "successes": 109,
+      "P": 0.109
+     },
+     {
+      "M_from": 1,
+      "M_to": 0,
+      "trials": 1000,
+      "successes": 125,
+      "P": 0.125
+     }
+    ],
+    [
+     {
+      "M_from": 13,
+      "M_to": 11,
+      "trials": 1000,
+      "successes": 690,
+      "P": 0.69
+     },
+     {
+      "M_from": 11,
+      "M_to": 9,
+      "trials": 1000,
+      "successes": 647,
+      "P": 0.647
+     },
+     {
+      "M_from": 9,
+      "M_to": 7,
+      "trials": 1000,
+      "successes": 575,
+      "P": 0.575
+     },
+     {
+      "M_from": 7,
+      "M_to": 5,
+      "trials": 1000,
+      "successes": 441,
+      "P": 0.441
+     },
+     {
+      "M_from": 5,
+      "M_to": 3,
+      "trials": 1000,
+      "successes": 256,
+      "P": 0.256
+     },
+     {
+      "M_from": 3,
+      "M_to": 1,
+      "trials": 1000,
+      "successes": 83,
+      "P": 0.083
+     },
+     {
+      "M_from": 1,
+      "M_to": 0,
+      "trials": 1000,
+      "successes": 150,
+      "P": 0.15
+     }
+    ],
+    [
+     {
+      "M_from": 13,
+      "M_to": 11,
+      "trials": 1000,
+      "successes": 700,
+      "P": 0.7
+     },
+     {
+      "M_from": 11,
+      "M_to": 9,
+      "trials": 1000,
+      "successes": 639,
+      "P": 0.639
+     },
+     {
+      "M_from": 9,
+      "M_to": 7,
+      "trials": 1000,
+      "successes": 567,
+      "P": 0.567
+     },
+     {
+      "M_from": 7,
+      "M_to": 5,
+      "trials": 1000,
+      "successes": 426,
+      "P": 0.426
+     },
+     {
+      "M_from": 5,
+      "M_to": 3,
+      "trials": 1000,
+      "successes": 247,
+      "P": 0.247
+     },
+     {
+      "M_from": 3,
+      "M_to": 1,
+      "trials": 1000,
+      "successes": 93,
+      "P": 0.093
+     },
+     {
+      "M_from": 1,
+      "M_to": 0,
+      "trials": 1000,
+      "successes": 104,
+      "P": 0.104
+     }
+    ],
+    [
+     {
+      "M_from": 13,
+      "M_to": 11,
+      "trials": 1000,
+      "successes": 691,
+      "P": 0.691
+     },
+     {
+      "M_from": 11,
+      "M_to": 9,
+      "trials": 1000,
+      "successes": 633,
+      "P": 0.633
+     },
+     {
+      "M_from": 9,
+      "M_to": 7,
+      "trials": 1000,
+      "successes": 572,
+      "P": 0.572
+     },
+     {
+      "M_from": 7,
+      "M_to": 5,
+      "trials": 1000,
+      "successes": 455,
+      "P": 0.455
+     },
+     {
+      "M_from": 5,
+      "M_to": 3,
+      "trials": 1000,
+      "successes": 283,
+      "P": 0.283
+     },
+     {
+      "M_from": 3,
+      "M_to": 1,
+      "trials": 1000,
+      "successes": 97,
+      "P": 0.097
+     },
+     {
+      "M_from": 1,
+      "M_to": 0,
+      "trials": 1000,
+      "successes": 130,
+      "P": 0.13
+     }
+    ]
+   ],
+   "interfaces": [
+    13,
+    11,
+    9,
+    7,
+    5,
+    3,
+    1,
+    0
+   ]
+  },
+  {
+   "Omega": 12,
+   "model": "TH",
+   "n_ok": 8,
+   "cpu": 2.7697337859999998,
+   "lnT_mean": 10.564843421558695,
+   "lnT_se": 0.11408701434875243,
+   "T": 38748.34877279889,
+   "T_se": 4420.68342243277,
+   "mean_max_v": 4.789481748886049,
+   "mean_dist": 0.6832863231747452,
+   "t_burn": 66.0506423145057,
+   "replicate_lnT": [
+    10.746104967465872,
+    10.83836595828521,
+    10.328511312941176,
+    10.452881964963316,
+    11.09555562966804,
+    10.647339839603658,
+    10.153107780820713,
+    10.25687991872158
+   ],
+   "replicate_stages": [
+    [
+     {
+      "M_from": 17,
+      "M_to": 15,
+      "trials": 1000,
+      "successes": 723,
+      "P": 0.723
+     },
+     {
+      "M_from": 15,
+      "M_to": 13,
+      "trials": 1000,
+      "successes": 735,
+      "P": 0.735
+     },
+     {
+      "M_from": 13,
+      "M_to": 11,
+      "trials": 1000,
+      "successes": 656,
+      "P": 0.656
+     },
+     {
+      "M_from": 11,
+      "M_to": 9,
+      "trials": 1000,
+      "successes": 601,
+      "P": 0.601
+     },
+     {
+      "M_from": 9,
+      "M_to": 7,
+      "trials": 1000,
+      "successes": 524,
+      "P": 0.524
+     },
+     {
+      "M_from": 7,
+      "M_to": 5,
+      "trials": 1000,
+      "successes": 359,
+      "P": 0.359
+     },
+     {
+      "M_from": 5,
+      "M_to": 3,
+      "trials": 1000,
+      "successes": 182,
+      "P": 0.182
+     },
+     {
+      "M_from": 3,
+      "M_to": 1,
+      "trials": 1000,
+      "successes": 63,
+      "P": 0.063
+     },
+     {
+      "M_from": 1,
+      "M_to": 0,
+      "trials": 1000,
+      "successes": 74,
+      "P": 0.074
+     }
+    ],
+    [
+     {
+      "M_from": 17,
+      "M_to": 15,
+      "trials": 1000,
+      "successes": 745,
+      "P": 0.745
+     },
+     {
+      "M_from": 15,
+      "M_to": 13,
+      "trials": 1000,
+      "successes": 714,
+      "P": 0.714
+     },
+     {
+      "M_from": 13,
+      "M_to": 11,
+      "trials": 1000,
+      "successes": 700,
+      "P": 0.7
+     },
+     {
+      "M_from": 11,
+      "M_to": 9,
+      "trials": 1000,
+      "successes": 607,
+      "P": 0.607
+     },
+     {
+      "M_from": 9,
+      "M_to": 7,
+      "trials": 1000,
+      "successes": 537,
+      "P": 0.537
+     },
+     {
+      "M_from": 7,
+      "M_to": 5,
+      "trials": 1000,
+      "successes": 327,
+      "P": 0.327
+     },
+     {
+      "M_from": 5,
+      "M_to": 3,
+      "trials": 1000,
+      "successes": 153,
+      "P": 0.153
+     },
+     {
+      "M_from": 3,
+      "M_to": 1,
+      "trials": 1000,
+      "successes": 55,
+      "P": 0.055
+     },
+     {
+      "M_from": 1,
+      "M_to": 0,
+      "trials": 1000,
+      "successes": 88,
+      "P": 0.088
+     }
+    ],
+    [
+     {
+      "M_from": 17,
+      "M_to": 15,
+      "trials": 1000,
+      "successes": 707,
+      "P": 0.707
+     },
+     {
+      "M_from": 15,
+      "M_to": 13,
+      "trials": 1000,
+      "successes": 728,
+      "P": 0.728
+     },
+     {
+      "M_from": 13,
+      "M_to": 11,
+      "trials": 1000,
+      "successes": 662,
+      "P": 0.662
+     },
+     {
+      "M_from": 11,
+      "M_to": 9,
+      "trials": 1000,
+      "successes": 655,
+      "P": 0.655
+     },
+     {
+      "M_from": 9,
+      "M_to": 7,
+      "trials": 1000,
+      "successes": 508,
+      "P": 0.508
+     },
+     {
+      "M_from": 7,
+      "M_to": 5,
+      "trials": 1000,
+      "successes": 373,
+      "P": 0.373
+     },
+     {
+      "M_from": 5,
+      "M_to": 3,
+      "trials": 1000,
+      "successes": 207,
+      "P": 0.207
+     },
+     {
+      "M_from": 3,
+      "M_to": 1,
+      "trials": 1000,
+      "successes": 66,
+      "P": 0.066
+     },
+     {
+      "M_from": 1,
+      "M_to": 0,
+      "trials": 1000,
+      "successes": 86,
+      "P": 0.086
+     }
+    ],
+    [
+     {
+      "M_from": 17,
+      "M_to": 15,
+      "trials": 1000,
+      "successes": 732,
+      "P": 0.732
+     },
+     {
+      "M_from": 15,
+      "M_to": 13,
+      "trials": 1000,
+      "successes": 717,
+      "P": 0.717
+     },
+     {
+      "M_from": 13,
+      "M_to": 11,
+      "trials": 1000,
+      "successes": 690,
+      "P": 0.69
+     },
+     {
+      "M_from": 11,
+      "M_to": 9,
+      "trials": 1000,
+      "successes": 620,
+      "P": 0.62
+     },
+     {
+      "M_from": 9,
+      "M_to": 7,
+      "trials": 1000,
+      "successes": 509,
+      "P": 0.509
+     },
+     {
+      "M_from": 7,
+      "M_to": 5,
+      "trials": 1000,
+      "successes": 353,
+      "P": 0.353
+     },
+     {
+      "M_from": 5,
+      "M_to": 3,
+      "trials": 1000,
+      "successes": 158,
+      "P": 0.158
+     },
+     {
+      "M_from": 3,
+      "M_to": 1,
+      "trials": 1000,
+      "successes": 63,
+      "P": 0.063
+     },
+     {
+      "M_from": 1,
+      "M_to": 0,
+      "trials": 1000,
+      "successes": 113,
+      "P": 0.113
+     }
+    ],
+    [
+     {
+      "M_from": 17,
+      "M_to": 15,
+      "trials": 1000,
+      "successes": 741,
+      "P": 0.741
+     },
+     {
+      "M_from": 15,
+      "M_to": 13,
+      "trials": 1000,
+      "successes": 708,
+      "P": 0.708
+     },
+     {
+      "M_from": 13,
+      "M_to": 11,
+      "trials": 1000,
+      "successes": 670,
+      "P": 0.67
+     },
+     {
+      "M_from": 11,
+      "M_to": 9,
+      "trials": 1000,
+      "successes": 616,
+      "P": 0.616
+     },
+     {
+      "M_from": 9,
+      "M_to": 7,
+      "trials": 1000,
+      "successes": 502,
+      "P": 0.502
+     },
+     {
+      "M_from": 7,
+      "M_to": 5,
+      "trials": 1000,
+      "successes": 315,
+      "P": 0.315
+     },
+     {
+      "M_from": 5,
+      "M_to": 3,
+      "trials": 1000,
+      "successes": 159,
+      "P": 0.159
+     },
+     {
+      "M_from": 3,
+      "M_to": 1,
+      "trials": 2000,
+      "successes": 98,
+      "P": 0.049
+     },
+     {
+      "M_from": 1,
+      "M_to": 0,
+      "trials": 1000,
+      "successes": 92,
+      "P": 0.092
+     }
+    ],
+    [
+     {
+      "M_from": 17,
+      "M_to": 15,
+      "trials": 1000,
+      "successes": 732,
+      "P": 0.732
+     },
+     {
+      "M_from": 15,
+      "M_to": 13,
+      "trials": 1000,
+      "successes": 732,
+      "P": 0.732
+     },
+     {
+      "M_from": 13,
+      "M_to": 11,
+      "trials": 1000,
+      "successes": 697,
+      "P": 0.697
+     },
+     {
+      "M_from": 11,
+      "M_to": 9,
+      "trials": 1000,
+      "successes": 579,
+      "P": 0.579
+     },
+     {
+      "M_from": 9,
+      "M_to": 7,
+      "trials": 1000,
+      "successes": 488,
+      "P": 0.488
+     },
+     {
+      "M_from": 7,
+      "M_to": 5,
+      "trials": 1000,
+      "successes": 354,
+      "P": 0.354
+     },
+     {
+      "M_from": 5,
+      "M_to": 3,
+      "trials": 1000,
+      "successes": 183,
+      "P": 0.183
+     },
+     {
+      "M_from": 3,
+      "M_to": 1,
+      "trials": 1000,
+      "successes": 57,
+      "P": 0.057
+     },
+     {
+      "M_from": 1,
+      "M_to": 0,
+      "trials": 1000,
+      "successes": 94,
+      "P": 0.094
+     }
+    ],
+    [
+     {
+      "M_from": 17,
+      "M_to": 15,
+      "trials": 1000,
+      "successes": 730,
+      "P": 0.73
+     },
+     {
+      "M_from": 15,
+      "M_to": 13,
+      "trials": 1000,
+      "successes": 728,
+      "P": 0.728
+     },
+     {
+      "M_from": 13,
+      "M_to": 11,
+      "trials": 1000,
+      "successes": 699,
+      "P": 0.699
+     },
+     {
+      "M_from": 11,
+      "M_to": 9,
+      "trials": 1000,
+      "successes": 599,
+      "P": 0.599
+     },
+     {
+      "M_from": 9,
+      "M_to": 7,
+      "trials": 1000,
+      "successes": 482,
+      "P": 0.482
+     },
+     {
+      "M_from": 7,
+      "M_to": 5,
+      "trials": 1000,
+      "successes": 371,
+      "P": 0.371
+     },
+     {
+      "M_from": 5,
+      "M_to": 3,
+      "trials": 1000,
+      "successes": 224,
+      "P": 0.224
+     },
+     {
+      "M_from": 3,
+      "M_to": 1,
+      "trials": 1000,
+      "successes": 65,
+      "P": 0.065
+     },
+     {
+      "M_from": 1,
+      "M_to": 0,
+      "trials": 1000,
+      "successes": 106,
+      "P": 0.106
+     }
+    ],
+    [
+     {
+      "M_from": 17,
+      "M_to": 15,
+      "trials": 1000,
+      "successes": 746,
+      "P": 0.746
+     },
+     {
+      "M_from": 15,
+      "M_to": 13,
+      "trials": 1000,
+      "successes": 742,
+      "P": 0.742
+     },
+     {
+      "M_from": 13,
+      "M_to": 11,
+      "trials": 1000,
+      "successes": 693,
+      "P": 0.693
+     },
+     {
+      "M_from": 11,
+      "M_to": 9,
+      "trials": 1000,
+      "successes": 619,
+      "P": 0.619
+     },
+     {
+      "M_from": 9,
+      "M_to": 7,
+      "trials": 1000,
+      "successes": 488,
+      "P": 0.488
+     },
+     {
+      "M_from": 7,
+      "M_to": 5,
+      "trials": 1000,
+      "successes": 346,
+      "P": 0.346
+     },
+     {
+      "M_from": 5,
+      "M_to": 3,
+      "trials": 1000,
+      "successes": 190,
+      "P": 0.19
+     },
+     {
+      "M_from": 3,
+      "M_to": 1,
+      "trials": 1000,
+      "successes": 62,
+      "P": 0.062
+     },
+     {
+      "M_from": 1,
+      "M_to": 0,
+      "trials": 1000,
+      "successes": 118,
+      "P": 0.118
+     }
+    ]
+   ],
+   "interfaces": [
+    17,
+    15,
+    13,
+    11,
+    9,
+    7,
+    5,
+    3,
+    1,
+    0
+   ]
+  },
+  {
+   "Omega": 14,
+   "model": "TH",
+   "n_ok": 8,
+   "cpu": 5.778543908000001,
+   "lnT_mean": 12.173654103754075,
+   "lnT_se": 0.1837126881659658,
+   "T": 193620.26128649624,
+   "T_se": 35570.498684338905,
+   "mean_max_v": 4.735222213349319,
+   "mean_dist": 0.6484325644679869,
+   "t_burn": 66.0506423145057,
+   "replicate_lnT": [
+    11.356992593717854,
+    12.043163802345017,
+    12.776132882557848,
+    12.24602117360154,
+    11.761598063157221,
+    12.529586649569156,
+    11.844195268377828,
+    12.831542396706128
+   ],
+   "replicate_stages": [
+    [
+     {
+      "M_from": 20,
+      "M_to": 18,
+      "trials": 1000,
+      "successes": 763,
+      "P": 0.763
+     },
+     {
+      "M_from": 18,
+      "M_to": 16,
+      "trials": 1000,
+      "successes": 751,
+      "P": 0.751
+     },
+     {
+      "M_from": 16,
+      "M_to": 14,
+      "trials": 1000,
+      "successes": 759,
+      "P": 0.759
+     },
+     {
+      "M_from": 14,
+      "M_to": 12,
+      "trials": 1000,
+      "successes": 700,
+      "P": 0.7
+     },
+     {
+      "M_from": 12,
+      "M_to": 10,
+      "trials": 1000,
+      "successes": 656,
+      "P": 0.656
+     },
+     {
+      "M_from": 10,
+      "M_to": 8,
+      "trials": 1000,
+      "successes": 516,
+      "P": 0.516
+     },
+     {
+      "M_from": 8,
+      "M_to": 6,
+      "trials": 1000,
+      "successes": 357,
+      "P": 0.357
+     },
+     {
+      "M_from": 6,
+      "M_to": 4,
+      "trials": 1000,
+      "successes": 231,
+      "P": 0.231
+     },
+     {
+      "M_from": 4,
+      "M_to": 2,
+      "trials": 1000,
+      "successes": 107,
+      "P": 0.107
+     },
+     {
+      "M_from": 2,
+      "M_to": 0,
+      "trials": 3000,
+      "successes": 64,
+      "P": 0.021333333333333333
+     }
+    ],
+    [
+     {
+      "M_from": 20,
+      "M_to": 18,
+      "trials": 1000,
+      "successes": 763,
+      "P": 0.763
+     },
+     {
+      "M_from": 18,
+      "M_to": 16,
+      "trials": 1000,
+      "successes": 741,
+      "P": 0.741
+     },
+     {
+      "M_from": 16,
+      "M_to": 14,
+      "trials": 1000,
+      "successes": 707,
+      "P": 0.707
+     },
+     {
+      "M_from": 14,
+      "M_to": 12,
+      "trials": 1000,
+      "successes": 665,
+      "P": 0.665
+     },
+     {
+      "M_from": 12,
+      "M_to": 10,
+      "trials": 1000,
+      "successes": 609,
+      "P": 0.609
+     },
+     {
+      "M_from": 10,
+      "M_to": 8,
+      "trials": 1000,
+      "successes": 482,
+      "P": 0.482
+     },
+     {
+      "M_from": 8,
+      "M_to": 6,
+      "trials": 1000,
+      "successes": 348,
+      "P": 0.348
+     },
+     {
+      "M_from": 6,
+      "M_to": 4,
+      "trials": 1000,
+      "successes": 221,
+      "P": 0.221
+     },
+     {
+      "M_from": 4,
+      "M_to": 2,
+      "trials": 1000,
+      "successes": 87,
+      "P": 0.087
+     },
+     {
+      "M_from": 2,
+      "M_to": 0,
+      "trials": 3000,
+      "successes": 56,
+      "P": 0.018666666666666668
+     }
+    ],
+    [
+     {
+      "M_from": 20,
+      "M_to": 18,
+      "trials": 1000,
+      "successes": 764,
+      "P": 0.764
+     },
+     {
+      "M_from": 18,
+      "M_to": 16,
+      "trials": 1000,
+      "successes": 746,
+      "P": 0.746
+     },
+     {
+      "M_from": 16,
+      "M_to": 14,
+      "trials": 1000,
+      "successes": 721,
+      "P": 0.721
+     },
+     {
+      "M_from": 14,
+      "M_to": 12,
+      "trials": 1000,
+      "successes": 680,
+      "P": 0.68
+     },
+     {
+      "M_from": 12,
+      "M_to": 10,
+      "trials": 1000,
+      "successes": 599,
+      "P": 0.599
+     },
+     {
+      "M_from": 10,
+      "M_to": 8,
+      "trials": 1000,
+      "successes": 499,
+      "P": 0.499
+     },
+     {
+      "M_from": 8,
+      "M_to": 6,
+      "trials": 1000,
+      "successes": 317,
+      "P": 0.317
+     },
+     {
+      "M_from": 6,
+      "M_to": 4,
+      "trials": 1000,
+      "successes": 181,
+      "P": 0.181
+     },
+     {
+      "M_from": 4,
+      "M_to": 2,
+      "trials": 1000,
+      "successes": 76,
+      "P": 0.076
+     },
+     {
+      "M_from": 2,
+      "M_to": 0,
+      "trials": 4000,
+      "successes": 53,
+      "P": 0.01325
+     }
+    ],
+    [
+     {
+      "M_from": 20,
+      "M_to": 18,
+      "trials": 1000,
+      "successes": 747,
+      "P": 0.747
+     },
+     {
+      "M_from": 18,
+      "M_to": 16,
+      "trials": 1000,
+      "successes": 789,
+      "P": 0.789
+     },
+     {
+      "M_from": 16,
+      "M_to": 14,
+      "trials": 1000,
+      "successes": 749,
+      "P": 0.749
+     },
+     {
+      "M_from": 14,
+      "M_to": 12,
+      "trials": 1000,
+      "successes": 709,
+      "P": 0.709
+     },
+     {
+      "M_from": 12,
+      "M_to": 10,
+      "trials": 1000,
+      "successes": 592,
+      "P": 0.592
+     },
+     {
+      "M_from": 10,
+      "M_to": 8,
+      "trials": 1000,
+      "successes": 502,
+      "P": 0.502
+     },
+     {
+      "M_from": 8,
+      "M_to": 6,
+      "trials": 1000,
+      "successes": 346,
+      "P": 0.346
+     },
+     {
+      "M_from": 6,
+      "M_to": 4,
+      "trials": 1000,
+      "successes": 227,
+      "P": 0.227
+     },
+     {
+      "M_from": 4,
+      "M_to": 2,
+      "trials": 1000,
+      "successes": 92,
+      "P": 0.092
+     },
+     {
+      "M_from": 2,
+      "M_to": 0,
+      "trials": 4000,
+      "successes": 50,
+      "P": 0.0125
+     }
+    ],
+    [
+     {
+      "M_from": 20,
+      "M_to": 18,
+      "trials": 1000,
+      "successes": 738,
+      "P": 0.738
+     },
+     {
+      "M_from": 18,
+      "M_to": 16,
+      "trials": 1000,
+      "successes": 766,
+      "P": 0.766
+     },
+     {
+      "M_from": 16,
+      "M_to": 14,
+      "trials": 1000,
+      "successes": 751,
+      "P": 0.751
+     },
+     {
+      "M_from": 14,
+      "M_to": 12,
+      "trials": 1000,
+      "successes": 677,
+      "P": 0.677
+     },
+     {
+      "M_from": 12,
+      "M_to": 10,
+      "trials": 1000,
+      "successes": 615,
+      "P": 0.615
+     },
+     {
+      "M_from": 10,
+      "M_to": 8,
+      "trials": 1000,
+      "successes": 512,
+      "P": 0.512
+     },
+     {
+      "M_from": 8,
+      "M_to": 6,
+      "trials": 1000,
+      "successes": 353,
+      "P": 0.353
+     },
+     {
+      "M_from": 6,
+      "M_to": 4,
+      "trials": 1000,
+      "successes": 225,
+      "P": 0.225
+     },
+     {
+      "M_from": 4,
+      "M_to": 2,
+      "trials": 1000,
+      "successes": 104,
+      "P": 0.104
+     },
+     {
+      "M_from": 2,
+      "M_to": 0,
+      "trials": 3000,
+      "successes": 53,
+      "P": 0.017666666666666667
+     }
+    ],
+    [
+     {
+      "M_from": 20,
+      "M_to": 18,
+      "trials": 1000,
+      "successes": 785,
+      "P": 0.785
+     },
+     {
+      "M_from": 18,
+      "M_to": 16,
+      "trials": 1000,
+      "successes": 766,
+      "P": 0.766
+     },
+     {
+      "M_from": 16,
+      "M_to": 14,
+      "trials": 1000,
+      "successes": 751,
+      "P": 0.751
+     },
+     {
+      "M_from": 14,
+      "M_to": 12,
+      "trials": 1000,
+      "successes": 681,
+      "P": 0.681
+     },
+     {
+      "M_from": 12,
+      "M_to": 10,
+      "trials": 1000,
+      "successes": 608,
+      "P": 0.608
+     },
+     {
+      "M_from": 10,
+      "M_to": 8,
+      "trials": 1000,
+      "successes": 472,
+      "P": 0.472
+     },
+     {
+      "M_from": 8,
+      "M_to": 6,
+      "trials": 1000,
+      "successes": 335,
+      "P": 0.335
+     },
+     {
+      "M_from": 6,
+      "M_to": 4,
+      "trials": 1000,
+      "successes": 202,
+      "P": 0.202
+     },
+     {
+      "M_from": 4,
+      "M_to": 2,
+      "trials": 1000,
+      "successes": 69,
+      "P": 0.069
+     },
+     {
+      "M_from": 2,
+      "M_to": 0,
+      "trials": 4000,
+      "successes": 60,
+      "P": 0.015
+     }
+    ],
+    [
+     {
+      "M_from": 20,
+      "M_to": 18,
+      "trials": 1000,
+      "successes": 761,
+      "P": 0.761
+     },
+     {
+      "M_from": 18,
+      "M_to": 16,
+      "trials": 1000,
+      "successes": 769,
+      "P": 0.769
+     },
+     {
+      "M_from": 16,
+      "M_to": 14,
+      "trials": 1000,
+      "successes": 757,
+      "P": 0.757
+     },
+     {
+      "M_from": 14,
+      "M_to": 12,
+      "trials": 1000,
+      "successes": 686,
+      "P": 0.686
+     },
+     {
+      "M_from": 12,
+      "M_to": 10,
+      "trials": 1000,
+      "successes": 629,
+      "P": 0.629
+     },
+     {
+      "M_from": 10,
+      "M_to": 8,
+      "trials": 1000,
+      "successes": 528,
+      "P": 0.528
+     },
+     {
+      "M_from": 8,
+      "M_to": 6,
+      "trials": 1000,
+      "successes": 380,
+      "P": 0.38
+     },
+     {
+      "M_from": 6,
+      "M_to": 4,
+      "trials": 1000,
+      "successes": 217,
+      "P": 0.217
+     },
+     {
+      "M_from": 4,
+      "M_to": 2,
+      "trials": 1000,
+      "successes": 88,
+      "P": 0.088
+     },
+     {
+      "M_from": 2,
+      "M_to": 0,
+      "trials": 4000,
+      "successes": 66,
+      "P": 0.0165
+     }
+    ],
+    [
+     {
+      "M_from": 20,
+      "M_to": 18,
+      "trials": 1000,
+      "successes": 747,
+      "P": 0.747
+     },
+     {
+      "M_from": 18,
+      "M_to": 16,
+      "trials": 1000,
+      "successes": 775,
+      "P": 0.775
+     },
+     {
+      "M_from": 16,
+      "M_to": 14,
+      "trials": 1000,
+      "successes": 746,
+      "P": 0.746
+     },
+     {
+      "M_from": 14,
+      "M_to": 12,
+      "trials": 1000,
+      "successes": 701,
+      "P": 0.701
+     },
+     {
+      "M_from": 12,
+      "M_to": 10,
+      "trials": 1000,
+      "successes": 616,
+      "P": 0.616
+     },
+     {
+      "M_from": 10,
+      "M_to": 8,
+      "trials": 1000,
+      "successes": 468,
+      "P": 0.468
+     },
+     {
+      "M_from": 8,
+      "M_to": 6,
+      "trials": 1000,
+      "successes": 320,
+      "P": 0.32
+     },
+     {
+      "M_from": 6,
+      "M_to": 4,
+      "trials": 1000,
+      "successes": 206,
+      "P": 0.206
+     },
+     {
+      "M_from": 4,
+      "M_to": 2,
+      "trials": 1000,
+      "successes": 76,
+      "P": 0.076
+     },
+     {
+      "M_from": 2,
+      "M_to": 0,
+      "trials": 5000,
+      "successes": 50,
+      "P": 0.01
+     }
+    ]
+   ],
+   "interfaces": [
+    20,
+    18,
+    16,
+    14,
+    12,
+    10,
+    8,
+    6,
+    4,
+    2,
+    0
+   ]
+  },
+  {
+   "Omega": 16,
+   "model": "TH",
+   "n_ok": 8,
+   "cpu": 8.103736737000002,
+   "lnT_mean": 14.13513238453717,
+   "lnT_se": 0.14342784899697397,
+   "T": 1376607.0696724071,
+   "T_se": 197443.79091714084,
+   "mean_max_v": 4.5508866787339635,
+   "mean_dist": 0.5992099266250985,
+   "t_burn": 66.0506423145057,
+   "replicate_lnT": [
+    14.313005677849937,
+    14.345967134116902,
+    13.587668717668102,
+    14.033702977184515,
+    13.470909649531038,
+    14.281423865156432,
+    14.541316140250121,
+    14.507064914540308
+   ],
+   "replicate_stages": [
+    [
+     {
+      "M_from": 24,
+      "M_to": 22,
+      "trials": 1000,
+      "successes": 776,
+      "P": 0.776
+     },
+     {
+      "M_from": 22,
+      "M_to": 20,
+      "trials": 1000,
+      "successes": 771,
+      "P": 0.771
+     },
+     {
+      "M_from": 20,
+      "M_to": 18,
+      "trials": 1000,
+      "successes": 787,
+      "P": 0.787
+     },
+     {
+      "M_from": 18,
+      "M_to": 16,
+      "trials": 1000,
+      "successes": 776,
+      "P": 0.776
+     },
+     {
+      "M_from": 16,
+      "M_to": 14,
+      "trials": 1000,
+      "successes": 690,
+      "P": 0.69
+     },
+     {
+      "M_from": 14,
+      "M_to": 12,
+      "trials": 1000,
+      "successes": 624,
+      "P": 0.624
+     },
+     {
+      "M_from": 12,
+      "M_to": 10,
+      "trials": 1000,
+      "successes": 534,
+      "P": 0.534
+     },
+     {
+      "M_from": 10,
+      "M_to": 8,
+      "trials": 1000,
+      "successes": 407,
+      "P": 0.407
+     },
+     {
+      "M_from": 8,
+      "M_to": 6,
+      "trials": 1000,
+      "successes": 294,
+      "P": 0.294
+     },
+     {
+      "M_from": 6,
+      "M_to": 4,
+      "trials": 1000,
+      "successes": 153,
+      "P": 0.153
+     },
+     {
+      "M_from": 4,
+      "M_to": 2,
+      "trials": 1000,
+      "successes": 67,
+      "P": 0.067
+     },
+     {
+      "M_from": 2,
+      "M_to": 0,
+      "trials": 6000,
+      "successes": 59,
+      "P": 0.009833333333333333
+     }
+    ],
+    [
+     {
+      "M_from": 24,
+      "M_to": 22,
+      "trials": 1000,
+      "successes": 767,
+      "P": 0.767
+     },
+     {
+      "M_from": 22,
+      "M_to": 20,
+      "trials": 1000,
+      "successes": 785,
+      "P": 0.785
+     },
+     {
+      "M_from": 20,
+      "M_to": 18,
+      "trials": 1000,
+      "successes": 810,
+      "P": 0.81
+     },
+     {
+      "M_from": 18,
+      "M_to": 16,
+      "trials": 1000,
+      "successes": 768,
+      "P": 0.768
+     },
+     {
+      "M_from": 16,
+      "M_to": 14,
+      "trials": 1000,
+      "successes": 704,
+      "P": 0.704
+     },
+     {
+      "M_from": 14,
+      "M_to": 12,
+      "trials": 1000,
+      "successes": 658,
+      "P": 0.658
+     },
+     {
+      "M_from": 12,
+      "M_to": 10,
+      "trials": 1000,
+      "successes": 568,
+      "P": 0.568
+     },
+     {
+      "M_from": 10,
+      "M_to": 8,
+      "trials": 1000,
+      "successes": 415,
+      "P": 0.415
+     },
+     {
+      "M_from": 8,
+      "M_to": 6,
+      "trials": 1000,
+      "successes": 293,
+      "P": 0.293
+     },
+     {
+      "M_from": 6,
+      "M_to": 4,
+      "trials": 1000,
+      "successes": 149,
+      "P": 0.149
+     },
+     {
+      "M_from": 4,
+      "M_to": 2,
+      "trials": 1000,
+      "successes": 60,
+      "P": 0.06
+     },
+     {
+      "M_from": 2,
+      "M_to": 0,
+      "trials": 6000,
+      "successes": 54,
+      "P": 0.009
+     }
+    ],
+    [
+     {
+      "M_from": 24,
+      "M_to": 22,
+      "trials": 1000,
+      "successes": 771,
+      "P": 0.771
+     },
+     {
+      "M_from": 22,
+      "M_to": 20,
+      "trials": 1000,
+      "successes": 819,
+      "P": 0.819
+     },
+     {
+      "M_from": 20,
+      "M_to": 18,
+      "trials": 1000,
+      "successes": 801,
+      "P": 0.801
+     },
+     {
+      "M_from": 18,
+      "M_to": 16,
+      "trials": 1000,
+      "successes": 761,
+      "P": 0.761
+     },
+     {
+      "M_from": 16,
+      "M_to": 14,
+      "trials": 1000,
+      "successes": 705,
+      "P": 0.705
+     },
+     {
+      "M_from": 14,
+      "M_to": 12,
+      "trials": 1000,
+      "successes": 670,
+      "P": 0.67
+     },
+     {
+      "M_from": 12,
+      "M_to": 10,
+      "trials": 1000,
+      "successes": 524,
+      "P": 0.524
+     },
+     {
+      "M_from": 10,
+      "M_to": 8,
+      "trials": 1000,
+      "successes": 396,
+      "P": 0.396
+     },
+     {
+      "M_from": 8,
+      "M_to": 6,
+      "trials": 1000,
+      "successes": 288,
+      "P": 0.288
+     },
+     {
+      "M_from": 6,
+      "M_to": 4,
+      "trials": 1000,
+      "successes": 186,
+      "P": 0.186
+     },
+     {
+      "M_from": 4,
+      "M_to": 2,
+      "trials": 2000,
+      "successes": 122,
+      "P": 0.061
+     },
+     {
+      "M_from": 2,
+      "M_to": 0,
+      "trials": 3000,
+      "successes": 50,
+      "P": 0.016666666666666666
+     }
+    ],
+    [
+     {
+      "M_from": 24,
+      "M_to": 22,
+      "trials": 1000,
+      "successes": 795,
+      "P": 0.795
+     },
+     {
+      "M_from": 22,
+      "M_to": 20,
+      "trials": 1000,
+      "successes": 789,
+      "P": 0.789
+     },
+     {
+      "M_from": 20,
+      "M_to": 18,
+      "trials": 1000,
+      "successes": 777,
+      "P": 0.777
+     },
+     {
+      "M_from": 18,
+      "M_to": 16,
+      "trials": 1000,
+      "successes": 735,
+      "P": 0.735
+     },
+     {
+      "M_from": 16,
+      "M_to": 14,
+      "trials": 1000,
+      "successes": 663,
+      "P": 0.663
+     },
+     {
+      "M_from": 14,
+      "M_to": 12,
+      "trials": 1000,
+      "successes": 620,
+      "P": 0.62
+     },
+     {
+      "M_from": 12,
+      "M_to": 10,
+      "trials": 1000,
+      "successes": 535,
+      "P": 0.535
+     },
+     {
+      "M_from": 10,
+      "M_to": 8,
+      "trials": 1000,
+      "successes": 417,
+      "P": 0.417
+     },
+     {
+      "M_from": 8,
+      "M_to": 6,
+      "trials": 1000,
+      "successes": 263,
+      "P": 0.263
+     },
+     {
+      "M_from": 6,
+      "M_to": 4,
+      "trials": 1000,
+      "successes": 155,
+      "P": 0.155
+     },
+     {
+      "M_from": 4,
+      "M_to": 2,
+      "trials": 1000,
+      "successes": 86,
+      "P": 0.086
+     },
+     {
+      "M_from": 2,
+      "M_to": 0,
+      "trials": 5000,
+      "successes": 58,
+      "P": 0.0116
+     }
+    ],
+    [
+     {
+      "M_from": 24,
+      "M_to": 22,
+      "trials": 1000,
+      "successes": 781,
+      "P": 0.781
+     },
+     {
+      "M_from": 22,
+      "M_to": 20,
+      "trials": 1000,
+      "successes": 808,
+      "P": 0.808
+     },
+     {
+      "M_from": 20,
+      "M_to": 18,
+      "trials": 1000,
+      "successes": 810,
+      "P": 0.81
+     },
+     {
+      "M_from": 18,
+      "M_to": 16,
+      "trials": 1000,
+      "successes": 767,
+      "P": 0.767
+     },
+     {
+      "M_from": 16,
+      "M_to": 14,
+      "trials": 1000,
+      "successes": 714,
+      "P": 0.714
+     },
+     {
+      "M_from": 14,
+      "M_to": 12,
+      "trials": 1000,
+      "successes": 609,
+      "P": 0.609
+     },
+     {
+      "M_from": 12,
+      "M_to": 10,
+      "trials": 1000,
+      "successes": 545,
+      "P": 0.545
+     },
+     {
+      "M_from": 10,
+      "M_to": 8,
+      "trials": 1000,
+      "successes": 452,
+      "P": 0.452
+     },
+     {
+      "M_from": 8,
+      "M_to": 6,
+      "trials": 1000,
+      "successes": 304,
+      "P": 0.304
+     },
+     {
+      "M_from": 6,
+      "M_to": 4,
+      "trials": 1000,
+      "successes": 170,
+      "P": 0.17
+     },
+     {
+      "M_from": 4,
+      "M_to": 2,
+      "trials": 1000,
+      "successes": 78,
+      "P": 0.078
+     },
+     {
+      "M_from": 2,
+      "M_to": 0,
+      "trials": 4000,
+      "successes": 51,
+      "P": 0.01275
+     }
+    ],
+    [
+     {
+      "M_from": 24,
+      "M_to": 22,
+      "trials": 1000,
+      "successes": 775,
+      "P": 0.775
+     },
+     {
+      "M_from": 22,
+      "M_to": 20,
+      "trials": 1000,
+      "successes": 783,
+      "P": 0.783
+     },
+     {
+      "M_from": 20,
+      "M_to": 18,
+      "trials": 1000,
+      "successes": 789,
+      "P": 0.789
+     },
+     {
+      "M_from": 18,
+      "M_to": 16,
+      "trials": 1000,
+      "successes": 742,
+      "P": 0.742
+     },
+     {
+      "M_from": 16,
+      "M_to": 14,
+      "trials": 1000,
+      "successes": 682,
+      "P": 0.682
+     },
+     {
+      "M_from": 14,
+      "M_to": 12,
+      "trials": 1000,
+      "successes": 629,
+      "P": 0.629
+     },
+     {
+      "M_from": 12,
+      "M_to": 10,
+      "trials": 1000,
+      "successes": 543,
+      "P": 0.543
+     },
+     {
+      "M_from": 10,
+      "M_to": 8,
+      "trials": 1000,
+      "successes": 435,
+      "P": 0.435
+     },
+     {
+      "M_from": 8,
+      "M_to": 6,
+      "trials": 1000,
+      "successes": 257,
+      "P": 0.257
+     },
+     {
+      "M_from": 6,
+      "M_to": 4,
+      "trials": 1000,
+      "successes": 151,
+      "P": 0.151
+     },
+     {
+      "M_from": 4,
+      "M_to": 2,
+      "trials": 1000,
+      "successes": 61,
+      "P": 0.061
+     },
+     {
+      "M_from": 2,
+      "M_to": 0,
+      "trials": 5000,
+      "successes": 56,
+      "P": 0.0112
+     }
+    ],
+    [
+     {
+      "M_from": 24,
+      "M_to": 22,
+      "trials": 1000,
+      "successes": 748,
+      "P": 0.748
+     },
+     {
+      "M_from": 22,
+      "M_to": 20,
+      "trials": 1000,
+      "successes": 753,
+      "P": 0.753
+     },
+     {
+      "M_from": 20,
+      "M_to": 18,
+      "trials": 1000,
+      "successes": 781,
+      "P": 0.781
+     },
+     {
+      "M_from": 18,
+      "M_to": 16,
+      "trials": 1000,
+      "successes": 718,
+      "P": 0.718
+     },
+     {
+      "M_from": 16,
+      "M_to": 14,
+      "trials": 1000,
+      "successes": 705,
+      "P": 0.705
+     },
+     {
+      "M_from": 14,
+      "M_to": 12,
+      "trials": 1000,
+      "successes": 595,
+      "P": 0.595
+     },
+     {
+      "M_from": 12,
+      "M_to": 10,
+      "trials": 1000,
+      "successes": 522,
+      "P": 0.522
+     },
+     {
+      "M_from": 10,
+      "M_to": 8,
+      "trials": 1000,
+      "successes": 416,
+      "P": 0.416
+     },
+     {
+      "M_from": 8,
+      "M_to": 6,
+      "trials": 1000,
+      "successes": 292,
+      "P": 0.292
+     },
+     {
+      "M_from": 6,
+      "M_to": 4,
+      "trials": 1000,
+      "successes": 132,
+      "P": 0.132
+     },
+     {
+      "M_from": 4,
+      "M_to": 2,
+      "trials": 1000,
+      "successes": 61,
+      "P": 0.061
+     },
+     {
+      "M_from": 2,
+      "M_to": 0,
+      "trials": 5000,
+      "successes": 56,
+      "P": 0.0112
+     }
+    ],
+    [
+     {
+      "M_from": 24,
+      "M_to": 22,
+      "trials": 1000,
+      "successes": 773,
+      "P": 0.773
+     },
+     {
+      "M_from": 22,
+      "M_to": 20,
+      "trials": 1000,
+      "successes": 781,
+      "P": 0.781
+     },
+     {
+      "M_from": 20,
+      "M_to": 18,
+      "trials": 1000,
+      "successes": 779,
+      "P": 0.779
+     },
+     {
+      "M_from": 18,
+      "M_to": 16,
+      "trials": 1000,
+      "successes": 725,
+      "P": 0.725
+     },
+     {
+      "M_from": 16,
+      "M_to": 14,
+      "trials": 1000,
+      "successes": 693,
+      "P": 0.693
+     },
+     {
+      "M_from": 14,
+      "M_to": 12,
+      "trials": 1000,
+      "successes": 623,
+      "P": 0.623
+     },
+     {
+      "M_from": 12,
+      "M_to": 10,
+      "trials": 1000,
+      "successes": 488,
+      "P": 0.488
+     },
+     {
+      "M_from": 10,
+      "M_to": 8,
+      "trials": 1000,
+      "successes": 419,
+      "P": 0.419
+     },
+     {
+      "M_from": 8,
+      "M_to": 6,
+      "trials": 1000,
+      "successes": 278,
+      "P": 0.278
+     },
+     {
+      "M_from": 6,
+      "M_to": 4,
+      "trials": 1000,
+      "successes": 133,
+      "P": 0.133
+     },
+     {
+      "M_from": 4,
+      "M_to": 2,
+      "trials": 1000,
+      "successes": 55,
+      "P": 0.055
+     },
+     {
+      "M_from": 2,
+      "M_to": 0,
+      "trials": 4000,
+      "successes": 52,
+      "P": 0.013
+     }
+    ]
+   ],
+   "interfaces": [
+    24,
+    22,
+    20,
+    18,
+    16,
+    14,
+    12,
+    10,
+    8,
+    6,
+    4,
+    2,
+    0
+   ]
+  },
+  {
+   "Omega": 20,
+   "model": "TH",
+   "n_ok": 8,
+   "cpu": 24.428917596999998,
+   "lnT_mean": 18.559964169908426,
+   "lnT_se": 0.19396069890025877,
+   "T": 114944983.77593675,
+   "T_se": 22294809.388259597,
+   "mean_max_v": 4.726999295202432,
+   "mean_dist": 0.5990875698997578,
+   "t_burn": 66.0506423145057,
+   "replicate_lnT": [
+    19.44132857482755,
+    17.527616478132504,
+    18.67392998666369,
+    18.69099869950807,
+    18.80783216313337,
+    18.53262219435405,
+    18.65008313892447,
+    18.15530212372371
+   ],
+   "replicate_stages": [
+    [
+     {
+      "M_from": 31,
+      "M_to": 28,
+      "trials": 1000,
+      "successes": 691,
+      "P": 0.691
+     },
+     {
+      "M_from": 28,
+      "M_to": 25,
+      "trials": 1000,
+      "successes": 752,
+      "P": 0.752
+     },
+     {
+      "M_from": 25,
+      "M_to": 22,
+      "trials": 1000,
+      "successes": 718,
+      "P": 0.718
+     },
+     {
+      "M_from": 22,
+      "M_to": 19,
+      "trials": 1000,
+      "successes": 667,
+      "P": 0.667
+     },
+     {
+      "M_from": 19,
+      "M_to": 16,
+      "trials": 1000,
+      "successes": 550,
+      "P": 0.55
+     },
+     {
+      "M_from": 16,
+      "M_to": 13,
+      "trials": 1000,
+      "successes": 437,
+      "P": 0.437
+     },
+     {
+      "M_from": 13,
+      "M_to": 10,
+      "trials": 1000,
+      "successes": 275,
+      "P": 0.275
+     },
+     {
+      "M_from": 10,
+      "M_to": 7,
+      "trials": 1000,
+      "successes": 117,
+      "P": 0.117
+     },
+     {
+      "M_from": 7,
+      "M_to": 4,
+      "trials": 2000,
+      "successes": 71,
+      "P": 0.0355
+     },
+     {
+      "M_from": 4,
+      "M_to": 1,
+      "trials": 18000,
+      "successes": 51,
+      "P": 0.0028333333333333335
+     },
+     {
+      "M_from": 1,
+      "M_to": 0,
+      "trials": 2000,
+      "successes": 61,
+      "P": 0.0305
+     }
+    ],
+    [
+     {
+      "M_from": 31,
+      "M_to": 28,
+      "trials": 1000,
+      "successes": 732,
+      "P": 0.732
+     },
+     {
+      "M_from": 28,
+      "M_to": 25,
+      "trials": 1000,
+      "successes": 740,
+      "P": 0.74
+     },
+     {
+      "M_from": 25,
+      "M_to": 22,
+      "trials": 1000,
+      "successes": 737,
+      "P": 0.737
+     },
+     {
+      "M_from": 22,
+      "M_to": 19,
+      "trials": 1000,
+      "successes": 677,
+      "P": 0.677
+     },
+     {
+      "M_from": 19,
+      "M_to": 16,
+      "trials": 1000,
+      "successes": 572,
+      "P": 0.572
+     },
+     {
+      "M_from": 16,
+      "M_to": 13,
+      "trials": 1000,
+      "successes": 446,
+      "P": 0.446
+     },
+     {
+      "M_from": 13,
+      "M_to": 10,
+      "trials": 1000,
+      "successes": 284,
+      "P": 0.284
+     },
+     {
+      "M_from": 10,
+      "M_to": 7,
+      "trials": 1000,
+      "successes": 132,
+      "P": 0.132
+     },
+     {
+      "M_from": 7,
+      "M_to": 4,
+      "trials": 1000,
+      "successes": 55,
+      "P": 0.055
+     },
+     {
+      "M_from": 4,
+      "M_to": 1,
+      "trials": 9000,
+      "successes": 51,
+      "P": 0.005666666666666667
+     },
+     {
+      "M_from": 1,
+      "M_to": 0,
+      "trials": 1000,
+      "successes": 51,
+      "P": 0.051
+     }
+    ],
+    [
+     {
+      "M_from": 31,
+      "M_to": 28,
+      "trials": 1000,
+      "successes": 734,
+      "P": 0.734
+     },
+     {
+      "M_from": 28,
+      "M_to": 25,
+      "trials": 1000,
+      "successes": 746,
+      "P": 0.746
+     },
+     {
+      "M_from": 25,
+      "M_to": 22,
+      "trials": 1000,
+      "successes": 738,
+      "P": 0.738
+     },
+     {
+      "M_from": 22,
+      "M_to": 19,
+      "trials": 1000,
+      "successes": 652,
+      "P": 0.652
+     },
+     {
+      "M_from": 19,
+      "M_to": 16,
+      "trials": 1000,
+      "successes": 543,
+      "P": 0.543
+     },
+     {
+      "M_from": 16,
+      "M_to": 13,
+      "trials": 1000,
+      "successes": 399,
+      "P": 0.399
+     },
+     {
+      "M_from": 13,
+      "M_to": 10,
+      "trials": 1000,
+      "successes": 220,
+      "P": 0.22
+     },
+     {
+      "M_from": 10,
+      "M_to": 7,
+      "trials": 1000,
+      "successes": 103,
+      "P": 0.103
+     },
+     {
+      "M_from": 7,
+      "M_to": 4,
+      "trials": 2000,
+      "successes": 73,
+      "P": 0.0365
+     },
+     {
+      "M_from": 4,
+      "M_to": 1,
+      "trials": 10000,
+      "successes": 52,
+      "P": 0.0052
+     },
+     {
+      "M_from": 1,
+      "M_to": 0,
+      "trials": 1000,
+      "successes": 51,
+      "P": 0.051
+     }
+    ],
+    [
+     {
+      "M_from": 31,
+      "M_to": 28,
+      "trials": 1000,
+      "successes": 738,
+      "P": 0.738
+     },
+     {
+      "M_from": 28,
+      "M_to": 25,
+      "trials": 1000,
+      "successes": 769,
+      "P": 0.769
+     },
+     {
+      "M_from": 25,
+      "M_to": 22,
+      "trials": 1000,
+      "successes": 729,
+      "P": 0.729
+     },
+     {
+      "M_from": 22,
+      "M_to": 19,
+      "trials": 1000,
+      "successes": 664,
+      "P": 0.664
+     },
+     {
+      "M_from": 19,
+      "M_to": 16,
+      "trials": 1000,
+      "successes": 574,
+      "P": 0.574
+     },
+     {
+      "M_from": 16,
+      "M_to": 13,
+      "trials": 1000,
+      "successes": 453,
+      "P": 0.453
+     },
+     {
+      "M_from": 13,
+      "M_to": 10,
+      "trials": 1000,
+      "successes": 269,
+      "P": 0.269
+     },
+     {
+      "M_from": 10,
+      "M_to": 7,
+      "trials": 1000,
+      "successes": 131,
+      "P": 0.131
+     },
+     {
+      "M_from": 7,
+      "M_to": 4,
+      "trials": 2000,
+      "successes": 63,
+      "P": 0.0315
+     },
+     {
+      "M_from": 4,
+      "M_to": 1,
+      "trials": 17000,
+      "successes": 52,
+      "P": 0.003058823529411765
+     },
+     {
+      "M_from": 1,
+      "M_to": 0,
+      "trials": 1000,
+      "successes": 54,
+      "P": 0.054
+     }
+    ],
+    [
+     {
+      "M_from": 31,
+      "M_to": 28,
+      "trials": 1000,
+      "successes": 713,
+      "P": 0.713
+     },
+     {
+      "M_from": 28,
+      "M_to": 25,
+      "trials": 1000,
+      "successes": 761,
+      "P": 0.761
+     },
+     {
+      "M_from": 25,
+      "M_to": 22,
+      "trials": 1000,
+      "successes": 747,
+      "P": 0.747
+     },
+     {
+      "M_from": 22,
+      "M_to": 19,
+      "trials": 1000,
+      "successes": 690,
+      "P": 0.69
+     },
+     {
+      "M_from": 19,
+      "M_to": 16,
+      "trials": 1000,
+      "successes": 566,
+      "P": 0.566
+     },
+     {
+      "M_from": 16,
+      "M_to": 13,
+      "trials": 1000,
+      "successes": 395,
+      "P": 0.395
+     },
+     {
+      "M_from": 13,
+      "M_to": 10,
+      "trials": 1000,
+      "successes": 264,
+      "P": 0.264
+     },
+     {
+      "M_from": 10,
+      "M_to": 7,
+      "trials": 1000,
+      "successes": 112,
+      "P": 0.112
+     },
+     {
+      "M_from": 7,
+      "M_to": 4,
+      "trials": 2000,
+      "successes": 72,
+      "P": 0.036
+     },
+     {
+      "M_from": 4,
+      "M_to": 1,
+      "trials": 14000,
+      "successes": 53,
+      "P": 0.003785714285714286
+     },
+     {
+      "M_from": 1,
+      "M_to": 0,
+      "trials": 2000,
+      "successes": 92,
+      "P": 0.046
+     }
+    ],
+    [
+     {
+      "M_from": 31,
+      "M_to": 28,
+      "trials": 1000,
+      "successes": 738,
+      "P": 0.738
+     },
+     {
+      "M_from": 28,
+      "M_to": 25,
+      "trials": 1000,
+      "successes": 745,
+      "P": 0.745
+     },
+     {
+      "M_from": 25,
+      "M_to": 22,
+      "trials": 1000,
+      "successes": 735,
+      "P": 0.735
+     },
+     {
+      "M_from": 22,
+      "M_to": 19,
+      "trials": 1000,
+      "successes": 656,
+      "P": 0.656
+     },
+     {
+      "M_from": 19,
+      "M_to": 16,
+      "trials": 1000,
+      "successes": 564,
+      "P": 0.564
+     },
+     {
+      "M_from": 16,
+      "M_to": 13,
+      "trials": 1000,
+      "successes": 407,
+      "P": 0.407
+     },
+     {
+      "M_from": 13,
+      "M_to": 10,
+      "trials": 1000,
+      "successes": 256,
+      "P": 0.256
+     },
+     {
+      "M_from": 10,
+      "M_to": 7,
+      "trials": 1000,
+      "successes": 113,
+      "P": 0.113
+     },
+     {
+      "M_from": 7,
+      "M_to": 4,
+      "trials": 2000,
+      "successes": 65,
+      "P": 0.0325
+     },
+     {
+      "M_from": 4,
+      "M_to": 1,
+      "trials": 14000,
+      "successes": 53,
+      "P": 0.003785714285714286
+     },
+     {
+      "M_from": 1,
+      "M_to": 0,
+      "trials": 1000,
+      "successes": 70,
+      "P": 0.07
+     }
+    ],
+    [
+     {
+      "M_from": 31,
+      "M_to": 28,
+      "trials": 1000,
+      "successes": 740,
+      "P": 0.74
+     },
+     {
+      "M_from": 28,
+      "M_to": 25,
+      "trials": 1000,
+      "successes": 719,
+      "P": 0.719
+     },
+     {
+      "M_from": 25,
+      "M_to": 22,
+      "trials": 1000,
+      "successes": 715,
+      "P": 0.715
+     },
+     {
+      "M_from": 22,
+      "M_to": 19,
+      "trials": 1000,
+      "successes": 665,
+      "P": 0.665
+     },
+     {
+      "M_from": 19,
+      "M_to": 16,
+      "trials": 1000,
+      "successes": 532,
+      "P": 0.532
+     },
+     {
+      "M_from": 16,
+      "M_to": 13,
+      "trials": 1000,
+      "successes": 349,
+      "P": 0.349
+     },
+     {
+      "M_from": 13,
+      "M_to": 10,
+      "trials": 1000,
+      "successes": 223,
+      "P": 0.223
+     },
+     {
+      "M_from": 10,
+      "M_to": 7,
+      "trials": 1000,
+      "successes": 100,
+      "P": 0.1
+     },
+     {
+      "M_from": 7,
+      "M_to": 4,
+      "trials": 2000,
+      "successes": 74,
+      "P": 0.037
+     },
+     {
+      "M_from": 4,
+      "M_to": 1,
+      "trials": 12000,
+      "successes": 53,
+      "P": 0.004416666666666667
+     },
+     {
+      "M_from": 1,
+      "M_to": 0,
+      "trials": 1000,
+      "successes": 76,
+      "P": 0.076
+     }
+    ],
+    [
+     {
+      "M_from": 31,
+      "M_to": 28,
+      "trials": 1000,
+      "successes": 734,
+      "P": 0.734
+     },
+     {
+      "M_from": 28,
+      "M_to": 25,
+      "trials": 1000,
+      "successes": 747,
+      "P": 0.747
+     },
+     {
+      "M_from": 25,
+      "M_to": 22,
+      "trials": 1000,
+      "successes": 758,
+      "P": 0.758
+     },
+     {
+      "M_from": 22,
+      "M_to": 19,
+      "trials": 1000,
+      "successes": 671,
+      "P": 0.671
+     },
+     {
+      "M_from": 19,
+      "M_to": 16,
+      "trials": 1000,
+      "successes": 596,
+      "P": 0.596
+     },
+     {
+      "M_from": 16,
+      "M_to": 13,
+      "trials": 1000,
+      "successes": 463,
+      "P": 0.463
+     },
+     {
+      "M_from": 13,
+      "M_to": 10,
+      "trials": 1000,
+      "successes": 262,
+      "P": 0.262
+     },
+     {
+      "M_from": 10,
+      "M_to": 7,
+      "trials": 1000,
+      "successes": 136,
+      "P": 0.136
+     },
+     {
+      "M_from": 7,
+      "M_to": 4,
+      "trials": 2000,
+      "successes": 87,
+      "P": 0.0435
+     },
+     {
+      "M_from": 4,
+      "M_to": 1,
+      "trials": 13000,
+      "successes": 52,
+      "P": 0.004
+     },
+     {
+      "M_from": 1,
+      "M_to": 0,
+      "trials": 2000,
+      "successes": 93,
+      "P": 0.0465
+     }
+    ]
+   ],
+   "interfaces": [
+    31,
+    28,
+    25,
+    22,
+    19,
+    16,
+    13,
+    10,
+    7,
+    4,
+    1,
+    0
+   ]
+  },
+  {
+   "Omega": 24,
+   "model": "TH",
+   "n_ok": 8,
+   "cpu": 65.575880127,
+   "lnT_mean": 22.766545934334644,
+   "lnT_se": 0.3051414045395657,
+   "T": 7715876563.079447,
+   "T_se": 2354433411.711979,
+   "mean_max_v": 4.644441859337634,
+   "mean_dist": 0.5855130488947491,
+   "t_burn": 66.0506423145057,
+   "replicate_lnT": [
+    23.314138080637196,
+    21.731156111509126,
+    23.075089898033664,
+    22.191959623691602,
+    22.42358237785996,
+    24.3755859480495,
+    21.972298271988485,
+    23.048557162907606
+   ],
+   "replicate_stages": [
+    [
+     {
+      "M_from": 38,
+      "M_to": 34,
+      "trials": 1000,
+      "successes": 686,
+      "P": 0.686
+     },
+     {
+      "M_from": 34,
+      "M_to": 30,
+      "trials": 1000,
+      "successes": 722,
+      "P": 0.722
+     },
+     {
+      "M_from": 30,
+      "M_to": 26,
+      "trials": 1000,
+      "successes": 688,
+      "P": 0.688
+     },
+     {
+      "M_from": 26,
+      "M_to": 22,
+      "trials": 1000,
+      "successes": 590,
+      "P": 0.59
+     },
+     {
+      "M_from": 22,
+      "M_to": 18,
+      "trials": 1000,
+      "successes": 454,
+      "P": 0.454
+     },
+     {
+      "M_from": 18,
+      "M_to": 14,
+      "trials": 1000,
+      "successes": 212,
+      "P": 0.212
+     },
+     {
+      "M_from": 14,
+      "M_to": 10,
+      "trials": 1000,
+      "successes": 84,
+      "P": 0.084
+     },
+     {
+      "M_from": 10,
+      "M_to": 6,
+      "trials": 3000,
+      "successes": 58,
+      "P": 0.019333333333333334
+     },
+     {
+      "M_from": 6,
+      "M_to": 2,
+      "trials": 20000,
+      "successes": 22,
+      "P": 0.0011
+     },
+     {
+      "M_from": 2,
+      "M_to": 0,
+      "trials": 14000,
+      "successes": 53,
+      "P": 0.003785714285714286
+     }
+    ],
+    [
+     {
+      "M_from": 38,
+      "M_to": 34,
+      "trials": 1000,
+      "successes": 691,
+      "P": 0.691
+     },
+     {
+      "M_from": 34,
+      "M_to": 30,
+      "trials": 1000,
+      "successes": 721,
+      "P": 0.721
+     },
+     {
+      "M_from": 30,
+      "M_to": 26,
+      "trials": 1000,
+      "successes": 622,
+      "P": 0.622
+     },
+     {
+      "M_from": 26,
+      "M_to": 22,
+      "trials": 1000,
+      "successes": 566,
+      "P": 0.566
+     },
+     {
+      "M_from": 22,
+      "M_to": 18,
+      "trials": 1000,
+      "successes": 430,
+      "P": 0.43
+     },
+     {
+      "M_from": 18,
+      "M_to": 14,
+      "trials": 1000,
+      "successes": 253,
+      "P": 0.253
+     },
+     {
+      "M_from": 14,
+      "M_to": 10,
+      "trials": 1000,
+      "successes": 119,
+      "P": 0.119
+     },
+     {
+      "M_from": 10,
+      "M_to": 6,
+      "trials": 2000,
+      "successes": 60,
+      "P": 0.03
+     },
+     {
+      "M_from": 6,
+      "M_to": 2,
+      "trials": 20000,
+      "successes": 46,
+      "P": 0.0023
+     },
+     {
+      "M_from": 2,
+      "M_to": 0,
+      "trials": 13000,
+      "successes": 53,
+      "P": 0.004076923076923077
+     }
+    ],
+    [
+     {
+      "M_from": 38,
+      "M_to": 34,
+      "trials": 1000,
+      "successes": 708,
+      "P": 0.708
+     },
+     {
+      "M_from": 34,
+      "M_to": 30,
+      "trials": 1000,
+      "successes": 710,
+      "P": 0.71
+     },
+     {
+      "M_from": 30,
+      "M_to": 26,
+      "trials": 1000,
+      "successes": 661,
+      "P": 0.661
+     },
+     {
+      "M_from": 26,
+      "M_to": 22,
+      "trials": 1000,
+      "successes": 544,
+      "P": 0.544
+     },
+     {
+      "M_from": 22,
+      "M_to": 18,
+      "trials": 1000,
+      "successes": 420,
+      "P": 0.42
+     },
+     {
+      "M_from": 18,
+      "M_to": 14,
+      "trials": 1000,
+      "successes": 226,
+      "P": 0.226
+     },
+     {
+      "M_from": 14,
+      "M_to": 10,
+      "trials": 1000,
+      "successes": 90,
+      "P": 0.09
+     },
+     {
+      "M_from": 10,
+      "M_to": 6,
+      "trials": 3000,
+      "successes": 57,
+      "P": 0.019
+     },
+     {
+      "M_from": 6,
+      "M_to": 2,
+      "trials": 20000,
+      "successes": 29,
+      "P": 0.00145
+     },
+     {
+      "M_from": 2,
+      "M_to": 0,
+      "trials": 13000,
+      "successes": 53,
+      "P": 0.004076923076923077
+     }
+    ],
+    [
+     {
+      "M_from": 38,
+      "M_to": 34,
+      "trials": 1000,
+      "successes": 689,
+      "P": 0.689
+     },
+     {
+      "M_from": 34,
+      "M_to": 30,
+      "trials": 1000,
+      "successes": 722,
+      "P": 0.722
+     },
+     {
+      "M_from": 30,
+      "M_to": 26,
+      "trials": 1000,
+      "successes": 684,
+      "P": 0.684
+     },
+     {
+      "M_from": 26,
+      "M_to": 22,
+      "trials": 1000,
+      "successes": 573,
+      "P": 0.573
+     },
+     {
+      "M_from": 22,
+      "M_to": 18,
+      "trials": 1000,
+      "successes": 438,
+      "P": 0.438
+     },
+     {
+      "M_from": 18,
+      "M_to": 14,
+      "trials": 1000,
+      "successes": 271,
+      "P": 0.271
+     },
+     {
+      "M_from": 14,
+      "M_to": 10,
+      "trials": 1000,
+      "successes": 99,
+      "P": 0.099
+     },
+     {
+      "M_from": 10,
+      "M_to": 6,
+      "trials": 3000,
+      "successes": 71,
+      "P": 0.023666666666666666
+     },
+     {
+      "M_from": 6,
+      "M_to": 2,
+      "trials": 20000,
+      "successes": 44,
+      "P": 0.0022
+     },
+     {
+      "M_from": 2,
+      "M_to": 0,
+      "trials": 14000,
+      "successes": 52,
+      "P": 0.0037142857142857142
+     }
+    ],
+    [
+     {
+      "M_from": 38,
+      "M_to": 34,
+      "trials": 1000,
+      "successes": 659,
+      "P": 0.659
+     },
+     {
+      "M_from": 34,
+      "M_to": 30,
+      "trials": 1000,
+      "successes": 697,
+      "P": 0.697
+     },
+     {
+      "M_from": 30,
+      "M_to": 26,
+      "trials": 1000,
+      "successes": 709,
+      "P": 0.709
+     },
+     {
+      "M_from": 26,
+      "M_to": 22,
+      "trials": 1000,
+      "successes": 601,
+      "P": 0.601
+     },
+     {
+      "M_from": 22,
+      "M_to": 18,
+      "trials": 1000,
+      "successes": 442,
+      "P": 0.442
+     },
+     {
+      "M_from": 18,
+      "M_to": 14,
+      "trials": 1000,
+      "successes": 234,
+      "P": 0.234
+     },
+     {
+      "M_from": 14,
+      "M_to": 10,
+      "trials": 1000,
+      "successes": 109,
+      "P": 0.109
+     },
+     {
+      "M_from": 10,
+      "M_to": 6,
+      "trials": 2000,
+      "successes": 50,
+      "P": 0.025
+     },
+     {
+      "M_from": 6,
+      "M_to": 2,
+      "trials": 20000,
+      "successes": 28,
+      "P": 0.0014
+     },
+     {
+      "M_from": 2,
+      "M_to": 0,
+      "trials": 13000,
+      "successes": 53,
+      "P": 0.004076923076923077
+     }
+    ],
+    [
+     {
+      "M_from": 38,
+      "M_to": 34,
+      "trials": 1000,
+      "successes": 667,
+      "P": 0.667
+     },
+     {
+      "M_from": 34,
+      "M_to": 30,
+      "trials": 1000,
+      "successes": 744,
+      "P": 0.744
+     },
+     {
+      "M_from": 30,
+      "M_to": 26,
+      "trials": 1000,
+      "successes": 672,
+      "P": 0.672
+     },
+     {
+      "M_from": 26,
+      "M_to": 22,
+      "trials": 1000,
+      "successes": 581,
+      "P": 0.581
+     },
+     {
+      "M_from": 22,
+      "M_to": 18,
+      "trials": 1000,
+      "successes": 421,
+      "P": 0.421
+     },
+     {
+      "M_from": 18,
+      "M_to": 14,
+      "trials": 1000,
+      "successes": 231,
+      "P": 0.231
+     },
+     {
+      "M_from": 14,
+      "M_to": 10,
+      "trials": 1000,
+      "successes": 89,
+      "P": 0.089
+     },
+     {
+      "M_from": 10,
+      "M_to": 6,
+      "trials": 3000,
+      "successes": 50,
+      "P": 0.016666666666666666
+     },
+     {
+      "M_from": 6,
+      "M_to": 2,
+      "trials": 20000,
+      "successes": 19,
+      "P": 0.00095
+     },
+     {
+      "M_from": 2,
+      "M_to": 0,
+      "trials": 20000,
+      "successes": 34,
+      "P": 0.0017
+     }
+    ],
+    [
+     {
+      "M_from": 38,
+      "M_to": 34,
+      "trials": 1000,
+      "successes": 689,
+      "P": 0.689
+     },
+     {
+      "M_from": 34,
+      "M_to": 30,
+      "trials": 1000,
+      "successes": 729,
+      "P": 0.729
+     },
+     {
+      "M_from": 30,
+      "M_to": 26,
+      "trials": 1000,
+      "successes": 679,
+      "P": 0.679
+     },
+     {
+      "M_from": 26,
+      "M_to": 22,
+      "trials": 1000,
+      "successes": 629,
+      "P": 0.629
+     },
+     {
+      "M_from": 22,
+      "M_to": 18,
+      "trials": 1000,
+      "successes": 437,
+      "P": 0.437
+     },
+     {
+      "M_from": 18,
+      "M_to": 14,
+      "trials": 1000,
+      "successes": 257,
+      "P": 0.257
+     },
+     {
+      "M_from": 14,
+      "M_to": 10,
+      "trials": 1000,
+      "successes": 120,
+      "P": 0.12
+     },
+     {
+      "M_from": 10,
+      "M_to": 6,
+      "trials": 3000,
+      "successes": 74,
+      "P": 0.024666666666666667
+     },
+     {
+      "M_from": 6,
+      "M_to": 2,
+      "trials": 20000,
+      "successes": 32,
+      "P": 0.0016
+     },
+     {
+      "M_from": 2,
+      "M_to": 0,
+      "trials": 12000,
+      "successes": 54,
+      "P": 0.0045
+     }
+    ],
+    [
+     {
+      "M_from": 38,
+      "M_to": 34,
+      "trials": 1000,
+      "successes": 727,
+      "P": 0.727
+     },
+     {
+      "M_from": 34,
+      "M_to": 30,
+      "trials": 1000,
+      "successes": 703,
+      "P": 0.703
+     },
+     {
+      "M_from": 30,
+      "M_to": 26,
+      "trials": 1000,
+      "successes": 689,
+      "P": 0.689
+     },
+     {
+      "M_from": 26,
+      "M_to": 22,
+      "trials": 1000,
+      "successes": 591,
+      "P": 0.591
+     },
+     {
+      "M_from": 22,
+      "M_to": 18,
+      "trials": 1000,
+      "successes": 471,
+      "P": 0.471
+     },
+     {
+      "M_from": 18,
+      "M_to": 14,
+      "trials": 1000,
+      "successes": 223,
+      "P": 0.223
+     },
+     {
+      "M_from": 14,
+      "M_to": 10,
+      "trials": 1000,
+      "successes": 104,
+      "P": 0.104
+     },
+     {
+      "M_from": 10,
+      "M_to": 6,
+      "trials": 2000,
+      "successes": 56,
+      "P": 0.028
+     },
+     {
+      "M_from": 6,
+      "M_to": 2,
+      "trials": 20000,
+      "successes": 26,
+      "P": 0.0013
+     },
+     {
+      "M_from": 2,
+      "M_to": 0,
+      "trials": 20000,
+      "successes": 44,
+      "P": 0.0022
+     }
+    ]
+   ],
+   "interfaces": [
+    38,
+    34,
+    30,
+    26,
+    22,
+    18,
+    14,
+    10,
+    6,
+    2,
+    0
+   ]
+  },
+  {
+   "Omega": 30,
+   "model": "TH",
+   "n_ok": 5,
+   "cpu": 109.059641565,
+   "lnT_mean": 26.475769066630118,
+   "lnT_se": 0.6876176378093802,
+   "T": 314978136879.05225,
+   "T_se": 216584522442.37354,
+   "mean_max_v": 4.332222222222223,
+   "mean_dist": 0.4624775331018164,
+   "t_burn": 66.0506423145057,
+   "replicate_lnT": [
+    26.426405690517647,
+    null,
+    23.996465617205157,
+    27.960983514588346,
+    27.525093393559725,
+    null,
+    26.469897117279714,
+    null
+   ],
+   "replicate_stages": [
+    [
+     {
+      "M_from": 49,
+      "M_to": 44,
+      "trials": 1000,
+      "successes": 659,
+      "P": 0.659
+     },
+     {
+      "M_from": 44,
+      "M_to": 39,
+      "trials": 1000,
+      "successes": 700,
+      "P": 0.7
+     },
+     {
+      "M_from": 39,
+      "M_to": 34,
+      "trials": 1000,
+      "successes": 664,
+      "P": 0.664
+     },
+     {
+      "M_from": 34,
+      "M_to": 29,
+      "trials": 1000,
+      "successes": 609,
+      "P": 0.609
+     },
+     {
+      "M_from": 29,
+      "M_to": 24,
+      "trials": 1000,
+      "successes": 453,
+      "P": 0.453
+     },
+     {
+      "M_from": 24,
+      "M_to": 19,
+      "trials": 1000,
+      "successes": 267,
+      "P": 0.267
+     },
+     {
+      "M_from": 19,
+      "M_to": 14,
+      "trials": 1000,
+      "successes": 98,
+      "P": 0.098
+     },
+     {
+      "M_from": 14,
+      "M_to": 9,
+      "trials": 3000,
+      "successes": 50,
+      "P": 0.016666666666666666
+     },
+     {
+      "M_from": 9,
+      "M_to": 4,
+      "trials": 20000,
+      "successes": 22,
+      "P": 0.0011
+     },
+     {
+      "M_from": 4,
+      "M_to": 0,
+      "trials": 20000,
+      "successes": 3,
+      "P": 0.00015
+     }
+    ],
+    [
+     {
+      "M_from": 49,
+      "M_to": 44,
+      "trials": 1000,
+      "successes": 689,
+      "P": 0.689
+     },
+     {
+      "M_from": 44,
+      "M_to": 39,
+      "trials": 1000,
+      "successes": 691,
+      "P": 0.691
+     },
+     {
+      "M_from": 39,
+      "M_to": 34,
+      "trials": 1000,
+      "successes": 681,
+      "P": 0.681
+     },
+     {
+      "M_from": 34,
+      "M_to": 29,
+      "trials": 1000,
+      "successes": 580,
+      "P": 0.58
+     },
+     {
+      "M_from": 29,
+      "M_to": 24,
+      "trials": 1000,
+      "successes": 421,
+      "P": 0.421
+     },
+     {
+      "M_from": 24,
+      "M_to": 19,
+      "trials": 1000,
+      "successes": 228,
+      "P": 0.228
+     },
+     {
+      "M_from": 19,
+      "M_to": 14,
+      "trials": 1000,
+      "successes": 87,
+      "P": 0.087
+     },
+     {
+      "M_from": 14,
+      "M_to": 9,
+      "trials": 3000,
+      "successes": 58,
+      "P": 0.019333333333333334
+     },
+     {
+      "M_from": 9,
+      "M_to": 4,
+      "trials": 20000,
+      "successes": 23,
+      "P": 0.00115
+     },
+     {
+      "M_from": 4,
+      "M_to": 0,
+      "trials": 20000,
+      "successes": 0,
+      "P": 0.0
+     }
+    ],
+    [
+     {
+      "M_from": 49,
+      "M_to": 44,
+      "trials": 1000,
+      "successes": 666,
+      "P": 0.666
+     },
+     {
+      "M_from": 44,
+      "M_to": 39,
+      "trials": 1000,
+      "successes": 692,
+      "P": 0.692
+     },
+     {
+      "M_from": 39,
+      "M_to": 34,
+      "trials": 1000,
+      "successes": 647,
+      "P": 0.647
+     },
+     {
+      "M_from": 34,
+      "M_to": 29,
+      "trials": 1000,
+      "successes": 590,
+      "P": 0.59
+     },
+     {
+      "M_from": 29,
+      "M_to": 24,
+      "trials": 1000,
+      "successes": 481,
+      "P": 0.481
+     },
+     {
+      "M_from": 24,
+      "M_to": 19,
+      "trials": 1000,
+      "successes": 282,
+      "P": 0.282
+     },
+     {
+      "M_from": 19,
+      "M_to": 14,
+      "trials": 1000,
+      "successes": 127,
+      "P": 0.127
+     },
+     {
+      "M_from": 14,
+      "M_to": 9,
+      "trials": 2000,
+      "successes": 64,
+      "P": 0.032
+     },
+     {
+      "M_from": 9,
+      "M_to": 4,
+      "trials": 20000,
+      "successes": 47,
+      "P": 0.00235
+     },
+     {
+      "M_from": 4,
+      "M_to": 0,
+      "trials": 20000,
+      "successes": 6,
+      "P": 0.0003
+     }
+    ],
+    [
+     {
+      "M_from": 49,
+      "M_to": 44,
+      "trials": 1000,
+      "successes": 687,
+      "P": 0.687
+     },
+     {
+      "M_from": 44,
+      "M_to": 39,
+      "trials": 1000,
+      "successes": 719,
+      "P": 0.719
+     },
+     {
+      "M_from": 39,
+      "M_to": 34,
+      "trials": 1000,
+      "successes": 671,
+      "P": 0.671
+     },
+     {
+      "M_from": 34,
+      "M_to": 29,
+      "trials": 1000,
+      "successes": 566,
+      "P": 0.566
+     },
+     {
+      "M_from": 29,
+      "M_to": 24,
+      "trials": 1000,
+      "successes": 426,
+      "P": 0.426
+     },
+     {
+      "M_from": 24,
+      "M_to": 19,
+      "trials": 1000,
+      "successes": 239,
+      "P": 0.239
+     },
+     {
+      "M_from": 19,
+      "M_to": 14,
+      "trials": 1000,
+      "successes": 74,
+      "P": 0.074
+     },
+     {
+      "M_from": 14,
+      "M_to": 9,
+      "trials": 4000,
+      "successes": 56,
+      "P": 0.014
+     },
+     {
+      "M_from": 9,
+      "M_to": 4,
+      "trials": 20000,
+      "successes": 27,
+      "P": 0.00135
+     },
+     {
+      "M_from": 4,
+      "M_to": 0,
+      "trials": 20000,
+      "successes": 1,
+      "P": 5e-05
+     }
+    ],
+    [
+     {
+      "M_from": 49,
+      "M_to": 44,
+      "trials": 1000,
+      "successes": 716,
+      "P": 0.716
+     },
+     {
+      "M_from": 44,
+      "M_to": 39,
+      "trials": 1000,
+      "successes": 719,
+      "P": 0.719
+     },
+     {
+      "M_from": 39,
+      "M_to": 34,
+      "trials": 1000,
+      "successes": 680,
+      "P": 0.68
+     },
+     {
+      "M_from": 34,
+      "M_to": 29,
+      "trials": 1000,
+      "successes": 599,
+      "P": 0.599
+     },
+     {
+      "M_from": 29,
+      "M_to": 24,
+      "trials": 1000,
+      "successes": 460,
+      "P": 0.46
+     },
+     {
+      "M_from": 24,
+      "M_to": 19,
+      "trials": 1000,
+      "successes": 225,
+      "P": 0.225
+     },
+     {
+      "M_from": 19,
+      "M_to": 14,
+      "trials": 1000,
+      "successes": 79,
+      "P": 0.079
+     },
+     {
+      "M_from": 14,
+      "M_to": 9,
+      "trials": 5000,
+      "successes": 71,
+      "P": 0.0142
+     },
+     {
+      "M_from": 9,
+      "M_to": 4,
+      "trials": 20000,
+      "successes": 34,
+      "P": 0.0017
+     },
+     {
+      "M_from": 4,
+      "M_to": 0,
+      "trials": 20000,
+      "successes": 1,
+      "P": 5e-05
+     }
+    ],
+    [
+     {
+      "M_from": 49,
+      "M_to": 44,
+      "trials": 1000,
+      "successes": 657,
+      "P": 0.657
+     },
+     {
+      "M_from": 44,
+      "M_to": 39,
+      "trials": 1000,
+      "successes": 672,
+      "P": 0.672
+     },
+     {
+      "M_from": 39,
+      "M_to": 34,
+      "trials": 1000,
+      "successes": 644,
+      "P": 0.644
+     },
+     {
+      "M_from": 34,
+      "M_to": 29,
+      "trials": 1000,
+      "successes": 542,
+      "P": 0.542
+     },
+     {
+      "M_from": 29,
+      "M_to": 24,
+      "trials": 1000,
+      "successes": 368,
+      "P": 0.368
+     },
+     {
+      "M_from": 24,
+      "M_to": 19,
+      "trials": 1000,
+      "successes": 188,
+      "P": 0.188
+     },
+     {
+      "M_from": 19,
+      "M_to": 14,
+      "trials": 1000,
+      "successes": 57,
+      "P": 0.057
+     },
+     {
+      "M_from": 14,
+      "M_to": 9,
+      "trials": 5000,
+      "successes": 65,
+      "P": 0.013
+     },
+     {
+      "M_from": 9,
+      "M_to": 4,
+      "trials": 20000,
+      "successes": 15,
+      "P": 0.00075
+     },
+     {
+      "M_from": 4,
+      "M_to": 0,
+      "trials": 20000,
+      "successes": 0,
+      "P": 0.0
+     }
+    ],
+    [
+     {
+      "M_from": 49,
+      "M_to": 44,
+      "trials": 1000,
+      "successes": 669,
+      "P": 0.669
+     },
+     {
+      "M_from": 44,
+      "M_to": 39,
+      "trials": 1000,
+      "successes": 729,
+      "P": 0.729
+     },
+     {
+      "M_from": 39,
+      "M_to": 34,
+      "trials": 1000,
+      "successes": 686,
+      "P": 0.686
+     },
+     {
+      "M_from": 34,
+      "M_to": 29,
+      "trials": 1000,
+      "successes": 607,
+      "P": 0.607
+     },
+     {
+      "M_from": 29,
+      "M_to": 24,
+      "trials": 1000,
+      "successes": 451,
+      "P": 0.451
+     },
+     {
+      "M_from": 24,
+      "M_to": 19,
+      "trials": 1000,
+      "successes": 239,
+      "P": 0.239
+     },
+     {
+      "M_from": 19,
+      "M_to": 14,
+      "trials": 1000,
+      "successes": 87,
+      "P": 0.087
+     },
+     {
+      "M_from": 14,
+      "M_to": 9,
+      "trials": 3000,
+      "successes": 60,
+      "P": 0.02
+     },
+     {
+      "M_from": 9,
+      "M_to": 4,
+      "trials": 20000,
+      "successes": 31,
+      "P": 0.00155
+     },
+     {
+      "M_from": 4,
+      "M_to": 0,
+      "trials": 20000,
+      "successes": 2,
+      "P": 0.0001
+     }
+    ],
+    [
+     {
+      "M_from": 49,
+      "M_to": 44,
+      "trials": 1000,
+      "successes": 693,
+      "P": 0.693
+     },
+     {
+      "M_from": 44,
+      "M_to": 39,
+      "trials": 1000,
+      "successes": 722,
+      "P": 0.722
+     },
+     {
+      "M_from": 39,
+      "M_to": 34,
+      "trials": 1000,
+      "successes": 730,
+      "P": 0.73
+     },
+     {
+      "M_from": 34,
+      "M_to": 29,
+      "trials": 1000,
+      "successes": 562,
+      "P": 0.562
+     },
+     {
+      "M_from": 29,
+      "M_to": 24,
+      "trials": 1000,
+      "successes": 480,
+      "P": 0.48
+     },
+     {
+      "M_from": 24,
+      "M_to": 19,
+      "trials": 1000,
+      "successes": 238,
+      "P": 0.238
+     },
+     {
+      "M_from": 19,
+      "M_to": 14,
+      "trials": 1000,
+      "successes": 68,
+      "P": 0.068
+     },
+     {
+      "M_from": 14,
+      "M_to": 9,
+      "trials": 4000,
+      "successes": 55,
+      "P": 0.01375
+     },
+     {
+      "M_from": 9,
+      "M_to": 4,
+      "trials": 20000,
+      "successes": 17,
+      "P": 0.00085
+     },
+     {
+      "M_from": 4,
+      "M_to": 0,
+      "trials": 20000,
+      "successes": 0,
+      "P": 0.0
+     }
+    ]
+   ],
+   "interfaces": [
+    49,
+    44,
+    39,
+    34,
+    29,
+    24,
+    19,
+    14,
+    9,
+    4,
+    0
+   ]
+  }
+ ],
+ "spent": 218.443330542,
+ "harness_pass": true
+}
