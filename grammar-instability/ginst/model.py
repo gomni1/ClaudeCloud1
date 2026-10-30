@@ -339,6 +339,35 @@ def eigs_at(b, par):
     return np.linalg.eigvals(J), J
 
 
+def newton_polish(b, par, iters=20):
+    """Polish a balance by Newton's method on the full system (open level) or on the reduced system in
+    (C, V, L) with P = T - C - V - L (closed level), with the analytic Jacobian."""
+    x = np.array(b, float)
+    closed = par[13] == 0 and par[18] == 0
+    for _ in range(iters):
+        f = f_np(x, par)
+        J = J_np(x, par)
+        if closed:
+            Jr = reduced_jacobian(J)
+            try:
+                d3 = np.linalg.solve(Jr, -f[:3])
+            except np.linalg.LinAlgError:
+                break
+            d = np.append(d3, -d3.sum())
+        else:
+            try:
+                d = np.linalg.solve(J, -f)
+            except np.linalg.LinAlgError:
+                break
+        x_new = x + d
+        if np.any(x_new <= 0) or not np.all(np.isfinite(x_new)):
+            break
+        x = x_new
+        if np.linalg.norm(d) <= 1e-15 * np.linalg.norm(x):
+            break
+    return x
+
+
 def classify_balances(par):
     out = []
     for b in balances(par):

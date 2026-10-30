@@ -59,9 +59,9 @@ def hurwitz_cubic(c2, c1, c0):
 
 
 def charpoly_coeffs(M):
-    p = sp.Poly(sp.expand((lam * sp.eye(M.shape[0]) - M).det()), lam)
-    c = p.all_coeffs()  # leading first
-    return [sp.simplify(ci) for ci in c[1:]]
+    """Coefficients of det(lam I - M) after the leading 1 (Berkowitz; no simplification)."""
+    c = M.charpoly(lam).all_coeffs()
+    return [sp.together(sp.expand(ci)) for ci in c[1:]]
 
 
 def m0():
@@ -70,7 +70,7 @@ def m0():
     # open level, cv: gC = A - y h, gV = h
     J = J_general(A - y * h, h)
     c3, c2, c1, c0 = charpoly_coeffs(J)
-    det_minusJ = sp.factor(sp.simplify((-J).det()))
+    det_minusJ = sp.factor(sp.together(sp.expand((-J).det(method='berkowitz'))))
     conds = hurwitz_quartic(c3, c2, c1, c0)
     res = {k: poly_sign(v, vars_open)[0] for k, v in conds.items()}
     out["open_cv"] = dict(det_minus_J=str(det_minusJ), hurwitz_signs_for_h_positive=res,
@@ -82,7 +82,7 @@ def m0():
     conds = hurwitz_cubic(d2, d1, d0)
     vars_closed = [k1, k2, k3, k5, k6, k7, k8, k10, y, h]
     res = {k: poly_sign(v, vars_closed)[0] for k, v in conds.items()}
-    out["closed_cv"] = dict(det_minus_Jred=str(sp.factor(sp.simplify((-Jr).det()))), hurwitz_signs_for_h_positive=res,
+    out["closed_cv"] = dict(det_minus_Jred=str(sp.factor(sp.together(sp.expand((-Jr).det(method='berkowitz'))))), hurwitz_signs_for_h_positive=res,
                             holds=all(v == "positive" for v in res.values()))
     # tot denominator: g homogeneous of degree 1 in (C, V, L, P) with gL = gP = gamma.
     # At a balance gC = A - y gV - (l + p) gamma (Euler), with l = L/C, p = P/C.
@@ -118,7 +118,7 @@ def principal_minors(M):
     res = {}
     for r in range(1, n + 1):
         for S in itertools.combinations(range(n), r):
-            res[S] = M.extract(list(S), list(S)).det()
+            res[S] = M.extract(list(S), list(S)).det(method="berkowitz")
     return res
 
 
@@ -143,7 +143,7 @@ def m1():
     th = {}
     for S, mnr in principal_minors(M).items():
         s, num, den, nneg = poly_sign(mnr, variables)
-        th["".join(names[i] for i in S)] = dict(sign=s, factored=str(sp.factor(sp.simplify(mnr))))
+        th["".join(names[i] for i in S)] = dict(sign=s, factored=str(sp.factor(sp.together(sp.expand(mnr)))))
     out["TH_open_cv"] = dict(minors=th, all_positive_for_h_positive=all(v["sign"] == "positive" for v in th.values()))
     # any rate law with g = g(C, V): the {C, V} minor
     M = -J_general(gC, gV)
@@ -154,6 +154,11 @@ def m1():
 if __name__ == "__main__":
     import json
     import sys
-    r = dict(M0=m0(), M1=m1())
+    import time
+    t0 = time.time()
+    r = dict(M1=m1())
     json.dump(r, open(sys.argv[1], "w"), indent=1, default=str)
-    print(json.dumps(r, indent=1, default=str)[:4000])
+    print("M1 done %.0fs" % (time.time() - t0), flush=True)
+    r["M0"] = m0()
+    json.dump(r, open(sys.argv[1], "w"), indent=1, default=str)
+    print("M0 done %.0fs" % (time.time() - t0), flush=True)

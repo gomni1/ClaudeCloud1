@@ -12,8 +12,12 @@ def verify_cycle(par, x0, period_guess):
     n = model.dim(par)
     f = lambda t, z: model.f_np(z, par)
     out = {}
+    # both integrators start 1% of a period downstream of x0; the section stays the one through x0
+    x1 = solve_ivp(f, (0, 0.01 * period_guess), np.array(x0, float), method="Radau", rtol=1e-12, atol=1e-15,
+                   jac=lambda t, z: model.J_np(z, par)).y[:, -1]
     for meth in ("LSODA", "Radau"):
-        cr = integ.poincare(np.array(x0), par, 50 * period_guess, balances=[], max_cross=12, rtol=1e-10)
+        cr = integ.poincare(np.array(x0), par, 50 * period_guess, balances=[], max_cross=12, rtol=1e-10, method=meth,
+                            x_start=x1)
         out[meth] = dict(period=float(np.mean(np.diff(cr["times"][-6:]))) if len(cr["times"]) >= 6 else None)
     # monodromy over one period from a point on the cycle
     T = out["Radau"]["period"]

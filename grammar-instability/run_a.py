@@ -89,6 +89,7 @@ def stage_m2():
                 c["multistable"] += rec["n_stable"] > 1
                 if rec["n_periodic"]:
                     hits.append(rec)
+            fz.flush()
             if done % 2000 < CHUNK:
                 log("m2 done=%d cpu=%.0fs wall=%.0fs counts=%s" % (done, cpu, time.time() - t0, counts))
             if cpu >= BUDGET["m2"]:
@@ -208,7 +209,45 @@ def stage_m3():
     log("m3 done: %s" % summ)
 
 
-STAGES = dict(planted=stage_planted, m2=stage_m2, adaptive=stage_adaptive, m3=stage_m3)
+def stage_m4cyc():
+    """M4 for the periodic M2 end states (SPEC §6); one verification per draw, from its first periodic run."""
+    from scipy.integrate import solve_ivp
+    from ginst import m4
+    out = []
+    for r in load_draws():
+        if not r["n_periodic"]:
+            continue
+        t0 = time.process_time()
+        run = next(u for u in r["runs"] if u["class"]["kind"] == "periodic")
+        d = dict((k, r[k]) for k in ("i", "level", "den", "k", "m", "kr", "kc", "T", "law"))
+        par = m2.par_of(d)
+        x0 = np.array(run["class"]["point"])
+        v = m4.verify_cycle(par, x0, run["class"]["period"])
+        n_triv = 2 if r["level"] == "closed" else 1
+        mods = np.array(v["moduli"])
+        nontriv = np.sort(mods[np.argsort(np.abs(mods - 1.0))[n_triv:]])[::-1]
+        v["nontrivial_moduli"] = nontriv.tolist()
+        v["verified"] = bool(v["agree"] and np.all(nontriv < 1 - 1e-6))
+        v["unstable"] = bool(np.any(nontriv > 1.0))
+        # orbit over one period: coordinate ranges and the conserved total
+        T = v["periods"]["Radau"]["period"]
+        sol = solve_ivp(lambda t, z: model.f_np(z, par), (0, T), x0, method="Radau", rtol=1e-10, atol=1e-14,
+                        jac=lambda t, z: model.J_np(z, par), dense_output=True)
+        ys = sol.sol(np.linspace(0, T, 2001))
+        v["orbit_min"] = ys.min(axis=1).tolist()
+        v["orbit_max"] = ys.max(axis=1).tolist()
+        v["total_range"] = [float(ys.sum(axis=0).min()), float(ys.sum(axis=0).max())]
+        v["closure_rel"] = float(np.linalg.norm(sol.y[:, -1] - x0) / np.linalg.norm(x0))
+        v["exact_rates"] = ["%.17g" % x for x in r["k"]]
+        v["exact_T"] = "%.17g" % r["T"]
+        v["cpu"] = time.process_time() - t0
+        out.append(dict(draw=d, balances=r["bal"], m2_periods=[u["class"].get("period") for u in r["runs"]],
+                        start_point=x0.tolist(), verification=v))
+        log("m4cyc draw %d: verified=%s periods=%s nontrivial=%s" % (r["i"], v["verified"], v["periods"], v["nontrivial_moduli"]))
+    save("m4_cycle.json", dict(hits=out, cycle_verified=any(h["verification"]["verified"] for h in out)))
+
+
+STAGES = dict(planted=stage_planted, m2=stage_m2, adaptive=stage_adaptive, m3=stage_m3, m4cyc=stage_m4cyc)
 
 if __name__ == "__main__":
     os.makedirs(EV, exist_ok=True)
