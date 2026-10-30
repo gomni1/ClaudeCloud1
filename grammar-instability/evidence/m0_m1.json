@@ -1,0 +1,269 @@
+{
+ "M1": {
+  "MA_open": {
+   "minors": {
+    "C": {
+     "sign": "positive",
+     "n_negative_terms": 0,
+     "n_terms": 39
+    },
+    "V": {
+     "sign": "positive",
+     "n_negative_terms": 0,
+     "n_terms": 3
+    },
+    "L": {
+     "sign": "positive",
+     "n_negative_terms": 0,
+     "n_terms": 2
+    },
+    "P": {
+     "sign": "positive",
+     "n_negative_terms": 0,
+     "n_terms": 2
+    },
+    "CV": {
+     "sign": "positive",
+     "n_negative_terms": 0,
+     "n_terms": 6
+    },
+    "CL": {
+     "sign": "positive",
+     "n_negative_terms": 0,
+     "n_terms": 15
+    },
+    "CP": {
+     "sign": "positive",
+     "n_negative_terms": 0,
+     "n_terms": 29
+    },
+    "VL": {
+     "sign": "positive",
+     "n_negative_terms": 0,
+     "n_terms": 6
+    },
+    "VP": {
+     "sign": "positive",
+     "n_negative_terms": 0,
+     "n_terms": 5
+    },
+    "LP": {
+     "sign": "positive",
+     "n_negative_terms": 0,
+     "n_terms": 4
+    },
+    "CVL": {
+     "sign": "positive",
+     "n_negative_terms": 0,
+     "n_terms": 6
+    },
+    "CVP": {
+     "sign": "positive",
+     "n_negative_terms": 0,
+     "n_terms": 8
+    },
+    "CLP": {
+     "sign": "positive",
+     "n_negative_terms": 0,
+     "n_terms": 24
+    },
+    "VLP": {
+     "sign": "positive",
+     "n_negative_terms": 0,
+     "n_terms": 10
+    },
+    "CVLP": {
+     "sign": "positive",
+     "n_negative_terms": 0,
+     "n_terms": 6
+    }
+   },
+   "all_positive": true
+  },
+  "TH_open_cv": {
+   "minors": {
+    "C": {
+     "sign": "positive",
+     "factored": "(h*k5*y + h*k6*y + k1*k6)/(k5 + k6)"
+    },
+    "V": {
+     "sign": "positive",
+     "factored": "h"
+    },
+    "L": {
+     "sign": "positive",
+     "factored": "k5 + k6"
+    },
+    "P": {
+     "sign": "positive",
+     "factored": "k8 + k9"
+    },
+    "CV": {
+     "sign": "positive",
+     "factored": "h*(k1 + k7)"
+    },
+    "CL": {
+     "sign": "positive",
+     "factored": "h*y*(k5 + k6)"
+    },
+    "CP": {
+     "sign": "positive",
+     "factored": "(k8 + k9)*(h*k5*y + h*k6*y + k1*k6)/(k5 + k6)"
+    },
+    "VL": {
+     "sign": "positive",
+     "factored": "h*(k5 + k6)"
+    },
+    "VP": {
+     "sign": "positive",
+     "factored": "h*(k8 + k9)"
+    },
+    "LP": {
+     "sign": "positive",
+     "factored": "(k5 + k6)*(k8 + k9)"
+    },
+    "CVL": {
+     "sign": "positive",
+     "factored": "h*k7*(k5 + k6)"
+    },
+    "CVP": {
+     "sign": "positive",
+     "factored": "h*(k1*k8 + k1*k9 + k7*k9)"
+    },
+    "CLP": {
+     "sign": "positive",
+     "factored": "h*y*(k5 + k6)*(k8 + k9)"
+    },
+    "VLP": {
+     "sign": "positive",
+     "factored": "h*(k5 + k6)*(k8 + k9)"
+    },
+    "CVLP": {
+     "sign": "positive",
+     "factored": "h*k7*k9*(k5 + k6)"
+    }
+   },
+   "all_positive_for_h_positive": true
+  },
+  "general_gCV_minor_CV": "g_V*(k1 + k7)"
+ },
+ "M0": {
+  "open_cv": {
+   "det_minus_J": "h*k7*k9*(k5 + k6)",
+   "hurwitz_signs_for_h_positive": {
+    "c3": "positive",
+    "c2": "positive",
+    "c1": "positive",
+    "c0": "positive",
+    "D2": "positive",
+    "D3": "positive"
+   },
+   "holds": true
+  },
+  "closed_cv": {
+   "det_minus_Jred": "h*(k1*k8 + k5*k7 + k5*k8*y + k5*k8 + k6*k7 + k6*k8*y + k6*k8)",
+   "hurwitz_signs_for_h_positive": {
+    "c2": "positive",
+    "c1": "positive",
+    "c0": "positive",
+    "D2": "positive"
+   },
+   "holds": true
+  },
+  "open_tot": {
+   "hurwitz_signs": {
+    "c3": "positive",
+    "c2": "mixed",
+    "c1": "mixed",
+    "c0": "positive",
+    "D2": "mixed",
+    "D3": "mixed"
+   },
+   "holds": false,
+   "where_it_breaks": [
+    {
+     "condition": "c2",
+     "n_negative_terms": 4,
+     "examples": [
+      "-gamma*k1*k5",
+      "-gamma*k1*k6",
+      "-gamma*k5*k7",
+      "-gamma*k6*k7"
+     ]
+    },
+    {
+     "condition": "c1",
+     "n_negative_terms": 4,
+     "examples": [
+      "-gamma*k1*k8",
+      "-gamma*k1*k9",
+      "-gamma*k5*k7",
+      "-gamma*k6*k7"
+     ]
+    },
+    {
+     "condition": "D2",
+     "n_negative_terms": 38,
+     "examples": [
+      "-gamma*k1**2*k5*k6",
+      "-gamma*k1**2*k6**2",
+      "-gamma*k1*k5**3",
+      "-3*gamma*k1*k5**2*k6"
+     ]
+    },
+    {
+     "condition": "D3",
+     "n_negative_terms": 1113,
+     "examples": [
+      "-2*g_V*gamma*k1**3*k5**2*k6*k8",
+      "-2*g_V*gamma*k1**3*k5**2*k6*k9",
+      "-gamma*k1**3*k5*k6**2*k8**2",
+      "-2*gamma*k1**3*k5*k6**2*k8*k9"
+     ]
+    }
+   ],
+   "note": "gamma = dg/dL = dg/dP = (k3 V F'_kr - k11 C F'_kc) * (-C/N^2) has no fixed sign"
+  },
+  "closed_tot": {
+   "hurwitz_signs": {
+    "c2": "positive",
+    "c1": "mixed",
+    "c0": "mixed",
+    "D2": "mixed"
+   },
+   "holds": false,
+   "where_it_breaks": [
+    {
+     "condition": "c1",
+     "n_negative_terms": 4,
+     "examples": [
+      "-gamma*k1*k5",
+      "-gamma*k1*k6",
+      "-gamma*k5*k7",
+      "-gamma*k6*k7"
+     ]
+    },
+    {
+     "condition": "c0",
+     "n_negative_terms": 3,
+     "examples": [
+      "-gamma*k1*k8",
+      "-gamma*k5*k7",
+      "-gamma*k6*k7"
+     ]
+    },
+    {
+     "condition": "D2",
+     "n_negative_terms": 35,
+     "examples": [
+      "-gamma*k1**2*k5*k6",
+      "-gamma*k1**2*k6**2",
+      "-gamma*k1*k5**3",
+      "-3*gamma*k1*k5**2*k6"
+     ]
+    }
+   ],
+   "note": "gamma = dg/dL = dg/dP = (k3 V F'_kr - k11 C F'_kc) * (-C/N^2) has no fixed sign"
+  }
+ }
+}
