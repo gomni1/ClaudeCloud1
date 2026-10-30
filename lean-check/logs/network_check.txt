@@ -1,0 +1,19 @@
+# Network check, 2026-10-30 03:30-03:31 UTC (curl through the session's egress proxy; HTTP status, 000 = connection refused by the proxy)
+# Transcribed from the session's command output.
+https://github.com/openai/math -> 403
+https://api.github.com/repos/openai/math -> 403
+https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh -> 200
+https://github.com/leanprover/lean4/releases -> 403
+https://release.lean-lang.org/ -> 000
+https://lakecache.blob.core.windows.net/mathlib4 -> 000
+https://mathlib4.lean-cache.cloud/ -> 000
+https://reservoir.lean-lang.org/ -> 000
+https://github.com/leanprover/lean4/releases/download/v4.34.1/lean-4.34.1-linux.tar.zst -> 200 (redirect to release-assets.githubusercontent.com)
+https://codeload.github.com/leanprover/lean4/tar.gz/refs/tags/v4.34.1 -> 403
+https://lakecache.blob.core.windows.net/mathlib4/f/1.ltar -> 000
+https://mathlib4.lean-cache.cloud/f/1.ltar -> 000
+# Proxy relay log: release.lean-lang.org:443, lakecache.blob.core.windows.net:443 and mathlib4.lean-cache.cloud:443
+# connect_rejected ("gateway answered 403 to CONNECT (policy denial or upstream failure)").
+# git over HTTPS worked through the proxy: openai/math was cloned with git (blob:none partial clone) and
+# Lake fetched its git dependencies (Mathlib and 40 other packages) the same way.
+# Consequence: `lake exe cache get` cannot reach the Mathlib cache; Mathlib must be built from source.

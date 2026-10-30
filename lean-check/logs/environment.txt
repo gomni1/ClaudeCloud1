@@ -1,0 +1,18 @@
+# Environment (recorded 2026-10-30T06:54:08Z)
+Linux 6.18.44-fc-v185
+4
+               total        used        free      shared  buff/cache   available
+Mem:              15           0           3           0          11          14
+model name	: Intel(R) Xeon(R) Processor @ 2.80GHz
+/dev/vda        252G   25G   15G  63% /
+release: openai/math 4eaee87548250b2682affda7d05d947c05554bae (2026-10-29 17:35:35 -0700)
+lean-toolchain: leanprover/lean4:v4.34.1
+Lean (version 4.34.1, x86_64-unknown-linux-gnu, commit 5045d0056413266e57c625dcd7c365b10e377c52, Release)
+Lake version 5.0.0-src+5045d00 (Lean version 4.34.1)
+mathlib: d13f23b723b8a846827a245b89c10fc7d3f11612
+comparator: d03acab154d269c06e60e4de7e4cc85deebff94b
+lean4export: 076e8e57707e813375e8f9da8bf989799ace9680
+landrun: ec104f6edc1e14d7fec6d31146f1ec6f9c192c5a (landrun version 0.1.18)
+go: go version go1.24.7 linux/amd64
+landlock: CONFIG_SECURITY_LANDLOCK=y, ABI version 7 (probed 03:36 UTC)
+Mathlib oleans present after the stopped build: 4336 of 8529 Mathlib modules
