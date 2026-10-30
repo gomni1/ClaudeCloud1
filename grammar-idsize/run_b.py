@@ -154,10 +154,25 @@ def _exact_job(args):
 
 
 def stage_exact():
-    jobs = [(k10, om, d) for k10 in family.K10S for om in (2, 3, 4) for d in ("up", "down")]
+    """Sizes in increasing order, saved after every job; no new job starts once the 0.5 CPU-h cap is spent."""
+    jobs = [(k10, om, d) for om in (2, 3, 4) for k10 in family.K10S for d in ("up", "down")]
+    out, spent = [], 0.0
     with ProcessPoolExecutor(WORKERS) as ex:
-        out = list(ex.map(_exact_job, jobs))
-    save("exact", dict(rows=out))
+        it = iter(jobs)
+        pending = [ex.submit(_exact_job, j) for j in [next(it) for _ in range(WORKERS)]]
+        while pending:
+            r = pending.pop(0).result()
+            out.append(r)
+            spent += r["cpu"]
+            log("exact k10=%s Omega=%d %s T=%s conv=%s cpu=%.0f spent=%.0f" % (
+                r["k10"], r["Omega"], r["direction"], r.get("T_exact"), r.get("converged"), r["cpu"], spent))
+            save("exact", dict(rows=out, spent=spent, cap=0.5 * H))
+            j = next(it, None)
+            if j is not None and spent < 0.5 * H:
+                pending.append(ex.submit(_exact_job, j))
+            elif j is not None:
+                log("exact budget stop before %s" % (j,))
+                it = iter(())
 
 
 def pr3_T(series, om):

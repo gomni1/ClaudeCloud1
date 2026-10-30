@@ -169,14 +169,30 @@ def g1():
     # sensitivity (not the verdict): failed replicates at a size, given the lnT they would have with the failed
     # stage's P set to 0.5 / trials (an optimistic P, so a lower bound on their lnT)
     sens = {}
+    filled = {}
     for om in sel:
         r = rows[om]
-        fills = []
-        for st in r["replicate_stages"]:
-            if st and st[-1]["successes"] == 0:
-                pass
-        sens[om] = dict(n_failed=8 - r["n_ok"])
+        ok_lnflux = []
+        for st, lt in zip(r["replicate_stages"], r["replicate_lnT"]):
+            if lt is not None:
+                ok_lnflux.append(-lt - sum(math.log(x["P"]) for x in st))
+        lnflux = float(np.mean(ok_lnflux))
+        vals = []
+        for st, lt in zip(r["replicate_stages"], r["replicate_lnT"]):
+            if lt is not None:
+                vals.append(lt)
+            else:
+                lp = sum(math.log(x["P"]) if x["successes"] > 0 else math.log(1.0 / x["trials"]) for x in st)
+                n_left = len(r["interfaces"]) - 1 - len(st)  # stages never reached (none if the last stage failed)
+                vals.append(-lnflux - lp if n_left == 0 else float("nan"))
+        filled[om] = np.array(vals)
+        last = [st[-1] for st in r["replicate_stages"] if st]
+        sens[om] = dict(n_failed=8 - r["n_ok"], last_stage_successes=[x["successes"] for x in last],
+                        last_stage_trials=[x["trials"] for x in last],
+                        lnT_mean_with_failures_at_one_success=float(np.nanmean(vals)))
     out["failed_replicates"] = sens
+    if all(np.all(np.isfinite(filled[om])) for om in sel):
+        out["s25_sensitivity_failures_at_one_success"] = s25({om: filled[om].mean() for om in sel})
     out["local_slopes_all"] = {"%d-%d" % (a, b): float((rows[b]["lnT_mean"] - rows[a]["lnT_mean"]) / (b - a))
                                for a, b in zip(sorted(rows)[:-1], sorted(rows)[1:])}
     return out
@@ -214,7 +230,25 @@ def exact_vs_sim(rows):
     return out
 
 
+def switch_summary():
+    """evidence/switch.json holds every no-passage switching time (267 MB); the committed summary keeps counts
+    and moments.  The runs are reproducible from their seeds (sim.seed_for("idsize-switch", k10, Omega, dir, 0, b))."""
+    sw = load("switch")
+    if not sw:
+        return
+    rows = []
+    for r in sw["rows"]:
+        t = np.asarray(r["tau_S_nopass"], float)
+        q = np.percentile(t, [5, 25, 50, 75, 95]).tolist() if len(t) else None
+        rows.append({k: v for k, v in r.items() if k != "tau_S_nopass"} | dict(
+            n_tau=len(t), tau_mean=float(t.mean()) if len(t) else None, tau_sd=float(t.std()) if len(t) else None,
+            tau_max=float(t.max()) if len(t) else None, tau_quantiles_5_25_50_75_95=q))
+    json.dump(dict(rows=rows, spent=sw["spent"], cap=sw["cap"]), open(os.path.join(EV, "switch_summary.json"), "w"),
+              indent=1)
+
+
 def main():
+    switch_summary()
     A = dict(m0=load("m0"), planted=load("planted"), harness=load("harness"))
     gm = gmam_values()
     A["gmam"] = gm

@@ -67,3 +67,78 @@
 07:33:15 switch k10=2.0 Omega=10 up {'n': 30000, 'passages': 83, 'cpu_capped': False} cpu=2 spent=41
 07:33:40 switch k10=2.0 Omega=10 down {'n': 854000, 'passages': 69, 'cpu_capped': False} cpu=31 spent=72
 07:33:48 switch k10=0.5 Omega=12 up {'n': 126000, 'passages': 71, 'cpu_capped': False} cpu=6 spent=78
+07:34:39 switch k10=0.5 Omega=12 down {'n': 1000000, 'passages': 18, 'cpu_capped': False} cpu=54 spent=132
+07:34:39 switch k10=1.0 Omega=12 up {'n': 126000, 'passages': 71, 'cpu_capped': False} cpu=8 spent=140
+07:34:55 switch k10=1.0 Omega=12 down {'n': 1000000, 'passages': 7, 'cpu_capped': False} cpu=56 spent=196
+07:34:55 switch k10=2.0 Omega=12 up {'n': 126000, 'passages': 77, 'cpu_capped': False} cpu=13 spent=209
+07:35:48 switch k10=2.0 Omega=12 down {'n': 1000000, 'passages': 3, 'cpu_capped': False} cpu=54 spent=263
+07:37:12 switch k10=0.5 Omega=16 up {'n': 1000000, 'passages': 22, 'cpu_capped': False} cpu=75 spent=339
+07:37:22 switch k10=0.5 Omega=16 down {'n': 1000000, 'passages': 0, 'cpu_capped': False} cpu=85 spent=424
+07:38:58 switch k10=1.0 Omega=16 up {'n': 1000000, 'passages': 18, 'cpu_capped': False} cpu=103 spent=526
+07:38:58 switch k10=1.0 Omega=16 down {'n': 1000000, 'passages': 0, 'cpu_capped': False} cpu=85 spent=611
+07:41:41 switch k10=2.0 Omega=16 up {'n': 1000000, 'passages': 16, 'cpu_capped': False} cpu=169 spent=780
+07:41:41 switch k10=2.0 Omega=16 down {'n': 1000000, 'passages': 0, 'cpu_capped': False} cpu=92 spent=872
+07:41:56 stage switch done in 549 s
+07:41:56 stage td0 start
+07:41:56 td0 k10=0.5 Omega=2 up {'n': 972, 'T': 3.4309559874328053, 'se': 0.11599447518544954} cpu=0 spent=0
+07:41:56 td0 k10=0.5 Omega=2 down {'n': 972, 'T': 5.469100319386385, 'se': 0.17446347909100676} cpu=0 spent=0
+07:41:56 td0 k10=1.0 Omega=2 up {'n': 972, 'T': 2.519321371713872, 'se': 0.08690596168175817} cpu=0 spent=0
+07:41:56 td0 k10=1.0 Omega=2 down {'n': 972, 'T': 4.417634189443468, 'se': 0.14901386331091535} cpu=0 spent=0
+07:41:56 td0 k10=2.0 Omega=2 up {'n': 972, 'T': 2.0877207023020254, 'se': 0.06852950259864211} cpu=0 spent=0
+07:41:56 td0 k10=2.0 Omega=2 down {'n': 972, 'T': 3.461608202775374, 'se': 0.11806140586728496} cpu=0 spent=0
+07:41:56 td0 k10=0.5 Omega=3 up {'n': 972, 'T': 7.998300222473769, 'se': 0.30831386895952073} cpu=0 spent=0
+07:41:56 td0 k10=0.5 Omega=3 down {'n': 972, 'T': 13.985613545651653, 'se': 0.4412644578781707} cpu=0 spent=0
+07:41:56 td0 k10=1.0 Omega=3 up {'n': 972, 'T': 6.443018425011165, 'se': 0.2601119295209893} cpu=0 spent=0
+07:41:56 td0 k10=1.0 Omega=3 down {'n': 972, 'T': 11.55143442839471, 'se': 0.37263500580234926} cpu=0 spent=0
+07:41:56 td0 k10=2.0 Omega=3 up {'n': 972, 'T': 5.027630141228285, 'se': 0.2035024266826781} cpu=0 spent=0
+07:41:56 td0 k10=2.0 Omega=3 down {'n': 972, 'T': 9.754583176628081, 'se': 0.32519648082130365} cpu=0 spent=0
+07:41:56 td0 k10=0.5 Omega=4 up {'n': 972, 'T': 20.227653640405446, 'se': 0.8562300580626045} cpu=0 spent=0
+07:41:56 td0 k10=0.5 Omega=4 down {'n': 972, 'T': 30.707039119183847, 'se': 0.969656670200722} cpu=0 spent=0
+07:41:56 td0 k10=1.0 Omega=4 up {'n': 972, 'T': 15.661149099135754, 'se': 0.7224877448695421} cpu=0 spent=0
+07:41:57 td0 k10=1.0 Omega=4 down {'n': 972, 'T': 26.043436866367006, 'se': 0.9059771769077652} cpu=0 spent=1
+07:41:57 td0 k10=2.0 Omega=4 up {'n': 972, 'T': 13.298123966985763, 'se': 0.5876533513768196} cpu=0 spent=1
+07:41:57 td0 k10=2.0 Omega=4 down {'n': 972, 'T': 21.855714526747416, 'se': 0.7318856021974003} cpu=0 spent=1
+07:41:57 td0 k10=0.5 Omega=5 up {'n': 972, 'T': 51.5997815492544, 'se': 2.0571034329434155} cpu=0 spent=1
+07:41:57 td0 k10=0.5 Omega=5 down {'n': 972, 'T': 70.63802652486791, 'se': 2.2620220877415838} cpu=0 spent=1
+07:41:57 td0 k10=1.0 Omega=5 up {'n': 972, 'T': 41.55236910626723, 'se': 1.745112303563708} cpu=0 spent=2
+07:41:57 td0 k10=1.0 Omega=5 down {'n': 972, 'T': 61.80476695314272, 'se': 2.0003776884643156} cpu=0 spent=2
+07:41:57 td0 k10=2.0 Omega=5 up {'n': 972, 'T': 34.917851156440946, 'se': 1.464091457908789} cpu=0 spent=2
+07:41:58 td0 k10=2.0 Omega=5 down {'n': 972, 'T': 54.67720598253444, 'se': 1.6603411486057744} cpu=1 spent=3
+07:41:59 td0 k10=0.5 Omega=6 up {'n': 972, 'T': 139.1616950370116, 'se': 5.081308047433458} cpu=1 spent=4
+07:41:59 td0 k10=0.5 Omega=6 down {'n': 972, 'T': 168.746007168061, 'se': 5.180082607514487} cpu=1 spent=4
+07:42:00 td0 k10=1.0 Omega=6 up {'n': 972, 'T': 110.23227419985407, 'se': 4.06220907286316} cpu=1 spent=5
+07:42:00 td0 k10=1.0 Omega=6 down {'n': 972, 'T': 136.8280999925117, 'se': 4.319571543886898} cpu=1 spent=6
+07:42:01 td0 k10=2.0 Omega=6 up {'n': 972, 'T': 97.6257161151322, 'se': 3.8638015464624313} cpu=1 spent=8
+07:42:02 td0 k10=2.0 Omega=6 down {'n': 972, 'T': 132.6703782231193, 'se': 4.08944062558976} cpu=2 spent=10
+07:42:07 td0 k10=0.5 Omega=8 up {'n': 972, 'T': 858.1542149142606, 'se': 28.201448117335893} cpu=5 spent=15
+07:42:07 td0 k10=0.5 Omega=8 down {'n': 972, 'T': 930.5934978774568, 'se': 29.615571422886852} cpu=5 spent=20
+07:42:14 td0 k10=1.0 Omega=8 up {'n': 972, 'T': 750.5254825342381, 'se': 24.96795557836945} cpu=7 spent=26
+07:42:14 td0 k10=1.0 Omega=8 down {'n': 972, 'T': 775.007420072657, 'se': 24.300961180469717} cpu=7 spent=33
+07:42:25 td0 k10=2.0 Omega=8 up {'n': 972, 'T': 671.5761982829223, 'se': 22.75182164641361} cpu=11 spent=44
+07:42:26 td0 k10=2.0 Omega=8 down {'n': 972, 'T': 750.3778143451799, 'se': 23.836539125781393} cpu=12 spent=56
+07:43:04 td0 k10=0.5 Omega=10 up {'n': 972, 'T': 5099.218316908692, 'se': 164.23035032813598} cpu=37 spent=93
+07:43:05 td0 k10=0.5 Omega=10 down {'n': 972, 'T': 5241.018142653581, 'se': 165.03345509742883} cpu=38 spent=131
+07:44:09 td0 k10=1.0 Omega=10 up {'n': 972, 'T': 5059.765278900275, 'se': 171.49003807613266} cpu=63 spent=194
+07:44:09 td0 k10=1.0 Omega=10 down {'n': 972, 'T': 4934.431671517936, 'se': 167.97580481343525} cpu=61 spent=255
+07:45:00 watcher: gMAM budget stop at 07:45 (stage killed; results not saved)
+07:45:46 stage exact start
+07:45:54 td0 k10=2.0 Omega=10 up {'n': 972, 'T': 4956.6219131366615, 'se': 161.8565487916223} cpu=105 spent=360
+07:46:12 td0 k10=2.0 Omega=10 down {'n': 972, 'T': 5454.619428715873, 'se': 181.51140837219856} cpu=120 spent=481
+07:50:29 td0 k10=0.5 Omega=12 up {'n': 972, 'T': 31124.245319432444, 'se': 941.9373045983152} cpu=253 spent=734
+07:50:29 td0 k10=0.5 Omega=12 down {'n': 972, 'T': 30980.714695549304, 'se': 1019.8243283859294} cpu=253 spent=988
+07:50:57 exact k10=0.5 Omega=2 up T=3.5068900864824686 conv=True cpu=306 spent=306
+07:50:57 exact k10=0.5 Omega=2 down T=5.435178116774094 conv=True cpu=131 spent=437
+07:57:08 exact k10=1.0 Omega=2 up T=2.6013823666254203 conv=True cpu=366 spent=803
+07:57:08 exact k10=1.0 Omega=2 down T=4.188528606480612 conv=True cpu=132 spent=935
+07:58:43 td0 k10=1.0 Omega=12 up {'n': 972, 'T': 34390.345878854256, 'se': 1040.4891470003095} cpu=487 spent=1475
+07:58:43 td0 k10=1.0 Omega=12 down {'n': 972, 'T': 33684.42670518527, 'se': 1063.5591867603296} cpu=475 spent=1950
+08:02:06 exact k10=2.0 Omega=2 up T=2.0854950583391036 conv=True cpu=294 spent=1228
+08:02:06 exact k10=2.0 Omega=2 down T=3.423558278540693 conv=True cpu=152 spent=1380
+08:06:09 exact k10=0.5 Omega=3 up T=8.541299365742214 conv=True cpu=240 spent=1620
+08:07:40 exact k10=0.5 Omega=3 down T=13.894733152634437 conv=True cpu=328 spent=1948
+08:07:40 exact budget stop before (1.0, 3, 'down')
+08:08:02 td0 k10=2.0 Omega=12 up {'n': 586, 'T': 35915.10484227554, 'se': 1429.4040430933187} cpu=565 spent=2515
+08:08:19 td0 k10=2.0 Omega=12 down {'n': 571, 'T': 36461.00353501421, 'se': 1525.6612775063563} cpu=567 spent=3082
+08:08:22 watcher: td0 stopped after the Omega=12 level (Omega=16 skipped: phi_obs < 1e-3 there for every k10 and direction, so T_D0 cannot enter R1)
+08:10:05 exact k10=1.0 Omega=3 up T=6.400315611606332 conv=True cpu=233 spent=2181
+08:10:05 stage exact done in 1460 s
