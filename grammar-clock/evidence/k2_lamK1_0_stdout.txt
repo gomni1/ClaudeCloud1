@@ -1,0 +1,1 @@
+{"name": "lamK1_0", "end": "parameter turns (fold)", "n": 9, "p_last": 0.008228817510406742, "period_last": 5.855638263342648, "cls": "turn, unclassified (no Floquet modulus near 1)", "cpu": 31.33188736}

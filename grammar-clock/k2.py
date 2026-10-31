@@ -174,7 +174,7 @@ def continue_branch(pb, u0, direction, cpu_cap, name, ds0=0.02, ds_max=0.2, p_st
             pt["ds"] = ds
             pts.append(pt)
             json.dump(dict(name=name, points=pts), open(path, "w"), default=float)
-            if turned:
+            if turned and not os.environ.get("K2_REV1"):
                 reason = "parameter turns (fold)"
                 break
             if p_stop is not None and (u[n + 1] - p_stop) * direction >= 0:
@@ -230,7 +230,9 @@ def classify(res):
     saddle_near = min([b["orbit_dist_rel"] for b in P[-1]["balances"] if not b["stable"]] or [np.inf])
     out["min_orbit_dist_to_unstable_balance"] = float(saddle_near)
     cpx = [b for b in P[-1]["balances"] if any(abs(e[1]) > 1e-9 for e in b["eig"])]
-    if res["end_reason"] and "amplitude" in res["end_reason"] and 0.4 <= fits.get("amp_loglog_slope", 0) <= 0.6 and cpx:
+    hopf_rev1 = os.environ.get("K2_REV1") and 0.4 <= fits.get("amp_loglog_slope", 0) <= 0.6 and cpx
+    if hopf_rev1 or (res["end_reason"] and "amplitude" in res["end_reason"]
+                     and 0.4 <= fits.get("amp_loglog_slope", 0) <= 0.6 and cpx):
         out["type"] = "Hopf"
     elif res["end_reason"] and "period" in res["end_reason"] and -0.6 <= fits.get("period_loglog_slope", 0) <= -0.4:
         out["type"] = "SNIC (candidate; check balance saddle-node)"
@@ -269,7 +271,8 @@ if __name__ == "__main__":
         pb = Problem(d, "lam")
         y0 = np.array(spec["point"])[:3] if d["level"] == "closed" else np.array(spec["point"])
         u0 = np.concatenate([y0, [spec["period"], 0.0]])
-        r = continue_branch(pb, u0, +1, cap, sys.argv[4], p_stop=1.0)
+        r = continue_branch(pb, u0, +1, cap, sys.argv[4], p_stop=1.0,
+                            ds_max=float(os.environ.get("K2_DSMAX", 0.2)))
     print(json.dumps(dict(name=r["name"], end=r["end_reason"], n=len(r["points"]), p_last=r["points"][-1]["p"],
                           period_last=r["points"][-1]["period"], cls=r["classification"].get("type"),
                           cpu=r["cpu_s"])), flush=True)

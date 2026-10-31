@@ -35,3 +35,9 @@
 03:20:39 done=68000 cpu=2199 capped=1
 03:21:08 K1a finished complete=True cpu=2240
 restart: K1c resumed at cpu=2614.394625393 (2240 before K1c + sum of finished K1c task CPU; in-flight chunks lost)
+03:29:39 done=2000 cpu=2700 capped=0
+03:35:11 done=4000 cpu=3430 capped=2
+03:35:49 done=6000 cpu=3513 capped=2
+03:37:21 done=8000 cpu=3693 capped=2
+03:38:07 done=10000 cpu=3794 capped=2
+03:39:06 K1 finished: {"sub": {"K1b": {"complete": true, "note": "before restart"}, "K1a": {"complete": true, "note": "before restart"}, "K1c": {"complete": true, "done": 11535, "cpu": 1263.496000999999}}, "K1c_queue": {"closed": 108, "K1b": 1197, "open": 10282}, "K1c_resumed_skip": 52, "cpu_total": 3877.890626392999, "capped": 2, "wall": 659.0479502677917}
