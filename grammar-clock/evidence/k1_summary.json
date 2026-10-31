@@ -1,0 +1,26 @@
+{
+ "sub": {
+  "K1b": {
+   "complete": true,
+   "note": "before restart"
+  },
+  "K1a": {
+   "complete": true,
+   "note": "before restart"
+  },
+  "K1c": {
+   "complete": true,
+   "done": 11535,
+   "cpu": 1263.496000999999
+  }
+ },
+ "K1c_queue": {
+  "closed": 108,
+  "K1b": 1197,
+  "open": 10282
+ },
+ "K1c_resumed_skip": 52,
+ "cpu_total": 3877.890626392999,
+ "capped": 2,
+ "wall": 659.0479502677917
+}
