@@ -1,9 +1,0 @@
-Traceback (most recent call last):
-  File "/home/user/ClaudeCloud1/grammar-clock/k3.py", line 232, in <module>
-    rows, ivs = sizes(CAP - used)
-                ~~~~~^^^^^^^^^^^^
-  File "/home/user/ClaudeCloud1/grammar-clock/k3.py", line 158, in sizes
-    pr = core.run_clock(om, n0, core.seed_of(4, om, 0), t_max=1e9, max_ticks=10 ** 6, max_events=10 ** 6)
-  File "/home/user/ClaudeCloud1/grammar-clock/clock/core.py", line 68, in run_clock
-    samp = np.zeros(max_samp * nsp, dtype=np.float32)
-numpy._core._exceptions._ArrayMemoryError: Unable to allocate 74.5 GiB for an array with shape (20000000002,) and data type float32

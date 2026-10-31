@@ -1,0 +1,1 @@
+{"name": "Tup", "end": "cpu cap", "n": 108, "p_last": 15.528284072782494, "period_last": 247.5288598799883, "cls": "unclassified", "cpu": 602.955509226}

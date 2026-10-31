@@ -155,7 +155,7 @@ def sizes(cap_left):
         left = cap_left - (cpu() - c0)
         n0, N = core.n_start(om, X[:, 0])
         t = cpu()
-        pr = core.run_clock(om, n0, core.seed_of(4, om, 0), t_max=1e9, max_ticks=10 ** 6, max_events=10 ** 6)
+        pr = core.run_clock(om, n0, core.seed_of(4, om, 0), t_max=1e6 / om, max_ticks=10 ** 6, max_events=10 ** 6)
         cpu_ev = (cpu() - t) / max(pr["events"], 1)
         ev_rate = pr["events"] / pr["t_end"]
         proj = 1000 * core.T_DET * ev_rate * cpu_ev
