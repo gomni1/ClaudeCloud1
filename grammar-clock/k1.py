@@ -196,8 +196,13 @@ def main():
     t0 = time.time()
     summary = dict(sub={})
     path = os.path.join(EV, "k1_records.jsonl")
-    with open(path, "w") as out:
-        for sub, tasks in (("K1b", [dict(sub="K1b", d=draw_b(i)) for i in range(40000)]),
+    resume = os.environ.get("K1C_RESUME")
+    if resume:  # container restart: K1a/K1b complete; resume K1c, skipping finished draws
+        state["cpu"] = float(resume)
+        summary["sub"]["K1b"] = dict(complete=True, note="before restart")
+        summary["sub"]["K1a"] = dict(complete=True, note="before restart")
+    with open(path, "a" if resume else "w") as out:
+        for sub, tasks in () if resume else (("K1b", [dict(sub="K1b", d=draw_b(i)) for i in range(40000)]),
                            ("K1a", [dict(sub="K1a", d=m2.draw_params(i)) for i in range(41100, 100000)
                                     if i % 4 in (2, 3)])):
             c0, n0 = state["cpu"], state["done"]
@@ -229,8 +234,13 @@ def main():
     t_o = [t_o[j] for j in perm]
     summary["K1c_queue"] = dict(closed=len(t_c), K1b=len(t_b), open=len(t_o))
     c0, n0 = state["cpu"], state["done"]
-    with open(os.path.join(EV, "k1c_records.jsonl"), "w") as out:
-        ok = run_tasks(t_c + t_b + t_o, out, state) if state["cpu"] < CAP_TOTAL else False
+    allc = t_c + t_b + t_o
+    if resume:
+        done = {(r.get("src"), r["i"]) for r in map(json.loads, open(os.path.join(EV, "k1c_records.jsonl")))}
+        allc = [t for t in allc if (t["src"], t["d"]["i"]) not in done]
+        summary["K1c_resumed_skip"] = len(done)
+    with open(os.path.join(EV, "k1c_records.jsonl"), "a" if resume else "w") as out:
+        ok = run_tasks(allc, out, state) if state["cpu"] < CAP_TOTAL else False
     summary["sub"]["K1c"] = dict(complete=ok, done=state["done"] - n0, cpu=state["cpu"] - c0)
     summary.update(cpu_total=state["cpu"], capped=state["capped"], wall=time.time() - t0)
     json.dump(summary, open(os.path.join(EV, "k1_summary.json"), "w"), indent=1)

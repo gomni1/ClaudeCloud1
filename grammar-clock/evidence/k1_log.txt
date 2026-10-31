@@ -34,3 +34,4 @@
 03:19:41 done=66000 cpu=2119 capped=1
 03:20:39 done=68000 cpu=2199 capped=1
 03:21:08 K1a finished complete=True cpu=2240
+restart: K1c resumed at cpu=2614.394625393 (2240 before K1c + sum of finished K1c task CPU; in-flight chunks lost)
