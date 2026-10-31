@@ -1,0 +1,1 @@
+{"name": "rev1_lamK1_0", "end": "cpu cap", "n": 224, "p_last": -0.03136238613703201, "period_last": 8.628103088488375, "cls": "unclassified", "cpu": 603.031493486}
