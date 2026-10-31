@@ -32,3 +32,5 @@
 03:17:09 done=62000 cpu=1983 capped=1
 03:18:21 done=64000 cpu=2060 capped=1
 03:19:41 done=66000 cpu=2119 capped=1
+03:20:39 done=68000 cpu=2199 capped=1
+03:21:08 K1a finished complete=True cpu=2240
