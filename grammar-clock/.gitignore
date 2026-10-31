@@ -1,3 +1,5 @@
 /evidence/.k1_tmp_*
 __pycache__/
 csrc/*.so
+evidence/k1_records.jsonl
+evidence/k1c_records.jsonl

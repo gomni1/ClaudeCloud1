@@ -15,3 +15,7 @@
 02:53:29 done=30000 cpu=687 capped=0
 02:53:49 done=32000 cpu=727 capped=0
 02:54:23 done=34000 cpu=767 capped=0
+02:55:42 done=36000 cpu=807 capped=0
+02:57:28 done=38000 cpu=909 capped=0
+02:58:50 done=40000 cpu=951 capped=0
+02:58:50 K1b finished complete=True cpu=951
