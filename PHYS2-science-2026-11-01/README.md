@@ -72,6 +72,7 @@ invoked in-process; `main()` is importable for that purpose.
    mean delta orders in the predicted direction at all three sizes. The verdict
    stands; the detail is in `B/RESULTS.md` §5.
 
-This folder was produced locally. There is no GitHub credential configured in
-this workspace, so nothing was pushed to `gomni1/ClaudeCloud1` and no pull
-request was opened; the repository was not touched.
+This folder was produced locally and pushed to `gomni1/ClaudeCloud1` on branch
+`grammar-science` as pull request **#9** — https://github.com/gomni1/ClaudeCloud1/pull/9. The branch adds only this
+folder: 28 files, every one with status *added*, nothing outside the folder
+modified and no deletions. Nothing else in the repository was changed.

@@ -79,8 +79,9 @@ call, not this report's.
 
 ## Location
 
-Local only, on this machine:
+Local, on this machine:
 `C:\Users\gomni\.claude-science\orgs\507f6842-5f31-4700-810b-ef2f8851a6d3\workspaces\546fe95b-6295-4b36-92c3-038b033f2b5f\PHYS2-science-2026-11-01`
-No GitHub credential is configured in this workspace, so nothing was pushed to
-`gomni1/ClaudeCloud1`, no branch `grammar-science` was created and no pull
-request opened. The repository was not touched.
+
+Pushed to `gomni1/ClaudeCloud1`, branch `grammar-science`, as pull request
+**#9** — https://github.com/gomni1/ClaudeCloud1/pull/9. The branch adds only this folder: 28 files, every one with status
+*added*, no file outside the folder touched and no deletions anywhere.
