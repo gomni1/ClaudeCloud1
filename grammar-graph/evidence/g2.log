@@ -1,0 +1,10 @@
+G2 rep 0 lam 0.0: A=0.219 R=0.173 dens=0.0218 longest=2.4 nlong=0 cpu=34
+G2 rep 1 lam 0.0: A=0.219 R=0.166 dens=0.0219 longest=2.4 nlong=0 cpu=34
+G2 rep 2 lam 0.0: A=0.223 R=0.167 dens=0.0220 longest=2.4 nlong=0 cpu=34
+G2 rep 1 lam 0.006: A=0.295 R=0.185 dens=0.0218 longest=2.8 nlong=0 cpu=61
+G2 rep 0 lam 0.006: A=0.284 R=0.190 dens=0.0217 longest=2.4 nlong=0 cpu=61
+G2 rep 2 lam 0.006: A=0.290 R=0.188 dens=0.0218 longest=2.8 nlong=0 cpu=61
+G2 rep 1 lam 0.02: A=0.215 R=0.220 dens=0.0214 longest=2.8 nlong=0 cpu=85
+G2 rep 2 lam 0.02: A=0.220 R=0.216 dens=0.0216 longest=2.4 nlong=0 cpu=86
+G2 rep 0 lam 0.02: A=0.217 R=0.224 dens=0.0212 longest=2.8 nlong=0 cpu=86
+g2 done; CPU s 515.733925

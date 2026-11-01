@@ -104,6 +104,6 @@ if __name__ == "__main__":
         jobs = [(c, r) for c in ("R", "C0", "C5", "K") for r in (0, 1)]
         with Pool(4) as p:
             cpus = p.map(g3_job, jobs)
-    tot = sum(cpus) + (cpu_s() - c0)
+    tot = cpu_s() - c0  # main self + reaped pool children (workers' own figures are listed separately)
     json.dump(dict(part=part, cpu_s_workers=cpus, cpu_s_total=tot), open(os.path.join(EVID, f"{part}_cpu.json"), "w"))
     print(part, "done; CPU s", tot)
