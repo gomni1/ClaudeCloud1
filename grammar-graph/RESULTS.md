@@ -4,6 +4,18 @@
 
 SPEC.md frozen before any simulation code ran. SHA-256: `f9be5551a459fba1e3a150f46c509e120abfccbb311b675bf2ad0a91fdc6d1c6` (1 Nov 2026, commit "SPEC freeze").
 
+## Summary
+
+The site rule of draw 19387 was simulated exactly on fixed graphs (N = 10^4). On the triangulated sphere S, local
+phase defects are abundant (about 2.2% of faces in every frame). Their cores sit at low amplitude (D2 passes), and
+they are born and die in local opposite-sign pairs (D3 passes). But no defect keeps an identity for longer than 2.8
+time units (0.44 periods), so D1 (a persistent localised integer) is **killed** and D4 cannot be computed. No
+comparison class (K, R, C0, C5) hosts a track lasting 20 periods. On every sparse graph the well-mixed clock is lost:
+the global C fraction fluctuates with A of about 0.2-0.3 of the well-mixed cycle's spread, with no spectral line, at
+lam = 0, 0.006 and 0.02 alike. The harness failed H1 as frozen. That was a finite-size effect of the well-mixed chain
+at N = 10^4, not a code bug (see the bug log). It passed under revision R1 (H1 at N = 10^6), and **the G2/G3 verdicts
+count under R1 only**.
+
 <!-- BEGIN GENERATED -->
 ## Verdicts
 
@@ -31,6 +43,13 @@ S is topologically two-dimensional by construction; it is a declared comparison 
 | S | 0 | 10000 | 5.9988 | 0.6034 | 31 | 2.765 (2-15) | 19996 (faces) |
 | S | 1 | 10000 | 5.9988 | 0.6005 | 31 | 2.818 (2-15) | 19996 (faces) |
 | S | 2 | 10000 | 5.9988 | 0.6005 | 30 | 2.786 (2-15) | 19996 (faces) |
+| K | - | 10000 | 9999 | 1 | 1 | n/a (no radii 2..0) | C(10^4, 3) = 166616670000 |
+| R | 0 | 10000 | 8.0000 | 0.0005 | 7 | 4.763 (2-3) | 50 |
+| R | 1 | 10000 | 8.0000 | 0.0005 | 7 | 4.762 (2-3) | 46 |
+| C0 | 0 | 10000 | 8.0000 | 0.6429 | 1250 | 0.997 (2-625) | 60000 |
+| C0 | 1 | 10000 | 8.0000 | 0.6429 | 1250 | 0.997 (2-625) | 60000 |
+| C5 | 0 | 10000 | 8.0000 | 0.5513 | 15 | 3.553 (2-7) | 51195 |
+| C5 | 1 | 10000 | 8.0000 | 0.5549 | 16 | 3.710 (2-8) | 51550 |
 
 ## G2: class S by lam (3 replicates; mean over replicates, longest = max)
 
@@ -44,7 +63,13 @@ S is topologically two-dimensional by construction; it is a declared comparison 
 
 | Class | Rbar (global coherence) | A | Triangles | Defect density | Longest track | Tracks >= 20 periods |
 |---|---|---|---|---|---|---|
+| K | 1.000 | 1.278 | 166616670000 | 0.0000 | 0.0 | 0 |
+| R | 0.746 | 0.247 | 48 | 0.0296 | 2.0 | 0 |
+| C0 | 0.130 | 0.207 | 60000 | 0.0065 | 1.2 | 0 |
+| C5 | 0.075 | 0.214 | 51372 | 0.0196 | 1.6 | 0 |
 | S (G2, lam = 0) | 0.169 | 0.221 | 19996 | 0.0219 | 2.4 | 0 |
+
+C-report: classes hosting defect tracks lasting >= 20 periods: none (of K, R, C0, C5; S: none).
 
 ## CPU
 
@@ -52,7 +77,44 @@ S is topologically two-dimensional by construction; it is a declared comparison 
 |---|---|---|
 | G1 | 0.024 h (85 s, incl. H1-R1) | 0.5 h |
 | G2 | 0.072 h (258 s) | 3.0 h |
+| G3 | 0.055 h (196 s) | 1.5 h |
 <!-- END GENERATED -->
+
+## Reading the results
+
+- **D2 and D3 pass, but D1 is killed.** This is the profile of phase singularities in a spatially smoothed, temporally
+  filtered noisy field. Zeros of such a field sit at low amplitude (D2: ratio 0.43), and they are created and destroyed
+  as nearby opposite-sign pairs (D3: births and deaths paired at 99.999%). They live 1-7 frames. Track-lifetime
+  histograms are in `evidence/g2/*.json`. The D3 pass therefore describes short-lived pairs, not persistent defects.
+- **No collective clock on S.** The mean global (c, v) on S is (0.076, 0.657), against the well-mixed balance
+  (0.0812, 0.6332). An exploratory check, not preregistered (`evidence/exploratory_spectrum_S.json`): the
+  periodogram of the global C fraction has no line. Its largest bin is 12-15 times the median at every lam, which is
+  the level expected for the largest of about 2000 noise bins (about 11). A = 0.22 is broadband fluctuation.
+- **Rbar on R (0.75) is an offset, not synchrony.** On R the mean global (c, v) is (0.0945, 0.573), which is
+  +0.6 s_c and -1.0 s_v from (c*, v*). The radius-2 balls (65 sites) average the noise down, so most local phases
+  point the same way. A is 0.25 there too. C0 and C5 have Rbar 0.13 and 0.075, and mean states close to the balance.
+- **R has only 48 triangles** (locally tree-like; about (d-1)^3/6 = 57 expected), so its defect density is a density
+  over very few triangles. C0 has a lower density (0.65%) than S (2.2%) and C5 (2.0%). Rewiring 5% of the edges
+  triples it.
+- **K at N = 10^4** oscillates with A = 1.28, larger than the mean-field cycle (the H1 finding). Its fields are all
+  equal by construction, so no defects are possible there.
+- The total-winding identity held on every frame of all 9 runs on S (4764 frames each; 0 violations) and on
+  every planted field.
+
+## Past the Hopf point
+
+In the mean field the cycle is gone at lam = 0.02: the balance is a stable focus, and s_c, s_v are taken from lam = 0
+as preregistered. On S nothing changes qualitatively across the Hopf point. A is 0.221, 0.289 and 0.217 at lam = 0,
+0.006 and 0.02. Rbar rises slightly (0.169, 0.187, 0.220), defect density stays at 2.1-2.2%, and the longest track
+is 2.4-2.8 time units at every lam. On S the stochastic site dynamics is already non-oscillatory at lam = 0, so the
+mean-field bifurcation leaves no visible trace in these measurements.
+
+## Observational register
+
+Analogies only: short-lived opposite-sign phase-winding pairs that nucleate and annihilate locally resemble
+vortex-antivortex pair fluctuations in a two-dimensional medium below any binding regime, or virtual
+particle-antiparticle pairs, rather than stable particles; nothing here supports reading them as persistent
+particles.
 
 ## Revisions and bug log
 
@@ -68,3 +130,9 @@ S is topologically two-dimensional by construction; it is a declared comparison 
 - **Revision R1 (new claim, written after the exploratory check above, so not blind).** H1-R1: SPEC H1 unchanged
   (130 periods, discard 30, same estimators and tolerances) at N = 10^6, seed seed_of("H1", "R1"). If H1-R1 passes,
   the harness passes under R1 and G2/G3 are reported as counting under R1 only. Nothing else changes.
+  Result: H1-R1 **passes** (period 6.3535, range [0.0542, 0.1190]).
+- **Accounting fix (not a simulator bug):** the first `evidence/g2_cpu.json` double-counted CPU (it added the
+  workers' own figures to the parent's figure, which already includes the reaped workers). It was corrected to the
+  parent's figure (258 s) and the code was fixed before G3. No simulator, detector or tracker bug was found or fixed.
+- **Wording clarifications, criteria unchanged:** in D3, a fraction with zero events is underdetermined (stated in the
+  SPEC). In the G3 table, K's triangle count is C(10^4, 3) and its defect density 0, both by construction (SPEC 4).

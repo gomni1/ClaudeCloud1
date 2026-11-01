@@ -1,0 +1,9 @@
+G3 R rep 1: A=0.245 R=0.748 dens=0.0295 longest=1.6 cpu=24
+G3 R rep 0: A=0.249 R=0.745 dens=0.0298 longest=2.0 cpu=24
+G3 C0 rep 1: A=0.209 R=0.130 dens=0.0065 longest=1.2 cpu=27
+G3 C0 rep 0: A=0.206 R=0.130 dens=0.0065 longest=0.8 cpu=28
+G3 K rep 0: A=1.276 R=1.000 dens=0.0000 longest=0.0 cpu=1
+G3 K rep 1: A=1.281 R=1.000 dens=0.0000 longest=0.0 cpu=1
+G3 C5 rep 1: A=0.212 R=0.076 dens=0.0194 longest=1.6 cpu=46
+G3 C5 rep 0: A=0.215 R=0.074 dens=0.0198 longest=1.6 cpu=46
+g3 done; CPU s 196.254983

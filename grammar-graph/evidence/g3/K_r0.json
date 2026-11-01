@@ -1,0 +1,21 @@
+{
+ "cls": "K",
+ "rep": 0,
+ "A": 1.27565460219522,
+ "Rbar": 1.0,
+ "mean_c": 0.07526099773242631,
+ "mean_v": 0.6601015873015873,
+ "density": 0.0,
+ "ntri": 166616670000,
+ "longest": 0.0,
+ "n_long": 0,
+ "events": 33055624,
+ "note": "all local fields coincide (radius-2 ball = whole graph): phases equal, every winding 0, Rbar = 1 by construction",
+ "graph": {
+  "N": 10000,
+  "mean_degree": 9999,
+  "clustering": 1.0,
+  "diameter": 1,
+  "d_g": null
+ }
+}
