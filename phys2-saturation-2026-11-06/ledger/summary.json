@@ -1,0 +1,926 @@
+{
+  "claims_judged": 62,
+  "register_census": {
+    "not_a_physical_claim": 18,
+    "effective": 31,
+    "native": 11,
+    "observational": 2
+  },
+  "result_class_census": {
+    "not_a_result": 17,
+    "structural": 15,
+    "hygiene": 4,
+    "generative": 24,
+    "discriminating": 2
+  },
+  "rung_census": {
+    "mechanism": 49,
+    "instrument": 10,
+    "programme": 3
+  },
+  "mechanism_vs_instrument": {
+    "mechanism": 49,
+    "instrument": 10,
+    "instrument_share": 0.169
+  },
+  "identity_predicate_census": {
+    "obligation_closure": 1,
+    "closure_class": 1,
+    "signature_fidelity": 6,
+    "unstated": 2
+  },
+  "register_violations": [],
+  "anti_fitting_flags": [
+    {
+      "claim_id": "NOTE-Saturation-Mechanism-2026-11-06#0041",
+      "document": "NOTE-Saturation-Mechanism-2026-11-06",
+      "section": "The saturation mechanism in the working turnover grammar / Numerical receipts (preregistered; SPEC.md with R1)",
+      "claim": "N1 planted, as declared — creation k3·C² without using Void — flagged in 173 of 200 draws (86.5%) — reported, no criterion. It would have missed 95%, which is why R1 was made",
+      "value": 0.68
+    }
+  ],
+  "promotion_language_flags": [
+    {
+      "claim_id": "NOTE-Saturation-Mechanism-2026-11-06#0010",
+      "document": "NOTE-Saturation-Mechanism-2026-11-06",
+      "section": "The saturation mechanism in the working turnover grammar / In plain words",
+      "claim": "What bounds a level. On an open level every solution is bounded under any recruitment law whatever, including autocatalysis that strengthens without limit, provided seeding is present. The bound is set by supply from below, by breach, and by seeding, which keeps Void from piling up. It is not set by the threshold cap. Without seeding, an open level with no Contact accumulates Void without bound.",
+      "value": 0.65
+    },
+    {
+      "claim_id": "NOTE-Saturation-Mechanism-2026-11-06#0029",
+      "document": "NOTE-Saturation-Mechanism-2026-11-06",
+      "section": "The saturation mechanism in the working turnover grammar / S5. Cycling needs a lag (class A, with an exploratory check)",
+      "claim": "Statement. On a closed level with k1 = k7 = 0 and L(0) = P(0) = 0, C(t) is monotone and converges to a balance: no overshoot and no cycle. Proof. L and P stay 0, and V = T − C, so dC/dt = −k2·C + (k10 + k3·F(C/T))·(T − C) is a scalar autonomous equation, whose solutions are monotone. ∎ If L(0) or P(0) is positive, both decay exponentially and the limit set lies in the same scalar system. So on a closed level, cycling needs a delayed route back through L or P. This proves [theorem, model] the line 'Cycling around balance requires a lagged counter-process' on 'Self-limiting growth', for this grammar.",
+      "value": 0.69
+    },
+    {
+      "claim_id": "NOTE-Saturation-Mechanism-2026-11-06#0041",
+      "document": "NOTE-Saturation-Mechanism-2026-11-06",
+      "section": "The saturation mechanism in the working turnover grammar / Numerical receipts (preregistered; SPEC.md with R1)",
+      "claim": "N1 planted, as declared — creation k3·C² without using Void — flagged in 173 of 200 draws (86.5%) — reported, no criterion. It would have missed 95%, which is why R1 was made",
+      "value": 0.68
+    },
+    {
+      "claim_id": "NOTE-Saturation-Mechanism-2026-11-06#0057",
+      "document": "NOTE-Saturation-Mechanism-2026-11-06",
+      "section": "The saturation mechanism in the working turnover grammar / Placement on the premise map (done 6 Nov on Glenn's instruction to execute)",
+      "claim": "The gap 'The saturation mechanism itself' is archived as filled in the [model] register, with a pointer to the new node and its record kept. 'Why is the set of persistent closures discrete?' now rests on the new node in its place.",
+      "value": 0.64
+    }
+  ],
+  "negative_results": [
+    {
+      "claim_id": "NOTE-Saturation-Mechanism-2026-11-06#0000",
+      "document": "NOTE-Saturation-Mechanism-2026-11-06",
+      "section": "The saturation mechanism in the working turnover grammar",
+      "claim": "Stamp: SANDBOX / DRAFT. Promotes nothing. 6 Nov 2026. Claude. [model] register: the rate equations are an effective-register summary of step processes, at large numbers. Classes: A proved · B refuted as stated · C blocked · D not mathematical · E external fact. Target: the premise-map gap 'The saturation mechanism itself'. It asked for a recruitment law, a counter-process and a lag, stated at least in words, and for a balance set by the process itself. Declared first: SPEC.md (SHA-256 cc7ac93a1740b46be66acd2418567917823264359693a8d63c409801def9eb09) was hashed before any code was written. One revision, R1, changed the planted failure. It was declared before checks.py was written or any check run. Both are in RUN.md.",
+      "value": 0.64
+    },
+    {
+      "claim_id": "NOTE-Saturation-Mechanism-2026-11-06#0041",
+      "document": "NOTE-Saturation-Mechanism-2026-11-06",
+      "section": "The saturation mechanism in the working turnover grammar / Numerical receipts (preregistered; SPEC.md with R1)",
+      "claim": "N1 planted, as declared — creation k3·C² without using Void — flagged in 173 of 200 draws (86.5%) — reported, no criterion. It would have missed 95%, which is why R1 was made",
+      "value": 0.75
+    },
+    {
+      "claim_id": "NOTE-Saturation-Mechanism-2026-11-06#0043",
+      "document": "NOTE-Saturation-Mechanism-2026-11-06",
+      "section": "The saturation mechanism in the working turnover grammar / Numerical receipts (preregistered; SPEC.md with R1)",
+      "claim": "N3 (S4) — balance count, 5000 draws per level, kr ∈ 1..m — kr = 1: exactly one balance in 910 of 910 open and 971 of 971 closed draws. kr ≥ 2: three balances in 73 of 4090 open (1.8%) and 59 of 4029 closed (1.5%) draws, never two — kill not met; planted cubic: 3 roots found",
+      "value": 0.8
+    },
+    {
+      "claim_id": "NOTE-Saturation-Mechanism-2026-11-06#0044",
+      "document": "NOTE-Saturation-Mechanism-2026-11-06",
+      "section": "The saturation mechanism in the working turnover grammar / Numerical receipts (preregistered; SPEC.md with R1)",
+      "claim": "N4 (S5) — closed, k1 = k7 = 0, 300 draws: sign changes of dC/dt — 0 of 300 — kill not met",
+      "value": 0.95
+    },
+    {
+      "claim_id": "NOTE-Saturation-Mechanism-2026-11-06#0046",
+      "document": "NOTE-Saturation-Mechanism-2026-11-06",
+      "section": "The saturation mechanism in the working turnover grammar / Numerical receipts (preregistered; SPEC.md with R1)",
+      "claim": "Still filling: 79 runs, all below the pin. Over the window the level's total was still growing, mostly into L or Void. In these runs the window identity holds to 10⁻⁶. That identity is exact: the mean of C equals the pin, minus the growth of the total and the change in P over the window. In the six lowest runs, growth of the total accounts for the whole shortfall. A later window, from 10 to 20 times the run length, moves all 79 toward the pin (0.019 → 0.31, 0.08 → 0.80, 0.12 → 0.91), and leaves 10 more than 5% off. The declared run length, 200 over the smallest rate, is shorter than some levels take to fill.",
+      "value": 0.8
+    },
+    {
+      "claim_id": "NOTE-Saturation-Mechanism-2026-11-06#0047",
+      "document": "NOTE-Saturation-Mechanism-2026-11-06",
+      "section": "The saturation mechanism in the working turnover grammar / Numerical receipts (preregistered; SPEC.md with R1)",
+      "claim": "Sampling: 4 runs, plus 11 within 5%, all under k3·C² recruitment. The 2001-point output grid is too coarse for the motion, so the sampled mean is wrong: the sampled identity is off by up to 76%. Integrating ∫C dt along with the ODE restores the identity to 10⁻¹¹. It puts 14 of these 15 runs within 1.2% of the pin; the fifteenth, at 0.83, is still filling. In draw 245 the sampled mean is 1.75 times the pin; integrated, it is 0.996.",
+      "value": 0.79
+    },
+    {
+      "claim_id": "NOTE-Saturation-Mechanism-2026-11-06#0048",
+      "document": "NOTE-Saturation-Mechanism-2026-11-06",
+      "section": "The saturation mechanism in the working turnover grammar / Numerical receipts (preregistered; SPEC.md with R1)",
+      "claim": "What this means for N1: as declared, N1 checks the bound only at output times. In these 15 runs, the motion between output times was not checked. S1 rests on its proof; N1 is a receipt.",
+      "value": 0.62
+    },
+    {
+      "claim_id": "NOTE-Saturation-Mechanism-2026-11-06#0050",
+      "document": "NOTE-Saturation-Mechanism-2026-11-06",
+      "section": "The saturation mechanism in the working turnover grammar / What this does not show",
+      "claim": "Anything at the composite rung, or about a persistent composite. 'Self-limiting growth' keeps its kill line, which needs a persistent composite, and none exists yet.",
+      "value": 0.91
+    },
+    {
+      "claim_id": "NOTE-Saturation-Mechanism-2026-11-06#0052",
+      "document": "NOTE-Saturation-Mechanism-2026-11-06",
+      "section": "The saturation mechanism in the working turnover grammar / What this does not show",
+      "claim": "The size of the bound. w_max·w_V·k12 is loose, and it is not a prediction of how much a level holds. S2 gives that for Contact.",
+      "value": 0.65
+    }
+  ],
+  "ra1_dependent": [],
+  "a3_dependent": [],
+  "high_insertion_risk": [
+    {
+      "claim_id": "NOTE-Saturation-Mechanism-2026-11-06#0004",
+      "document": "NOTE-Saturation-Mechanism-2026-11-06",
+      "section": "The saturation mechanism in the working turnover grammar",
+      "claim": "S1 reads off how the grammar is built: a role change moves a unit between roles and creates none. Its content is the identification of what bounds a level, not a dynamical discovery (P2.6-03 §3: a calculation must not merely certify its own construction).",
+      "value": 2.83
+    },
+    {
+      "claim_id": "NOTE-Saturation-Mechanism-2026-11-06#0005",
+      "document": "NOTE-Saturation-Mechanism-2026-11-06",
+      "section": "The saturation mechanism in the working turnover grammar",
+      "claim": "S2 is already on the map, in 'A level is set by three things…'. It is restated here for any recruitment law, not claimed as new.",
+      "value": 2.79
+    },
+    {
+      "claim_id": "NOTE-Saturation-Mechanism-2026-11-06#0029",
+      "document": "NOTE-Saturation-Mechanism-2026-11-06",
+      "section": "The saturation mechanism in the working turnover grammar / S5. Cycling needs a lag (class A, with an exploratory check)",
+      "claim": "Statement. On a closed level with k1 = k7 = 0 and L(0) = P(0) = 0, C(t) is monotone and converges to a balance: no overshoot and no cycle. Proof. L and P stay 0, and V = T − C, so dC/dt = −k2·C + (k10 + k3·F(C/T))·(T − C) is a scalar autonomous equation, whose solutions are monotone. ∎ If L(0) or P(0) is positive, both decay exponentially and the limit set lies in the same scalar system. So on a closed level, cycling needs a delayed route back through L or P. This proves [theorem, model] the line 'Cycling around balance requires a lagged counter-process' on 'Self-limiting growth', for this grammar.",
+      "value": 2.79
+    },
+    {
+      "claim_id": "NOTE-Saturation-Mechanism-2026-11-06#0018",
+      "document": "NOTE-Saturation-Mechanism-2026-11-06",
+      "section": "The saturation mechanism in the working turnover grammar / S1. A level is bounded by role conservation, under any recruitment law (class A)",
+      "claim": "so every non-negative solution is bounded. On the closed level, C + V + L + P is constant.",
+      "value": 2.76
+    },
+    {
+      "claim_id": "NOTE-Saturation-Mechanism-2026-11-06#0022",
+      "document": "NOTE-Saturation-Mechanism-2026-11-06",
+      "section": "The saturation mechanism in the working turnover grammar / S1. A level is bounded by role conservation, under any recruitment law (class A)",
+      "claim": "What it says. Recruitment moves substrate from Void to Contact, one step nearer the only exit. It never adds substrate, so in the weighted count it can only lower the load. That is why no recruitment law, however strongly it favours growth, can make a level run away: mass action (ρ = k3·C) and ρ = k3·C² are bounded too. The threshold cap F ≤ 1 is not used. The crowding release is not used.",
+      "value": 2.7
+    },
+    {
+      "claim_id": "NOTE-Saturation-Mechanism-2026-11-06#0023",
+      "document": "NOTE-Saturation-Mechanism-2026-11-06",
+      "section": "The saturation mechanism in the working turnover grammar / S1b. Seeding is what bounds the Void reserve (class A)",
+      "claim": "Statement. With k10 = 0, under the threshold law (kr ≥ 1) or mass action, the open level has unbounded solutions. Proof. On the face C = L = P = 0 the recruitment flux is 0 (F(0) = 0 for kr ≥ 1, and k3·V·C = 0), so the face is invariant and dV/dt = k12 on it. Then V(t) = V(0) + k12·t. ∎ 'One level of the grammar persists under threshold rates…' already showed seeding necessary for persistence [theorem, model]. S1b adds that, on an open level, it is also necessary for boundedness [theorem, model].",
+      "value": 2.69
+    },
+    {
+      "claim_id": "NOTE-Saturation-Mechanism-2026-11-06#0009",
+      "document": "NOTE-Saturation-Mechanism-2026-11-06",
+      "section": "The saturation mechanism in the working turnover grammar / In plain words",
+      "claim": "Counter-process. The Void that growth uses up. Each recruitment turns a unit of Void into a unit of Contact and creates nothing, so recruitment per unit of Contact falls as Contact's share rises. No release triggered by crowding is needed, and the working grammar has none.",
+      "value": 2.65
+    },
+    {
+      "claim_id": "NOTE-Saturation-Mechanism-2026-11-06#0019",
+      "document": "NOTE-Saturation-Mechanism-2026-11-06",
+      "section": "The saturation mechanism in the working turnover grammar / S1. A level is bounded by role conservation, under any recruitment law (class A)",
+      "claim": "Proof. Write dy/dt = A0·y + ρ·V·(e_C − e_V) + k12·e_V. A0 is compartmental: off-diagonal entries ≥ 0, column sums 0 except P's, which is −k9. Under A0 every role reaches the exit: V → C at k10, C → P at k7, P → out at k9, and L → V or C at k5 + k6. So −A0 is a nonsingular M-matrix and w = (−A0)⁻ᵀ·1 > 0. The V-column of wᵀA0 = −1ᵀ reads k10·(w_C − w_V) = −1, so w_V − w_C = 1/k10 > 0. Then",
+      "value": 2.65
+    },
+    {
+      "claim_id": "NOTE-Saturation-Mechanism-2026-11-06#0020",
+      "document": "NOTE-Saturation-Mechanism-2026-11-06",
+      "section": "The saturation mechanism in the working turnover grammar / S1. A level is bounded by role conservation, under any recruitment law (class A)",
+      "claim": "d(w·y)/dt = −(C + V + L + P) − ρ·V/k10 + w_V·k12 ≤ w_V·k12 − (w·y)/w_max,",
+      "value": 2.61
+    },
+    {
+      "claim_id": "NOTE-Saturation-Mechanism-2026-11-06#0027",
+      "document": "NOTE-Saturation-Mechanism-2026-11-06",
+      "section": "The saturation mechanism in the working turnover grammar / S3. The counter-process is density-triggered (class A)",
+      "claim": "For kr ≥ 2, F(x)/x ~ C(m, kr)·x^(kr−1) → 0 as x → 0, so r rises from zero and then falls to zero as V/T → 0. This is a threshold: scarce Contact cannot recruit, and seeding carries it.",
+      "value": 2.61
+    },
+    {
+      "claim_id": "NOTE-Saturation-Mechanism-2026-11-06#0008",
+      "document": "NOTE-Saturation-Mechanism-2026-11-06",
+      "section": "The saturation mechanism in the working turnover grammar / In plain words",
+      "claim": "Recruitment law. Void becomes Contact at k3·V·F(x), where F(x) is the chance that at least kr of a site's m neighbours are Contact, plus seeding at k10·V. With one-neighbour recruitment (kr = 1), sparse Contact grows in proportion to the Contact present. With kr ≥ 2 it grows as a power of it, so scarce Contact relies on seeding.",
+      "value": 2.55
+    },
+    {
+      "claim_id": "NOTE-Saturation-Mechanism-2026-11-06#0026",
+      "document": "NOTE-Saturation-Mechanism-2026-11-06",
+      "section": "The saturation mechanism in the working turnover grammar / S3. The counter-process is density-triggered (class A)",
+      "claim": "For kr = 1, r falls strictly as Contact's share x rises: F(x)/x = (1 − (1 − x)^m)/x = Σ_{j=0}^{m−1} (1 − x)^j, which strictly decreases from m at x → 0 for m ≥ 2, and V/T = 1 − x − (L + P)/T also falls.",
+      "value": 2.43
+    },
+    {
+      "claim_id": "NOTE-Saturation-Mechanism-2026-11-06#0056",
+      "document": "NOTE-Saturation-Mechanism-2026-11-06",
+      "section": "The saturation mechanism in the working turnover grammar / Placement on the premise map (done 6 Nov on Glenn's instruction to execute)",
+      "claim": "New Known node: 'In the working grammar, growth pays for itself in Void: a level is bounded under any recruitment law, and cycling needs a lag'. Not promoted.",
+      "value": 2.33
+    },
+    {
+      "claim_id": "NOTE-Saturation-Mechanism-2026-11-06#0007",
+      "document": "NOTE-Saturation-Mechanism-2026-11-06",
+      "section": "The saturation mechanism in the working turnover grammar / In plain words",
+      "claim": "In the grammar now in use, every part the gap asked for can be stated and proved.",
+      "value": 2.3
+    },
+    {
+      "claim_id": "NOTE-Saturation-Mechanism-2026-11-06#0032",
+      "document": "NOTE-Saturation-Mechanism-2026-11-06",
+      "section": "The saturation mechanism in the working turnover grammar / S5. Cycling needs a lag (class A, with an exploratory check)",
+      "claim": "19387, closed — k7 (through P) — cycle, 6.352 — rest — rest — rest — rest",
+      "value": 2.29
+    },
+    {
+      "claim_id": "NOTE-Saturation-Mechanism-2026-11-06#0016",
+      "document": "NOTE-Saturation-Mechanism-2026-11-06",
+      "section": "The saturation mechanism in the working turnover grammar / The grammar",
+      "claim": "Two constants recur: D = k2 + k7 + k1·k5/(k5 + k6), the net loss rate of Contact once L has settled, and c = 1 + k1/(k5 + k6) + k7/k8.",
+      "value": 2.27
+    },
+    {
+      "claim_id": "NOTE-Saturation-Mechanism-2026-11-06#0021",
+      "document": "NOTE-Saturation-Mechanism-2026-11-06",
+      "section": "The saturation mechanism in the working turnover grammar / S1. A level is bounded by role conservation, under any recruitment law (class A)",
+      "claim": "and the bound follows by comparison. On the closed level the four right-hand sides sum to zero. ∎",
+      "value": 2.27
+    },
+    {
+      "claim_id": "NOTE-Saturation-Mechanism-2026-11-06#0012",
+      "document": "NOTE-Saturation-Mechanism-2026-11-06",
+      "section": "The saturation mechanism in the working turnover grammar / In plain words",
+      "claim": "The lag. On a closed level with only Contact and Void, overshoot and cycling are impossible. A cycle needs a delayed route back through L or P. Of the two moderate-rate clocks, the closed one needs both routes and the open one needs only the route through P.",
+      "value": 2.26
+    },
+    {
+      "claim_id": "NOTE-Saturation-Mechanism-2026-11-06#0003",
+      "document": "NOTE-Saturation-Mechanism-2026-11-06",
+      "section": "The saturation mechanism in the working turnover grammar",
+      "claim": "The class-A results are short proofs, given in full below. The numerical checks are preregistered receipts with kill lines and planted failures. They are not proofs.",
+      "value": 2.25
+    },
+    {
+      "claim_id": "NOTE-Saturation-Mechanism-2026-11-06#0002",
+      "document": "NOTE-Saturation-Mechanism-2026-11-06",
+      "section": "The saturation mechanism in the working turnover grammar",
+      "claim": "A level is not a composite. 'Self-limiting growth' is stated for composites, and nothing here is carried to the composite rung.",
+      "value": 2.16
+    },
+    {
+      "claim_id": "NOTE-Saturation-Mechanism-2026-11-06#0031",
+      "document": "NOTE-Saturation-Mechanism-2026-11-06",
+      "section": "The saturation mechanism in the working turnover grammar / S5. Cycling needs a lag (class A, with an exploratory check)",
+      "claim": "19387, closed — k1 (through L) — cycle, 6.352 — rest — rest — rest — rest",
+      "value": 2.13
+    },
+    {
+      "claim_id": "NOTE-Saturation-Mechanism-2026-11-06#0042",
+      "document": "NOTE-Saturation-Mechanism-2026-11-06",
+      "section": "The saturation mechanism in the working turnover grammar / Numerical receipts (preregistered; SPEC.md with R1)",
+      "claim": "N2 (S1b) — k10 = 0 from (0, V0, 0, 0): V(100) = V0 + 100·k12 — max relative error 6.4×10⁻¹⁶ in 20 draws per law — pass",
+      "value": 2.05
+    },
+    {
+      "claim_id": "NOTE-Saturation-Mechanism-2026-11-06#0024",
+      "document": "NOTE-Saturation-Mechanism-2026-11-06",
+      "section": "The saturation mechanism in the working turnover grammar / S2. Contact is pinned by throughput (restated; already on the map)",
+      "claim": "At any balance of the open level, and for any ρ: dP/dt = 0 and d(C + V + L + P)/dt = k12 − k9·P = 0 give P = k12/k9, C = (k8 + k9)·k12/(k7·k9) and L = k1·C/(k5 + k6). Along any solution, bounded by S1, the long-run means of P and C converge to the same values, because (total(t) − total(0))/t → 0 and (P(t) − P(0))/t → 0. So recruitment and seeding set only the Void reserve. 'A level is set by three things…' already carries this. The only addition here is that it holds for every recruitment law.",
+      "value": 2.02
+    }
+  ],
+  "overclaims": [
+    {
+      "claim_id": "NOTE-Saturation-Mechanism-2026-11-06#0012",
+      "document": "NOTE-Saturation-Mechanism-2026-11-06",
+      "section": "The saturation mechanism in the working turnover grammar / In plain words",
+      "claim": "The lag. On a closed level with only Contact and Void, overshoot and cycling are impossible. A cycle needs a delayed route back through L or P. Of the two moderate-rate clocks, the closed one needs both routes and the open one needs only the route through P.",
+      "value": 2.94
+    },
+    {
+      "claim_id": "NOTE-Saturation-Mechanism-2026-11-06#0010",
+      "document": "NOTE-Saturation-Mechanism-2026-11-06",
+      "section": "The saturation mechanism in the working turnover grammar / In plain words",
+      "claim": "What bounds a level. On an open level every solution is bounded under any recruitment law whatever, including autocatalysis that strengthens without limit, provided seeding is present. The bound is set by supply from below, by breach, and by seeding, which keeps Void from piling up. It is not set by the threshold cap. Without seeding, an open level with no Contact accumulates Void without bound.",
+      "value": 2.89
+    },
+    {
+      "claim_id": "NOTE-Saturation-Mechanism-2026-11-06#0056",
+      "document": "NOTE-Saturation-Mechanism-2026-11-06",
+      "section": "The saturation mechanism in the working turnover grammar / Placement on the premise map (done 6 Nov on Glenn's instruction to execute)",
+      "claim": "New Known node: 'In the working grammar, growth pays for itself in Void: a level is bounded under any recruitment law, and cycling needs a lag'. Not promoted.",
+      "value": 2.88
+    },
+    {
+      "claim_id": "NOTE-Saturation-Mechanism-2026-11-06#0011",
+      "document": "NOTE-Saturation-Mechanism-2026-11-06",
+      "section": "The saturation mechanism in the working turnover grammar / In plain words",
+      "claim": "The balance. The amount of Contact at a balance is pinned by throughput. Recruitment and seeding set only the Void reserve around it. With kr = 1 there is exactly one balance. With kr ≥ 2 there can be three: two stable and one unstable, all with the same Contact and differing in Void reserve.",
+      "value": 2.84
+    },
+    {
+      "claim_id": "NOTE-Saturation-Mechanism-2026-11-06#0013",
+      "document": "NOTE-Saturation-Mechanism-2026-11-06",
+      "section": "The saturation mechanism in the working turnover grammar / In plain words",
+      "claim": "Claude's reading, not a derivation: this is the shape monism asks for ('No bound on a pattern can be supplied from outside'). The bound is the single substrate's own role conservation: Contact and Void are roles, not substances (floor 'Contact and Void are scale-relative roles'). It is not an added rule.",
+      "value": 2.83
+    },
+    {
+      "claim_id": "NOTE-Saturation-Mechanism-2026-11-06#0007",
+      "document": "NOTE-Saturation-Mechanism-2026-11-06",
+      "section": "The saturation mechanism in the working turnover grammar / In plain words",
+      "claim": "In the grammar now in use, every part the gap asked for can be stated and proved.",
+      "value": 2.74
+    },
+    {
+      "claim_id": "NOTE-Saturation-Mechanism-2026-11-06#0030",
+      "document": "NOTE-Saturation-Mechanism-2026-11-06",
+      "section": "The saturation mechanism in the working turnover grammar / S5. Cycling needs a lag (class A, with an exploratory check)",
+      "claim": "Exploratory, no kill. With the crowding release off, each delayed route of the two moderate-rate clocks was scaled down by s:",
+      "value": 2.64
+    },
+    {
+      "claim_id": "NOTE-Saturation-Mechanism-2026-11-06#0004",
+      "document": "NOTE-Saturation-Mechanism-2026-11-06",
+      "section": "The saturation mechanism in the working turnover grammar",
+      "claim": "S1 reads off how the grammar is built: a role change moves a unit between roles and creates none. Its content is the identification of what bounds a level, not a dynamical discovery (P2.6-03 §3: a calculation must not merely certify its own construction).",
+      "value": 2.6
+    },
+    {
+      "claim_id": "NOTE-Saturation-Mechanism-2026-11-06#0008",
+      "document": "NOTE-Saturation-Mechanism-2026-11-06",
+      "section": "The saturation mechanism in the working turnover grammar / In plain words",
+      "claim": "Recruitment law. Void becomes Contact at k3·V·F(x), where F(x) is the chance that at least kr of a site's m neighbours are Contact, plus seeding at k10·V. With one-neighbour recruitment (kr = 1), sparse Contact grows in proportion to the Contact present. With kr ≥ 2 it grows as a power of it, so scarce Contact relies on seeding.",
+      "value": 2.58
+    },
+    {
+      "claim_id": "NOTE-Saturation-Mechanism-2026-11-06#0047",
+      "document": "NOTE-Saturation-Mechanism-2026-11-06",
+      "section": "The saturation mechanism in the working turnover grammar / Numerical receipts (preregistered; SPEC.md with R1)",
+      "claim": "Sampling: 4 runs, plus 11 within 5%, all under k3·C² recruitment. The 2001-point output grid is too coarse for the motion, so the sampled mean is wrong: the sampled identity is off by up to 76%. Integrating ∫C dt along with the ODE restores the identity to 10⁻¹¹. It puts 14 of these 15 runs within 1.2% of the pin; the fifteenth, at 0.83, is still filling. In draw 245 the sampled mean is 1.75 times the pin; integrated, it is 0.996.",
+      "value": 2.58
+    },
+    {
+      "claim_id": "NOTE-Saturation-Mechanism-2026-11-06#0046",
+      "document": "NOTE-Saturation-Mechanism-2026-11-06",
+      "section": "The saturation mechanism in the working turnover grammar / Numerical receipts (preregistered; SPEC.md with R1)",
+      "claim": "Still filling: 79 runs, all below the pin. Over the window the level's total was still growing, mostly into L or Void. In these runs the window identity holds to 10⁻⁶. That identity is exact: the mean of C equals the pin, minus the growth of the total and the change in P over the window. In the six lowest runs, growth of the total accounts for the whole shortfall. A later window, from 10 to 20 times the run length, moves all 79 toward the pin (0.019 → 0.31, 0.08 → 0.80, 0.12 → 0.91), and leaves 10 more than 5% off. The declared run length, 200 over the smallest rate, is shorter than some levels take to fill.",
+      "value": 2.39
+    },
+    {
+      "claim_id": "NOTE-Saturation-Mechanism-2026-11-06#0022",
+      "document": "NOTE-Saturation-Mechanism-2026-11-06",
+      "section": "The saturation mechanism in the working turnover grammar / S1. A level is bounded by role conservation, under any recruitment law (class A)",
+      "claim": "What it says. Recruitment moves substrate from Void to Contact, one step nearer the only exit. It never adds substrate, so in the weighted count it can only lower the load. That is why no recruitment law, however strongly it favours growth, can make a level run away: mass action (ρ = k3·C) and ρ = k3·C² are bounded too. The threshold cap F ≤ 1 is not used. The crowding release is not used.",
+      "value": 2.34
+    },
+    {
+      "claim_id": "NOTE-Saturation-Mechanism-2026-11-06#0055",
+      "document": "NOTE-Saturation-Mechanism-2026-11-06",
+      "section": "The saturation mechanism in the working turnover grammar / Kill triggers",
+      "claim": "The reading 'saturation is role conservation': a route admitted in the grammar that creates Contact without using Void, or an open level that is bounded with every listed rate positive although its bound involves none of supply, breach or seeding.",
+      "value": 2.33
+    },
+    {
+      "claim_id": "NOTE-Saturation-Mechanism-2026-11-06#0017",
+      "document": "NOTE-Saturation-Mechanism-2026-11-06",
+      "section": "The saturation mechanism in the working turnover grammar / S1. A level is bounded by role conservation, under any recruitment law (class A)",
+      "claim": "Statement. Let k10, k7, k9 > 0 and k5 + k6 > 0. On the open level, let ρ(t) ≥ 0 be any recruitment per unit of Void along the solution, depending on the state in any way. Let A0 be the level's transfer matrix with ρ = 0, and w the vector of expected times to exit under A0, so that wᵀ(−A0) = 1ᵀ. Then",
+      "value": 2.29
+    },
+    {
+      "claim_id": "NOTE-Saturation-Mechanism-2026-11-06#0048",
+      "document": "NOTE-Saturation-Mechanism-2026-11-06",
+      "section": "The saturation mechanism in the working turnover grammar / Numerical receipts (preregistered; SPEC.md with R1)",
+      "claim": "What this means for N1: as declared, N1 checks the bound only at output times. In these 15 runs, the motion between output times was not checked. S1 rests on its proof; N1 is a receipt.",
+      "value": 2.26
+    },
+    {
+      "claim_id": "NOTE-Saturation-Mechanism-2026-11-06#0024",
+      "document": "NOTE-Saturation-Mechanism-2026-11-06",
+      "section": "The saturation mechanism in the working turnover grammar / S2. Contact is pinned by throughput (restated; already on the map)",
+      "claim": "At any balance of the open level, and for any ρ: dP/dt = 0 and d(C + V + L + P)/dt = k12 − k9·P = 0 give P = k12/k9, C = (k8 + k9)·k12/(k7·k9) and L = k1·C/(k5 + k6). Along any solution, bounded by S1, the long-run means of P and C converge to the same values, because (total(t) − total(0))/t → 0 and (P(t) − P(0))/t → 0. So recruitment and seeding set only the Void reserve. 'A level is set by three things…' already carries this. The only addition here is that it holds for every recruitment law.",
+      "value": 2.25
+    },
+    {
+      "claim_id": "NOTE-Saturation-Mechanism-2026-11-06#0009",
+      "document": "NOTE-Saturation-Mechanism-2026-11-06",
+      "section": "The saturation mechanism in the working turnover grammar / In plain words",
+      "claim": "Counter-process. The Void that growth uses up. Each recruitment turns a unit of Void into a unit of Contact and creates nothing, so recruitment per unit of Contact falls as Contact's share rises. No release triggered by crowding is needed, and the working grammar has none.",
+      "value": 2.13
+    },
+    {
+      "claim_id": "NOTE-Saturation-Mechanism-2026-11-06#0043",
+      "document": "NOTE-Saturation-Mechanism-2026-11-06",
+      "section": "The saturation mechanism in the working turnover grammar / Numerical receipts (preregistered; SPEC.md with R1)",
+      "claim": "N3 (S4) — balance count, 5000 draws per level, kr ∈ 1..m — kr = 1: exactly one balance in 910 of 910 open and 971 of 971 closed draws. kr ≥ 2: three balances in 73 of 4090 open (1.8%) and 59 of 4029 closed (1.5%) draws, never two — kill not met; planted cubic: 3 roots found",
+      "value": 2.09
+    },
+    {
+      "claim_id": "NOTE-Saturation-Mechanism-2026-11-06#0003",
+      "document": "NOTE-Saturation-Mechanism-2026-11-06",
+      "section": "The saturation mechanism in the working turnover grammar",
+      "claim": "The class-A results are short proofs, given in full below. The numerical checks are preregistered receipts with kill lines and planted failures. They are not proofs.",
+      "value": 2.03
+    }
+  ],
+  "low_confidence_review_queue": [
+    {
+      "claim_id": "NOTE-Saturation-Mechanism-2026-11-06#0000",
+      "question": "result_class",
+      "confidence": 0.39,
+      "claim": "Stamp: SANDBOX / DRAFT. Promotes nothing. 6 Nov 2026. Claude. [model] register: the rate equations are an effective-register summary of step processes, at large numbers. Classes: A proved · B refuted as stated · C blocked · D not mathematical · E external fact. Target: the premise-map gap 'The saturation mechanism itself'. It asked for a recruitment law, a counter-process and a lag, stated at least in words, and for a balance set by the process itself. Declared first: SPEC.md (SHA-256 cc7ac93a1740b46be66acd2418567917823264359693a8d63c409801def9eb09) was hashed before any code was written. One revision, R1, changed the planted failure. It was declared before checks.py was written or any check run. Both are in RUN.md."
+    },
+    {
+      "claim_id": "NOTE-Saturation-Mechanism-2026-11-06#0000",
+      "question": "rung_kind",
+      "confidence": 0.53,
+      "claim": "Stamp: SANDBOX / DRAFT. Promotes nothing. 6 Nov 2026. Claude. [model] register: the rate equations are an effective-register summary of step processes, at large numbers. Classes: A proved · B refuted as stated · C blocked · D not mathematical · E external fact. Target: the premise-map gap 'The saturation mechanism itself'. It asked for a recruitment law, a counter-process and a lag, stated at least in words, and for a balance set by the process itself. Declared first: SPEC.md (SHA-256 cc7ac93a1740b46be66acd2418567917823264359693a8d63c409801def9eb09) was hashed before any code was written. One revision, R1, changed the planted failure. It was declared before checks.py was written or any check run. Both are in RUN.md."
+    },
+    {
+      "claim_id": "NOTE-Saturation-Mechanism-2026-11-06#0001",
+      "question": "result_class",
+      "confidence": 0.32,
+      "claim": "Everything here is [model]. It concerns one level of the Contact/Void grammar as encoded in pull request 4 (roles C, V, L, P), with the crowding release removed (Glenn, 1 Nov) and the all-neighbours count (Glenn, 31 Oct). Whether these rate laws are physically entitled is the separate gap 'What rate law do threshold triggers give over the ensemble?', which this note does not touch."
+    },
+    {
+      "claim_id": "NOTE-Saturation-Mechanism-2026-11-06#0002",
+      "question": "register",
+      "confidence": 0.27,
+      "claim": "A level is not a composite. 'Self-limiting growth' is stated for composites, and nothing here is carried to the composite rung."
+    },
+    {
+      "claim_id": "NOTE-Saturation-Mechanism-2026-11-06#0003",
+      "question": "rung_kind",
+      "confidence": 0.09,
+      "claim": "The class-A results are short proofs, given in full below. The numerical checks are preregistered receipts with kill lines and planted failures. They are not proofs."
+    },
+    {
+      "claim_id": "NOTE-Saturation-Mechanism-2026-11-06#0004",
+      "question": "register",
+      "confidence": 0.32,
+      "claim": "S1 reads off how the grammar is built: a role change moves a unit between roles and creates none. Its content is the identification of what bounds a level, not a dynamical discovery (P2.6-03 §3: a calculation must not merely certify its own construction)."
+    },
+    {
+      "claim_id": "NOTE-Saturation-Mechanism-2026-11-06#0004",
+      "question": "result_class",
+      "confidence": 0.36,
+      "claim": "S1 reads off how the grammar is built: a role change moves a unit between roles and creates none. Its content is the identification of what bounds a level, not a dynamical discovery (P2.6-03 §3: a calculation must not merely certify its own construction)."
+    },
+    {
+      "claim_id": "NOTE-Saturation-Mechanism-2026-11-06#0004",
+      "question": "rung_kind",
+      "confidence": 0.41,
+      "claim": "S1 reads off how the grammar is built: a role change moves a unit between roles and creates none. Its content is the identification of what bounds a level, not a dynamical discovery (P2.6-03 §3: a calculation must not merely certify its own construction)."
+    },
+    {
+      "claim_id": "NOTE-Saturation-Mechanism-2026-11-06#0005",
+      "question": "result_class",
+      "confidence": 0.46,
+      "claim": "S2 is already on the map, in 'A level is set by three things…'. It is restated here for any recruitment law, not claimed as new."
+    },
+    {
+      "claim_id": "NOTE-Saturation-Mechanism-2026-11-06#0006",
+      "question": "result_class",
+      "confidence": 0.22,
+      "claim": "The lag check on the two moderate-rate clocks is exploratory: two clocks, numerical, no kill line."
+    },
+    {
+      "claim_id": "NOTE-Saturation-Mechanism-2026-11-06#0007",
+      "question": "register",
+      "confidence": 0.54,
+      "claim": "In the grammar now in use, every part the gap asked for can be stated and proved."
+    },
+    {
+      "claim_id": "NOTE-Saturation-Mechanism-2026-11-06#0007",
+      "question": "result_class",
+      "confidence": 0.39,
+      "claim": "In the grammar now in use, every part the gap asked for can be stated and proved."
+    },
+    {
+      "claim_id": "NOTE-Saturation-Mechanism-2026-11-06#0008",
+      "question": "register",
+      "confidence": 0.51,
+      "claim": "Recruitment law. Void becomes Contact at k3·V·F(x), where F(x) is the chance that at least kr of a site's m neighbours are Contact, plus seeding at k10·V. With one-neighbour recruitment (kr = 1), sparse Contact grows in proportion to the Contact present. With kr ≥ 2 it grows as a power of it, so scarce Contact relies on seeding."
+    },
+    {
+      "claim_id": "NOTE-Saturation-Mechanism-2026-11-06#0008",
+      "question": "result_class",
+      "confidence": 0.36,
+      "claim": "Recruitment law. Void becomes Contact at k3·V·F(x), where F(x) is the chance that at least kr of a site's m neighbours are Contact, plus seeding at k10·V. With one-neighbour recruitment (kr = 1), sparse Contact grows in proportion to the Contact present. With kr ≥ 2 it grows as a power of it, so scarce Contact relies on seeding."
+    },
+    {
+      "claim_id": "NOTE-Saturation-Mechanism-2026-11-06#0009",
+      "question": "register",
+      "confidence": 0.42,
+      "claim": "Counter-process. The Void that growth uses up. Each recruitment turns a unit of Void into a unit of Contact and creates nothing, so recruitment per unit of Contact falls as Contact's share rises. No release triggered by crowding is needed, and the working grammar has none."
+    },
+    {
+      "claim_id": "NOTE-Saturation-Mechanism-2026-11-06#0009",
+      "question": "result_class",
+      "confidence": 0.35,
+      "claim": "Counter-process. The Void that growth uses up. Each recruitment turns a unit of Void into a unit of Contact and creates nothing, so recruitment per unit of Contact falls as Contact's share rises. No release triggered by crowding is needed, and the working grammar has none."
+    },
+    {
+      "claim_id": "NOTE-Saturation-Mechanism-2026-11-06#0010",
+      "question": "register",
+      "confidence": 0.37,
+      "claim": "What bounds a level. On an open level every solution is bounded under any recruitment law whatever, including autocatalysis that strengthens without limit, provided seeding is present. The bound is set by supply from below, by breach, and by seeding, which keeps Void from piling up. It is not set by the threshold cap. Without seeding, an open level with no Contact accumulates Void without bound."
+    },
+    {
+      "claim_id": "NOTE-Saturation-Mechanism-2026-11-06#0011",
+      "question": "identity_predicate",
+      "confidence": 0.52,
+      "claim": "The balance. The amount of Contact at a balance is pinned by throughput. Recruitment and seeding set only the Void reserve around it. With kr = 1 there is exactly one balance. With kr ≥ 2 there can be three: two stable and one unstable, all with the same Contact and differing in Void reserve."
+    },
+    {
+      "claim_id": "NOTE-Saturation-Mechanism-2026-11-06#0013",
+      "question": "result_class",
+      "confidence": 0.51,
+      "claim": "Claude's reading, not a derivation: this is the shape monism asks for ('No bound on a pattern can be supplied from outside'). The bound is the single substrate's own role conservation: Contact and Void are roles, not substances (floor 'Contact and Void are scale-relative roles'). It is not an added rule."
+    },
+    {
+      "claim_id": "NOTE-Saturation-Mechanism-2026-11-06#0013",
+      "question": "rung_kind",
+      "confidence": 0.29,
+      "claim": "Claude's reading, not a derivation: this is the shape monism asks for ('No bound on a pattern can be supplied from outside'). The bound is the single substrate's own role conservation: Contact and Void are roles, not substances (floor 'Contact and Void are scale-relative roles'). It is not an added rule."
+    },
+    {
+      "claim_id": "NOTE-Saturation-Mechanism-2026-11-06#0014",
+      "question": "register",
+      "confidence": 0.37,
+      "claim": "One level, roles C, V, L, P ≥ 0, T = C + V + L + P, x = C/T (all-neighbours count), F(x) = Pr[Bin(m, x) ≥ kr] with 1 ≤ kr ≤ m. o = 1 for an open level and 0 for a closed one. Rate order as in grammar-instability/ginst/model.py, with k11 = 0."
+    },
+    {
+      "claim_id": "NOTE-Saturation-Mechanism-2026-11-06#0015",
+      "question": "register",
+      "confidence": 0.34,
+      "claim": "ρ ≥ 0 is the recruitment per unit of Void. In the working grammar ρ = k3·F(x). S1 allows any ρ."
+    },
+    {
+      "claim_id": "NOTE-Saturation-Mechanism-2026-11-06#0015",
+      "question": "rung_kind",
+      "confidence": 0.47,
+      "claim": "ρ ≥ 0 is the recruitment per unit of Void. In the working grammar ρ = k3·F(x). S1 allows any ρ."
+    },
+    {
+      "claim_id": "NOTE-Saturation-Mechanism-2026-11-06#0016",
+      "question": "register",
+      "confidence": 0.49,
+      "claim": "Two constants recur: D = k2 + k7 + k1·k5/(k5 + k6), the net loss rate of Contact once L has settled, and c = 1 + k1/(k5 + k6) + k7/k8."
+    },
+    {
+      "claim_id": "NOTE-Saturation-Mechanism-2026-11-06#0017",
+      "question": "register",
+      "confidence": 0.37,
+      "claim": "Statement. Let k10, k7, k9 > 0 and k5 + k6 > 0. On the open level, let ρ(t) ≥ 0 be any recruitment per unit of Void along the solution, depending on the state in any way. Let A0 be the level's transfer matrix with ρ = 0, and w the vector of expected times to exit under A0, so that wᵀ(−A0) = 1ᵀ. Then"
+    },
+    {
+      "claim_id": "NOTE-Saturation-Mechanism-2026-11-06#0017",
+      "question": "result_class",
+      "confidence": 0.35,
+      "claim": "Statement. Let k10, k7, k9 > 0 and k5 + k6 > 0. On the open level, let ρ(t) ≥ 0 be any recruitment per unit of Void along the solution, depending on the state in any way. Let A0 be the level's transfer matrix with ρ = 0, and w the vector of expected times to exit under A0, so that wᵀ(−A0) = 1ᵀ. Then"
+    },
+    {
+      "claim_id": "NOTE-Saturation-Mechanism-2026-11-06#0018",
+      "question": "identity_predicate",
+      "confidence": 0.42,
+      "claim": "so every non-negative solution is bounded. On the closed level, C + V + L + P is constant."
+    },
+    {
+      "claim_id": "NOTE-Saturation-Mechanism-2026-11-06#0021",
+      "question": "result_class",
+      "confidence": 0.29,
+      "claim": "and the bound follows by comparison. On the closed level the four right-hand sides sum to zero. ∎"
+    },
+    {
+      "claim_id": "NOTE-Saturation-Mechanism-2026-11-06#0024",
+      "question": "identity_predicate",
+      "confidence": 0.54,
+      "claim": "At any balance of the open level, and for any ρ: dP/dt = 0 and d(C + V + L + P)/dt = k12 − k9·P = 0 give P = k12/k9, C = (k8 + k9)·k12/(k7·k9) and L = k1·C/(k5 + k6). Along any solution, bounded by S1, the long-run means of P and C converge to the same values, because (total(t) − total(0))/t → 0 and (P(t) − P(0))/t → 0. So recruitment and seeding set only the Void reserve. 'A level is set by three things…' already carries this. The only addition here is that it holds for every recruitment law."
+    },
+    {
+      "claim_id": "NOTE-Saturation-Mechanism-2026-11-06#0026",
+      "question": "register",
+      "confidence": 0.37,
+      "claim": "For kr = 1, r falls strictly as Contact's share x rises: F(x)/x = (1 − (1 − x)^m)/x = Σ_{j=0}^{m−1} (1 − x)^j, which strictly decreases from m at x → 0 for m ≥ 2, and V/T = 1 − x − (L + P)/T also falls."
+    },
+    {
+      "claim_id": "NOTE-Saturation-Mechanism-2026-11-06#0027",
+      "question": "register",
+      "confidence": 0.5,
+      "claim": "For kr ≥ 2, F(x)/x ~ C(m, kr)·x^(kr−1) → 0 as x → 0, so r rises from zero and then falls to zero as V/T → 0. This is a threshold: scarce Contact cannot recruit, and seeding carries it."
+    },
+    {
+      "claim_id": "NOTE-Saturation-Mechanism-2026-11-06#0028",
+      "question": "register",
+      "confidence": 0.34,
+      "claim": "Statement. Take k10 > 0 and all listed rates positive. (a) For kr = 1 there is exactly one balance, on the open level and, for each total, on the closed level. (b) For kr ≥ 2 there can be several. On the open level they share C, L and P, by S2, and differ only in V."
+    },
+    {
+      "claim_id": "NOTE-Saturation-Mechanism-2026-11-06#0029",
+      "question": "identity_predicate",
+      "confidence": 0.4,
+      "claim": "Statement. On a closed level with k1 = k7 = 0 and L(0) = P(0) = 0, C(t) is monotone and converges to a balance: no overshoot and no cycle. Proof. L and P stay 0, and V = T − C, so dC/dt = −k2·C + (k10 + k3·F(C/T))·(T − C) is a scalar autonomous equation, whose solutions are monotone. ∎ If L(0) or P(0) is positive, both decay exponentially and the limit set lies in the same scalar system. So on a closed level, cycling needs a delayed route back through L or P. This proves [theorem, model] the line 'Cycling around balance requires a lagged counter-process' on 'Self-limiting growth', for this grammar."
+    },
+    {
+      "claim_id": "NOTE-Saturation-Mechanism-2026-11-06#0030",
+      "question": "register",
+      "confidence": 0.46,
+      "claim": "Exploratory, no kill. With the crowding release off, each delayed route of the two moderate-rate clocks was scaled down by s:"
+    },
+    {
+      "claim_id": "NOTE-Saturation-Mechanism-2026-11-06#0032",
+      "question": "identity_predicate",
+      "confidence": 0.51,
+      "claim": "19387, closed — k7 (through P) — cycle, 6.352 — rest — rest — rest — rest"
+    },
+    {
+      "claim_id": "NOTE-Saturation-Mechanism-2026-11-06#0033",
+      "question": "register",
+      "confidence": 0.52,
+      "claim": "33538, open — k1 (through L) — cycle, 4.844 — cycle, 4.643 — cycle, 4.597 — cycle, 4.582 — cycle, 4.577"
+    },
+    {
+      "claim_id": "NOTE-Saturation-Mechanism-2026-11-06#0033",
+      "question": "identity_predicate",
+      "confidence": 0.2,
+      "claim": "33538, open — k1 (through L) — cycle, 4.844 — cycle, 4.643 — cycle, 4.597 — cycle, 4.582 — cycle, 4.577"
+    },
+    {
+      "claim_id": "NOTE-Saturation-Mechanism-2026-11-06#0035",
+      "question": "register",
+      "confidence": 0.39,
+      "claim": "\\ Relative swing 8.5×10⁻⁴ at s = 0.01, at the edge of the declared 10⁻³ rule. At that s, C is a hundred times larger, so this is a different regime."
+    },
+    {
+      "claim_id": "NOTE-Saturation-Mechanism-2026-11-06#0037",
+      "question": "result_class",
+      "confidence": 0.26,
+      "claim": "Integration: scipy solve_ivp, LSODA, rtol 10⁻⁹, atol 10⁻¹². The right-hand side was written independently in numpy."
+    },
+    {
+      "claim_id": "NOTE-Saturation-Mechanism-2026-11-06#0038",
+      "question": "register",
+      "confidence": 0.52,
+      "claim": "N0 harness — reproduce PR 7's clocks with k11 as drawn — 19387: period 6.35241, C in [0.7018, 1.5322]; 33538: period 4.84392, C in [0.2175, 1.2928] — pass (targets 6.352, 4.844; matches the map's recorded ranges)"
+    },
+    {
+      "claim_id": "NOTE-Saturation-Mechanism-2026-11-06#0038",
+      "question": "result_class",
+      "confidence": 0.1,
+      "claim": "N0 harness — reproduce PR 7's clocks with k11 as drawn — 19387: period 6.35241, C in [0.7018, 1.5322]; 33538: period 4.84392, C in [0.2175, 1.2928] — pass (targets 6.352, 4.844; matches the map's recorded ranges)"
+    },
+    {
+      "claim_id": "NOTE-Saturation-Mechanism-2026-11-06#0039",
+      "question": "register",
+      "confidence": 0.32,
+      "claim": "N1 bound (S1) — open level, rates in [10⁻², 10²], 600 draws × 4 starts, recruitment by the threshold law, mass action (k3·C) or k3·C², rotating — 2400 of 2400 runs completed; 0 bound violations; largest w·y(t)/bound = 1.0000000000000004 (the start) — kill not met"
+    },
+    {
+      "claim_id": "NOTE-Saturation-Mechanism-2026-11-06#0039",
+      "question": "result_class",
+      "confidence": 0.24,
+      "claim": "N1 bound (S1) — open level, rates in [10⁻², 10²], 600 draws × 4 starts, recruitment by the threshold law, mass action (k3·C) or k3·C², rotating — 2400 of 2400 runs completed; 0 bound violations; largest w·y(t)/bound = 1.0000000000000004 (the start) — kill not met"
+    },
+    {
+      "claim_id": "NOTE-Saturation-Mechanism-2026-11-06#0039",
+      "question": "identity_predicate",
+      "confidence": 0.24,
+      "claim": "N1 bound (S1) — open level, rates in [10⁻², 10²], 600 draws × 4 starts, recruitment by the threshold law, mass action (k3·C) or k3·C², rotating — 2400 of 2400 runs completed; 0 bound violations; largest w·y(t)/bound = 1.0000000000000004 (the start) — kill not met"
+    },
+    {
+      "claim_id": "NOTE-Saturation-Mechanism-2026-11-06#0040",
+      "question": "register",
+      "confidence": 0.52,
+      "claim": "N1 planted, R1 — replication faster than every Contact loss — flagged in 200 of 200 draws — pass (≥ 95%)"
+    },
+    {
+      "claim_id": "NOTE-Saturation-Mechanism-2026-11-06#0040",
+      "question": "result_class",
+      "confidence": 0.46,
+      "claim": "N1 planted, R1 — replication faster than every Contact loss — flagged in 200 of 200 draws — pass (≥ 95%)"
+    },
+    {
+      "claim_id": "NOTE-Saturation-Mechanism-2026-11-06#0040",
+      "question": "identity_predicate",
+      "confidence": 0.36,
+      "claim": "N1 planted, R1 — replication faster than every Contact loss — flagged in 200 of 200 draws — pass (≥ 95%)"
+    },
+    {
+      "claim_id": "NOTE-Saturation-Mechanism-2026-11-06#0041",
+      "question": "register",
+      "confidence": 0.29,
+      "claim": "N1 planted, as declared — creation k3·C² without using Void — flagged in 173 of 200 draws (86.5%) — reported, no criterion. It would have missed 95%, which is why R1 was made"
+    },
+    {
+      "claim_id": "NOTE-Saturation-Mechanism-2026-11-06#0041",
+      "question": "result_class",
+      "confidence": 0.24,
+      "claim": "N1 planted, as declared — creation k3·C² without using Void — flagged in 173 of 200 draws (86.5%) — reported, no criterion. It would have missed 95%, which is why R1 was made"
+    },
+    {
+      "claim_id": "NOTE-Saturation-Mechanism-2026-11-06#0042",
+      "question": "register",
+      "confidence": 0.34,
+      "claim": "N2 (S1b) — k10 = 0 from (0, V0, 0, 0): V(100) = V0 + 100·k12 — max relative error 6.4×10⁻¹⁶ in 20 draws per law — pass"
+    },
+    {
+      "claim_id": "NOTE-Saturation-Mechanism-2026-11-06#0042",
+      "question": "result_class",
+      "confidence": 0.44,
+      "claim": "N2 (S1b) — k10 = 0 from (0, V0, 0, 0): V(100) = V0 + 100·k12 — max relative error 6.4×10⁻¹⁶ in 20 draws per law — pass"
+    },
+    {
+      "claim_id": "NOTE-Saturation-Mechanism-2026-11-06#0042",
+      "question": "identity_predicate",
+      "confidence": 0.51,
+      "claim": "N2 (S1b) — k10 = 0 from (0, V0, 0, 0): V(100) = V0 + 100·k12 — max relative error 6.4×10⁻¹⁶ in 20 draws per law — pass"
+    },
+    {
+      "claim_id": "NOTE-Saturation-Mechanism-2026-11-06#0043",
+      "question": "register",
+      "confidence": 0.52,
+      "claim": "N3 (S4) — balance count, 5000 draws per level, kr ∈ 1..m — kr = 1: exactly one balance in 910 of 910 open and 971 of 971 closed draws. kr ≥ 2: three balances in 73 of 4090 open (1.8%) and 59 of 4029 closed (1.5%) draws, never two — kill not met; planted cubic: 3 roots found"
+    },
+    {
+      "claim_id": "NOTE-Saturation-Mechanism-2026-11-06#0043",
+      "question": "result_class",
+      "confidence": 0.41,
+      "claim": "N3 (S4) — balance count, 5000 draws per level, kr ∈ 1..m — kr = 1: exactly one balance in 910 of 910 open and 971 of 971 closed draws. kr ≥ 2: three balances in 73 of 4090 open (1.8%) and 59 of 4029 closed (1.5%) draws, never two — kill not met; planted cubic: 3 roots found"
+    },
+    {
+      "claim_id": "NOTE-Saturation-Mechanism-2026-11-06#0044",
+      "question": "register",
+      "confidence": 0.2,
+      "claim": "N4 (S5) — closed, k1 = k7 = 0, 300 draws: sign changes of dC/dt — 0 of 300 — kill not met"
+    },
+    {
+      "claim_id": "NOTE-Saturation-Mechanism-2026-11-06#0044",
+      "question": "result_class",
+      "confidence": 0.47,
+      "claim": "N4 (S5) — closed, k1 = k7 = 0, 300 draws: sign changes of dC/dt — 0 of 300 — kill not met"
+    },
+    {
+      "claim_id": "NOTE-Saturation-Mechanism-2026-11-06#0044",
+      "question": "identity_predicate",
+      "confidence": 0.32,
+      "claim": "N4 (S5) — closed, k1 = k7 = 0, 300 draws: sign changes of dC/dt — 0 of 300 — kill not met"
+    },
+    {
+      "claim_id": "NOTE-Saturation-Mechanism-2026-11-06#0045",
+      "question": "result_class",
+      "confidence": 0.44,
+      "claim": "Report only. This was added after the run; it was not declared and is not a check. result_N1.json also logs, for each law, the second-half mean Contact over the pin C, and a rough count of runs still swinging. Neither was declared, and S2 is cited, not tested. The logged mean runs from 0.02 to 1.75 times C. To see why, diag_n1_mean.py and diag_n1_followup.py re-ran the 600 first starts. In 83 of them the mean is more than 5% off the pin over the declared window. There are two causes, and neither bears on S1 or S2:"
+    },
+    {
+      "claim_id": "NOTE-Saturation-Mechanism-2026-11-06#0045",
+      "question": "rung_kind",
+      "confidence": 0.45,
+      "claim": "Report only. This was added after the run; it was not declared and is not a check. result_N1.json also logs, for each law, the second-half mean Contact over the pin C, and a rough count of runs still swinging. Neither was declared, and S2 is cited, not tested. The logged mean runs from 0.02 to 1.75 times C. To see why, diag_n1_mean.py and diag_n1_followup.py re-ran the 600 first starts. In 83 of them the mean is more than 5% off the pin over the declared window. There are two causes, and neither bears on S1 or S2:"
+    },
+    {
+      "claim_id": "NOTE-Saturation-Mechanism-2026-11-06#0046",
+      "question": "register",
+      "confidence": 0.31,
+      "claim": "Still filling: 79 runs, all below the pin. Over the window the level's total was still growing, mostly into L or Void. In these runs the window identity holds to 10⁻⁶. That identity is exact: the mean of C equals the pin, minus the growth of the total and the change in P over the window. In the six lowest runs, growth of the total accounts for the whole shortfall. A later window, from 10 to 20 times the run length, moves all 79 toward the pin (0.019 → 0.31, 0.08 → 0.80, 0.12 → 0.91), and leaves 10 more than 5% off. The declared run length, 200 over the smallest rate, is shorter than some levels take to fill."
+    },
+    {
+      "claim_id": "NOTE-Saturation-Mechanism-2026-11-06#0046",
+      "question": "result_class",
+      "confidence": 0.41,
+      "claim": "Still filling: 79 runs, all below the pin. Over the window the level's total was still growing, mostly into L or Void. In these runs the window identity holds to 10⁻⁶. That identity is exact: the mean of C equals the pin, minus the growth of the total and the change in P over the window. In the six lowest runs, growth of the total accounts for the whole shortfall. A later window, from 10 to 20 times the run length, moves all 79 toward the pin (0.019 → 0.31, 0.08 → 0.80, 0.12 → 0.91), and leaves 10 more than 5% off. The declared run length, 200 over the smallest rate, is shorter than some levels take to fill."
+    },
+    {
+      "claim_id": "NOTE-Saturation-Mechanism-2026-11-06#0047",
+      "question": "register",
+      "confidence": 0.42,
+      "claim": "Sampling: 4 runs, plus 11 within 5%, all under k3·C² recruitment. The 2001-point output grid is too coarse for the motion, so the sampled mean is wrong: the sampled identity is off by up to 76%. Integrating ∫C dt along with the ODE restores the identity to 10⁻¹¹. It puts 14 of these 15 runs within 1.2% of the pin; the fifteenth, at 0.83, is still filling. In draw 245 the sampled mean is 1.75 times the pin; integrated, it is 0.996."
+    },
+    {
+      "claim_id": "NOTE-Saturation-Mechanism-2026-11-06#0047",
+      "question": "result_class",
+      "confidence": 0.47,
+      "claim": "Sampling: 4 runs, plus 11 within 5%, all under k3·C² recruitment. The 2001-point output grid is too coarse for the motion, so the sampled mean is wrong: the sampled identity is off by up to 76%. Integrating ∫C dt along with the ODE restores the identity to 10⁻¹¹. It puts 14 of these 15 runs within 1.2% of the pin; the fifteenth, at 0.83, is still filling. In draw 245 the sampled mean is 1.75 times the pin; integrated, it is 0.996."
+    },
+    {
+      "claim_id": "NOTE-Saturation-Mechanism-2026-11-06#0048",
+      "question": "register",
+      "confidence": 0.44,
+      "claim": "What this means for N1: as declared, N1 checks the bound only at output times. In these 15 runs, the motion between output times was not checked. S1 rests on its proof; N1 is a receipt."
+    },
+    {
+      "claim_id": "NOTE-Saturation-Mechanism-2026-11-06#0048",
+      "question": "identity_predicate",
+      "confidence": 0.38,
+      "claim": "What this means for N1: as declared, N1 checks the bound only at output times. In these 15 runs, the motion between output times was not checked. S1 rests on its proof; N1 is a receipt."
+    },
+    {
+      "claim_id": "NOTE-Saturation-Mechanism-2026-11-06#0049",
+      "question": "register",
+      "confidence": 0.22,
+      "claim": "Whether the rate laws (constant supply k12, seeding k10·V, threshold recruitment F) are physically entitled. That stays open under 'What rate law do threshold triggers give over the ensemble?'."
+    },
+    {
+      "claim_id": "NOTE-Saturation-Mechanism-2026-11-06#0050",
+      "question": "register",
+      "confidence": 0.51,
+      "claim": "Anything at the composite rung, or about a persistent composite. 'Self-limiting growth' keeps its kill line, which needs a persistent composite, and none exists yet."
+    },
+    {
+      "claim_id": "NOTE-Saturation-Mechanism-2026-11-06#0050",
+      "question": "result_class",
+      "confidence": 0.16,
+      "claim": "Anything at the composite rung, or about a persistent composite. 'Self-limiting growth' keeps its kill line, which needs a persistent composite, and none exists yet."
+    },
+    {
+      "claim_id": "NOTE-Saturation-Mechanism-2026-11-06#0051",
+      "question": "rung_kind",
+      "confidence": 0.49,
+      "claim": "Anything about finite ensembles: die-out, escape and lifetimes are large-number questions not asked here."
+    },
+    {
+      "claim_id": "NOTE-Saturation-Mechanism-2026-11-06#0052",
+      "question": "register",
+      "confidence": 0.54,
+      "claim": "The size of the bound. w_max·w_V·k12 is loose, and it is not a prediction of how much a level holds. S2 gives that for Contact."
+    },
+    {
+      "claim_id": "NOTE-Saturation-Mechanism-2026-11-06#0052",
+      "question": "result_class",
+      "confidence": 0.35,
+      "claim": "The size of the bound. w_max·w_V·k12 is loose, and it is not a prediction of how much a level holds. S2 gives that for Contact."
+    },
+    {
+      "claim_id": "NOTE-Saturation-Mechanism-2026-11-06#0052",
+      "question": "rung_kind",
+      "confidence": 0.41,
+      "claim": "The size of the bound. w_max·w_V·k12 is loose, and it is not a prediction of how much a level holds. S2 gives that for Contact."
+    },
+    {
+      "claim_id": "NOTE-Saturation-Mechanism-2026-11-06#0053",
+      "question": "result_class",
+      "confidence": 0.45,
+      "claim": "Whether saturation counts as the counter-process in the sense of 'Self-limiting growth'. That is a reading, which Glenn gave on 1 Nov ('yes and yes'). This note shows what that reading amounts to in the grammar. It does not make the reading compulsory."
+    },
+    {
+      "claim_id": "NOTE-Saturation-Mechanism-2026-11-06#0055",
+      "question": "result_class",
+      "confidence": 0.35,
+      "claim": "The reading 'saturation is role conservation': a route admitted in the grammar that creates Contact without using Void, or an open level that is bounded with every listed rate positive although its bound involves none of supply, breach or seeding."
+    },
+    {
+      "claim_id": "NOTE-Saturation-Mechanism-2026-11-06#0056",
+      "question": "register",
+      "confidence": 0.24,
+      "claim": "New Known node: 'In the working grammar, growth pays for itself in Void: a level is bounded under any recruitment law, and cycling needs a lag'. Not promoted."
+    },
+    {
+      "claim_id": "NOTE-Saturation-Mechanism-2026-11-06#0056",
+      "question": "identity_predicate",
+      "confidence": 0.54,
+      "claim": "New Known node: 'In the working grammar, growth pays for itself in Void: a level is bounded under any recruitment law, and cycling needs a lag'. Not promoted."
+    },
+    {
+      "claim_id": "NOTE-Saturation-Mechanism-2026-11-06#0057",
+      "question": "rung_kind",
+      "confidence": 0.45,
+      "claim": "The gap 'The saturation mechanism itself' is archived as filled in the [model] register, with a pointer to the new node and its record kept. 'Why is the set of persistent closures discrete?' now rests on the new node in its place."
+    },
+    {
+      "claim_id": "NOTE-Saturation-Mechanism-2026-11-06#0057",
+      "question": "identity_predicate",
+      "confidence": 0.46,
+      "claim": "The gap 'The saturation mechanism itself' is archived as filled in the [model] register, with a pointer to the new node and its record kept. 'Why is the set of persistent closures discrete?' now rests on the new node in its place."
+    },
+    {
+      "claim_id": "NOTE-Saturation-Mechanism-2026-11-06#0059",
+      "question": "result_class",
+      "confidence": 0.51,
+      "claim": "Files (C:\\Users\\gomni\\GENERAL\\phys2-saturation-2026-11-06\\): SPEC.md, RUN.md (hash and R1), checks.py, example_stability.py, diag_n1_mean.py, diag_n1_followup.py, result_N0–N4.json, result_example_stability.json, result_diag_n1_mean.json, result_diag_n1_followup.txt, run_stdout.txt. example_stability.py, the two diag_n1 scripts and their result files are report-only, written after the run."
+    },
+    {
+      "claim_id": "NOTE-Saturation-Mechanism-2026-11-06#0061",
+      "question": "register",
+      "confidence": 0.32,
+      "claim": "Example rates (k1, k2, k3, k5, k6, k7, k8, k9, k10, k11, k12) = (0.4885, 0.1976, 13.992, 7.024, 8.293, 2.092, 1.267, 4.986, 0.3117, 0, 16.654)."
+    },
+    {
+      "claim_id": "NOTE-Saturation-Mechanism-2026-11-06#0061",
+      "question": "result_class",
+      "confidence": 0.51,
+      "claim": "Example rates (k1, k2, k3, k5, k6, k7, k8, k9, k10, k11, k12) = (0.4885, 0.1976, 13.992, 7.024, 8.293, 2.092, 1.267, 4.986, 0.3117, 0, 16.654)."
+    }
+  ],
+  "duplicate_finding_candidates": []
+}

@@ -1,0 +1,136 @@
+{
+ "draws": 300,
+ "draws_with_sign_change": 0,
+ "kill": false,
+ "exploratory": {
+  "19387 (closed) k1 (route through L)": [
+   {
+    "scale": 1.0,
+    "cycle": true,
+    "rel_amp": 0.8435113284591995,
+    "period": 6.352406377159055
+   },
+   {
+    "scale": 0.3,
+    "cycle": false,
+    "rel_amp": 1.3026194800984375e-14,
+    "period": null
+   },
+   {
+    "scale": 0.1,
+    "cycle": false,
+    "rel_amp": 3.9733602795735045e-14,
+    "period": null
+   },
+   {
+    "scale": 0.03,
+    "cycle": false,
+    "rel_amp": 8.17749047991357e-14,
+    "period": null
+   },
+   {
+    "scale": 0.01,
+    "cycle": false,
+    "rel_amp": 8.359903058586631e-14,
+    "period": null
+   }
+  ],
+  "19387 (closed) k7 (route through P)": [
+   {
+    "scale": 1.0,
+    "cycle": true,
+    "rel_amp": 0.8435113284591995,
+    "period": 6.352406377159055
+   },
+   {
+    "scale": 0.3,
+    "cycle": false,
+    "rel_amp": 6.395058356277936e-14,
+    "period": null
+   },
+   {
+    "scale": 0.1,
+    "cycle": false,
+    "rel_amp": 2.0762584330206254e-14,
+    "period": null
+   },
+   {
+    "scale": 0.03,
+    "cycle": false,
+    "rel_amp": 6.211755391536102e-14,
+    "period": null
+   },
+   {
+    "scale": 0.01,
+    "cycle": false,
+    "rel_amp": 8.869837216410801e-14,
+    "period": null
+   }
+  ],
+  "33538 (open) k1 (route through L)": [
+   {
+    "scale": 1.0,
+    "cycle": true,
+    "rel_amp": 1.9830262782567973,
+    "period": 4.8438890174672435
+   },
+   {
+    "scale": 0.3,
+    "cycle": true,
+    "rel_amp": 2.0586798907303634,
+    "period": 4.642816429408244
+   },
+   {
+    "scale": 0.1,
+    "cycle": true,
+    "rel_amp": 2.0757181312381863,
+    "period": 4.596681264522306
+   },
+   {
+    "scale": 0.03,
+    "cycle": true,
+    "rel_amp": 2.0789818228381867,
+    "period": 4.581600744841705
+   },
+   {
+    "scale": 0.01,
+    "cycle": true,
+    "rel_amp": 2.0678929394926517,
+    "period": 4.57738878460341
+   }
+  ],
+  "33538 (open) k7 (route through P)": [
+   {
+    "scale": 1.0,
+    "cycle": true,
+    "rel_amp": 1.9830262782567973,
+    "period": 4.8438890174672435
+   },
+   {
+    "scale": 0.3,
+    "cycle": false,
+    "rel_amp": 1.4471205439805963e-12,
+    "period": null
+   },
+   {
+    "scale": 0.1,
+    "cycle": false,
+    "rel_amp": 3.213711530961071e-11,
+    "period": null
+   },
+   {
+    "scale": 0.03,
+    "cycle": false,
+    "rel_amp": 2.450968492895713e-09,
+    "period": null
+   },
+   {
+    "scale": 0.01,
+    "cycle": false,
+    "rel_amp": 0.0008549183167248125,
+    "period": null
+   }
+  ]
+ },
+ "_seconds": 25.6
+}

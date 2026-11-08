@@ -1,0 +1,114 @@
+{
+  "register": {
+    "type": "choice",
+    "instructions": "PHYS2 pins every statement to one of three language registers. Which register is `claim` written in?",
+    "criteria": {
+      "native": "Native or hard-floor register: assumes no space, time, metric, direction, causality, observer, matter, field, mass, energy or known physical law.",
+      "effective": "Effective or internal register: spacelike or timelike behaviour has already been recovered internally, so terms such as space, time, rest, motion, translation, propagation, stability and observer are used as earned effective descriptions.",
+      "observational": "Observational register: compares a derived consequence against known physics or against measurement.",
+      "mixed": "The claim moves between two or more of these registers inside one statement.",
+      "not_a_physical_claim": "The claim is about project process, filing, scheduling or document structure rather than about the substrate or its behaviour."
+    }
+  },
+  "particle_language_in_mechanical_text": {
+    "type": "noul",
+    "instructions": "`claim` uses particle vocabulary such as quark, proton, neutron, electron, photon, gluon, charge, spin, helicity, antimatter or antiparticle, and uses it to describe the mechanism itself rather than inside an explicitly labelled comparison to observation.",
+    "criteria": {
+      "true": "Particle vocabulary appears as part of the mechanical description, with no label marking it as an observational comparison.",
+      "false": "Either no particle vocabulary appears, or it appears and the text explicitly marks it as an observational-register comparison, a candidate mapping, or a speculative mapping."
+    }
+  },
+  "result_class": {
+    "type": "choice",
+    "instructions": "Classify what `claim` contributes, using the PHYS2 progress rule. Judge only what the claim itself states, not what it might lead to.",
+    "criteria": {
+      "hygiene": "Excludes a careless reading, restates a discipline, or records a programme rule. Valuable but not a result about the model.",
+      "structural": "Establishes a distinction, a definition or a representational separation that later work must respect.",
+      "discriminating": "Eliminates a live candidate architecture or a candidate representation, or makes two retained commitments conflict.",
+      "generative": "Derives a restriction that was not stipulated as an outcome of the setup, or supplies an executable failure condition that could damage or terminate the branch.",
+      "not_a_result": "The claim reports no finding: it is narration, a pointer, a heading, or an intention to do something later."
+    }
+  },
+  "rung_kind": {
+    "type": "choice",
+    "instructions": "PHYS2 blocks on two different kinds of obstacle. Which kind does `claim` concern?",
+    "criteria": {
+      "mechanism": "Concerns whether the substrate or the model can perform a behaviour, such as repair, turnover, drift or propagation.",
+      "instrument": "Concerns whether a quantity can be defined, measured or observed at all: a missing invariant, an absent observation hook, an ambiguous diagnostic, a package that would not run.",
+      "programme": "Concerns scheduling, filing, authorisation, terminology or documentation rather than the model or its instruments.",
+      "none": "The claim concerns none of these."
+    }
+  },
+  "depends_on_ra1": {
+    "type": "noul",
+    "instructions": "Withdraw the RA1 renewal axiom, which states that local substrate changes admit a common probabilistic dynamics sustaining recurrent collective organisations through changes in their participants. Does `claim` then stop following from its own stated premises?",
+    "criteria": {
+      "true": "The claim no longer follows once RA1 is withdrawn.",
+      "false": "The claim still follows from its own premises, or it merely mentions RA1 in passing without depending on it."
+    }
+  },
+  "depends_on_a3": {
+    "type": "noul",
+    "instructions": "Withdraw the A3 selection axiom, which states that among arrangements admitted by the constraints the realised arrangement minimises delay-weighted load subject to meeting demand. Does `claim` then stop following from its own stated premises?",
+    "criteria": {
+      "true": "The claim no longer follows once A3 is withdrawn.",
+      "false": "The claim still follows from its own premises, or it merely mentions A3 in passing without depending on it."
+    }
+  },
+  "insertion_risk": {
+    "type": "score",
+    "instructions": "PHYS2 distinguishes a result that was measured from a result the construction guaranteed. Judge how much of the invariance, band or agreement reported in `claim` could have been produced by the setup that generated it.",
+    "criteria": [
+      "The claim reports something measured under no filter, target or admissibility rule that could have produced it.",
+      "The claim reports something produced under a constraining rule, and the text states that constraint and says what was still free to vary beneath it.",
+      "The claim reports an invariance produced under a screen, target count, designed parameter region or admissibility filter, and does not say how much could have varied.",
+      "The claim reports an invariance that the construction guarantees, so no other outcome was available to observe."
+    ]
+  },
+  "observation_used_as_construction_target": {
+    "type": "noul",
+    "instructions": "PHYS2 requires inference to run from primitive to consequence to observation, never backward, and treats observations as the comparison set rather than the construction target. Does `claim` use a known observation, constant or measured value to shape the model, rather than comparing an already-derived consequence against it?",
+    "criteria": {
+      "true": "A known observation, constant or value was used to choose, tune or justify part of the construction.",
+      "false": "Either no observation is involved, or an observation appears only as a comparison made after the consequence was derived."
+    }
+  },
+  "wording_exceeds_evidence": {
+    "type": "score",
+    "instructions": "PHYS2 holds that strength of wording is not strength of evidence. Compare how strongly `claim` is worded against the evidence the claim itself cites or refers to.",
+    "criteria": [
+      "Wording is weaker than the evidence, or equal to it, with limits and caveats stated.",
+      "Wording matches the evidence cited.",
+      "Wording is stronger than the evidence cited: a provisional or single-case result is stated as though it were general.",
+      "Wording asserts a recovered mechanism, a law, or universal behaviour where only one prototype, one designed corridor, or no evidence at all is cited."
+    ]
+  },
+  "identity_predicate": {
+    "type": "choice",
+    "instructions": "PHYS2 uses several non-equivalent definitions of when a structure is still the same structure. If `claim` asserts that something persisted, survived or remained itself, which definition is it using?",
+    "criteria": {
+      "closure_class": "Sameness means a declared closure criterion remains satisfied across constituent replacement.",
+      "re_registration": "Sameness means the organisation keeps reconstructing its own recurrence, with or without net drift.",
+      "signature_fidelity": "Sameness means a declared measured signature stays close to its earlier value.",
+      "obligation_closure": "Sameness means every recurrence-relevant obligation closes within the structure's own support at its own scale.",
+      "unstated": "The claim asserts persistence but names no criterion for it.",
+      "not_a_persistence_claim": "The claim does not assert that anything persisted or survived."
+    }
+  },
+  "reports_negative_result": {
+    "type": "noul",
+    "instructions": "`claim` reports a failure, a refutation, an arrest, a collapse, a null result, or a mechanism that did not do what was hoped.",
+    "criteria": {
+      "true": "The claim reports something that failed or did not happen.",
+      "false": "The claim reports a success, a definition, or a plan."
+    }
+  },
+  "promotion_language": {
+    "type": "noul",
+    "instructions": "PHYS2 forbids promoting a result, freezing a document, closing an open question or declaring a milestone without the project owner's explicit sign-off. Does `claim` do any of those things?",
+    "criteria": {
+      "true": "The claim promotes, freezes, settles, closes or declares something final.",
+      "false": "The claim is provisional, or reports without settling anything."
+    }
+  }
+}
