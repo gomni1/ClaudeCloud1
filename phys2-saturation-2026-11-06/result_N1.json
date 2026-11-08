@@ -1,0 +1,51 @@
+{
+ "TH": {
+  "runs": 800,
+  "completed": 800,
+  "not_completed": 0,
+  "violations": 0,
+  "max_ratio": 1.0000000000000002,
+  "cycling_runs": 266,
+  "meanC_over_pin_range": [
+   0.0389808924736795,
+   1.1223005959686083
+  ]
+ },
+ "MA": {
+  "runs": 800,
+  "completed": 800,
+  "not_completed": 0,
+  "violations": 0,
+  "max_ratio": 1.0000000000000002,
+  "cycling_runs": 156,
+  "meanC_over_pin_range": [
+   0.02252865572066905,
+   1.1943497466910766
+  ]
+ },
+ "SA": {
+  "runs": 800,
+  "completed": 800,
+  "not_completed": 0,
+  "violations": 0,
+  "max_ratio": 1.0000000000000004,
+  "cycling_runs": 178,
+  "meanC_over_pin_range": [
+   0.018803673857323087,
+   1.749817588896618
+  ]
+ },
+ "PLANT_REP": {
+  "draws": 200,
+  "flagged": 200,
+  "rate": 1.0
+ },
+ "PLANT_C2": {
+  "draws": 200,
+  "flagged": 173,
+  "rate": 0.865
+ },
+ "kill": false,
+ "planted_pass": true,
+ "_seconds": 960.0
+}
