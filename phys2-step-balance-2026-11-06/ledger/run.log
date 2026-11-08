@@ -1,0 +1,42 @@
+extracted 122 claims from C:\Users\gomni\GENERAL\phys2-step-balance-2026-11-06
+  judged 25/122
+  judged 50/122
+  judged 75/122
+  judged 100/122
+{
+  "claims_judged": 122,
+  "register_census": {
+    "not_a_physical_claim": 15,
+    "observational": 43,
+    "effective": 56,
+    "native": 6,
+    "mixed": 2
+  },
+  "result_class_census": {
+    "hygiene": 8,
+    "structural": 39,
+    "generative": 47,
+    "discriminating": 13,
+    "not_a_result": 15
+  },
+  "rung_census": {
+    "programme": 6,
+    "instrument": 26,
+    "mechanism": 73,
+    "none": 17
+  },
+  "mechanism_vs_instrument": {
+    "mechanism": 73,
+    "instrument": 26,
+    "instrument_share": 0.263
+  },
+  "identity_predicate_census": {
+    "signature_fidelity": 18,
+    "unstated": 3,
+    "re_registration": 1,
+    "closure_class": 1
+  }
+}
+
+full output in ledger-out-step-balance/
+exit 0
