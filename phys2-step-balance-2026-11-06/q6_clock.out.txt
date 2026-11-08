@@ -1,0 +1,17 @@
+(a) forward fraction = b/(a + b)    net speed v = (-a + b)/(a + b)
+(b) v = tanh(eta)    reversal rate = 2*a*b/(a + b) = m/cosh(eta)    minus m*sqrt(1-v^2): 0
+(c) E^2 - p^2 = a*b    p/E - v = 0
+    under a boost: a'b' - ab = 0   E' - (E cosh + p sinh) = 0   p' - (p cosh + E sinh) = 0
+    arithmetic mean E, geometric mean m, harmonic mean (reversal rate): E * rev = a*b  (= m^2)
+(d) a -> 0 (m = 0): forward fraction -> 1 , v -> 1 , reversal rate -> 0
+
+Simulation (m = 1, T = 2e5 per run)
+  eta    v_pred    v_sim     fwd_pred  fwd_sim   back_pred(1-v)/2  back_sim   rev_pred m*sqrt(1-v^2)  rev_sim
+  0.0   0.00000  0.00431   0.50000   0.50215   0.50000           0.49785    1.00000                 1.00091
+  0.5   0.46212  0.46543   0.73106   0.73272   0.26894           0.26728    0.88682                 0.88658
+  1.0   0.76159  0.76231   0.88080   0.88115   0.11920           0.11885    0.64805                 0.64904
+  2.0   0.96403  0.96349   0.98201   0.98175   0.01799           0.01825    0.26580                 0.26741
+  boosted eta=0.5: a' = 0.6046 (pred 0.6065), b' = 1.6510 (pred 1.6487), a'b' = 0.9982, v' = 0.4639 (pred 0.4621), KS p(forward dwell exponential) = 0.62
+  boosted eta=1.0: a' = 0.3667 (pred 0.3679), b' = 2.7221 (pred 2.7183), a'b' = 0.9982, v' = 0.7626 (pred 0.7616), KS p(forward dwell exponential) = 0.62
+
+Discrete-tick chain, flip probs pa=0.02, pb=0.05: forward fraction pb/(pa+pb) = 0.71429, v = 0.42857, reversals/tick = 2 pa pb/(pa+pb) = 0.02857, sqrt(pa pb) sqrt(1-v^2) = 0.02857

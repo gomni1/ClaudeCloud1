@@ -1,0 +1,61 @@
+uniform count alone: f(x) = 10*x**2*(x**2 - 6*x + 6)/7   mean = 2/3   total = 7/60
+
+ALL SIX CASES (reported before any comparison)
+
+ALIGNED ('e', 'nubar_e'):  weighted density in (E1,E2) ~ E3*(E1*E2 + E3 - 1)
+   electron f(x) = 5*x**2*(x - 3)*(x - 1)
+   exact Michel? no
+   <x> = 7/12 = 0.583333;  rho matching mean = -1/8 = -0.125000
+   <W> over uniform count = 2/7 = 0.285714
+   nubar_e spectrum = 5*x**2*(x - 3)*(x - 1);   nu_mu spectrum = 5*x**4
+
+OPPOSED ('e', 'nubar_e'):  weighted density in (E1,E2) ~ E3*(1 - E3)
+   electron f(x) = -2*x**2*(2*x - 3)
+   exact Michel? yes, rho = 3/4
+   <x> = 7/10 = 0.700000;  rho matching mean = 3/4 = 0.750000
+   <W> over uniform count = 5/7 = 0.714286
+   nubar_e spectrum = -2*x**2*(2*x - 3);   nu_mu spectrum = -12*x**2*(x - 1)
+
+ALIGNED ('e', 'nu_mu'):  weighted density in (E1,E2) ~ E2*(E1*E3 + E2 - 1)
+   electron f(x) = 5*x**2*(x - 3)*(x - 1)
+   exact Michel? no
+   <x> = 7/12 = 0.583333;  rho matching mean = -1/8 = -0.125000
+   <W> over uniform count = 2/7 = 0.285714
+   nubar_e spectrum = 5*x**4;   nu_mu spectrum = 5*x**2*(x - 3)*(x - 1)
+
+OPPOSED ('e', 'nu_mu'):  weighted density in (E1,E2) ~ E2*(1 - E2)
+   electron f(x) = -2*x**2*(2*x - 3)
+   exact Michel? yes, rho = 3/4
+   <x> = 7/10 = 0.700000;  rho matching mean = 3/4 = 0.750000
+   <W> over uniform count = 5/7 = 0.714286
+   nubar_e spectrum = -12*x**2*(x - 1);   nu_mu spectrum = -2*x**2*(2*x - 3)
+
+ALIGNED ('nubar_e', 'nu_mu'):  weighted density in (E1,E2) ~ E1*(E1 + E2*E3 - 1)
+   electron f(x) = 5*x**4
+   exact Michel? no
+   <x> = 5/6 = 0.833333;  rho matching mean = 7/4 = 1.750000
+   <W> over uniform count = 2/7 = 0.285714
+   nubar_e spectrum = 5*x**2*(x - 3)*(x - 1);   nu_mu spectrum = 5*x**2*(x - 3)*(x - 1)
+
+OPPOSED ('nubar_e', 'nu_mu'):  weighted density in (E1,E2) ~ E1*(1 - E1)
+   electron f(x) = -12*x**2*(x - 1)
+   exact Michel? yes, rho = 0
+   <x> = 3/5 = 0.600000;  rho matching mean = 0 = 0.000000
+   <W> over uniform count = 5/7 = 0.714286
+   nubar_e spectrum = -2*x**2*(2*x - 3);   nu_mu spectrum = -2*x**2*(2*x - 3)
+
+TWIST rho = 0.74977 +/- 0.00026 (stat+syst in quadrature)
+   OPPOSED ('e', 'nubar_e'): rho = 0.75000  pull = +0.89 sigma
+   OPPOSED ('e', 'nu_mu'): rho = 0.75000  pull = +0.89 sigma
+   OPPOSED ('nubar_e', 'nu_mu'): rho = 0.00000  pull = -2890.15 sigma
+
+[control] SM Dalitz density / (uniform x OPPOSED(e,nu_mu)) = 4
+[control] SM Dalitz density / (uniform x OPPOSED(e,nubar_e)) = 4*E2*(E2 - 1)/(E3*(E3 - 1))
+
+Monte Carlo (RAMBO, explicit angles), N = 1000000  max|sum p| = 6.9e-13
+   ALIGNED (e,nubar_e): <x_e> = 0.5827   <W> = 0.2859
+   OPPOSED (e,nubar_e): <x_e> = 0.6998   <W> = 0.7141
+   ALIGNED (e,nu_mu): <x_e> = 0.5831   <W> = 0.2860
+   OPPOSED (e,nu_mu): <x_e> = 0.6996   <W> = 0.7140
+   ALIGNED (nubar_e,nu_mu): <x_e> = 0.8334   <W> = 0.2854
+   OPPOSED (nubar_e,nu_mu): <x_e> = 0.5996   <W> = 0.7146
