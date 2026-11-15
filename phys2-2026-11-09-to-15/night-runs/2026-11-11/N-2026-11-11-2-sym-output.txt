@@ -1,0 +1,7 @@
+column sums zero: [0, 0, 0, 0]
+e3 - det M at balance: 0
+q = k8*(k5 + k6)
+dq/dr1 = 0
+numerator: k8*(k5 + k6)
+denominator: 1
+P1 dqw/dr1 is zero? False

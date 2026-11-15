@@ -1,0 +1,13 @@
+draw 404354 m 23 kr 7 V* 430.3324348 maxRe 0.30216289 verified
+draw 407868 m 13 kr 2 V* 3.644229802 maxRe 20.950703 verified
+draw 408007 m 21 kr 7 V* 0.6439264821 maxRe 14.321154 verified
+draw 409191 m 27 kr 2 V* 91.37599019 maxRe 11.880678 verified
+draw 409528 m 18 kr 4 V* 0.8274601781 maxRe 2.81608 verified
+draw 411934 m 20 kr 10 V* 0.09786051923 maxRe 0.13307761 verified
+draw 413532 m 2 kr 2 V* 0.3275292698 maxRe 0.2669937 verified
+draw 413589 m 8 kr 3 V* 0.1238813344 maxRe 1.8444161 verified
+draw 415982 m 18 kr 3 V* 6.696713653 maxRe 2.2763319 verified
+draw 416604 m 30 kr 12 V* 132.6488443 maxRe 0.088247447 verified
+draw 417045 m 20 kr 5 V* 0.6830253441 maxRe 14.483891 verified
+draw 423818 m 6 kr 3 V* 0.7948491097 maxRe 1.0707706 verified
+remaining verified: 12 of 12

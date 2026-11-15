@@ -1,0 +1,72 @@
+{
+ "harness": {
+  "C+_I2_zero": true,
+  "C+_I3_zero": true,
+  "R4_kappa3_gt_1e-3": true,
+  "RS_kappa3_gt_1e-3": true,
+  "pass": true
+ },
+ "kill_R2": {
+  "kappa2_lt_0p05": false,
+  "kappa3_gt_1e-6": false,
+  "killed": false
+ },
+ "fringes": {
+  "R2": {
+   "n_maxima_ABC": 19,
+   "spacing_ABC": 51.333333333333336,
+   "n_maxima_AB": 10,
+   "spacing_AB": 102.66666666666667,
+   "maxima_AB_x": [
+    -469.0,
+    -364.0,
+    -261.0,
+    -160.0,
+    -60.0,
+    40.0,
+    141.0,
+    243.0,
+    347.0,
+    455.0
+   ]
+  },
+  "C-arrow": {
+   "n_maxima_ABC": 9,
+   "spacing_ABC": 102.25,
+   "n_maxima_AB": 5,
+   "spacing_AB": 204.0,
+   "maxima_AB_x": [
+    -469.0,
+    -261.0,
+    -60.0,
+    141.0,
+    347.0
+   ]
+  },
+  "ratio_AB_arrow_over_R2": 1.987012987012987,
+  "ratio_ABC_arrow_over_R2": 1.9918831168831168,
+  "fringe_count_ok": true
+ }
+}
+R2       kappa2=1.24029 kappa3=2.20333e-16 max|I3|=1.14e-13 maxP=204.198
+R4       kappa2=0.921297 kappa3=0.579666 max|I3|=1.76e+04 maxP=41696.7
+RS       kappa2=1.53086 kappa3=0.37815 max|I3|=0.746 maxP=0.994976
+C+       kappa2=0 kappa3=nan max|I3|=0 maxP=15
+C-arrow  kappa2=1.31849 kappa3=2.15151e-16 max|I3|=8.88e-14 maxP=154.618
+pilot: 0.80 ms/draw; projected 26 s
+sigma=0 decoh_pred=1 A_kappa2=1.24 A_kappa3=3.237e-14 A200_kappa2=1.24 A200_kappa3=3.444e-15 B_kappa2=1.24 B_kappa2_sd=0 B_kappa3=2.203e-16 B_kappa3_max=2.203e-16 B200_kappa2=1.24 B200_kappa3=2.203e-16 max_I3_rel=5.567e-16 mean_P_ABC=71.52
+sigma=0.001 decoh_pred=0.9531 A_kappa2=1.227 A_kappa3=1.508e-15 A200_kappa2=1.227 A200_kappa3=4.556e-16 B_kappa2=1.24 B_kappa2_sd=0.005299 B_kappa3=2.275e-16 B_kappa3_max=2.513e-16 B200_kappa2=1.239 B200_kappa3=2.265e-16 max_I3_rel=9.722e-16 mean_P_ABC=68.88
+sigma=0.002 decoh_pred=0.8253 A_kappa2=1.188 A_kappa3=1.45e-15 A200_kappa2=1.188 A200_kappa3=4.723e-16 B_kappa2=1.235 B_kappa2_sd=0.01005 B_kappa3=2.275e-16 B_kappa3_max=2.508e-16 B200_kappa2=1.235 B200_kappa3=2.279e-16 max_I3_rel=9.574e-16 mean_P_ABC=61.64
+sigma=0.003 decoh_pred=0.6492 A_kappa2=1.114 A_kappa3=1.61e-15 A200_kappa2=1.115 A200_kappa3=5.089e-16 B_kappa2=1.22 B_kappa2_sd=0.01516 B_kappa3=2.282e-16 B_kappa3_max=2.501e-16 B200_kappa2=1.22 B200_kappa3=2.286e-16 max_I3_rel=9.276e-16 mean_P_ABC=51.67
+sigma=0.005 decoh_pred=0.3012 A_kappa2=0.8344 A_kappa3=1.998e-15 A200_kappa2=0.8363 A200_kappa3=6.433e-16 B_kappa2=1.136 B_kappa2_sd=0.02409 B_kappa3=2.439e-16 B_kappa3_max=2.696e-16 B200_kappa2=1.135 B200_kappa3=2.437e-16 max_I3_rel=8.673e-16 mean_P_ABC=31.96
+sigma=0.007 decoh_pred=0.09518 A_kappa2=0.4145 A_kappa3=3.734e-15 A200_kappa2=0.4159 A200_kappa3=1.248e-15 B_kappa2=1.055 B_kappa2_sd=0.02844 B_kappa3=2.641e-16 B_kappa3_max=2.903e-16 B200_kappa2=1.058 B200_kappa3=2.632e-16 max_I3_rel=8.711e-16 mean_P_ABC=20.34
+sigma=0.01 decoh_pred=0.00823 A_kappa2=0.05158 A_kappa3=3.03e-14 A200_kappa2=0.08874 A200_kappa3=5.487e-15 B_kappa2=1.028 B_kappa2_sd=0.02939 B_kappa3=2.725e-16 B_kappa3_max=3.043e-16 B200_kappa2=1.027 B200_kappa3=2.738e-16 max_I3_rel=9.585e-16 mean_P_ABC=15.48
+sigma=0.015 decoh_pred=2.04e-05 A_kappa2=0.02484 A_kappa3=6.351e-14 A200_kappa2=0.08067 A200_kappa3=6.078e-15 B_kappa2=1.026 B_kappa2_sd=0.02892 B_kappa3=2.731e-16 B_kappa3_max=3.067e-16 B200_kappa2=1.026 B200_kappa3=2.737e-16 max_I3_rel=8.796e-16 mean_P_ABC=15.02
+sigma=0.02 decoh_pred=4.587e-09 A_kappa2=0.0253 A_kappa3=6.083e-14 A200_kappa2=0.07979 A200_kappa3=6.308e-15 B_kappa2=1.028 B_kappa2_sd=0.02914 B_kappa3=2.724e-16 B_kappa3_max=3.081e-16 B200_kappa2=1.027 B200_kappa3=2.732e-16 max_I3_rel=9.758e-16 mean_P_ABC=14.99
+sigma=0.03 decoh_pred=1.732e-19 A_kappa2=0.02544 A_kappa3=6.406e-14 A200_kappa2=0.08025 A200_kappa3=6.11e-15 B_kappa2=1.028 B_kappa2_sd=0.03072 B_kappa3=2.726e-16 B_kappa3_max=3.077e-16 B200_kappa2=1.026 B200_kappa3=2.733e-16 max_I3_rel=9.148e-16 mean_P_ABC=14.99
+sigma=0.05 decoh_pred=7.668e-53 A_kappa2=0.0255 A_kappa3=6.348e-14 A200_kappa2=0.0797 A200_kappa3=6.446e-15 B_kappa2=1.027 B_kappa2_sd=0.02964 B_kappa3=2.722e-16 B_kappa3_max=3.06e-16 B200_kappa2=1.03 B200_kappa3=2.711e-16 max_I3_rel=8.329e-16 mean_P_ABC=15
+sigma=0.1 decoh_pred=3.457e-209 A_kappa2=0.02544 A_kappa3=6.219e-14 A200_kappa2=0.07925 A200_kappa3=6.205e-15 B_kappa2=1.028 B_kappa2_sd=0.03151 B_kappa3=2.723e-16 B_kappa3_max=3.014e-16 B200_kappa2=1.028 B200_kappa3=2.735e-16 max_I3_rel=9.413e-16 mean_P_ABC=14.99
+sigma=0.2 decoh_pred=0 A_kappa2=0.02525 A_kappa3=6.274e-14 A200_kappa2=0.08045 A200_kappa3=6.301e-15 B_kappa2=1.028 B_kappa2_sd=0.02909 B_kappa3=2.724e-16 B_kappa3_max=3.093e-16 B200_kappa2=1.03 B200_kappa3=2.717e-16 max_I3_rel=8.678e-16 mean_P_ABC=15
+sigma=0.5 decoh_pred=0 A_kappa2=0.02508 A_kappa3=6.339e-14 A200_kappa2=0.08002 A200_kappa3=6.184e-15 B_kappa2=1.028 B_kappa2_sd=0.02987 B_kappa3=2.724e-16 B_kappa3_max=3.022e-16 B200_kappa2=1.028 B200_kappa3=2.729e-16 max_I3_rel=9.232e-16 mean_P_ABC=14.99
+sigma=1 decoh_pred=0 A_kappa2=0.02549 A_kappa3=6.324e-14 A200_kappa2=0.07804 A200_kappa3=6.34e-15 B_kappa2=1.026 B_kappa2_sd=0.02944 B_kappa3=2.726e-16 B_kappa3_max=3.166e-16 B200_kappa2=1.028 B200_kappa3=2.719e-16 max_I3_rel=8.837e-16 mean_P_ABC=15.01
+sigma=1.571 decoh_pred=0 A_kappa2=0.02486 A_kappa3=6.336e-14 A200_kappa2=0.08143 A200_kappa3=6.024e-15 B_kappa2=1.027 B_kappa2_sd=0.02916 B_kappa3=2.727e-16 B_kappa3_max=3.034e-16 B200_kappa2=1.032 B200_kappa3=2.72e-16 max_I3_rel=9.136e-16 mean_P_ABC=15.02

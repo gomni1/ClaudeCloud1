@@ -1,0 +1,131 @@
+===== params.py =====
+import numpy as np
+from scipy.special import betainc
+# order k1,k2,k3,k5,k6,k7,k8,k10
+D = {
+ 'D1': (19,3,(0.47205648482747253,0.026204658014680544,33.767749788910784,0.04225910243329335,0.030726928960954643,36.36991748036593,59.878770174623746,0.8229214570079602),43.5483838,(0.011698,0.302527)),
+ 'D2': (18,5,(0.024467354766160413,0.0847675145432349,90.82676993397304,0.039721487333838824,40.11441371381962,5.966916105127517,1.1506079105936813,0.29752769122631306),5.0012035,(0.025242,0.588592)),
+ 'D3': (14,4,(0.018578078050096865,0.5500194295095171,2.8451705870016846,0.013313125306833104,5.403333570102309,0.057444853338346945,0.012223991364452957,0.031466728795776645),277.1509408,(0.018550,0.582794)),
+ 'D4': (15,5,(3.596248980757227,1.3029329580570022,20.09635296699752,52.21711843176238,0.0380210140143802,0.0831241648253706,0.03468201238140288,0.503530577322256),88.5270387,(0.042962,0.577694)),
+ 'D5': (12,4,(0.02961406591548577,0.06144775916831153,3.472816848550607,0.01210894788313174,0.010372856361553127,2.1755667328736545,57.2112846818156,0.21515490048701133),171.2382391,(0.063893,0.490737)),
+}
+def weights(y, m, kr, k):
+    C,V,L,P = y[0],y[1],y[2],y[3]
+    k1,k2,k3,k5,k6,k7,k8,k10 = k
+    T = C+V+L+P
+    F = betainc(kr, m-kr+1, min(max(C/T,0.0),1.0))
+    # order w1,w2,w7,w6,w5,w8,w10,w3
+    return np.array([k1*C,k2*C,k7*C,k6*L,k5*L,k8*P,k10*V,k3*F*V])
+def f(y, m, kr, k):
+    w1,w2,w7,w6,w5,w8,w10,w3 = weights(y,m,kr,k)
+    return np.array([-(w1+w2+w7)+w6+w10+w3, w2+w5+w8-w10-w3, w1-w5-w6, w7-w8])
+
+===== ode.py =====
+import numpy as np, sys
+from scipy.integrate import solve_ivp
+from params import D, weights, f
+np.set_printoptions(linewidth=200, precision=7)
+def cyc(name, s=1.0, T=1.0, verbose=True):
+    m,kr,k,Th,sw = D[name]; k = tuple(s*np.array(k))
+    rhs = lambda t,y: f(y,m,kr,k)
+    kw = dict(method='LSODA', rtol=1e-11, atol=1e-14)
+    y0 = np.full(4, T/4)
+    sol = solve_ivp(rhs,(0,40*Th/s),y0,**kw); y=sol.y[:,-1]
+    mid = 0.5*(sw[0]+sw[1])
+    ev = lambda t,y: y[0]/y.sum()-mid
+    ev.direction=1
+    sol = solve_ivp(rhs,(0,3.5*Th/s),y,events=ev,**kw)
+    te = sol.t_events[0]; per = np.diff(te)
+    ystart = sol.y_events[0][-1]
+    # augmented over one period
+    def rhs2(t,z):
+        w = weights(z[:4],m,kr,k); 
+        return np.concatenate([f(z[:4],m,kr,k), w])
+    P = per[-1]
+    sol2 = solve_ivp(rhs2,(0,P),np.concatenate([ystart,np.zeros(8)]),dense_output=True,**kw)
+    z = sol2.y[:,-1]; Psi_j = z[4:]/T
+    x = sol2.y[0]/T
+    if verbose:
+        print(name,'s',s,'T',T,'period',per,'claimed',Th/s,'closure',np.abs(z[:4]-ystart).max(),'swing',x.min(),x.max())
+        print('  Psi',Psi_j.sum(),'frac',Psi_j/Psi_j.sum())
+        w1,w2,w7,w6,w5,w8,w10,w3 = Psi_j
+        print('  flux resid',w1-w5-w6,w7-w8,w2+w5+w8-w10-w3)
+    return ystart,P,Psi_j,k,m,kr
+def floquet(name):
+    ystart,P,Psi_j,k,m,kr = cyc(name,verbose=False)
+    Psi = Psi_j.sum()
+    kw = dict(method='Radau', rtol=1e-12, atol=1e-15)
+    red = lambda u: np.array([u[0],1-u.sum(),u[1],u[2]])  # u=(c,l,p)
+    def ft(t,u):
+        g=f(red(u),m,kr,k); return g[[0,2,3]]
+    def fs(t,u):
+        y=red(u); g=f(y,m,kr,k); return g[[0,2,3]]/weights(y,m,kr,k).sum()
+    u0 = ystart[[0,2,3]]
+    out=[]
+    for fun,per in ((ft,P),(fs,Psi)):
+        base = solve_ivp(fun,(0,per),u0,**kw).y[:,-1]
+        M = np.zeros((3,3)); d=1e-6
+        for i in range(3):
+            up=u0.copy(); up[i]+=d; um=u0.copy(); um[i]-=d
+            M[:,i]=(solve_ivp(fun,(0,per),up,**kw).y[:,-1]-solve_ivp(fun,(0,per),um,**kw).y[:,-1])/(2*d)
+        ev = np.linalg.eigvals(M)
+        out.append((np.abs(base-u0).max(), sorted(ev,key=lambda z:-abs(z))))
+    print(name,'Floquet t-system  closure %.2e'%out[0][0], out[0][1])
+    print(name,'Floquet sigma-sys closure %.2e'%out[1][0], out[1][1])
+if __name__=='__main__':
+    for n in D: cyc(n)
+    print('--- scaling checks D2'); cyc('D2',s=3.7); cyc('D2',T=5.0); cyc('D4',s=0.2,T=0.3)
+    print('--- Floquet')
+    for n in D: floquet(n)
+
+===== chain.py =====
+# bare jump chain for D2, ratios only. usage: chain.py N seed nturns
+import sys, random, numpy as np
+from scipy.special import betainc
+from params import D
+from ode import cyc
+N=int(sys.argv[1]); seed=int(sys.argv[2]); nt=int(sys.argv[3]); name=sys.argv[4] if len(sys.argv)>4 else 'D2'
+m,kr,k,Th,(a,b)=D[name]
+ystart,P,Psi_j,_,_,_=cyc(name,verbose=False); Psi=Psi_j.sum()
+r=[x/k[7] for x in k]  # ratios to k10
+r1,r2,r3,r5,r6,r7,r8,r10=r
+F=[r3*float(betainc(kr,m-kr+1,i/N)) for i in range(N+1)]
+cnt=np.floor(ystart*N).astype(int); cnt[1]+=N-cnt.sum()
+nC,nV,nL,nP=map(int,cnt)
+lo=(a+0.2*(b-a))*N; hi=(a+0.6*(b-a))*N
+rng=random.Random(seed); rnd=rng.random
+armed=False; marks=[]; step=0; rec=[]; stride=max(1,N//50)
+rC=r1+r2+r7; rL=r5+r6
+while len(marks)<nt+1:
+    wC=rC*nC; wL=rL*nL; wP=r8*nP; wV=(r10+F[nC])*nV
+    u=rnd()*(wC+wL+wP+wV)
+    if u<wC:
+        nC-=1
+        if u<r1*nC+r1: nL+=1
+        elif u<(r1+r2)*(nC+1): nV+=1
+        else: nP+=1
+    elif u<wC+wL:
+        nL-=1
+        if u-wC<r5*(nL+1): nV+=1
+        else: nC+=1
+    elif u<wC+wL+wP:
+        nP-=1; nV+=1
+    else:
+        nV-=1; nC+=1
+    step+=1
+    if armed:
+        if nC>hi: marks.append(step); armed=False
+    elif nC<lo: armed=True
+    if step%stride==0: rec.append(nC)
+iv=np.diff(marks)[1:]/N   # first interval discarded
+rec=np.array(rec)/N
+def post(l,h):
+    arm=False; mk=[]
+    for i,x in enumerate(rec):
+        if arm:
+            if x>h: mk.append(i); arm=False
+        elif x<l: arm=True
+    d=np.diff(mk)[1:]*stride/N
+    return len(d),d.mean(),d.std(ddof=1)/d.mean()
+print(f"{name} N={N} seed={seed} n={len(iv)} mean={iv.mean():.3f} ratio={iv.mean()/Psi:.3f} cv={iv.std(ddof=1)/iv.mean():.3f} min={iv.min():.2f} max={iv.max():.2f} | alt(0.1,0.8)={post(a+0.1*(b-a),a+0.8*(b-a))} alt(0.4,0.5)={post(a+0.4*(b-a),a+0.5*(b-a))} swing=({rec.min():.3f},{rec.max():.3f}) longrun={ (marks[-1]-marks[1])/N/(len(marks)-2):.3f}")
+

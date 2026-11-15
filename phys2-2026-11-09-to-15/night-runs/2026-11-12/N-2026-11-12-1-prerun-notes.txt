@@ -1,0 +1,15 @@
+N-2026-11-12-1 pre-run notes. Written while coding the frozen queue's item 1, before any integration was run, and uploaded for its own timestamp. The queue file is not altered. These are details the queue left open, or defects I found in my own frozen rule while implementing it; each is declared here before any result exists.
+
+1. Planted cases are written about a shifted centre. The frozen residual r = |f_i| / (sum of |terms| of equation i) is 0/0 at an equilibrium where every term vanishes separately (the origin of a Stuart-Landau unit), so 'r < 1e-8' could never be met there. The model's balances are cancellations of non-zero terms. So every Stuart-Landau plant is run in w = w0 + z with w0 = (3, 2), and the linear terms are counted separately (mu*w, -mu*w0, omega*w, -omega*w0), the cubic term as one term. This changes no orbit, period or multiplier.
+
+2. Contraction rule (ii) at the rounding floor. The frozen (ii) reads 'the largest |f| in the last block is no larger than in the block before'. After 40 tau and 60 tau of contraction both blocks sit at rounding noise, where 'no larger' is a coin toss. Declared variant (ii'): (ii) also counts as met when r < 1e-11 at every step of both blocks. Both the literal (ii) and (ii') outcomes are reported for every planted case and every start. If a planted rest case passes only under (ii'), the report says so and says that under the literal frozen rule the harness failed that plant.
+
+3. The stiff control (mu = 400). Its period is 1 = 400 tau, beyond the frozen rule's own stated detection limit (about 100 tau / 14), so the classifier cannot be asked to find it. The queue describes it as a control for the multiplier routine with a pass criterion on the second logarithm only. It is run that way: the multiplier routine is started from the analytic cycle point |z| = 20 with the analytic period 1.
+
+4. Numbering. Draw n = the (n+1)-th call of draw() (0-based, as in the checker's loop). Checked first against the m = 19, kr = 3 rates of the 11 Nov handoff.
+
+5. Guard and summaries are evaluated at the solver's own steps after each block (not by a terminal event). Stage B is integrated in blocks of 10 tau, stopping after the block in which the 40th crossing falls; only the first 40 crossings are used.
+
+6. Newton step for rest rule (iii) and all 'class' quantities use the basis B = columns (e_C - e_V, e_L - e_V, e_P - e_V); for the planted cases the class is the whole space. The multiplier routine starts from an orthonormal basis of the same space (QR of B). The trace integral is carried as an extra variable in the same propagation.
+
+7. Floquet segment count n = ceil(Theta*Lambda/5) with Lambda taken from the 20 001 output points of the measured period.

@@ -1,0 +1,85 @@
+N-2026-11-15-2 — independent checker (a fresh Claude subagent that did not see the working): its report as returned, then its scripts and their output.
+
+===== REPORT =====
+VERDICT: CONFIRMED (R1-R5 hold; one sharpening of R4, extra flags for R6).
+1. R1-R2 by derivation. Separations correct for any pair to the same screen grain, independent of x. Per-step variance of the difference is 2 sigma^2 (1-c). Average of c along either leg is integral_0^1 max(0,1-qt) dt = 1-q/2 (q<=1), 1/(2q) (q>1). Gaussian difference gives E[cos 2X] = exp(-2 Var) = exp(-4 sigma^2 N_un). Both limits check.
+2. R3 by computation. All 16 entries reproduced by formula and by direct step sum. A lattice version (route reads the nearest grain) agrees within 0.3%; largest gap l=1, Delta=200: 11 943-11 945 against 11 970. Neglected length mismatch at most 48 unpaired steps, under 0.3% of the variance.
+3. Monte Carlo of one pair (4000 draws each), four cases, MC/formula: 0.537/0.549, 0.492/0.501, 0.461/0.465, 0.379/0.383 (s.e. about 0.009). All within 1.5 s.e.
+4. R4 is right and can be stated more strongly. Under J(l) both legs have the same unshared fraction 1-mu(q), so leg 2 always supplies exactly 1/6 of N_un. No l makes "only the 2 000-step leg dephases" true, even within a slit. The earlier sentence is right only under a different rule: trunk-and-branch histories (routes through one slit occupy the same grains up to the slit, then fan out), or depth-only jitter on leg 1 (jitter a function of step index alone before the barrier, grain-local after). Neither is J(l) with straight routes.
+5. R5 is right. Checked a smooth (Gaussian) correlation numerically: N_un = (D1+D2) d^2/(3 l^2), so the d^2 remark holds. Caveat: changing d also changes fringe spacing, so a test must compare visibility, not raw pattern. Opened: Hornberger, 'Introduction to decoherence theory' (quant-ph/0612118): rate "is determined by the square of the relevant distance" and "should saturate at a finite value" (from its quantum Brownian motion discussion; the collisional section was not retrieved). Opened, not explicit: Hornberger-Sipe (quant-ph/0303094), Gallis-Fleming kernel. From memory only: Joos-Zeh 1985.
+6. Further hidden structure in J(l): a global step index acts as a universal clock, with simultaneity across laterally separated grains; a lateral metric and a depth foliation, straight routes in an embedding geometry; fractional lateral positions (benign: at l=1 the triangular c equals the same-grain probability averaged over lattice offset); the pair-factor formula needs jointly Gaussian jitter; triangular c is a valid correlation only for one lateral dimension (not positive-definite in two); jitter uniform in depth, same on both sides of the barrier, independent of the carried orientation; the loss is an average over noise draws — a single emission gives a definite shifted pattern, so "loss" presupposes accumulation over many independent emissions.
+Could not check: the previous night's full-slit simulation and its sigma ~ 0.0046 threshold (taken as given).
+Sources: https://ar5iv.labs.arxiv.org/html/quant-ph/0612118 ; https://ar5iv.labs.arxiv.org/html/quant-ph/0303094 ; https://arxiv.org/pdf/2204.09755 (opened, nothing relevant)
+
+===== FILE: chk2/chk2.py =====
+import numpy as np
+D1,D2=10000,2000
+def mu(q): return 1-q/2 if q<=1 else 1/(2*q)
+def c(s,l): return np.maximum(0,1-s/l)
+def Nform(D,l): return (D1+D2)*(1-mu(D/l))
+def Nsum(D,l):  # direct continuous-position sum
+    n=np.arange(D1)+0.5; m=np.arange(D2)+0.5
+    return np.sum(1-c(D*n/D1,l))+np.sum(1-c(D*(1-m/D2),l))
+def Nlat(y1,y2,x,l): # lattice: route reads grain round(pos); integer-distance correlation
+    n=np.arange(D1)+0.5; m=np.arange(D2)+0.5
+    k1=np.abs(np.round(y1*n/D1)-np.round(y2*n/D1))
+    k2=np.abs(np.round(y1+(x-y1)*m/D2)-np.round(y2+(x-y2)*m/D2))
+    return np.sum(1-c(k1,l))+np.sum(1-c(k2,l))
+print("R3 table: l, Delta, formula, direct sum, lattice-rounded (y=-D/2..,x=37 / slit pair)")
+for l in (1,5,100,1000):
+    for D in (1,4,100,200):
+        y1,y2=((-100,-100+D) if D<100 else ((-100,0) if D==100 else (-100,100)))
+        print(l,D,round(Nform(D,l),2),round(Nsum(D,l),2),round(Nlat(y1,y2,37,l),2),round(Nlat(y1,y2,-300,l),2))
+print("limits: l=1e-9 ->",Nform(100,1e-9)," l=1e12 ->",Nform(100,1e12))
+# leg split: fraction of N_un from leg 2 is always D2/(D1+D2)
+print("leg split check (D=4,l=5): leg1",np.sum(1-c(4*(np.arange(D1)+.5)/D1,5)),"leg2",np.sum(1-c(4*(1-(np.arange(D2)+.5)/D2),5)))
+# smooth correlation: c=exp(-(s/l)^2) small d -> d^2/(3 l^2)
+for d in (5,10,20):
+    l=1000;n=np.arange(D1)+.5;m=np.arange(D2)+.5
+    N=np.sum(1-np.exp(-(d*n/D1/l)**2))+np.sum(1-np.exp(-(d*(1-m/D2)/l)**2))
+    print("gaussian corr d",d,"N_un",N,"pred (D1+D2)d^2/(3l^2)",12000*d*d/3/l/l)
+# Monte Carlo one pair
+rng=np.random.default_rng(1)
+def mc(D,l,sig,T=4000):
+    n=np.arange(D1)+0.5; m=np.arange(D2)+0.5
+    cc=np.concatenate([c(D*n/D1,l),c(D*(1-m/D2),l)])
+    acc=[]
+    for _ in range(T):
+        a=rng.standard_normal(cc.size); b=cc*a+np.sqrt(1-cc**2)*rng.standard_normal(cc.size)
+        acc.append(np.cos(2*sig*(a.sum()-b.sum())))
+    acc=np.array(acc); return acc.mean(),acc.std()/np.sqrt(T)
+print("MC one pair: Delta,l,sigma, MC mean +- se, exp(-4 s^2 N_un)")
+for D,l,s in ((100,100,0.005),(4,5,0.006),(200,1,0.004),(100,1000,0.02)):
+    mval,se=mc(D,l,s); print(D,l,s,round(mval,4),round(se,4),round(np.exp(-4*s*s*Nform(D,l)),4))
+# unpaired length difference
+print("max path-length diff slits -100/+100 at x=500:",np.hypot(2000,600)-np.hypot(2000,400)+0)
+
+===== FILE: chk2/output.txt =====
+R3 table: l, Delta, formula, direct sum, lattice-rounded (y=-D/2..,x=37 / slit pair)
+1 1 6000.0 6000.0 6000.0 6000.0
+1 4 10500.0 10500.0 10505.0 10500.0
+1 100 11940.0 11940.0 11943.0 11940.0
+1 200 11970.0 11970.0 11943.0 11945.0
+5 1 1200.0 1200.0 1200.0 1200.0
+5 4 4800.0 4800.0 4800.0 4800.0
+5 100 11700.0 11700.0 11700.2 11700.0
+5 200 11850.0 11850.0 11844.2 11845.0
+100 1 60.0 60.0 60.0 60.0
+100 4 240.0 240.0 240.0 240.0
+100 100 6000.0 6000.0 6000.0 6000.0
+100 200 9000.0 9000.0 8999.96 9000.0
+1000 1 6.0 6.0 6.0 6.0
+1000 4 24.0 24.0 24.0 24.0
+1000 100 600.0 600.0 600.0 600.0
+1000 200 1200.0 1200.0 1200.0 1200.0
+limits: l=1e-9 -> 11999.99999994  l=1e12 -> 6.000000496442226e-07
+leg split check (D=4,l=5): leg1 4000.0 leg2 800.0
+gaussian corr d 5 N_un 0.09999924875462274 pred (D1+D2)d^2/(3l^2) 0.1
+gaussian corr d 10 N_un 0.39998799528633344 pred (D1+D2)d^2/(3l^2) 0.4
+gaussian corr d 20 N_un 1.5998079982924043 pred (D1+D2)d^2/(3l^2) 1.6
+MC one pair: Delta,l,sigma, MC mean +- se, exp(-4 s^2 N_un)
+100 100 0.005 0.5365 0.008 0.5488
+4 5 0.006 0.4923 0.0085 0.501
+200 1 0.004 0.461 0.0089 0.4648
+100 1000 0.02 0.3787 0.0096 0.3829
+max path-length diff slits -100/+100 at x=500: 48.45349634499621

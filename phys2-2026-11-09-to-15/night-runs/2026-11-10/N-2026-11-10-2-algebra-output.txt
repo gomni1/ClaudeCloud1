@@ -1,0 +1,9 @@
+d(T1+T2)/dt = -P1*k9 - P2*u9 + k12   (U cancels: each unit counted once)
+P1* = k12/(C2*kappa + k9)
+C1* = k12*(C2*kappa + k8 + k9)/(k7*(C2*kappa + k9))
+dC1*/dC2 = -k12*k8*kappa/(k7*(C2*kappa + k9)**2)
+uptake at balance U* = C2*k12*kappa/(C2*kappa + k9) ; limit C2->oo: k12
+C1* limits: C2=0: k12*(k8 + k9)/(k7*k9)   C2->oo: k12/k7
+planted double count adds exactly: C2*P1*kappa
+joint balance C2* solutions: [0, k12*u8/(u7*u9) + k12/u7 - k9/kappa]
+upper exists (C2*>0) iff kappa*c*k12 > k9; then C1* = (k12*kappa*u8 + k12*kappa*u9 + k8*u7*u9)/(k7*kappa*(u8 + u9))

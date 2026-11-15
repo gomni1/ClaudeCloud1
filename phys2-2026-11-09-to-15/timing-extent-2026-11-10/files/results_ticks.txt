@@ -1,0 +1,20 @@
+=== Q5 TICKS (m = 0.2, boost) ===
+cells run 50; NOT ADMISSIBLE (a rate above 1 per tick): 30 cells (eta = 2, 2.5, 3); H-realised realisations with an inherited rate capped at 1: 1837
+  ticks ('Ev-A', 'DRIVE', 'nominal'): VERDICT CO-SHRINK | classified 6 of 60 | {'CO-SHRINK': 6, 'UNCLASSIFIED': 54}
+  ticks ('Ev-A', 'DRIVE', 'realised'): VERDICT CO-SHRINK | classified 6 of 60 | {'CO-SHRINK': 6, 'UNCLASSIFIED': 54}
+  ticks ('Ev-B', 'DRIVE', 'nominal'): VERDICT MIXED | classified 20 of 152 | {'TRADE': 4, 'UNCLASSIFIED': 124, 'MIXED': 8, 'UNSTABLE': 8, 'CO-SHRINK': 8}
+  ticks ('Ev-B', 'DRIVE', 'realised'): VERDICT MIXED | classified 17 of 152 | {'TRADE': 3, 'UNSTABLE': 11, 'UNCLASSIFIED': 124, 'MIXED': 8, 'CO-SHRINK': 6}
+  ticks ('Ev-B', 'WINDOW', 'nominal'): VERDICT WINDOW-ARTEFACT | classified 40 of 100 | {'WINDOW-ARTEFACT': 40, 'UNCLASSIFIED': 60}
+  ticks ('Ev-B', 'WINDOW', 'realised'): VERDICT WINDOW-ARTEFACT | classified 39 of 100 | {'WINDOW-ARTEFACT': 33, 'UNSTABLE': 1, 'UNCLASSIFIED': 60, 'NONE': 3, 'MIXED': 1, 'TRADE': 2}
+Ev-A in-window cells, ticks against continuous time (same eta, tau, D): dt, across at pulse end, product
+  n = 88; ratio ticks/continuous: dt median 1.120 (range 0.950..1.308), across median 1.046 (range 0.940..1.193)
+  grid minima, ticks: dt 2.178, across 3.029, product 6.596; continuous: dt 1.807, across 2.660, product 4.806
+    eta=0.5 tau=128 D=2: ticks dt 13.493 across 20.475 | continuous dt 13.071 across 20.918
+    eta=0.5 tau=128 D=4: ticks dt 15.860 across 20.475 | continuous dt 15.058 across 20.918
+    eta=0.5 tau=128 D=8: ticks dt 19.495 across 20.475 | continuous dt 18.206 across 20.918
+    eta=0.5 tau=128 D=16: ticks dt 23.317 across 20.475 | continuous dt 22.506 across 20.918
+    eta=1.5 tau=128 D=2: ticks dt 2.784 across 8.443 | continuous dt 2.258 across 7.079
+    eta=1.5 tau=128 D=4: ticks dt 3.021 across 8.443 | continuous dt 2.457 across 7.079
+    eta=1.5 tau=128 D=8: ticks dt 3.521 across 8.443 | continuous dt 2.851 across 7.079
+    eta=1.5 tau=128 D=16: ticks dt 4.368 across 8.443 | continuous dt 3.428 across 7.079
+    eta=1.5 tau=128 D=32: ticks dt 5.693 across 8.443 | continuous dt 4.351 across 7.079

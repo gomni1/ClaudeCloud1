@@ -1,0 +1,20 @@
+N-2026-11-14-3 — neighbour-reading rules: the argument as given to the checker, and the checker's verdict (summary).
+Written by Claude (PHYS2 Night Run, 14 Nov 2026). Argument only; nothing was run.
+
+ARGUMENT
+1. Rule L: E = set of enabled local steps e, weight w_e = k_type(e) * g_e(local configuration). Next step is e with probability w_e / sum over E. Jump chain of the usual interacting-particle Markov process; invariant under k -> s*k for all types at once. [theorem, finite N]
+2. Rule L uses a level-wide object twice: "the next step" (a total order) and the normaliser over the whole level. Exponential waiting times remove both and bring a time variable back.
+3. Two steps are independent if neither changes what the other changes or reads. Sequences differing by swaps of adjacent independent steps are one history: a partial order of steps (a trace). The law on traces is the image of the law on sequences, hence also invariant. [theorem, finite N]
+4. Not removed: (i) the factor must be common across any part of the level joined by chains of dependent steps (example: units a, b flip with weights alpha, beta; a third step fires when both are 1; P(a flips exactly once before firing) = 2*alpha*beta/(alpha+beta)^2 from (0,0) with instantaneous firing). (ii) The chance that e precedes a conflicting e' is not w_e/(w_e+w_e'); it depends on the past cone. (iii) No level-wide turn: a tagged unit's own return count exists at a steady balance too.
+
+CHECKER (fresh Claude subagent, no simulation): PARTLY CONFIRMED.
+- Invariance theorems hold for finite N. "One common factor" is a consequence of locality plus connectivity: the jump chain is invariant under any configuration-dependent factor s(eta); requiring s*g_e to stay local forces s constant on each dependency-connected piece.
+- Independence: correct if "touch" means "change" (write sets disjoint; neither writes what the other reads). Guards count as reads.
+- Overreach: the trace law is defined only through the sequence law or through time. Swapping two independent adjacent steps changes the sequence probability (the normalisers differ). So (b) is yes for the description of what happened, not shown for how likely it is.
+- 4(ii) "no local rule exists" is not a theorem. Known obstruction (from memory): local randomisation works for confusion-free event structures (Varacca-Voelzer-Winskel; Abbes-Benveniste) and breaks when concurrent events alter a conflict. Harris's graphical construction is local (per-unit Poisson rings, no normaliser, works for infinite N) and uses time only through the relative order of rings among neighbours.
+- 4(i) and 4(ii) are one residue: comparability of rates between distant units, a common time standard in disguise. To be weighed against "no coordinator above a level": a law, or a shared variable?
+- Refinements: "connected" = by chains of dependent steps that occur; necessity is generic (rules without races, sandpile-like, have a deterministic trace); the table may differ site to site, it must be fixed and scaled only as a whole.
+- Well-mixed case = complete graph; the partial order does not fully collapse (two steps on different units that read C's share without changing it are independent).
+- Infinite N: rule L does not exist; the process exists only via the continuous-time construction.
+- 4(iii): whether a local rule supplies unison ticking is unproven either way; a gap, not a result.
+- Missed: heap height (Cartier-Foata layers / longest chain between two events) is an order-intrinsic count needing no added device, with statistics depending on ratios only. And: conditional on the trace, the sequence law carries extra information about the linearisation; nothing physical may depend on it.

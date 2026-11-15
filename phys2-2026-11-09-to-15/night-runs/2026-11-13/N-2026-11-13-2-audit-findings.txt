@@ -1,0 +1,47 @@
+N-2026-11-13-2 — audit of Premise Map node E_ntau against the published record (observational register).
+Worked by a Claude subagent with web search (13 Nov 2026); checked by a second, fresh Claude subagent that located its own sources.
+Fetched pages were read through a summarising fetch tool: re-check wording before quoting verbatim.
+
+SOURCES
+S1 Yue et al. 2013, PRL 111, 222501, arXiv:1309.2623
+S2 Nico et al. 2005, PRC 71, 055502, arXiv:nucl-ex/0411041
+S3 Wietfeldt et al., J. Res. NIST, PMC4852842
+S4 PDG pdgLive, n mean life (2026 listing), https://pdglive.lbl.gov/view/S017T
+S5 Wietfeldt 2024, Symmetry 16(8), 956, doi:10.3390/sym16080956
+S6 Berezhiani 2019, EPJC 79, 484, arXiv:1807.07906
+S7 Gonzalez et al. (UCNtau) 2021, PRL 127, 162501, arXiv:2106.10375
+S8 Pattie et al. (UCNtau) 2018, arXiv:1707.01817
+S9 Salvat et al. 2014, PRC 89, 052501, arXiv:1310.5759
+S10 Musedinovic et al. (UCNtau) 2025, PRC 111, 045501, arXiv:2409.05560
+S11 Fuwa et al. 2024 (J-PARC), arXiv:2412.19519
+S12 J-PARC solenoid proposal, arXiv:1712.01831
+S13 Broussard et al. 2022, PRL 128, 212503, arXiv:2111.05543
+S14 BL2/BL3 white paper, arXiv:1410.5311
+S15 BL3 status, APS DNP 2025 abstract
+S16 PSI neutron-lifetime workshop, Sept 2025, book of abstracts
+S17 BL2 progress paper, PMC9706643
+S18 Caylor et al. 2025, arXiv:2506.01682 (also Phys. Rev. C)
+S19 review, arXiv:2106.02345
+S20 review of interactions in a background magnetic field, arXiv:hep-ph/0407099
+S21 Serebrov et al., arXiv:nucl-ex/0702009
+S22 Auler et al. 2025 (tauSPECT), arXiv:2503.15239
+Checker's extra sources: arXiv:2306.11349; arXiv:2209.15049; Serebrov et al., PRD 103, 074010 (2021); arXiv:1912.10006; Byrne's review arXiv:1407.3110.
+
+CLAIM TABLE (node's claim -> finding; worker / checker)
+1  Beam 888.1 +- 2.0 s, protons counted in a 4.6 T trap -> FOUND, but composite. 888.1 +- 2.0 is the inverse-variance mean of Yue 2013 (NIST, 887.7 +- 1.2 +- 1.9, 4.6 T), Byrne 1996 (ILL, 889.2 +- 3.0 +- 3.8, a different Penning trap) and Spivak 1988 (891 +- 9, a different apparatus). Yue + Byrne alone: 888.0 +- 2.0/2.1. NIST carries about 77% of the weight. CONFIRMED by the checker (own arithmetic 888.12 +- 1.99).
+2  'Every long reading therefore comes from counting protons inside the 4.6 T trap' -> NOT ACCURATE. Every long reading comes from counting decay protons; the precise one is the NIST trap at 4.6 T. Byrne's trap field: 'B = 5 T' in S6 only; the checker could not confirm it (Byrne's own review gives 1.2-1.6 T at trap centre and 4.0 T at the detector for an apparatus not clearly the lifetime run). Spivak's method beyond 'in-beam, counting decay protons': not sourced. CONFIRMED in substance; Byrne field and Spivak detail COULD NOT CHECK.
+3  UCNtau 877.75 s, uncertainty near 0.3 s -> FOUND, superseded: 877.82 +- 0.22 (stat) +0.20/-0.17 (syst) s (S10; PDG marks the 2021 value superseded). Trap fields: Halbach surface about 1.0 T; holding field up to 10 mT (6.8 and 3.4 mT in precision runs). CONFIRMED.
+4  Difference 9.8 +- 2.0 s in one review -> FOUND (S5 abstract; +- 2.1 reported in the body). Not separately checked.
+5  J-PARC 877.2 +- 1.7 (stat) +4.0/-3.6 (sys) s, electron counting -> FOUND (S11; arXiv only, no journal reference located). 2.3 sigma from the proton-counting beam average. No applied field is mentioned for the present chamber (absence of mention, not a statement). Planned upgrade (LiNA) adds a solenoid; the proposal says 400 mT is enough and simulates 900 mT: sub-tesla. CONFIRMED.
+6  Trap length and aperture varied; field strength not; no beam lifetime against field strength -> first part FOUND (S2, S3: trap length, collimator, filter, trapping time, voltages; field nominal 4.6 T throughout). Second part: no counter-example found by either search; a search-limited negative. Field non-uniformity is treated as a systematic (-5.3 s Monte Carlo correction in BL1; about 1 s in BL2). CONFIRMED as far as searched.
+7  Oak Ridge search at 6.6 T excludes the mirror-neutron reading -> FOUND, narrower: it excludes the specific neutron-mirror-neutron model with a small mass splitting (S13). S5 says the general idea remains viable. CONFIRMED.
+8  BL3 trim coils vary profile, not strength; no BL3 result -> trim coils FOUND (S14); BL3 under construction in autumn 2025 (S15); no BL3 or BL2 lifetime result found; no tauSPECT value found. CONFIRMED (nothing in 2025-26 changes the picture; the only new value is UCNtau 877.82).
+9  60 neV per tesla; about 0.3 micro-eV at 4.6 T; 782 keV -> FOUND (S19). 60.3 neV/T x 4.6 T = 0.28 micro-eV. CONFIRMED.
+10 'Above about 4.4e9 T the electron's states are quantised into Landau levels and the decay rate rises' -> the field value is right (4.41e9 T, S20); the wording is wrong: Landau quantisation exists at any field, and the critical field is where the cyclotron energy reaches the electron's rest energy. The rate rise was not sourced. Checker: CONFIRMED from memory, not sourced.
+11 'Neutrons in a magnetic bottle spend most of their time in the weak-field region' -> NOT FOUND as a stated sentence. Plausible for UCNtau from its geometry (1 T only at the array surface). Not general: tauSPECT's minimum field is about 0.21 T (S22).
+12 Charge exchange with residual gas as 'an ordinary candidate' (arXiv:2506.01682) -> FOUND WITH A DIFFERENT CONCLUSION. That paper (the NIST group) detects H2+ in BL2 data but concludes charge exchange is 'unlikely to be the cause of the current disagreement' (worst-case shift about -0.3 s). The proposal is Serebrov et al. (arXiv:1912.10006; PRD 103, 074010). CONFIRMED.
+13 (added) Bottles without a field: Serebrov 2005 878.5 +- 0.7 +- 0.3; Serebrov 2018 881.5 +- 0.7 +- 0.6; Pichlmaier 2010 880.7; Arzumanov 2015 880.2; Steyerl 2012 882.5. Magnetic: UCNtau 877.82; Pattie 2018 877.7; Ezhov 2018 878.3. PDG average 878.3 +- 0.4 (scale factor 1.8). Material bottles sit about 2.5-3 s above magnetic ones (unweighted). CONFIRMED.
+
+ARITHMETIC (both agents): (1/4.6)^2 = 0.0473, so 1% at 4.6 T under a law quadratic in the field is 0.047% at 1 T and 4.7e-8 at 10 mT.
+
+CHECKER'S VERDICT: PARTLY CONFIRMED. No finding disputed. Could not check: Byrne's trap field; Spivak's apparatus; an explicit statement of zero field in the present J-PARC chamber; the universal negative in 6; claim 10's correction is from memory.

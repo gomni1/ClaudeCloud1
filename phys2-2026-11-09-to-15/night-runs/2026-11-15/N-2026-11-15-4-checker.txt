@@ -1,0 +1,41 @@
+N-2026-11-15-4 — independent checker (a fresh Claude subagent that did not see the working): its report as returned, then its scripts and their output.
+
+===== REPORT =====
+VERDICT: PARTLY. Claim A holds and is stronger than stated; B1/B2/B4 hold with repairs; the "nothing varies around the turn" line and the "unit is already a reader" observation do not hold as written. Derived unless marked [memory]. Nothing was simulated.
+1. Claim A confirmed, exactly and at finite N. At any global step, P(step is the tagged unit's move a) = k_a/sum(w). Conditioned on the step being the tagged unit's, sum(w) cancels. So the next role is independent of the whole level history given the current role. Residual information is only the two channels the argument names. Corollary: the fraction of a unit's own steps that are V->C is fixed at (1 - p1*q6)/(2 + p7 + p1*q5), with p, q the normalised branch ratios (maximum 1/2); independent of k3, k10 and phase, so it can be checked against the five clocks. "Scatter of order sqrt(Psi)" is asserted, not derived.
+2. Claim B. B1 right: H is a trace invariant; the event record must include the realised read sets, which R as written (F(x) only) does not supply. Caveat: H needs no total order, but the law w_j/sum(w) is not swap-invariant step by step, because sum(w) is global; that rests entirely on the earlier result. B3 misworded: between consecutive own steps there are none; should read "any two steps of one unit". B4 order right: all recruitments are pairwise dependent, so H lies between N*Psi_3 and N*Psi; "nearly total" fails in low-recruitment phases. B5 plausible: H is superadditive along one unit's steps, so Kingman's theorem gives a linear rate if the process is stationary and ergodic and the degree bounded [memory]; that gives a cycle-averaged v only. "Nothing in it varies around the turn" is unproved and probably false: H's growth per own step follows the recruitment share of steps, which varies with x. H against own-count is therefore a candidate marker. Carrying H locally is a Lamport clock [memory]: an unbounded integer per unit, passed at every read; far more than one bit.
+3. Claim C. One bit is the correct minimum for marking; counting marks needs more. Noise formula right if g is the number of raw single-neighbour samples; g units reading m each gives g*m. But R's read returns only the thresholded bit, and only successes are steps, so C1 overstates what R provides. Arithmetic: g > 525 (z=2), 820 (z=2.5), 1181 (z=3); "several hundred" holds only at z=2. Fires per turn: 0.21*6.7 = 1.41 checks; upper end 42.9 to 59.3; 58 needs the actual pairing, not verified.
+4. "Re-arming takes about a turn" presupposes a turn-length timer: circular. Only the group threshold is clean. The rung-above reader is an observer, not a coordinator, provided it never writes back; the mark is then unavailable to the level itself. "Read together" needs a meaning without a total order. The tagged unit is declared in assumption (i); but H's dependence relation also relies on unit identity, undeclared.
+5. Strongest objection: the Observation contradicts Claim A. By A, a unit's arm/fire sequence is phase-blind in its own steps; V->C is certain. Phase lives only in when it fires against a count the unit lacks. So (ii) is not separable from (i): marking needs a count to mark against, and the unit is not "already" a reader except through the recruitment-versus-seeding bit.
+
+===== FILE: chk4/chk4.py =====
+from fractions import Fraction as Fr
+import itertools
+# embedded own-role chain C,L,P,V: check pi_V=(1-p1*q6)/(2+p7+p1*q5) exactly on rational grid
+def piV(p1,p7,q6):
+    p2=1-p1-p7;q5=1-q6
+    P=[[0,p1,p7,p2],[q6,0,0,q5],[0,0,0,1],[1,0,0,0]]
+    v=[Fr(1,4)]*4
+    # solve exactly: pi_L=pi_C p1, pi_P=pi_C p7, pi_V=pi_C(p2+p7+p1 q5)
+    c=1/(1+p1+p7+p2+p7+p1*q5); pi=[c,c*p1,c*p7,c*(p2+p7+p1*q5)]
+    assert all(sum(pi[i]*P[i][j] for i in range(4))==pi[j] for j in range(4))
+    return pi[3]
+ok=True;lo=1;hi=0
+for a,b,c in itertools.product(range(0,10),range(0,10),range(0,11)):
+    if a+b>10: continue
+    p1,p7,q6=Fr(a,10),Fr(b,10),Fr(c,10)
+    v=piV(p1,p7,q6); ok&=(v==(1-p1*q6)/(2+p7+p1*(1-q6))); lo=min(lo,v);hi=max(hi,v)
+print("pi_V formula (1-p1 q6)/(2+p7+p1 q5) exact on grid:",ok,"range on grid",float(lo),float(hi))
+for z in (2,2.5,3): print("z",z,"g >",z*z*0.21/(0.2*0.2)**2)
+for f in (.21,.29):
+  for psi in (6.7,204.5): print("frac",f,"Psi",psi,"->",round(f*psi,2))
+
+===== FILE: chk4/output.txt =====
+pi_V formula (1-p1 q6)/(2+p7+p1 q5) exact on grid: True range on grid 0.047619047619047616 0.5
+z 2 g > 524.9999999999998
+z 2.5 g > 820.3124999999997
+z 3 g > 1181.2499999999993
+frac 0.21 Psi 6.7 -> 1.41
+frac 0.21 Psi 204.5 -> 42.95
+frac 0.29 Psi 6.7 -> 1.94
+frac 0.29 Psi 204.5 -> 59.3

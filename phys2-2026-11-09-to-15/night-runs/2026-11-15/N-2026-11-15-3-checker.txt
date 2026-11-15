@@ -1,0 +1,134 @@
+N-2026-11-15-3 — independent checker (a fresh Claude subagent that did not see the working): its report as returned, then its scripts and their output.
+
+===== REPORT =====
+VERDICT: PARTLY. Claims 1 and 2 confirmed and can be strengthened; Claim 3(a)'s cost estimate and the "Located" sentence overreach.
+1. Claim 2 correct (computed and derived). 4-neighbour algebra matches for all three slit pairs and every x in -500..500. Outside the strip, intensity constant. Chebyshev totals exactly 12 000 for every (slit, x). Binomial count right. Nit: phase advances 4*omega per grain, so the continuous period is 2.5 grains, but sampled on whole grains the pattern repeats every 5.
+2. Claim 1 fair; no regular-lattice counter-case (derived, hex checked by BFS). Any periodic lattice gives a piecewise-linear step distance. Within one linear sector L1+L2 is linear in the endpoints, so y cancels and there are no fringes. Fringes appear only where the axis sits on a kink, and are then independent of D2. Rounding the Euclidean L keeps the pattern (correlation 0.94 with exact), whereas the 4-neighbour pattern correlates 0.01. So (iii) is not the cause.
+3. Correction to "isotropy": what the D2/d law needs is curvature of the distance function at the propagation direction, not isotropy. A smooth anisotropic (elliptic) norm still gives spacing proportional to D2/d (computed 50.1, 25.1, 100.1 against 50, 25, 100). A p=4 norm is smooth but flat on the axis and gives quartic path differences: no D2/d law. Isotropy is sufficient; needed only for the same law in every orientation.
+4. Literature for 3(a). Opened (Springer abstract): Howard-Newman 1997 is FPP on Poisson-Voronoi tessellations; "isotropy implies an exact Euclidean ball". Their passage time is not a step count, and isotropy is put in via a Poisson process in an already-Euclidean space. Exponents 1/3 and 2/3: conjectural for FPP, proved only for solvable last-passage models (from memory; search consistent). Arithmetic fine: 22.9 and 524.
+5. Overreach in 3(a): "share most of that fluctuation" not supported. Opened (arXiv 2011.14686 abstract): conditionally, the difference of passage times to points r apart fluctuates as r^(1/2). For slits 100 apart that is about 10 steps, two wavelengths, prefactor unknown. Using L = 12 000 is also wrong for the screen leg: 2000^(2/3) ~ 159, comparable to the slit spacing. Expect speckle-like wander of the fringes, not clean ones, unless the wavelength is much larger than sqrt(d).
+6. 3(b) roughly right but understated (computed). With a phase per step the weight is complex, and the axial wavenumber is complex at every weight tried (Im k 0.6 to 1.6 per grain). No travelling wave at any real weight. At wavelength 5 the lattice dispersion anisotropy is 3.5%. (d) is too quick: a long wavelength also restores isotropy in route (b) and relaxes the fluctuation cost in (a).
+7. The norm statement is correct (trivially). Statistical isotropy delivers it via the subadditive shape theorem, but only relative to a presupposed Euclidean plane. "Labels are not physical" does not entail it: the square grid is label-free and anisotropic.
+8. "Located" should read: curvature (strict convexity) of the far-distance function, with isotropy as one sufficient source, plus difference-fluctuations small against the wavelength, which is not shown.
+
+===== FILE: chk3/chk3.py =====
+import math, itertools
+from fractions import Fraction
+D1,D2=10000,2000; slits=[-100,0,100]; om=math.pi/5
+out=[]
+def P(*a):
+    s=' '.join(str(x) for x in a); print(s); out.append(s)
+# --- Claim 2: 4-neighbour
+def L4(y,x): return D1+abs(y)+D2+abs(x-y)
+def L8(y,x): return max(D1,abs(y))+max(D2,abs(x-y))
+ok=True
+for y1,y2 in itertools.combinations(slits,2):
+    for x in range(-500,501):
+        d=L4(y1,x)-L4(y2,x)
+        if y1<x<y2: e=abs(y1)-abs(y2)+2*x-y1-y2
+        elif x<=y1: e=abs(y1)-abs(y2)+(y1-x)-(y2-x)
+        else: e=abs(y1)-abs(y2)+(x-y1)-(x-y2)
+        ok&=(d==e)
+    outs={L4(y1,x)-L4(y2,x) for x in range(-500,y1+1)}, {L4(y1,x)-L4(y2,x) for x in range(y2,501)}
+    P('pair',y1,y2,'dL outside strip (left,right):',outs)
+P('4-nbr algebra matches for all x:',ok)
+P('8-nbr: set of total L over all slits,x:',{L8(y,x) for y in slits for x in range(-500,501)})
+# BFS confirm small case for 4 and 8 nbr distances
+from collections import deque
+def bfs(n,nb):
+    d={(0,0):0};q=deque([(0,0)])
+    while q:
+        p=q.popleft()
+        for a,b in nb:
+            r=(p[0]+a,p[1]+b)
+            if abs(r[0])<=n and abs(r[1])<=n and r not in d: d[r]=d[p]+1;q.append(r)
+    return d
+n4=[(1,0),(-1,0),(0,1),(0,-1)]; n8=n4+[(1,1),(1,-1),(-1,1),(-1,-1)]
+d4=bfs(15,n4); d8=bfs(15,n8)
+P('BFS 4-nbr = |dx|+|dz|:',all(v==abs(a)+abs(b) for (a,b),v in d4.items()),' 8-nbr = max:',all(v==max(abs(a),abs(b)) for (a,b),v in d8.items()))
+# triangular lattice (6 nbr) in axial coords: dist = max(|a|,|b|,|a+b|)
+n6=[(1,0),(-1,0),(0,1),(0,-1),(1,-1),(-1,1)]
+d6=bfs(15,n6)
+P('BFS 6-nbr = max(|a|,|b|,|a+b|):',all(v==max(abs(a),abs(b),abs(a+b)) for (a,b),v in d6.items()))
+# intensity (doubled-angle unit vectors), 3 slits
+def I(Lf,x): 
+    re=sum(math.cos(2*om*Lf(y,x)) for y in slits); im=sum(math.sin(2*om*Lf(y,x)) for y in slits)
+    return re*re+im*im
+Le=lambda y,x: math.hypot(D1,y)+math.hypot(D2,x-y)
+Lr=lambda y,x: round(math.hypot(D1,y))+round(math.hypot(D2,x-y))
+I4=[round(I(L4,x),6) for x in range(-500,501)]
+P('4-nbr intensity distinct values x<=-100:',sorted(set(I4[:401])),' x>=100:',sorted(set(I4[600:])))
+P('4-nbr intensity x=-12..12:',[round(v,2) for v in I4[488:513]])
+per=[p for p in range(1,30) if all(abs(I4[i]-I4[i+p])<1e-6 for i in range(401,500-p))]
+P('4-nbr smallest integer period inside (-100,0):',per[:1])
+# triangular lattice, axis along a lattice direction: steps = z + |x|/sqrt3 (lateral in units); axis bisecting: independent of x
+# hex in axial coords: axis along a: point (a=z-k, b=2k)?? use direct: lateral index k rows, forward z
+def L6(k,z): # axis = e_a ; lateral displacement k rows via b; position = a*e_a + b*e_b, forward = a + b/2, lateral rows = b
+    b=k; a=z-Fraction(b,2); return max(abs(a),abs(b),abs(a+b))
+P('6-nbr axis along lattice dir: L(k,z=2000)-2000 for k=0..6 rows:',[str(L6(k,2000)-2000) for k in range(0,7)],'(linear in |k| -> kink, no curvature)')
+# Euclidean exact vs rounded
+Ie=[I(Le,x) for x in range(-500,501)]; Irr=[I(Lr,x) for x in range(-500,501)]
+def corr(a,b):
+    ma=sum(a)/len(a); mb=sum(b)/len(b)
+    return sum((p-ma)*(q-mb) for p,q in zip(a,b))/math.sqrt(sum((p-ma)**2 for p in a)*sum((q-mb)**2 for q in b))
+P('Euclid exact: I(0)=%.3f, max=%.3f, min=%.3f'%(Ie[500],max(Ie),min(Ie)))
+P('corr(exact Euclid I, rounded-L I)=%.3f ; rounded max=%.3f min=%.3f'%(corr(Ie,Irr),max(Irr),min(Irr)))
+P('corr(exact Euclid I, 4-nbr I)=%.3f'%corr(Ie,I4))
+# paraxial fringe spacing: lambda=2pi/(2om)=5; spacing lambda*D2/d
+P('Euclid predicted spacing d=100:',5*D2/100,' d=200:',5*D2/200)
+# smooth anisotropic norm (ellipse) -> still D2/d law
+for kap in (1.0,2.0,0.5):
+    Lel=lambda y,x,k=kap: math.sqrt(D1**2+k*y*y)+math.sqrt(D2**2+k*(x-y)**2)
+    # two slits +-50 -> find first minimum spacing from phase diff
+    f=lambda x: (Lel(-100,x)-Lel(100,x))
+    # x at which path diff = 5 steps (one fringe)
+    lo,hi=0,2000
+    for _ in range(60):
+        m=(lo+hi)/2
+        if f(m)<5: lo=m
+        else: hi=m
+    P('elliptic norm kappa=%.1f: fringe spacing (d=200) = %.2f grains; lambda*D2/(kappa*d)=%.2f'%(kap,lo,5*D2/(kap*200)))
+for D in (1000,2000,4000):
+    Lp=lambda y,x: (D1**4+y**4)**.25+(D**4+(x-y)**4)**.25
+    P('p=4 norm D2=%d: path diff slits +-100 at x=50,100,200:'%D,[round(Lp(-100,x)-Lp(100,x),5) for x in (50,100,200)])
+P('12000^(1/3)=%.2f 12000^(2/3)=%.1f ; 2000^(1/3)=%.2f 2000^(2/3)=%.1f ; 10000^(1/3)=%.2f 10000^(2/3)=%.1f'%(12000**(1/3),12000**(2/3),2000**(1/3),2000**(2/3),10000**(1/3),10000**(2/3)))
+P('binomial check small: paths (0,-3)->(2,0) =',math.comb(5,2))
+# lattice Green fn: 2cos kx+2cos kz = E ; wavelength 5 on axis
+k=2*math.pi/5; E=2*math.cos(k)+2; kd=math.sqrt(2)*math.acos(E/4)
+P('lattice dispersion at wavelength 5: k_axis=%.4f k_diag=%.4f ratio=%.4f'%(k,kd,kd/k))
+# complex weight w=z e^{i 2om}: cos k = 1/(2w) - 1 (kx=0)
+import cmath
+for z in (0.2,0.25,0.3,1.0):
+    w=z*cmath.exp(2j*om); kk=cmath.acos(1/(2*w)-1)
+    P('all-routes sum, weight z=%.2f phase 2om/step: axial k = %.3f%+.3fi (Im k = damping per grain)'%(z,kk.real,kk.imag))
+open('/home/claude/night/chk3/output.txt','w').write('\n'.join(out)+'\n')
+
+===== FILE: chk3/output.txt =====
+pair -100 0 dL outside strip (left,right): ({0}, {200})
+pair -100 100 dL outside strip (left,right): ({-200}, {200})
+pair 0 100 dL outside strip (left,right): ({-200}, {0})
+4-nbr algebra matches for all x: True
+8-nbr: set of total L over all slits,x: {12000}
+BFS 4-nbr = |dx|+|dz|: True  8-nbr = max: True
+BFS 6-nbr = max(|a|,|b|,|a+b|): True
+4-nbr intensity distinct values x<=-100: [9.0]  x>=100: [9.0]
+4-nbr intensity x=-12..12: [6.24, 1.76, 9.0, 1.76, 6.24, 6.24, 1.76, 9.0, 1.76, 6.24, 6.24, 1.76, 9.0, 1.76, 6.24, 6.24, 1.76, 9.0, 1.76, 6.24, 6.24, 1.76, 9.0, 1.76, 6.24]
+4-nbr smallest integer period inside (-100,0): [5]
+6-nbr axis along lattice dir: L(k,z=2000)-2000 for k=0..6 rows: ['0', '1/2', '1', '3/2', '2', '5/2', '3'] (linear in |k| -> kink, no curvature)
+Euclid exact: I(0)=1.759, max=8.695, min=0.122
+corr(exact Euclid I, rounded-L I)=0.939 ; rounded max=9.000 min=0.382
+corr(exact Euclid I, 4-nbr I)=0.010
+Euclid predicted spacing d=100: 100.0  d=200: 50.0
+elliptic norm kappa=1.0: fringe spacing (d=200) = 50.08 grains; lambda*D2/(kappa*d)=50.00
+elliptic norm kappa=2.0: fringe spacing (d=200) = 25.07 grains; lambda*D2/(kappa*d)=25.00
+elliptic norm kappa=0.5: fringe spacing (d=200) = 100.13 grains; lambda*D2/(kappa*d)=100.00
+p=4 norm D2=1000: path diff slits +-100 at x=50,100,200: [0.12498, 0.39976, 1.99388]
+p=4 norm D2=2000: path diff slits +-100 at x=50,100,200: [0.01562, 0.05, 0.24995]
+p=4 norm D2=4000: path diff slits +-100 at x=50,100,200: [0.00195, 0.00625, 0.03125]
+12000^(1/3)=22.89 12000^(2/3)=524.1 ; 2000^(1/3)=12.60 2000^(2/3)=158.7 ; 10000^(1/3)=21.54 10000^(2/3)=464.2
+binomial check small: paths (0,-3)->(2,0) = 10
+lattice dispersion at wavelength 5: k_axis=1.2566 k_diag=1.2124 ratio=0.9648
+all-routes sum, weight z=0.20 phase 2om/step: axial k = 1.659+1.604i (Im k = damping per grain)
+all-routes sum, weight z=0.25 phase 2om/step: axial k = 1.747+1.413i (Im k = damping per grain)
+all-routes sum, weight z=0.30 phase 2om/step: axial k = 1.826+1.269i (Im k = damping per grain)
+all-routes sum, weight z=1.00 phase 2om/step: axial k = 2.350+0.627i (Im k = damping per grain)

@@ -1,0 +1,8 @@
+d(T1 + nu*T2)/dt - (k12 - nu*u9*P2) = 0
+planted: residual = P1*(C2*kappa + k9)
+sum f1 = -C2*P1*kappa - P1*k9 + k12
+P1* = k12/(C2*kappa + k9) ; C1* = k12*(C2*kappa + k8 + k9)/(k7*(C2*kappa + k9)) ; dC1*/dC2 = -k12*k8*kappa/(k7*(C2*kappa + k9)**2)
+U at lower balance = k12
+C2* (upper pin) = k12*(u8 + u9)/(nu*u7*u9)
+dC2/dt on face C2=L2=P2=0: V2*(C1*sigma + rho2*(C1 + L1 + P1 + V1))/(C1 + L1 + P1 + V1)
+dV2/dt on face C2=L2=P2=V2=0: P1*k9/nu

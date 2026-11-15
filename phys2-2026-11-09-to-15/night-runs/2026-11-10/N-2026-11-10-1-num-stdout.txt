@@ -1,0 +1,2 @@
+{"draws": 425454, "three_balance": 12264, "elapsed_s": 2700.003436565399, "root_counts": {"1": 413190, "3": 12264}, "flags": {"identity": 0, "middle_stable": 0, "outer_unstable": 212, "gp_sign_mismatch": 0}, "plantP1": {"run": 200, "tripped": 200, "minrel": 0.0025366746072222764}, "plantP2": {"run": 200, "tripped": 200}}
+outer cases: 212

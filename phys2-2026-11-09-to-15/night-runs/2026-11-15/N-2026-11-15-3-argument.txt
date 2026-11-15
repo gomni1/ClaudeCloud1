@@ -1,0 +1,51 @@
+N-2026-11-15-3 — route length in a rule stated in steps (D1 Locate) — argument as sent to the checker
+
+The 14 Nov slit test used L = sqrt(D1^2 + y^2) + sqrt(D2^2 + (x-y)^2) as 'the number of steps' on a route
+source -> barrier grain y -> screen grain x, with phase 2*omega*L (axis) and omega = pi/5.
+
+Claim 1 (where the continuum enters). Three separate things are imported by that L:
+ (i) straight routes at any slope (a grain network has no straight route at an arbitrary slope);
+ (ii) the Pythagorean form of the length (isotropy);
+ (iii) non-whole step counts.
+The PIN's clause forbids rounding, i.e. it addresses (iii) only. (ii) is the one doing the work.
+
+Claim 2 (worked example, exact). Grains on a square grid, steps to the four nearest neighbours. The fewest steps
+from the source (0, -D1) to barrier grain (y, 0) is D1 + |y|, and on to screen grain (x, D2) is D2 + |x - y|.
+For two barrier grains y1 < y2 the difference in route length at screen grain x is
+   dL = |y1| - |y2| + |x - y1| - |x - y2|
+      = constant for x <= y1 and for x >= y2 ; = |y1| - |y2| + 2x - y1 - y2 for y1 < x < y2.
+So with shortest step-counted routes: no fringes at all outside the strip between the two slits; inside it,
+fringes of spacing pi/(2 omega) grains (2.5 grains at omega = pi/5; phase 2*omega*dL advances by 4*omega per grain),
+whatever the screen distance D2 and whatever the slit spacing. With steps to all eight neighbours the fewest steps
+is max(|dx|, |dz|), which is D1 and D2 for every route in the 14 Nov geometry: no phase difference and no fringes.
+Observational register: observed two-slit fringes have spacing proportional to (distance to screen)/(slit spacing).
+So the fringe law of the 14 Nov run comes from the Euclidean form of L, not from the handoff rule, and a
+step-counted shortest route on a regular grid does not give it. [theorem, elementary, for these two grids]
+Also: on the square grid the number of shortest routes to (y,0) is binomial(D1+|y|, |y|), so 'one history per
+(slit grain, screen grain) with weight 1' is a further choice.
+
+Claim 3 (what could supply an isotropic length), each tagged:
+ (a) A substrate with no preferred direction in the statistical sense (a disordered network), read at the
+     effective register where a plane and rotations are available. Then fewest-step distance between far grains
+     is a constant times Euclidean distance to leading order (a rotation-invariant norm on the plane is Euclidean
+     up to scale). Published: shape theorems of first-passage percolation; isotropic versions (Howard & Newman,
+     'Euclidean models of first-passage percolation', 1997) — FROM MEMORY, not opened tonight.
+     Tag: 'no preferred direction' is arguably source-entailed (relational primacy; labels are not physical);
+     that a grain rule yields it is NOT EARNED; the plane itself is effective-register.
+     Cost: the fewest-step count then fluctuates from route to route. From memory and conjectural (KPZ class in
+     the plane): fluctuation ~ L^(1/3), correlated across a lateral distance ~ L^(2/3). For L = 12 000 that is
+     about 23 steps and about 520 grains. 23 steps of phase is far more than a turn, so fringes would survive only
+     because routes through slits 100-200 grains apart share most of that fluctuation. This is item 2's
+     question (jitter with a lateral reach) arising from the substrate itself, frozen rather than renewed.
+     Pointer only.
+ (b) Summing over all step routes, not only the shortest. Needs weights (the number of n-step routes grows
+     exponentially). For unbiased weights the sum is a lattice Green's function: isotropic only when the
+     wavelength is many grains, and a damped rather than travelling wave away from a critical weight.
+     The 14 Nov wavelength is 5 grains. FROM MEMORY. Tag: NOT EARNED; it is a different rule from the PIN's.
+ (c) A finer rung beneath: a non-whole number of steps at this rung is a whole count one rung down.
+     Supplies (iii) only, not (ii). Tag: allowed by the ladder principle; a descent, so not taken.
+ (d) Small omega (wavelength of many grains): makes rounding harmless, i.e. (iii) again, not (ii).
+
+Located: the crack is isotropy (ii), not rounding (iii). What a grain rule must supply is a statistically
+direction-free count of steps between far grains, and enough sharing of its fluctuations between neighbouring
+routes. Nothing was run.
