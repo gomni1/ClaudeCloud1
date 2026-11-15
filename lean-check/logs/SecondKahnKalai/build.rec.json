@@ -1,0 +1,12 @@
+{
+ "build": {
+  "cmd": [
+   "lake",
+   "build",
+   "OAI.Combinatorics.GraphThreshold.Main"
+  ],
+  "returncode": 0,
+  "wall_s": 1252.993192911148,
+  "cpu_s": 2425.125221
+ }
+}

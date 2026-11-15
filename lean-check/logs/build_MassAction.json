@@ -1,0 +1,14 @@
+{
+ "cmd": [
+  "lake",
+  "build",
+  "OAI.Analysis.MassAction.Main"
+ ],
+ "returncode": -15,
+ "wall_s": 11671.683505773544,
+ "cpu_user_s": 18670.412318,
+ "cpu_sys_s": 3915.289507,
+ "cpu_s": 22585.701825,
+ "maxrss_kb": 1937152,
+ "end": "2026-10-30 06:51:34"
+}

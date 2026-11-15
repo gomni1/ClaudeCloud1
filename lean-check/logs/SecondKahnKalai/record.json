@@ -1,0 +1,64 @@
+{
+ "name": "SecondKahnKalai",
+ "config": {
+  "challenge_module": "ComparatorChallenges.SecondKahnKalai",
+  "solution_module": "OAI.Combinatorics.GraphThreshold.Main",
+  "theorem_names": [
+   "OAI.LeanBlast.SecondKahnKalai.secondKahnKalaiBounds"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+   "propext",
+   "Quot.sound",
+   "Classical.choice"
+  ],
+  "enable_nanoda": false
+ },
+ "build": {
+  "cmd": [
+   "lake",
+   "build",
+   "OAI.Combinatorics.GraphThreshold.Main"
+  ],
+  "returncode": 0,
+  "wall_s": 1252.993192911148,
+  "cpu_s": 2425.125221
+ },
+ "axioms_run": {
+  "cmd": [
+   "lake",
+   "env",
+   "lean",
+   "/home/user/leanwork/probe/axioms_SecondKahnKalai.lean"
+  ],
+  "returncode": 0,
+  "wall_s": 15.534848928451538,
+  "cpu_s": 15.309658000000013
+ },
+ "comparator_removed_build_dirs": [
+  "/home/user/leanwork/math/lean/.lake/build/lib/lean/OAI",
+  "/home/user/leanwork/math/lean/.lake/build/ir/OAI"
+ ],
+ "comparator": {
+  "cmd": [
+   "lake",
+   "env",
+   "comparator",
+   "ComparatorChallenges/SecondKahnKalai.json"
+  ],
+  "returncode": 0,
+  "wall_s": 215.5736267566681,
+  "cpu_s": 319.05109499999986
+ },
+ "scan": {
+  "n_files": 38,
+  "hits": {
+   "ComparatorChallenges.SecondKahnKalai": {
+    "sorry": [
+     68
+    ]
+   }
+  },
+  "hits_outside_challenge": {}
+ }
+}

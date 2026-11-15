@@ -1,0 +1,443 @@
+{
+ "release_commit": "4eaee87548250b2682affda7d05d947c05554bae",
+ "targets": [
+  {
+   "family": "149",
+   "name": "MassAction",
+   "config": {
+    "challenge_module": "ComparatorChallenges.MassAction",
+    "solution_module": "OAI.Analysis.MassAction.Main",
+    "theorem_names": [
+     "OAI.Problem326.global_bounded_persistent_solution"
+    ],
+    "definition_names": [],
+    "permitted_axioms": [
+     "propext",
+     "Quot.sound",
+     "Classical.choice"
+    ],
+    "enable_nanoda": false
+   },
+   "n_files": 72,
+   "n_lines": 7818,
+   "solution_in_closure": true,
+   "challenge_in_closure": true,
+   "external_imports": [
+    "Mathlib",
+    "Mathlib.Analysis.Asymptotics.Lemmas",
+    "Mathlib.Analysis.SpecialFunctions.Log.NegMulLog",
+    "Mathlib.Analysis.SpecialFunctions.Pow.Asymptotics",
+    "Mathlib.Analysis.SpecialFunctions.Pow.Continuity"
+   ],
+   "imports_all_of_mathlib": true,
+   "scan_counts": {
+    "sorry": 1,
+    "admit": 0,
+    "axiom_decl": 0,
+    "implemented_by": 0,
+    "unsafe": 0,
+    "native_decide": 0
+   },
+   "scan_hits": {
+    "ComparatorChallenges.MassAction": {
+     "sorry": [
+      54
+     ]
+    }
+   },
+   "hits_outside_challenge": {}
+  },
+  {
+   "family": "131",
+   "name": "SwitchChain",
+   "config": {
+    "challenge_module": "ComparatorChallenges.SwitchChain",
+    "solution_module": "OAI.Probability.SwitchChain.Main",
+    "theorem_names": [
+     "OAI.Problem315.switch_chain_main",
+     "OAI.Problem315.switch_chain_tv_bound",
+     "OAI.Problem315.switch_connectivity"
+    ],
+    "definition_names": [],
+    "permitted_axioms": [
+     "propext",
+     "Quot.sound",
+     "Classical.choice"
+    ],
+    "enable_nanoda": false
+   },
+   "n_files": 166,
+   "n_lines": 22862,
+   "solution_in_closure": true,
+   "challenge_in_closure": true,
+   "external_imports": [
+    "Mathlib"
+   ],
+   "imports_all_of_mathlib": true,
+   "scan_counts": {
+    "sorry": 3,
+    "admit": 0,
+    "axiom_decl": 0,
+    "implemented_by": 0,
+    "unsafe": 0,
+    "native_decide": 0
+   },
+   "scan_hits": {
+    "ComparatorChallenges.SwitchChain": {
+     "sorry": [
+      157,
+      161,
+      165
+     ]
+    }
+   },
+   "hits_outside_challenge": {}
+  },
+  {
+   "family": "186",
+   "name": "SharpThreshold",
+   "config": {
+    "challenge_module": "ComparatorChallenges.SharpThreshold",
+    "solution_module": "OAI.Combinatorics.SharpThreshold.Main",
+    "theorem_names": [
+     "OAI.Problem313.sharp_threshold_width"
+    ],
+    "definition_names": [],
+    "permitted_axioms": [
+     "propext",
+     "Quot.sound",
+     "Classical.choice"
+    ],
+    "enable_nanoda": false
+   },
+   "n_files": 79,
+   "n_lines": 7762,
+   "solution_in_closure": true,
+   "challenge_in_closure": true,
+   "external_imports": [
+    "Mathlib"
+   ],
+   "imports_all_of_mathlib": true,
+   "scan_counts": {
+    "sorry": 1,
+    "admit": 0,
+    "axiom_decl": 0,
+    "implemented_by": 0,
+    "unsafe": 0,
+    "native_decide": 0
+   },
+   "scan_hits": {
+    "ComparatorChallenges.SharpThreshold": {
+     "sorry": [
+      57
+     ]
+    }
+   },
+   "hits_outside_challenge": {}
+  },
+  {
+   "family": "176",
+   "name": "SecondKahnKalai",
+   "config": {
+    "challenge_module": "ComparatorChallenges.SecondKahnKalai",
+    "solution_module": "OAI.Combinatorics.GraphThreshold.Main",
+    "theorem_names": [
+     "OAI.LeanBlast.SecondKahnKalai.secondKahnKalaiBounds"
+    ],
+    "definition_names": [],
+    "permitted_axioms": [
+     "propext",
+     "Quot.sound",
+     "Classical.choice"
+    ],
+    "enable_nanoda": false
+   },
+   "n_files": 38,
+   "n_lines": 6827,
+   "solution_in_closure": true,
+   "challenge_in_closure": true,
+   "external_imports": [
+    "Mathlib.Algebra.BigOperators.Field",
+    "Mathlib.Algebra.BigOperators.Group.Finset.Piecewise",
+    "Mathlib.Algebra.BigOperators.Group.Finset.Powerset",
+    "Mathlib.Algebra.BigOperators.GroupWithZero.Finset",
+    "Mathlib.Algebra.BigOperators.Ring.Finset",
+    "Mathlib.Algebra.Group.Action.Pointwise.Finset",
+    "Mathlib.Algebra.Order.BigOperators.Group.Finset",
+    "Mathlib.Algebra.Order.BigOperators.Ring.Finset",
+    "Mathlib.Algebra.Order.Field.GeomSum",
+    "Mathlib.Algebra.Order.Floor.Semifield",
+    "Mathlib.Analysis.Complex.ExponentialBounds",
+    "Mathlib.Analysis.SpecialFunctions.Exp",
+    "Mathlib.Analysis.SpecialFunctions.Log.Base",
+    "Mathlib.Analysis.SpecialFunctions.Log.Basic",
+    "Mathlib.Basic.Real.Basic",
+    "Mathlib.Combinatorics.SimpleGraph.Copy",
+    "Mathlib.Data.Finset.Card",
+    "Mathlib.Data.Finset.Max",
+    "Mathlib.Data.Finset.Powerset",
+    "Mathlib.Data.Fintype.BigOperators",
+    "Mathlib.Data.Fintype.Pi",
+    "Mathlib.Data.Fintype.Powerset",
+    "Mathlib.Data.Fintype.Sigma",
+    "Mathlib.Data.List.Pairwise",
+    "Mathlib.Data.Nat.Choose.Bounds",
+    "Mathlib.Data.Nat.Choose.Sum",
+    "Mathlib.Logic.Equiv.Fintype",
+    "Mathlib.Order.Interval.Set.Monotone",
+    "Mathlib.Tactic",
+    "Mathlib.Tactic.FieldSimp",
+    "Mathlib.Tactic.Linarith",
+    "Mathlib.Tactic.NormNum",
+    "Mathlib.Tactic.Positivity",
+    "Mathlib.Tactic.Ring",
+    "Mathlib.Topology.Order.Monotone"
+   ],
+   "imports_all_of_mathlib": false,
+   "scan_counts": {
+    "sorry": 1,
+    "admit": 0,
+    "axiom_decl": 0,
+    "implemented_by": 0,
+    "unsafe": 0,
+    "native_decide": 0
+   },
+   "scan_hits": {
+    "ComparatorChallenges.SecondKahnKalai": {
+     "sorry": [
+      68
+     ]
+    }
+   },
+   "hits_outside_challenge": {}
+  },
+  {
+   "family": "220",
+   "name": "DirectionalBallisticity",
+   "config": {
+    "challenge_module": "ComparatorChallenges.DirectionalBallisticity",
+    "solution_module": "OAI.Probability.Ballisticity.Main",
+    "theorem_names": [
+     "OAI.DirectionalTransience.directional_transience_implies_ballisticity"
+    ],
+    "definition_names": [],
+    "permitted_axioms": [
+     "propext",
+     "Quot.sound",
+     "Classical.choice"
+    ],
+    "enable_nanoda": false
+   },
+   "n_files": 514,
+   "n_lines": 98512,
+   "solution_in_closure": true,
+   "challenge_in_closure": true,
+   "external_imports": [
+    "Mathlib"
+   ],
+   "imports_all_of_mathlib": true,
+   "scan_counts": {
+    "sorry": 1,
+    "admit": 0,
+    "axiom_decl": 0,
+    "implemented_by": 0,
+    "unsafe": 0,
+    "native_decide": 0
+   },
+   "scan_hits": {
+    "ComparatorChallenges.DirectionalBallisticity": {
+     "sorry": [
+      96
+     ]
+    }
+   },
+   "hits_outside_challenge": {}
+  },
+  {
+   "family": "229",
+   "name": "ThreeStateSupercritical",
+   "config": {
+    "challenge_module": "ComparatorChallenges.ThreeStateSupercritical",
+    "solution_module": "OAI.Probability.ThreeState.Main",
+    "theorem_names": [
+     "OAI.ThreeState.regular_supercritical",
+     "OAI.ThreeState.poisson_supercritical"
+    ],
+    "definition_names": [],
+    "permitted_axioms": [
+     "propext",
+     "Quot.sound",
+     "Classical.choice"
+    ],
+    "enable_nanoda": false
+   },
+   "n_files": 28,
+   "n_lines": 7799,
+   "solution_in_closure": true,
+   "challenge_in_closure": true,
+   "external_imports": [
+    "Mathlib"
+   ],
+   "imports_all_of_mathlib": true,
+   "scan_counts": {
+    "sorry": 2,
+    "admit": 0,
+    "axiom_decl": 0,
+    "implemented_by": 0,
+    "unsafe": 0,
+    "native_decide": 0
+   },
+   "scan_hits": {
+    "ComparatorChallenges.ThreeStateSupercritical": {
+     "sorry": [
+      100,
+      104
+     ]
+    }
+   },
+   "hits_outside_challenge": {}
+  },
+  {
+   "family": "229",
+   "name": "ThreeStateTreeClauses",
+   "config": {
+    "challenge_module": "ComparatorChallenges.ThreeStateTreeClauses",
+    "definition_names": [],
+    "enable_nanoda": false,
+    "permitted_axioms": [
+     "propext",
+     "Quot.sound",
+     "Classical.choice"
+    ],
+    "solution_module": "OAI.Probability.ThreeStateClauses.Main",
+    "theorem_names": [
+     "OAI.ThreeState.TreeClauses.Tree.regular_reconstructs_above_KS",
+     "OAI.ThreeState.TreeClauses.Tree.poisson_reconstructs_above_KS"
+    ]
+   },
+   "n_files": 32,
+   "n_lines": 7896,
+   "solution_in_closure": true,
+   "challenge_in_closure": true,
+   "external_imports": [
+    "Mathlib"
+   ],
+   "imports_all_of_mathlib": true,
+   "scan_counts": {
+    "sorry": 2,
+    "admit": 0,
+    "axiom_decl": 0,
+    "implemented_by": 0,
+    "unsafe": 0,
+    "native_decide": 0
+   },
+   "scan_hits": {
+    "ComparatorChallenges.ThreeStateTreeClauses": {
+     "sorry": [
+      94,
+      98
+     ]
+    }
+   },
+   "hits_outside_challenge": {}
+  }
+ ],
+ "family_229_configs": [
+  "ThreeStateSupercritical",
+  "ThreeStateTreeClauses"
+ ],
+ "formalization_yaml_149": [],
+ "formalization_yaml_149_blocks": [],
+ "family_149_history": [
+  {
+   "commit": "4eaee8754",
+   "date": "2026-10-29",
+   "massaction_files": 71,
+   "comparator_config": true,
+   "sorry_count": 0,
+   "sorry_files": [],
+   "docs_149": true,
+   "yaml_mentions_massaction": false
+  },
+  {
+   "commit": "204e5f8f8",
+   "date": "2026-10-29",
+   "massaction_files": 71,
+   "comparator_config": true,
+   "sorry_count": 0,
+   "sorry_files": [],
+   "docs_149": true,
+   "yaml_mentions_massaction": false
+  },
+  {
+   "commit": "7ef5c0cc5",
+   "date": "2026-10-26",
+   "massaction_files": 71,
+   "comparator_config": true,
+   "sorry_count": 0,
+   "sorry_files": [],
+   "docs_149": true,
+   "yaml_mentions_massaction": false
+  },
+  {
+   "commit": "42907c9e9",
+   "date": "2026-10-26",
+   "massaction_files": 71,
+   "comparator_config": true,
+   "sorry_count": 0,
+   "sorry_files": [],
+   "docs_149": true,
+   "yaml_mentions_massaction": false
+  },
+  {
+   "commit": "1581d4cbd",
+   "date": "2026-10-12",
+   "massaction_files": 71,
+   "comparator_config": true,
+   "sorry_count": 0,
+   "sorry_files": [],
+   "docs_149": true,
+   "yaml_mentions_massaction": false
+  },
+  {
+   "commit": "2710f995c",
+   "date": "2026-10-12",
+   "massaction_files": 71,
+   "comparator_config": true,
+   "sorry_count": 0,
+   "sorry_files": [],
+   "docs_149": true,
+   "yaml_mentions_massaction": false
+  },
+  {
+   "commit": "fd4aeeb2e",
+   "date": "2026-10-07",
+   "massaction_files": 71,
+   "comparator_config": true,
+   "sorry_count": 0,
+   "sorry_files": [],
+   "docs_149": true,
+   "yaml_mentions_massaction": false
+  },
+  {
+   "commit": "301488868",
+   "date": "2026-10-07",
+   "massaction_files": 71,
+   "comparator_config": true,
+   "sorry_count": 0,
+   "sorry_files": [],
+   "docs_149": true,
+   "yaml_mentions_massaction": false
+  },
+  {
+   "commit": "adc7f1241",
+   "date": "2026-10-06",
+   "massaction_files": 71,
+   "comparator_config": true,
+   "sorry_count": 0,
+   "sorry_files": [],
+   "docs_149": true,
+   "yaml_mentions_massaction": false
+  }
+ ]
+}
