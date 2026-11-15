@@ -1,0 +1,82 @@
+[
+ {
+  "check": "P1",
+  "n_scripts": 6,
+  "all_deltas_exact": true,
+  "median_expected": 0.175,
+  "median_got": 0.175,
+  "median_exact": true,
+  "passed": true,
+  "rows": [
+   {
+    "Omega": 8,
+    "delta_expected": 0.25,
+    "delta_got": 0.25,
+    "visitD_expected": 0,
+    "visitD_got": 0,
+    "delta_exact": true,
+    "visitD_exact": true
+   },
+   {
+    "Omega": 8,
+    "delta_expected": 0.0,
+    "delta_got": 0.0,
+    "visitD_expected": 1,
+    "visitD_got": 1,
+    "delta_exact": true,
+    "visitD_exact": true
+   },
+   {
+    "Omega": 10,
+    "delta_expected": 0.0,
+    "delta_got": 0.0,
+    "visitD_expected": 1,
+    "visitD_got": 1,
+    "delta_exact": true,
+    "visitD_exact": true
+   },
+   {
+    "Omega": 10,
+    "delta_expected": 0.1,
+    "delta_got": 0.1,
+    "visitD_expected": 0,
+    "visitD_got": 0,
+    "delta_exact": true,
+    "visitD_exact": true
+   },
+   {
+    "Omega": 12,
+    "delta_expected": 0.75,
+    "delta_got": 0.75,
+    "visitD_expected": 0,
+    "visitD_got": 0,
+    "delta_exact": true,
+    "visitD_exact": true
+   },
+   {
+    "Omega": 12,
+    "delta_expected": 0.25,
+    "delta_got": 0.25,
+    "visitD_expected": 0,
+    "visitD_got": 0,
+    "delta_exact": true,
+    "visitD_exact": true
+   }
+  ]
+ },
+ {
+  "check": "P2",
+  "n_scripts": 6,
+  "all_flags_exact": true,
+  "passage_count_expected": 2,
+  "passage_count_got": 2,
+  "passed": true
+ },
+ {
+  "check": "E2E",
+  "n_runs_used": 400,
+  "mismatches": 0,
+  "n_visited_D": 0,
+  "passed": true
+ }
+]
