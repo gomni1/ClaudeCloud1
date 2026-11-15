@@ -1,0 +1,141 @@
+{
+ "rows": [
+  {
+   "k10": 0.5,
+   "Omega": 2,
+   "direction": "up",
+   "T_exact": 3.5068900864824686,
+   "converged": true,
+   "caps": [
+    40,
+    56,
+    40,
+    32
+   ],
+   "frozen_rule_converged": true,
+   "cpu": 306.033949672
+  },
+  {
+   "k10": 0.5,
+   "Omega": 2,
+   "direction": "down",
+   "T_exact": 5.435178116774094,
+   "converged": true,
+   "caps": [
+    20,
+    44,
+    20,
+    16
+   ],
+   "frozen_rule_converged": false,
+   "cpu": 131.390323561
+  },
+  {
+   "k10": 1.0,
+   "Omega": 2,
+   "direction": "up",
+   "T_exact": 2.6013823666254203,
+   "converged": true,
+   "caps": [
+    40,
+    56,
+    40,
+    32
+   ],
+   "frozen_rule_converged": true,
+   "cpu": 365.877656855
+  },
+  {
+   "k10": 1.0,
+   "Omega": 2,
+   "direction": "down",
+   "T_exact": 4.188528606480612,
+   "converged": true,
+   "caps": [
+    20,
+    44,
+    20,
+    16
+   ],
+   "frozen_rule_converged": true,
+   "cpu": 131.533664982
+  },
+  {
+   "k10": 2.0,
+   "Omega": 2,
+   "direction": "up",
+   "T_exact": 2.0854950583391036,
+   "converged": true,
+   "caps": [
+    40,
+    56,
+    40,
+    32
+   ],
+   "frozen_rule_converged": true,
+   "cpu": 293.61406830399994
+  },
+  {
+   "k10": 2.0,
+   "Omega": 2,
+   "direction": "down",
+   "T_exact": 3.423558278540693,
+   "converged": true,
+   "caps": [
+    20,
+    44,
+    20,
+    16
+   ],
+   "frozen_rule_converged": false,
+   "cpu": 151.54261176000006
+  },
+  {
+   "k10": 0.5,
+   "Omega": 3,
+   "direction": "up",
+   "T_exact": 8.541299365742214,
+   "converged": true,
+   "caps": [
+    24,
+    36,
+    24,
+    20
+   ],
+   "frozen_rule_converged": false,
+   "cpu": 239.56892193
+  },
+  {
+   "k10": 0.5,
+   "Omega": 3,
+   "direction": "down",
+   "T_exact": 13.894733152634437,
+   "converged": true,
+   "caps": [
+    24,
+    60,
+    24,
+    20
+   ],
+   "frozen_rule_converged": false,
+   "cpu": 328.379482079
+  },
+  {
+   "k10": 1.0,
+   "Omega": 3,
+   "direction": "up",
+   "T_exact": 6.400315611606332,
+   "converged": true,
+   "caps": [
+    24,
+    36,
+    24,
+    20
+   ],
+   "frozen_rule_converged": false,
+   "cpu": 232.81598291399996
+  }
+ ],
+ "spent": 2180.756662057,
+ "cap": 1800.0
+}
