@@ -1,0 +1,68 @@
+N2 {"TH": {"max_rel_err": 6.364204687488627e-16, "pass_": true}, "MA": {"max_rel_err": 6.364204687488627e-16, "pass_": true}, "_seconds": 0.0}
+N4 {"draws": 300, "draws_with_sign_change": 0, "kill": false, "exploratory": {"19387 (closed) k1 (route through L)": [{"scale": 1.0, "cycle": true, "rel_amp": 0.8435113284591995, "period": 6.352406377159055}, {"scale": 0.3, "cycle": false, "rel_amp": 1.3026194800984375e-14, "period": null}, {"scale": 0.1, "cycle": false, "rel_amp": 3.9733602795735045e-14, "period": null}, {"scale": 0.03, "cycle": false, "rel_amp": 8.17749047991357e-14, "period": null}, {"scale": 0.01, "cycle": false, "rel_amp": 8.359903058586631e-14, "period": null}], "19387 (closed) k7 (route through P)": [{"scale": 1.0, "cycle": true, "rel_amp": 0.8435113284591995, "period": 6.352406377159055}, {"scale": 0.3, "cycle": false, "rel_amp": 6.395058356277936e-14, "period": null}, {"scale": 0.1, "cycle": false, "rel_amp": 2.0762584330206254e-14, "period": null}, {"scale": 0.03, "cycle": false, "rel_amp": 6.211755391536102e-14, "period": null}, {"scale": 0.01, "cycle": false, "rel_amp": 8.869837216410801e-14, "period": null}], "33538 (open) k1 (route through L)": [{"scale": 1.0, "cycle": true, "rel_amp": 1.9830262782567973, "period": 4.8438890174672435}, {"scale": 0.3, "cycle": true, "rel_amp": 2.0586798907303634, "period": 4.642816429408244}, {"scale": 0.1, "cycle": true, "rel_amp": 2.0757181312381863, "period": 4.596681264522306}, {"scale": 0.03, "cycle": true, "rel_amp": 2.0789818228381867, "period": 4.581600744841705}, {"scale": 0.01, "cycle": true, "rel_amp": 2.0678929394926517, "period": 4.57738878460341}], "33538 (open) k7 (route through P)": [{"scale": 1.0, "cycle": true, "rel_amp": 1.9830262782567973, "period": 4.8438890174672435}, {"scale": 0.3, "cycle": false, "rel_amp": 1.4471205439805963e-12, "period": null}, {"scale": 0.1, "cycle": false, "rel_amp": 3.213711530961071e-11, "period": null}, {"scale": 0.03, "cycle": false, "rel_amp": 2.450968492895713e-09, "period": null}, {"scale": 0.01, "cycle": false, "rel_amp": 0.0008549183167248125, "period": null}]}, "_seconds": 25.6}
+N3 {"planted_roots": [0.2, 0.5, 0.8], "planted_pass": true, "open": {"kr1_draws": 910, "kr1_not_one": 0, "kr1_counts": [1], "kr2_draws": 4090, "kr2_count_hist": {"1": 4017, "3": 73}, "kr2_share_three": 0.01784841075794621}, "closed": {"kr1_draws": 971, "kr1_not_one": 0, "kr1_counts": [1], "kr2_draws": 4029, "kr2_count_hist": {"1": 3970, "3": 59}, "kr2_share_three": 0.014643832216430876}, "example_open_three": {"i": 4891, "level": "open", "m": 10, "kr": 6, "k": [0.4885013902188887, 0.19756599007130615, 13.991678708833835, 7.0238236029843755, 8.292826391072563, 2.091867696323845, 1.266693088796426, 4.986273246057814, 0.3116671607746543, 0.0, 16.653561853840188], "n": 3, "bal": [{"C": 9.983502649656785, "V": 2.588960917567218, "L": 0.31840872028176015, "P": 3.3398815171243617}, {"C": 9.983502649656785, "V": 14.393646161833082, "L": 0.31840872028176015, "P": 3.3398815171243617}, {"C": 9.983502649656785, "V": 79.74724543199478, "L": 0.31840872028176015, "P": 3.3398815171243617}]}, "kill": false, "_seconds": 21.3}
+C:\Users\gomni\GENERAL\phys2-saturation-2026-11-06\checks.py:53: RuntimeWarning: overflow encountered in scalar multiply
+  rho, rel, create = 0.0, 0.0, rep * C
+C:\Users\gomni\GENERAL\phys2-saturation-2026-11-06\checks.py:41: RuntimeWarning: invalid value encountered in scalar divide
+  x = C / T if T > 0 else 0.0
+C:\Users\gomni\GENERAL\phys2-saturation-2026-11-06\checks.py:57: RuntimeWarning: invalid value encountered in scalar add
+  return [-lossC * C + k6 * L + g + create,
+C:\Users\gomni\GENERAL\phys2-saturation-2026-11-06\checks.py:53: RuntimeWarning: overflow encountered in scalar multiply
+  rho, rel, create = 0.0, 0.0, rep * C
+C:\Users\gomni\GENERAL\phys2-saturation-2026-11-06\checks.py:41: RuntimeWarning: invalid value encountered in scalar divide
+  x = C / T if T > 0 else 0.0
+C:\Users\gomni\GENERAL\phys2-saturation-2026-11-06\checks.py:57: RuntimeWarning: invalid value encountered in scalar add
+  return [-lossC * C + k6 * L + g + create,
+C:\Users\gomni\GENERAL\phys2-saturation-2026-11-06\checks.py:53: RuntimeWarning: overflow encountered in scalar multiply
+  rho, rel, create = 0.0, 0.0, rep * C
+C:\Users\gomni\GENERAL\phys2-saturation-2026-11-06\checks.py:41: RuntimeWarning: invalid value encountered in scalar divide
+  x = C / T if T > 0 else 0.0
+C:\Users\gomni\GENERAL\phys2-saturation-2026-11-06\checks.py:57: RuntimeWarning: invalid value encountered in scalar add
+  return [-lossC * C + k6 * L + g + create,
+C:\Users\gomni\GENERAL\phys2-saturation-2026-11-06\checks.py:53: RuntimeWarning: overflow encountered in scalar multiply
+  rho, rel, create = 0.0, 0.0, rep * C
+C:\Users\gomni\GENERAL\phys2-saturation-2026-11-06\checks.py:41: RuntimeWarning: invalid value encountered in scalar divide
+  x = C / T if T > 0 else 0.0
+C:\Users\gomni\GENERAL\phys2-saturation-2026-11-06\checks.py:57: RuntimeWarning: invalid value encountered in scalar add
+  return [-lossC * C + k6 * L + g + create,
+C:\Users\gomni\GENERAL\phys2-saturation-2026-11-06\checks.py:53: RuntimeWarning: overflow encountered in scalar multiply
+  rho, rel, create = 0.0, 0.0, rep * C
+C:\Users\gomni\GENERAL\phys2-saturation-2026-11-06\checks.py:41: RuntimeWarning: invalid value encountered in scalar divide
+  x = C / T if T > 0 else 0.0
+C:\Users\gomni\GENERAL\phys2-saturation-2026-11-06\checks.py:57: RuntimeWarning: invalid value encountered in scalar add
+  return [-lossC * C + k6 * L + g + create,
+C:\Users\gomni\GENERAL\phys2-saturation-2026-11-06\checks.py:53: RuntimeWarning: overflow encountered in scalar multiply
+  rho, rel, create = 0.0, 0.0, rep * C
+C:\Users\gomni\GENERAL\phys2-saturation-2026-11-06\checks.py:41: RuntimeWarning: invalid value encountered in scalar divide
+  x = C / T if T > 0 else 0.0
+C:\Users\gomni\GENERAL\phys2-saturation-2026-11-06\checks.py:57: RuntimeWarning: invalid value encountered in scalar add
+  return [-lossC * C + k6 * L + g + create,
+C:\Users\gomni\GENERAL\phys2-saturation-2026-11-06\checks.py:53: RuntimeWarning: overflow encountered in scalar multiply
+  rho, rel, create = 0.0, 0.0, rep * C
+C:\Users\gomni\GENERAL\phys2-saturation-2026-11-06\checks.py:53: RuntimeWarning: overflow encountered in scalar multiply
+  rho, rel, create = 0.0, 0.0, rep * C
+C:\Users\gomni\GENERAL\phys2-saturation-2026-11-06\checks.py:41: RuntimeWarning: invalid value encountered in scalar divide
+  x = C / T if T > 0 else 0.0
+C:\Users\gomni\GENERAL\phys2-saturation-2026-11-06\checks.py:57: RuntimeWarning: invalid value encountered in scalar add
+  return [-lossC * C + k6 * L + g + create,
+C:\Users\gomni\GENERAL\phys2-saturation-2026-11-06\checks.py:41: RuntimeWarning: invalid value encountered in scalar divide
+  x = C / T if T > 0 else 0.0
+C:\Users\gomni\GENERAL\phys2-saturation-2026-11-06\checks.py:57: RuntimeWarning: invalid value encountered in scalar add
+  return [-lossC * C + k6 * L + g + create,
+C:\Users\gomni\GENERAL\phys2-saturation-2026-11-06\checks.py:51: RuntimeWarning: overflow encountered in scalar multiply
+  rho, rel, create = 0.0, 0.0, k3 * C * C
+C:\Users\gomni\GENERAL\phys2-saturation-2026-11-06\checks.py:51: RuntimeWarning: overflow encountered in scalar multiply
+  rho, rel, create = 0.0, 0.0, k3 * C * C
+C:\Users\gomni\GENERAL\phys2-saturation-2026-11-06\checks.py:51: RuntimeWarning: overflow encountered in scalar multiply
+  rho, rel, create = 0.0, 0.0, k3 * C * C
+C:\Users\gomni\GENERAL\phys2-saturation-2026-11-06\checks.py:51: RuntimeWarning: overflow encountered in scalar multiply
+  rho, rel, create = 0.0, 0.0, k3 * C * C
+C:\Users\gomni\GENERAL\phys2-saturation-2026-11-06\checks.py:51: RuntimeWarning: overflow encountered in scalar multiply
+  rho, rel, create = 0.0, 0.0, k3 * C * C
+C:\Users\gomni\GENERAL\phys2-saturation-2026-11-06\checks.py:51: RuntimeWarning: overflow encountered in scalar multiply
+  rho, rel, create = 0.0, 0.0, k3 * C * C
+C:\Users\gomni\GENERAL\phys2-saturation-2026-11-06\checks.py:51: RuntimeWarning: overflow encountered in scalar multiply
+  rho, rel, create = 0.0, 0.0, k3 * C * C
+C:\Users\gomni\GENERAL\phys2-saturation-2026-11-06\checks.py:51: RuntimeWarning: overflow encountered in scalar multiply
+  rho, rel, create = 0.0, 0.0, k3 * C * C
+N1 {"TH": {"runs": 800, "completed": 800, "not_completed": 0, "violations": 0, "max_ratio": 1.0000000000000002, "cycling_runs": 266, "meanC_over_pin_range": [0.0389808924736795, 1.1223005959686083]}, "MA": {"runs": 800, "completed": 800, "not_completed": 0, "violations": 0, "max_ratio": 1.0000000000000002, "cycling_runs": 156, "meanC_over_pin_range": [0.02252865572066905, 1.1943497466910766]}, "SA": {"runs": 800, "completed": 800, "not_completed": 0, "violations": 0, "max_ratio": 1.0000000000000004, "cycling_runs": 178, "meanC_over_pin_range": [0.018803673857323087, 1.749817588896618]}, "PLANT_REP": {"draws": 200, "flagged": 200, "rate": 1.0}, "PLANT_C2": {"draws": 200, "flagged": 173, "rate": 0.865}, "kill": false, "planted_pass": true, "_seconds": 960.0}

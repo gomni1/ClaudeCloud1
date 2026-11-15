@@ -1,0 +1,37 @@
+extracted 62 claims from C:\Users\gomni\GENERAL\phys2-saturation-2026-11-06
+  judged 25/62
+  judged 50/62
+{
+  "claims_judged": 62,
+  "register_census": {
+    "not_a_physical_claim": 18,
+    "effective": 31,
+    "native": 11,
+    "observational": 2
+  },
+  "result_class_census": {
+    "not_a_result": 17,
+    "structural": 15,
+    "hygiene": 4,
+    "generative": 24,
+    "discriminating": 2
+  },
+  "rung_census": {
+    "mechanism": 49,
+    "instrument": 10,
+    "programme": 3
+  },
+  "mechanism_vs_instrument": {
+    "mechanism": 49,
+    "instrument": 10,
+    "instrument_share": 0.169
+  },
+  "identity_predicate_census": {
+    "obligation_closure": 1,
+    "closure_class": 1,
+    "signature_fidelity": 6,
+    "unstated": 2
+  }
+}
+
+full output in ledger-out-saturation/

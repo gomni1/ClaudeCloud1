@@ -1,0 +1,25 @@
+sampled identity within 1e-6: 585 of 600
+Part 1: six lowest runs with the identity holding
+runs below the pin by more than 5% with the identity holding: 79
+draw 362 SA: 1 - mean/pin 0.981 | share from total still growing 0.981, from P changing +0.000 | end shares V 0.000 L 0.876
+draw 226 MA: 1 - mean/pin 0.977 | share from total still growing 0.977, from P changing +0.000 | end shares V 0.000 L 0.981
+draw 152 SA: 1 - mean/pin 0.971 | share from total still growing 0.971, from P changing +0.000 | end shares V 0.000 L 0.969
+draw 30 TH: 1 - mean/pin 0.955 | share from total still growing 0.955, from P changing +0.000 | end shares V 0.198 L 0.797
+draw 273 TH: 1 - mean/pin 0.923 | share from total still growing 0.923, from P changing +0.000 | end shares V 0.198 L 0.041
+draw 126 TH: 1 - mean/pin 0.921 | share from total still growing 0.921, from P changing +0.000 | end shares V 0.992 L 0.007
+Part 2: runs whose sampled identity is off by 1e-6 or more
+draw 245 SA: sampled mean/pin 1.7498, sampled identity 1.7579 -> integrated identity off by 2.2e-14; integrated mean/pin 0.9961
+draw 449 SA: sampled mean/pin 1.2290, sampled identity 1.2315 -> integrated identity off by 1.2e-13; integrated mean/pin 0.9986
+draw 239 SA: sampled mean/pin 0.9482, sampled identity 0.9484 -> integrated identity off by 1.4e-12; integrated mean/pin 1.0002
+draw 5 SA: sampled mean/pin 1.0476, sampled identity 1.0462 -> integrated identity off by 1.9e-13; integrated mean/pin 1.0001
+draw 71 SA: sampled mean/pin 1.0254, sampled identity 1.0260 -> integrated identity off by 1.9e-12; integrated mean/pin 1.0003
+draw 251 SA: sampled mean/pin 1.0084, sampled identity 1.0082 -> integrated identity off by 9.1e-13; integrated mean/pin 1.0002
+draw 323 SA: sampled mean/pin 0.8399, sampled identity 1.0078 -> integrated identity off by 5.6e-13; integrated mean/pin 0.8334
+draw 59 SA: sampled mean/pin 1.0087, sampled identity 0.9959 -> integrated identity off by 9.2e-13; integrated mean/pin 1.0000
+draw 575 SA: sampled mean/pin 1.0082, sampled identity 1.0039 -> integrated identity off by 1.1e-14; integrated mean/pin 1.0017
+draw 50 SA: sampled mean/pin 1.0152, sampled identity 1.0024 -> integrated identity off by 6.6e-14; integrated mean/pin 1.0111
+draw 458 SA: sampled mean/pin 1.0022, sampled identity 1.0020 -> integrated identity off by 1.3e-11; integrated mean/pin 1.0000
+draw 485 SA: sampled mean/pin 1.0033, sampled identity 1.0019 -> integrated identity off by 9.3e-15; integrated mean/pin 1.0018
+draw 344 SA: sampled mean/pin 0.9990, sampled identity 0.9988 -> integrated identity off by 1.1e-13; integrated mean/pin 1.0000
+draw 500 SA: sampled mean/pin 0.9978, sampled identity 1.0007 -> integrated identity off by 7.4e-14; integrated mean/pin 0.9975
+draw 68 SA: sampled mean/pin 0.9960, sampled identity 1.0004 -> integrated identity off by 3.5e-14; integrated mean/pin 1.0021
