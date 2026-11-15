@@ -1,0 +1,43 @@
+02:46:30 done=2000 cpu=40 capped=0
+02:46:51 done=4000 cpu=81 capped=0
+02:47:12 done=6000 cpu=121 capped=0
+02:47:33 done=8000 cpu=163 capped=0
+02:47:53 done=10000 cpu=203 capped=0
+02:48:14 done=12000 cpu=243 capped=0
+02:48:40 done=14000 cpu=285 capped=0
+02:49:41 done=16000 cpu=350 capped=0
+02:50:02 done=18000 cpu=391 capped=0
+02:50:29 done=20000 cpu=431 capped=0
+02:51:39 done=22000 cpu=472 capped=0
+02:52:15 done=24000 cpu=567 capped=0
+02:52:48 done=26000 cpu=607 capped=0
+02:53:08 done=28000 cpu=647 capped=0
+02:53:29 done=30000 cpu=687 capped=0
+02:53:49 done=32000 cpu=727 capped=0
+02:54:23 done=34000 cpu=767 capped=0
+02:55:42 done=36000 cpu=807 capped=0
+02:57:28 done=38000 cpu=909 capped=0
+02:58:50 done=40000 cpu=951 capped=0
+02:58:50 K1b finished complete=True cpu=951
+03:04:12 done=42000 cpu=1042 capped=0
+03:07:05 done=44000 cpu=1241 capped=1
+03:09:28 done=46000 cpu=1325 capped=1
+03:11:47 done=48000 cpu=1431 capped=1
+03:12:31 done=50000 cpu=1489 capped=1
+03:13:28 done=52000 cpu=1586 capped=1
+03:14:19 done=54000 cpu=1688 capped=1
+03:14:49 done=56000 cpu=1765 capped=1
+03:15:30 done=58000 cpu=1845 capped=1
+03:16:12 done=60000 cpu=1926 capped=1
+03:17:09 done=62000 cpu=1983 capped=1
+03:18:21 done=64000 cpu=2060 capped=1
+03:19:41 done=66000 cpu=2119 capped=1
+03:20:39 done=68000 cpu=2199 capped=1
+03:21:08 K1a finished complete=True cpu=2240
+restart: K1c resumed at cpu=2614.394625393 (2240 before K1c + sum of finished K1c task CPU; in-flight chunks lost)
+03:29:39 done=2000 cpu=2700 capped=0
+03:35:11 done=4000 cpu=3430 capped=2
+03:35:49 done=6000 cpu=3513 capped=2
+03:37:21 done=8000 cpu=3693 capped=2
+03:38:07 done=10000 cpu=3794 capped=2
+03:39:06 K1 finished: {"sub": {"K1b": {"complete": true, "note": "before restart"}, "K1a": {"complete": true, "note": "before restart"}, "K1c": {"complete": true, "done": 11535, "cpu": 1263.496000999999}}, "K1c_queue": {"closed": 108, "K1b": 1197, "open": 10282}, "K1c_resumed_skip": 52, "cpu_total": 3877.890626392999, "capped": 2, "wall": 659.0479502677917}

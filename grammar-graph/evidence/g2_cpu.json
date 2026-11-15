@@ -1,0 +1,1 @@
+{"part": "g2", "cpu_s_workers": [86.104645, 85.479684, 86.250578], "cpu_s_total": 257.89901799999996, "note": "corrected: first write double-counted reaped workers"}

@@ -1,0 +1,6 @@
+numpy>=2.0
+scipy>=1.14
+sympy>=1.13
+numba>=0.60
+pyamg>=5.0
+pytest>=8
