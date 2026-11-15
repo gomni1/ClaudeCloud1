@@ -1,0 +1,86 @@
+{
+ "A": 0.2085002768460867,
+ "Rbar": 0.12969247915960913,
+ "mean_c": 0.0780994205089443,
+ "mean_v": 0.6464669438145628,
+ "density": 0.006505958679768204,
+ "defect_frames": 1549329,
+ "amp_def_sum": 1174166.6940771681,
+ "amp_all_sum": 616350470.5897496,
+ "n_win_frames": 3969,
+ "ntri": 60000,
+ "identity_violations_allframes": 4597,
+ "events": 34418534,
+ "aborted": false,
+ "n_tracks": 1547867,
+ "longest": 1.2000000000000002,
+ "n_long": 0,
+ "pairing": {
+  "births": 1547437,
+  "deaths": 1547535,
+  "births_paired": 1166087,
+  "deaths_paired": 1166170
+ },
+ "long_tracks": [],
+ "replacement_mean": null,
+ "cls": "C0",
+ "rep": 1,
+ "graph": {
+  "N": 10000,
+  "mean_degree": 8.0,
+  "clustering": 0.6428571428571037,
+  "diameter": 1250,
+  "d_g": 0.9973653243831619,
+  "d_g_radii": [
+   2,
+   625
+  ],
+  "ball_sizes": [
+   1.0,
+   9.0,
+   17.0,
+   25.0,
+   33.0,
+   41.0,
+   49.0,
+   57.0,
+   65.0,
+   73.0,
+   81.0,
+   89.0,
+   97.0
+  ],
+  "triangles": 60000
+ },
+ "track_life_hist_frames": {
+  "edges": [
+   0,
+   1,
+   2,
+   5,
+   10,
+   25,
+   50,
+   100,
+   200,
+   318,
+   500,
+   1000,
+   4000
+  ],
+  "counts": [
+   1546442,
+   1390,
+   35,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ]
+ }
+}
