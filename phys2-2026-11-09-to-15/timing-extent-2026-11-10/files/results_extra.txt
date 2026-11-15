@@ -1,0 +1,111 @@
+=== P5 diagnostics ===
+sim/exact event-time variance over the 1161 P5 tests: mean 0.9996 +- 0.0014, median 1.0000
+sim/exact pulse-end variance over all 480 single-unit cells: mean 1.0010 +- 0.0015, median 0.9996
+Flagged cells rerun with 200000 realisations and fresh seeds (diagnostic only; grid results unchanged):
+  cell 298 (m=0.05, eta=2, k=1, tau=96) D=16: rerun var 29.9748 +- 0.2311, exact 30.0671, z -0.40; fraction 1.00000 vs 1.00000
+  cell 429 (m=0.05, eta=0.75, k=4, tau=128) D=2: rerun var 56.3519 +- 0.5642, exact 56.1318, z +0.39; fraction 0.99999 vs 0.99999
+  cell 429 (m=0.05, eta=0.75, k=4, tau=128) D=4: rerun var 73.7322 +- 0.6658, exact 73.9604, z -0.34; fraction 0.99999 vs 0.99998
+  cell 429 (m=0.05, eta=0.75, k=4, tau=128) D=8: rerun var 109.8151 +- 0.8467, exact 109.3761, z +0.52; fraction 0.99994 vs 0.99994
+  cell 529 (m=0.2, eta=1.5, k=1, tau=128) D=32: rerun var 20.9338 +- 0.1116, exact 20.9983, z -0.58; fraction 1.00000 vs 1.00000
+  cell 658 (m=0.2, eta=0.5, k=4, tau=96) D=2: rerun var 25.5266 +- 0.2310, exact 25.3180, z +0.90; fraction 1.00000 vs 1.00000
+  cell 679 (m=0.2, eta=1, k=4, tau=128) D=2: rerun var 2.6069 +- 0.0193, exact 2.5659, z +2.12; fraction 1.00000 vs 1.00000
+  cell 679 (m=0.2, eta=1, k=4, tau=128) D=4: rerun var 4.1478 +- 0.0259, exact 4.1062, z +1.61; fraction 1.00000 vs 1.00000
+
+=== Q1: Ev-B timing against window (exact, rest start) ===
+m=0.2 eta=1.0 k=1 D=8: untruncated dt 6.407; atom at T=D has mass 0.278
+    tau=   8.5: fraction 0.335, dt 0.110, dt/(tau-D) 0.221
+    tau=  10.0: fraction 0.479, dt 0.596, dt/(tau-D) 0.298
+    tau=  12.0: fraction 0.622, dt 1.223, dt/(tau-D) 0.306 sim frac 0.615 dt 1.199
+    tau=  16.0: fraction 0.797, dt 2.325, dt/(tau-D) 0.291 sim frac 0.807 dt 2.311
+    tau=  24.0: fraction 0.938, dt 4.004, dt/(tau-D) 0.250 sim frac 0.930 dt 3.974
+    tau=  32.0: fraction 0.980, dt 5.080, dt/(tau-D) 0.212 sim frac 0.979 dt 5.053
+    tau=  48.0: fraction 0.998, dt 6.056, dt/(tau-D) 0.151 sim frac 0.998 dt 6.124
+    tau=  64.0: fraction 1.000, dt 6.325, dt/(tau-D) 0.113 sim frac 1.000 dt 6.338
+    tau=  96.0: fraction 1.000, dt 6.404, dt/(tau-D) 0.073 sim frac 1.000 dt 6.333
+    tau= 128.0: fraction 1.000, dt 6.407, dt/(tau-D) 0.053 sim frac 1.000 dt 6.356
+m=0.05 eta=1.0 k=1 D=8: untruncated dt 19.003; atom at T=D has mass 0.432
+    tau=   8.5: fraction 0.448, dt 0.054, dt/(tau-D) 0.109
+    tau=  10.0: fraction 0.495, dt 0.385, dt/(tau-D) 0.193
+    tau=  12.0: fraction 0.550, dt 0.949, dt/(tau-D) 0.237 sim frac 0.555 dt 0.859
+    tau=  16.0: fraction 0.640, dt 2.156, dt/(tau-D) 0.269 sim frac 0.637 dt 2.205
+    tau=  24.0: fraction 0.766, dt 4.452, dt/(tau-D) 0.278 sim frac 0.761 dt 4.434
+    tau=  32.0: fraction 0.844, dt 6.490, dt/(tau-D) 0.270 sim frac 0.849 dt 6.428
+    tau=  48.0: fraction 0.927, dt 9.844, dt/(tau-D) 0.246 sim frac 0.929 dt 9.950
+    tau=  64.0: fraction 0.964, dt 12.380, dt/(tau-D) 0.221 sim frac 0.964 dt 12.253
+    tau=  96.0: fraction 0.990, dt 15.646, dt/(tau-D) 0.178 sim frac 0.990 dt 15.013
+    tau= 128.0: fraction 0.997, dt 17.356, dt/(tau-D) 0.145 sim frac 0.999 dt 17.704
+m=0.2 eta=0.5 k=4 D=16: untruncated dt 12.207; atom at T=D has mass 0.000
+    tau=  16.5: fraction 0.001, dt 0.168, dt/(tau-D) 0.336
+    tau=  18.0: fraction 0.009, dt 0.549, dt/(tau-D) 0.274
+    tau=  24.0: fraction 0.141, dt 1.895, dt/(tau-D) 0.237 sim frac 0.142 dt 1.891
+    tau=  32.0: fraction 0.448, dt 3.811, dt/(tau-D) 0.238 sim frac 0.441 dt 3.798
+    tau=  48.0: fraction 0.854, dt 7.579, dt/(tau-D) 0.237 sim frac 0.848 dt 7.559
+    tau=  64.0: fraction 0.969, dt 10.211, dt/(tau-D) 0.213 sim frac 0.973 dt 10.223
+    tau=  96.0: fraction 0.999, dt 11.993, dt/(tau-D) 0.150 sim frac 1.000 dt 11.526
+    tau= 128.0: fraction 1.000, dt 12.192, dt/(tau-D) 0.109 sim frac 1.000 dt 12.093
+
+=== Q2: infimum numerics over the capped range (single unit, Ev-A, H-nominal, L = 0) ===
+smallest product found: 1.875 at a=0.0001, b=1.0, D=1, tau=5.61 (dt 1.099, across 1.707, fraction 0.950)
+smallest dt found: 1.099 at a=0.0001, b=1.0, D=1, tau=5.61
+smallest across found: 1.707 at a=0.0001, b=1.0, D=1, tau=5.61
+uncapped direction (m=0.2, k=1, D=2, tau=8, L=0): eta -> dt, across, product
+    eta=1: fraction 0.8441 dt 1.62243 across 3.60938 product 5.855963  (b_d = 0.5)
+    eta=2: fraction 0.9910 dt 1.11388 across 1.38555 product 1.543348  (b_d = 1.5)
+    eta=3: fraction 1.0000 dt 0.44410 across 0.47026 product 0.208843  (b_d = 4.0)
+    eta=4: fraction 1.0000 dt 0.16025 across 0.16447 product 0.026356  (b_d = 10.9)
+    eta=6: fraction 1.0000 dt 0.02150 across 0.02158 product 0.000464  (b_d = 80.7)
+    eta=8: fraction 1.0000 dt 0.00293 across 0.00291 product 0.000009  (b_d = 596.2)
+
+=== Q2: H-realised, sim against leading-order formula, by regime ===
+Var(v_i): sim / [Var(x_tau)/(tau+1/E_d)^2], 480 cells: mean 1.0008, range 0.887..1.107
+  ('E_d*tau<20', 'm*L=0.8'): n=188 sim/formula median 0.63 (0.30..0.93); ballistic share of formula median 0.39; realised/nominal variance ratio median 1.46 (1.07..46.56)
+  ('E_d*tau<20', 'm*L=12.8'): n=106 sim/formula median 0.95 (0.87..1.07); ballistic share of formula median 0.66; realised/nominal variance ratio median 3.84 (1.92..180.81)
+  ('E_d*tau<20', 'm*L=3.2'): n=294 sim/formula median 0.85 (0.66..1.02); ballistic share of formula median 0.45; realised/nominal variance ratio median 2.31 (1.25..208.70)
+  ('E_d*tau>=20', 'm*L=0.8'): n=52 sim/formula median 0.81 (0.51..1.02); ballistic share of formula median 0.50; realised/nominal variance ratio median 1.70 (1.10..15.58)
+  ('E_d*tau>=20', 'm*L=12.8'): n=134 sim/formula median 1.01 (0.92..1.17); ballistic share of formula median 0.50; realised/nominal variance ratio median 2.26 (1.29..47.28)
+  ('E_d*tau>=20', 'm*L=3.2'): n=186 sim/formula median 0.97 (0.85..1.12); ballistic share of formula median 0.51; realised/nominal variance ratio median 1.78 (1.12..43.76)
+H-realised, example of the window dependence (m=0.2, eta=1, boost): tau -> across at L=16, L=64 (realised | nominal), var(v_i), dE
+    tau=   4: L=16 10.62 | 5.36; L=64 28.44 | 9.61; var v 0.1189; dE 0.0161
+    tau=   8: L=16 10.31 | 5.98; L=64 26.99 | 10.17; var v 0.0979; dE 0.0329
+    tau=  12: L=16 10.53 | 6.29; L=64 25.80 | 10.29; var v 0.0816; dE 0.0460
+    tau=  16: L=16 10.29 | 6.80; L=64 24.07 | 10.66; var v 0.0643; dE 0.0550
+    tau=  24: L=16 10.77 | 7.71; L=64 23.09 | 11.18; var v 0.0493; dE 0.0678
+    tau=  32: L=16 11.15 | 8.22; L=64 22.53 | 11.64; var v 0.0375; dE 0.0747
+    tau=  48: L=16 11.62 | 9.29; L=64 20.86 | 12.45; var v 0.0247; dE 0.0783
+    tau=  64: L=16 12.44 | 10.43; L=64 20.76 | 13.15; var v 0.0194; dE 0.0769
+    tau=  96: L=16 14.30 | 12.69; L=64 21.98 | 14.99; var v 0.0142; dE 0.0714
+    tau= 128: L=16 15.74 | 14.43; L=64 22.42 | 16.62; var v 0.0106; dE 0.0600
+
+=== Q3: common mode at rho > 0 (m = 0.2): ensemble / single-unit ratios in matching cells ===
+  rho=0.0 N=16: across(L=16, nominal) ratio median 0.253; dt ratio median 0.244 (n=198); within / single-unit across median 0.940; 1/sqrt(N) = 0.250
+  rho=0.0 N=64: across(L=16, nominal) ratio median 0.125; dt ratio median 0.123 (n=198); within / single-unit across median 0.986; 1/sqrt(N) = 0.125
+  rho=0.0 N=256: across(L=16, nominal) ratio median 0.062; dt ratio median 0.060 (n=198); within / single-unit across median 0.996; 1/sqrt(N) = 0.062
+  rho=0.5 N=16: across(L=16, nominal) ratio median 0.391; dt ratio median 0.408 (n=198); within / single-unit across median 0.747; 1/sqrt(N) = 0.250
+  rho=0.5 N=64: across(L=16, nominal) ratio median 0.346; dt ratio median 0.366 (n=198); within / single-unit across median 0.780; 1/sqrt(N) = 0.125
+  rho=0.5 N=256: across(L=16, nominal) ratio median 0.335; dt ratio median 0.359 (n=198); within / single-unit across median 0.787; 1/sqrt(N) = 0.062
+  rho=0.9 N=16: across(L=16, nominal) ratio median 0.825; dt ratio median 0.842 (n=198); within / single-unit across median 0.263; 1/sqrt(N) = 0.250
+  rho=0.9 N=64: across(L=16, nominal) ratio median 0.820; dt ratio median 0.842 (n=198); within / single-unit across median 0.273; 1/sqrt(N) = 0.125
+  rho=0.9 N=256: across(L=16, nominal) ratio median 0.822; dt ratio median 0.848 (n=198); within / single-unit across median 0.277; 1/sqrt(N) = 0.062
+
+=== Step-scale: grid minima over Ev-A in-window cells with every drive rate <= 1 ===
+  single (0.05,): n=292 min dt 1.812, min across at pulse end 2.630, min product 4.7661
+  single (0.2,): n=139 min dt 1.807, min across at pulse end 2.660, min product 4.8065
+  ens (0.0, 16): n=66 min dt 0.498, min across at pulse end 0.590, min product 0.3090
+  ens (0.0, 64): n=72 min dt 0.248, min across at pulse end 0.296, min product 0.0732
+  ens (0.0, 256): n=76 min dt 0.122, min across at pulse end 0.151, min product 0.0198
+  ens (0.5, 16): n=62 min dt 0.825, min across at pulse end 0.941, min product 0.7769
+  ens (0.5, 64): n=62 min dt 0.756, min across at pulse end 0.871, min product 0.6588
+  ens (0.5, 256): n=63 min dt 0.709, min across at pulse end 0.851, min product 0.6035
+  ens (0.9, 16): n=48 min dt 1.430, min across at pulse end 1.899, min product 2.7159
+  ens (0.9, 64): n=48 min dt 1.400, min across at pulse end 1.876, min product 2.6279
+  ens (0.9, 256): n=49 min dt 1.317, min across at pulse end 1.626, min product 2.1422
+
+=== Ev-B DRIVE-axis TRADE strata (single unit): where they are ===
+  m=0.05 k=1 tau=4 D=2: eta 0.25: frac 0.48 dt 0.29 dx 14.97; eta 0.5: frac 0.51 dt 0.32 dx 14.00; eta 0.75: frac 0.52 dt 0.35 dx 12.83; eta 1: frac 0.56 dt 0.34 dx 11.49; eta 1.5: frac 0.58 dt 0.44 dx 8.23; eta 2: frac 0.64 dt 0.49 dx 5.18; eta 2.5: frac 0.72 dt 0.53 dx 3.09; eta 3: frac 0.83 dt 0.54 dx 1.70
+  m=0.05 k=1 tau=8 D=2: eta 0.25: frac 0.56 dt 1.22 dx 16.82; eta 0.5: frac 0.58 dt 1.27 dx 15.90; eta 0.75: frac 0.62 dt 1.39 dx 14.36; eta 1: frac 0.65 dt 1.43 dx 12.82; eta 1.5: frac 0.73 dt 1.59 dx 8.58; eta 2: frac 0.81 dt 1.59 dx 5.32; eta 2.5: frac 0.91 dt 1.52 dx 3.16
+  m=0.05 k=1 tau=8 D=4: eta 0.25: frac 0.50 dt 0.78 dx 16.82; eta 0.5: frac 0.52 dt 0.77 dx 15.90; eta 0.75: frac 0.56 dt 0.83 dx 14.36; eta 1: frac 0.59 dt 0.93 dx 12.82; eta 1.5: frac 0.67 dt 1.04 dx 8.58; eta 2: frac 0.74 dt 1.08 dx 5.32; eta 2.5: frac 0.84 dt 1.07 dx 3.16; eta 3: frac 0.93 dt 0.99 dx 1.85
+  m=0.05 k=1 tau=12 D=2: eta 0.25: frac 0.59 dt 2.28 dx 18.78; eta 0.5: frac 0.62 dt 2.42 dx 17.65; eta 0.75: frac 0.68 dt 2.58 dx 15.51; eta 1: frac 0.73 dt 2.66 dx 13.53; eta 1.5: frac 0.83 dt 2.70 dx 8.72; eta 2: frac 0.91 dt 2.59 dx 5.54
+  m=0.05 k=1 tau=12 D=8: eta 0.25: frac 0.42 dt 0.76 dx 18.78; eta 0.5: frac 0.46 dt 0.79 dx 17.65; eta 0.75: frac 0.51 dt 0.92 dx 15.51; eta 1: frac 0.56 dt 0.86 dx 13.53; eta 1.5: frac 0.65 dt 1.04 dx 8.72; eta 2: frac 0.74 dt 1.07 dx 5.54; eta 2.5: frac 0.83 dt 1.10 dx 3.24; eta 3: frac 0.93 dt 1.01 dx 1.89
+  m=0.05 k=1 tau=16 D=8: eta 0.25: frac 0.46 dt 1.88 dx 20.54; eta 0.5: frac 0.51 dt 2.08 dx 19.06; eta 0.75: frac 0.59 dt 2.08 dx 17.22; eta 1: frac 0.64 dt 2.21 dx 14.53; eta 1.5: frac 0.75 dt 2.30 dx 9.26; eta 2: frac 0.87 dt 2.13 dx 5.46
+  m=0.05 k=2 tau=4 D=2: eta 0.25: frac 0.48 dt 0.38 dx 14.29; eta 0.5: frac 0.51 dt 0.36 dx 13.62; eta 0.75: frac 0.55 dt 0.43 dx 11.92; eta 1: frac 0.57 dt 0.47 dx 10.06; eta 1.5: frac 0.66 dt 0.50 dx 6.27; eta 2: frac 0.74 dt 0.52 dx 3.45; eta 2.5: frac 0.85 dt 0.54 dx 1.87; eta 3: frac 0.93 dt 0.49 dx 1.10
+  m=0.05 k=2 tau=8 D=4: eta 0.25: frac 0.49 dt 0.94 dx 15.97; eta 0.5: frac 0.54 dt 0.96 dx 14.27; eta 0.75: frac 0.59 dt 1.02 dx 12.64; eta 1: frac 0.63 dt 1.12 dx 10.47; eta 1.5: frac 0.76 dt 1.11 dx 6.14; eta 2: frac 0.88 dt 1.06 dx 3.51

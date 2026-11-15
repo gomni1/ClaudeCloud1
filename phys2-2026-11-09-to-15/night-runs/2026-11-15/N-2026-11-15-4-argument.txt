@@ -1,0 +1,60 @@
+N-2026-11-15-4 — how a turn is read from inside (D2 Shape) — argument as sent to the checker
+
+Rule R (13 Nov). N units in roles C, V, L, P. Step types and weights:
+ C->L k1*nC ; C->V k2*nC ; C->P k7*nC ; L->C k6*nL ; L->V k5*nL ; P->V k8*nP ;
+ V->C (seeding) k10*nV ; V->C (recruitment) k3*F(nC/N)*nV, F(x) = P(at least kr of m sampled neighbours are C).
+Next step is of type j with probability w_j / sum(w). No time variable. In the large-N limit some rate choices
+give a cycle ('clock'); Psi = steps per unit per turn (6.7 to 204.5 for the five known clocks).
+
+Two different needs, kept apart:
+ (i) COUNTING along a turn; (ii) MARKING where a turn begins (or: that one has gone by).
+
+Claim A [theorem, model, by inspection]. A unit that reads only its own role changes cannot tell a turn, even
+statistically. Its role sequence is a Markov chain with fixed transition probabilities: from C to L, V, P with
+k1 : k2 : k7; from L to C, V with k6 : k5; from P to V; from V to C. None depends on the level's state.
+The level's phase enters a unit's history in only two ways: (1) whether a V->C was a seeding or a recruitment
+(the ratio k3 F(x) : k10 depends on Contact's share x), if those are distinguishable from inside; (2) how many
+steps of OTHER units pass while it waits, which it cannot count without reading something outside itself.
+So the own-step count (Psi per turn on average, scatter of order sqrt(Psi)) supplies (i) only in the weak sense
+of a count whose mean per turn is fixed; it never supplies (ii).
+
+Claim B (heap height, written exactly). Events are the steps of one realised sequence. Two steps are dependent
+if one changes a unit that the other changes or reads. e < e' if e comes earlier and there is a chain of
+pairwise dependent steps from e to e'. Height H(e, e') = the largest number of steps in such a chain.
+ B1 [theorem, by definition]: H is unchanged by swapping adjacent independent steps, so it needs no order of all
+    steps, only the partial order.
+ B2 [theorem, from 13-14 Nov (a)]: its law depends on the weights only through their ratios.
+ B3 [theorem]: for consecutive steps of one unit, H >= the number of that unit's own steps between them.
+ B4 [by inspection]: in the well-mixed rule R every recruitment reads the whole level's Contact count, so every
+    step that changes nC is dependent with every recruitment; the partial order is nearly total and H between
+    two events a turn apart is of order N*Psi. It gives nothing beyond the step count there.
+ B5 [expected, NOT proved]: with neighbour reading, H between two events at one unit grows in proportion to
+    steps-per-unit elapsed, H ~ v * (steps per unit), v >= 1 fixed by the ratios and the neighbour graph.
+ So heap height is a candidate for (i): a count that needs no order of all steps. It does not supply (ii):
+ nothing in it varies around the turn.
+
+Claim C (the least reader for (ii)). Marking needs three things:
+ C1 access to something that varies around the turn. In R that is Contact's share x, and the only step that
+    reads it is recruitment. One read of m neighbours gives x to within sqrt(x(1-x)/m).
+ C2 one bit carried between reads. A reader with no memory can say 'the share is high now' but not 'a turn has
+    gone by'; telling a rise through a threshold from sitting above it needs an armed/fired bit (hysteresis).
+ C3 enough reads to beat sampling noise: for thresholds a fraction 0.4 of the swing (b - a) apart (the 13 Nov
+    counter used a+0.2(b-a) and a+0.6(b-a)), a group of g units read together needs
+        sqrt(x(1-x)/g) < 0.2 (b - a) / z,   i.e.   g > z^2 x(1-x) / (0.2 (b-a))^2 ,
+    z about 2 to 3 for few false marks. Illustrative only (the swings are not in the 13-14 Nov reports):
+    x = 0.3, b - a = 0.2 gives g of several hundred.
+ Observation (by inspection of R): each unit already is a one-bit thresholded reader. 'In V' is armed;
+ recruitment (which needs kr of m neighbours in C) is firing; the path C -> (L or P) -> V re-arms it. But it fires
+ about Psi_3 times per turn (21-29% of Psi: roughly 1.4 to 58 times), not once, and only if recruitment can be
+ told from seeding. A once-per-turn mark needs a reader whose re-arming takes about a turn, or a group threshold.
+ Pointer (not a result): in the ladder picture the natural such reader is a unit of the rung above, fed by g
+ units of this level ('each level is fed and seeded by the level beneath it'; levels lock 1:1 to 1:4 in the
+ 1-2 Nov runs). It reads only what feeds it, so it is not a coordinator above the level.
+ 'Where a turn begins' is then conventional: any marker at a fixed phase gives the same count.
+
+Smallest assumptions. (i) a unit that stays the same unit across its own steps over a turn (a carrier at this
+rung; licensed only because a unit here is a complete organisation of the rung beneath). (ii) C1-C3 above, plus
+that recruitment and seeding differ from inside, or that neighbours are read at other steps too.
+
+Not shown: that a neighbour-reading form of R ticks at all (14 Nov: unproven); B5; any number for g.
+Nothing was run.

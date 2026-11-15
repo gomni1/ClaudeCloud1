@@ -1,0 +1,177 @@
+N-2026-11-15-1 — independent checker (a fresh Claude subagent that did not see the working): its report as returned, then its scripts and their output.
+
+===== REPORT =====
+VERDICT: PARTLY. Everything I could check holds; the only overreach is that the non-radial "smooth" case rests on numerics, not proof.
+1. C1 (mode reduction) confirmed by derivation: H1 is linear in P and its hypothesis set is rotation-invariant, so each angular Fourier projection of a solution is again a solution.
+2. C3 (identity) confirmed by derivation and computation. (a+b)(b+c)(c+a) = (a+b+c)(ab+bc+ca) - abc, and for unit a,b,c, ab+bc+ca = abc*conj(a+b+c), so the product is abc(|s|^2-1). Sum identity immediate. Numerical error ~1e-14 over 1e5 triples.
+3. C5 (plant) confirmed by computation. On c=-b, max|I3| is 5e-14; on the full family about 1.5e4. The planted f has f(0)=8, so it breaks P(0)=0; subtracting 8 fixes this without changing I3.
+4. C2 confirmed with two independent discretisations.
+ - Polynomial P(x,y) of degree <= 4, 8, 12, exact arithmetic mod 2^61-1 at rational unit points: nullity 6 each time (5 once P(0)=0). Rank mod p cannot exceed the true rank, so this is rigorous: no polynomial solutions beyond linear + quadratic up to degree 12.
+ - Radial B-splines (cubic, and piecewise-linear to admit kinks), m=0..6: same null spaces as claimed. Next singular values 1e-2 to 5e-2, falling slowly with refinement.
+ - That slow fall means the numerics cannot exclude rough or highly oscillatory solutions. Evidence, not proof, for non-polynomial smooth P.
+5. C4 confirmed by derivation; "theorem" justified for the radial case. Jacobian identity and ODE re-derived, both match. Sympy gives zero ODE residual for the claimed general solution; integration to f correct. The first-order condition is legitimate: F is constant on level curves of S, so grad F is parallel to grad S wherever grad S != 0. Needs no regularity of f on (2,3]. Regularity used: f'' on (0,2), plus existence of k'(0), i.e. f' has a left limit at r=2. The log term satisfies the Jacobian identity (residual 4e-15) but not H1 itself (I3 varies from -5 to 19). So continuity at 0 is not needed to kill it; the stated hypothesis is stronger than necessary but not wrong. Extension to (2,3] via C3 correct.
+6. General proof or counterexample: neither found. One unverified idea: averaging H1 over the one-parameter fibre {a+b+c=s} writes P(s) as a weighted circular-arc mean of P plus a term smooth in s. Such means gain about half a derivative, so continuous might bootstrap to smooth inside the disc. Jarai-type regularity theorems point the same way (from memory, not opened). The smooth non-radial case would still need a per-mode ODE argument like C4.
+7. Literature: two sources opened; neither covers this case. Fochi and Viola, Abstr. Appl. Anal. 2013, art. 878543: the conditional quadratic equation on ||x||=||y|| is equivalent to the full one, no regularity assumed, but for dim >= 3, all common norms, and pairs rather than triples. Szabo, Publ. Math. Debrecen 46 (1995): isosceles-orthogonal additivity only. Nothing found for a single fixed norm in the plane.
+8. C6 mild overreach. "Smooth readout" is proved only for radial P and for polynomials up to degree 12; numerically supported otherwise. Should also say: the plane; the disc has radius 3 in units of the contribution size; P is unconstrained outside it.
+
+===== FILE: chk1/chk_a.py =====
+# C3, C5, polynomial exact-rank test (C2 alt), C4 symbolic
+import numpy as np, sympy as sp, random
+from fractions import Fraction
+rng=np.random.default_rng(1)
+# C3
+th=rng.uniform(0,2*np.pi,(100000,3)); a,b,c=[np.exp(1j*th[:,i]) for i in range(3)]
+s=a+b+c
+print("C3 prod max err",np.max(np.abs(abs(a+b)*abs(b+c)*abs(c+a)-abs(abs(s)**2-1))))
+print("C3 sum max err",np.max(np.abs(abs(a+b)**2+abs(b+c)**2+abs(c+a)**2-abs(s)**2-3)))
+# C5
+f=lambda r:(r**2-2)**5-5*(r**2-2)**3
+def I3rad(f,a,b,c): return f(abs(a+b+c))-f(abs(a+b))-f(abs(a+c))-f(abs(b+c))+f(abs(a))+f(abs(b))+f(abs(c))-f(0*abs(a))
+print("C5 f(0)=",f(0.0)," (nonzero: P(0)=0 normalisation violated unless constant subtracted; I3 unaffected)")
+print("C5 restricted c=-b max|I3|",np.max(np.abs(I3rad(f,a,b,-b))))
+print("C5 full family max|I3|",np.max(np.abs(I3rad(f,a,b,c))))
+# C4 symbolic
+A=sp.symbols('A'); lam,gam=sp.symbols('lam gam')
+k=lam*sp.sin(A)+gam*sp.sin(A)*sp.tan(A/2)**2
+ode=sp.diff(k,A)*sp.sin(A)-(2+sp.cos(A))*k+2*sp.diff(k,A).subs(A,0)*sp.sin(A)
+print("C4 ODE residual of claimed solution:",sp.simplify(ode))
+# does the log solution satisfy H1 itself?
+g=lambda r:4*np.log(r)-r**2/2
+v=g(abs(s))-g(abs(a+b))-g(abs(a+c))-g(abs(b+c))+3*g(1.0)
+print("C4 log-term: spread of I3+f(0) over triples (should be const if it solved H1): min %.3f max %.3f"%(np.percentile(v,1),np.percentile(v,99)))
+# full Jacobian identity check for k = sin A (quadratic) and log term
+kq=lambda A:np.sin(A); kl=lambda A:np.sin(A)*np.tan(A/2)**2
+AA=rng.uniform(0.1,1.4,1000);BB=rng.uniform(0.1,1.4,1000)
+for nm,kk in (("quad",kq),("log",kl)):
+    r=(kk(AA)+kk(AA+BB))*(np.sin(BB)+np.sin(AA+BB))-(kk(BB)+kk(AA+BB))*(np.sin(AA)+np.sin(AA+BB))
+    print("C4 full Jacobian identity residual",nm,np.max(np.abs(r)))
+# Polynomial exact test mod prime
+p=2**61-1
+def pt():
+    while True:
+        t=random.randint(1,10**6); u=random.randint(1,10**6)
+        d=(t*t+u*u)%p
+        if d: 
+            inv=pow(d,p-2,p); return ((t*t-u*u)*inv%p, 2*t*u*inv%p)
+def rank_mod(M):
+    M=[r[:] for r in M]; rk=0; n=len(M[0])
+    for col in range(n):
+        piv=None
+        for i in range(rk,len(M)):
+            if M[i][col]%p: piv=i;break
+        if piv is None: continue
+        M[rk],M[piv]=M[piv],M[rk]; inv=pow(M[rk][col],p-2,p)
+        M[rk]=[x*inv%p for x in M[rk]]
+        for i in range(len(M)):
+            if i!=rk and M[i][col]:
+                fct=M[i][col]; M[i]=[(x-fct*y)%p for x,y in zip(M[i],M[rk])]
+        rk+=1
+    return rk
+random.seed(3)
+for D in (4,8,12):
+    mons=[(i,j) for i in range(D+1) for j in range(D+1-i)]
+    rows=[]
+    for _ in range(len(mons)+40):
+        a_,b_,c_=pt(),pt(),pt()
+        def P(x,y): return [pow(x,i,p)*pow(y,j,p)%p for i,j in mons]
+        add=lambda *v:(sum(q[0] for q in v)%p,sum(q[1] for q in v)%p)
+        terms=[(1,add(a_,b_,c_)),(-1,add(a_,b_)),(-1,add(a_,c_)),(-1,add(b_,c_)),(1,a_),(1,b_),(1,c_),(-1,(0,0))]
+        row=[0]*len(mons)
+        for sg,q in terms:
+            pv=P(*q); row=[(r+sg*x)%p for r,x in zip(row,pv)]
+        rows.append(row)
+    rk=rank_mod(rows)
+    print("poly deg<=%d: #monomials %d, rank %d, nullity (mod p, upper bound on true) %d"%(D,len(mons),rk,len(mons)-rk))
+
+===== FILE: chk1/chk_b.py =====
+# C2 alt discretisation: B-spline radial basis per angular mode
+import numpy as np
+from scipy.interpolate import BSpline
+rng=np.random.default_rng(7)
+def basis(deg,nint,R=3.0):
+    t=np.r_[[0]*deg,np.linspace(0,R,nint+1),[R]*deg]; n=len(t)-deg-1
+    return lambda r:np.stack([np.nan_to_num(BSpline.basis_element(t[i:i+deg+2],extrapolate=False)(np.clip(r,0,R-1e-12))) for i in range(n)],-1),n
+def run(m,deg,nint,N=6000):
+    B,n=basis(deg,nint)
+    th=rng.uniform(0,2*np.pi,(N,3)); a,b,c=[np.exp(1j*th[:,i]) for i in range(3)]
+    def row(z): return B(abs(z))*np.exp(1j*m*np.angle(z))[:,None]
+    M=row(a+b+c)-row(a+b)-row(a+c)-row(b+c)+row(a)+row(b)+row(c)
+    if m==0: M=M-B(np.zeros(N))
+    sv=np.linalg.svd(M,compute_uv=False); sv/=sv[0]
+    return n,sv[::-1][:5]
+for deg,nint in ((3,20),(3,40),(1,40),(1,80)):
+    for m in range(0,7):
+        n,sv=run(m,deg,nint)
+        print("deg %d nint %d m=%d nbasis %d smallest sv:"%(deg,nint,m,n)," ".join("%.1e"%x for x in sv))
+
+===== FILE: chk1/output.txt =====
+C3 prod max err 6.217248937900877e-15
+C3 sum max err 7.105427357601002e-15
+C5 f(0)= 8.0  (nonzero: P(0)=0 normalisation violated unless constant subtracted; I3 unaffected)
+C5 restricted c=-b max|I3| 5.5067062021407764e-14
+C5 full family max|I3| 15119.224709621898
+C4 ODE residual of claimed solution: 0
+C4 log-term: spread of I3+f(0) over triples (should be const if it solved H1): min -5.551 max 19.023
+C4 full Jacobian identity residual quad 0.0
+C4 full Jacobian identity residual log 3.552713678800501e-15
+poly deg<=4: #monomials 15, rank 9, nullity (mod p, upper bound on true) 6
+poly deg<=8: #monomials 45, rank 39, nullity (mod p, upper bound on true) 6
+poly deg<=12: #monomials 91, rank 85, nullity (mod p, upper bound on true) 6
+deg 3 nint 20 m=0 nbasis 23 smallest sv: 4.0e-17 1.8e-16 1.7e-02 2.5e-02 3.5e-02
+deg 3 nint 20 m=1 nbasis 23 smallest sv: 6.4e-17 2.9e-02 4.2e-02 5.7e-02 5.8e-02
+deg 3 nint 20 m=2 nbasis 23 smallest sv: 6.3e-17 2.5e-02 3.6e-02 4.6e-02 4.9e-02
+deg 3 nint 20 m=3 nbasis 23 smallest sv: 2.4e-02 3.4e-02 4.4e-02 4.5e-02 5.1e-02
+deg 3 nint 20 m=4 nbasis 23 smallest sv: 2.5e-02 3.7e-02 4.7e-02 4.9e-02 5.8e-02
+deg 3 nint 20 m=5 nbasis 23 smallest sv: 2.9e-02 4.2e-02 5.6e-02 5.9e-02 6.9e-02
+deg 3 nint 20 m=6 nbasis 23 smallest sv: 3.4e-02 4.9e-02 6.3e-02 6.5e-02 7.9e-02
+deg 3 nint 40 m=0 nbasis 43 smallest sv: 3.3e-17 2.0e-16 1.1e-02 1.6e-02 1.8e-02
+deg 3 nint 40 m=1 nbasis 43 smallest sv: 6.4e-17 2.0e-02 2.8e-02 3.1e-02 3.7e-02
+deg 3 nint 40 m=2 nbasis 43 smallest sv: 5.4e-17 1.9e-02 2.6e-02 2.9e-02 3.4e-02
+deg 3 nint 40 m=3 nbasis 43 smallest sv: 1.9e-02 2.6e-02 3.0e-02 3.5e-02 3.6e-02
+deg 3 nint 40 m=4 nbasis 43 smallest sv: 1.8e-02 2.6e-02 3.0e-02 3.5e-02 3.6e-02
+deg 3 nint 40 m=5 nbasis 43 smallest sv: 2.1e-02 2.9e-02 3.2e-02 3.9e-02 3.9e-02
+deg 3 nint 40 m=6 nbasis 43 smallest sv: 2.2e-02 3.1e-02 3.4e-02 4.1e-02 4.5e-02
+deg 1 nint 40 m=0 nbasis 41 smallest sv: 9.2e-16 1.9e-05 2.6e-02 3.5e-02 3.6e-02
+deg 1 nint 40 m=1 nbasis 41 smallest sv: 6.4e-17 4.7e-02 6.0e-02 6.4e-02 6.6e-02
+deg 1 nint 40 m=2 nbasis 41 smallest sv: 2.0e-05 4.4e-02 5.3e-02 5.6e-02 5.9e-02
+deg 1 nint 40 m=3 nbasis 41 smallest sv: 4.2e-02 5.2e-02 5.4e-02 5.5e-02 5.9e-02
+deg 1 nint 40 m=4 nbasis 41 smallest sv: 4.3e-02 5.4e-02 5.7e-02 6.0e-02 6.4e-02
+deg 1 nint 40 m=5 nbasis 41 smallest sv: 4.8e-02 6.0e-02 6.4e-02 6.7e-02 7.2e-02
+deg 1 nint 40 m=6 nbasis 41 smallest sv: 4.6e-02 6.5e-02 6.9e-02 7.2e-02 7.6e-02
+deg 1 nint 80 m=0 nbasis 81 smallest sv: 1.6e-16 3.6e-06 1.9e-02 2.3e-02 2.4e-02
+deg 1 nint 80 m=1 nbasis 81 smallest sv: 5.4e-17 3.7e-02 4.3e-02 4.3e-02 4.5e-02
+deg 1 nint 80 m=2 nbasis 81 smallest sv: 4.0e-06 3.2e-02 4.0e-02 4.2e-02 4.3e-02
+deg 1 nint 80 m=3 nbasis 81 smallest sv: 3.1e-02 4.0e-02 4.1e-02 4.2e-02 4.2e-02
+deg 1 nint 80 m=4 nbasis 81 smallest sv: 2.9e-02 4.1e-02 4.1e-02 4.3e-02 4.4e-02
+deg 1 nint 80 m=5 nbasis 81 smallest sv: 3.6e-02 4.5e-02 4.5e-02 4.6e-02 4.7e-02
+deg 1 nint 80 m=6 nbasis 81 smallest sv: 3.7e-02 4.3e-02 4.5e-02 4.6e-02 4.9e-02
+
+===== FILE: chk1/out_b.txt =====
+deg 3 nint 20 m=0 nbasis 23 smallest sv: 4.0e-17 1.8e-16 1.7e-02 2.5e-02 3.5e-02
+deg 3 nint 20 m=1 nbasis 23 smallest sv: 6.4e-17 2.9e-02 4.2e-02 5.7e-02 5.8e-02
+deg 3 nint 20 m=2 nbasis 23 smallest sv: 6.3e-17 2.5e-02 3.6e-02 4.6e-02 4.9e-02
+deg 3 nint 20 m=3 nbasis 23 smallest sv: 2.4e-02 3.4e-02 4.4e-02 4.5e-02 5.1e-02
+deg 3 nint 20 m=4 nbasis 23 smallest sv: 2.5e-02 3.7e-02 4.7e-02 4.9e-02 5.8e-02
+deg 3 nint 20 m=5 nbasis 23 smallest sv: 2.9e-02 4.2e-02 5.6e-02 5.9e-02 6.9e-02
+deg 3 nint 20 m=6 nbasis 23 smallest sv: 3.4e-02 4.9e-02 6.3e-02 6.5e-02 7.9e-02
+deg 3 nint 40 m=0 nbasis 43 smallest sv: 3.3e-17 2.0e-16 1.1e-02 1.6e-02 1.8e-02
+deg 3 nint 40 m=1 nbasis 43 smallest sv: 6.4e-17 2.0e-02 2.8e-02 3.1e-02 3.7e-02
+deg 3 nint 40 m=2 nbasis 43 smallest sv: 5.4e-17 1.9e-02 2.6e-02 2.9e-02 3.4e-02
+deg 3 nint 40 m=3 nbasis 43 smallest sv: 1.9e-02 2.6e-02 3.0e-02 3.5e-02 3.6e-02
+deg 3 nint 40 m=4 nbasis 43 smallest sv: 1.8e-02 2.6e-02 3.0e-02 3.5e-02 3.6e-02
+deg 3 nint 40 m=5 nbasis 43 smallest sv: 2.1e-02 2.9e-02 3.2e-02 3.9e-02 3.9e-02
+deg 3 nint 40 m=6 nbasis 43 smallest sv: 2.2e-02 3.1e-02 3.4e-02 4.1e-02 4.5e-02
+deg 1 nint 40 m=0 nbasis 41 smallest sv: 9.2e-16 1.9e-05 2.6e-02 3.5e-02 3.6e-02
+deg 1 nint 40 m=1 nbasis 41 smallest sv: 6.4e-17 4.7e-02 6.0e-02 6.4e-02 6.6e-02
+deg 1 nint 40 m=2 nbasis 41 smallest sv: 2.0e-05 4.4e-02 5.3e-02 5.6e-02 5.9e-02
+deg 1 nint 40 m=3 nbasis 41 smallest sv: 4.2e-02 5.2e-02 5.4e-02 5.5e-02 5.9e-02
+deg 1 nint 40 m=4 nbasis 41 smallest sv: 4.3e-02 5.4e-02 5.7e-02 6.0e-02 6.4e-02
+deg 1 nint 40 m=5 nbasis 41 smallest sv: 4.8e-02 6.0e-02 6.4e-02 6.7e-02 7.2e-02
+deg 1 nint 40 m=6 nbasis 41 smallest sv: 4.6e-02 6.5e-02 6.9e-02 7.2e-02 7.6e-02
+deg 1 nint 80 m=0 nbasis 81 smallest sv: 1.6e-16 3.6e-06 1.9e-02 2.3e-02 2.4e-02
+deg 1 nint 80 m=1 nbasis 81 smallest sv: 5.4e-17 3.7e-02 4.3e-02 4.3e-02 4.5e-02
+deg 1 nint 80 m=2 nbasis 81 smallest sv: 4.0e-06 3.2e-02 4.0e-02 4.2e-02 4.3e-02
+deg 1 nint 80 m=3 nbasis 81 smallest sv: 3.1e-02 4.0e-02 4.1e-02 4.2e-02 4.2e-02
+deg 1 nint 80 m=4 nbasis 81 smallest sv: 2.9e-02 4.1e-02 4.1e-02 4.3e-02 4.4e-02
+deg 1 nint 80 m=5 nbasis 81 smallest sv: 3.6e-02 4.5e-02 4.5e-02 4.6e-02 4.7e-02
+deg 1 nint 80 m=6 nbasis 81 smallest sv: 3.7e-02 4.3e-02 4.5e-02 4.6e-02 4.9e-02

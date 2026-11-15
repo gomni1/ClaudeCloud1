@@ -1,0 +1,251 @@
+===== common.py =====
+import json, numpy as np
+from scipy.special import betainc, betaln
+D_ = json.load(open('/home/claude/night1112/N-2026-11-12-1-verify-output.json'))
+DRAWS = ['2045','301417','384616','456280','616482']
+def par(d):
+    e = D_[d]; return list(e['k']), int(e['m']), int(e['kr'])
+def make(d):
+    (k1,k2,k3,k5,k6,k7,k8,k10), m, kr = par(d)
+    lb = betaln(kr, m-kr+1)
+    def rho(x):
+        x = min(max(x,0.0),1.0); return k3*betainc(kr, m-kr+1, x)
+    def drho(x):
+        x = min(max(x,1e-300),1.0); return k3*np.exp((kr-1)*np.log(x)+(m-kr)*np.log1p(-x) - lb) if x<1 else 0.0
+    # reduced coords y=(C,L,P), V=1-C-L-P
+    def f(t,y):
+        C,L,P = y; V = 1-C-L-P; r = k10+rho(C)
+        return [-(k1+k2+k7)*C + k6*L + r*V, k1*C-(k5+k6)*L, k7*C-k8*P]
+    def J(t,y):
+        C,L,P = y; V = 1-C-L-P; r = k10+rho(C)
+        return np.array([[-(k1+k2+k7)+drho(C)*V-r, k6-r, -r],[k1,-(k5+k6),0.0],[k7,0.0,-k8]])
+    return f,J,rho,drho
+
+===== N-2026-11-12-1-checker-a.py =====
+# A: balances, root completeness, class eigenvalues (double + mpmath 50 digits)
+import numpy as np, mpmath as mp, sys
+sys.path.insert(0,'/home/claude/night1112/checker')
+from common import *
+mp.mp.dps = 50
+for d in DRAWS:
+    (k1,k2,k3,k5,k6,k7,k8,k10), m, kr = par(d)
+    K = [mp.mpf(repr(v)) for v in (k1,k2,k3,k5,k6,k7,k8,k10)]
+    k1,k2,k3,k5,k6,k7,k8,k10 = K
+    c = 1 + k1/(k5+k6) + k7/k8; Dd = k2+k7+k1*k5/(k5+k6)
+    rho = lambda x: k3*mp.betainc(kr, m-kr+1, 0, x, regularized=True)
+    drho = lambda x: k3*x**(kr-1)*(1-x)**(m-kr)/mp.beta(kr,m-kr+1)
+    H = lambda x: (k10+rho(x))*(1-c*x) - Dd*x
+    xmax = 1/c
+    # grid: uniform 40001 + log-spaced near both ends
+    g = np.unique(np.concatenate([np.linspace(0,1,40001)[1:-1], np.logspace(-14,-1,2000), 1-np.logspace(-14,-1,2000)]))
+    hv = [H(mp.mpf(float(u))*xmax) for u in g]
+    roots=[]
+    for i in range(len(g)-1):
+        if hv[i]==0 or hv[i]*hv[i+1]<0:
+            roots.append(mp.findroot(H,(mp.mpf(float(g[i]))*xmax, mp.mpf(float(g[i+1]))*xmax), solver='anderson', tol=mp.mpf(10)**-40))
+    # near-tangency check: min |H| at local extrema of sign-constant stretches
+    hf = np.array([float(h) for h in hv]); 
+    ext = [i for i in range(1,len(hf)-1) if (hf[i]-hf[i-1])*(hf[i+1]-hf[i])<0]
+    print(f"draw {d}: m={m} kr={kr} c={float(c):.6f} 1/c={float(xmax):.6f}  H(0+)={float(H(mp.mpf('1e-30'))):.3e} H(1/c)={float(H(xmax)):.3e}")
+    print(f"  #roots={len(roots)}; local extrema of H on grid: {[(round(float(g[i]*float(xmax)),5), float('%.3e'%hf[i])) for i in ext]}")
+    for x in roots:
+        C=x; L=k1*x/(k5+k6); P=k7*x/k8; V=1-c*x; r=k10+rho(x)
+        J = mp.matrix([[-(k1+k2+k7)+drho(x)*V-r, k6-r, -r],[k1,-(k5+k6),0],[k7,0,-k8]])
+        ev = mp.eig(J, left=False, right=False)
+        # also 4D Jacobian check
+        J4 = mp.matrix([[-(k1+k2+k7)+drho(x)*V, r, k6, 0],[k2-drho(x)*V, -r, k5, k8],[k1,0,-(k5+k6),0],[k7,0,0,-k8]])
+        ev4 = mp.eig(J4, left=False, right=False)
+        nun = sum(1 for e in ev if mp.re(e)>0)
+        print(f"  x={mp.nstr(x,12)} V={mp.nstr(V,8)} L={mp.nstr(L,8)} P={mp.nstr(P,8)} resid={mp.nstr(H(x),3)}")
+        print("     class eig:", [mp.nstr(e,10) for e in ev], f" #Re>0={nun}  det={mp.nstr(mp.det(J),6)} tr={mp.nstr(J[0,0]+J[1,1]+J[2,2],6)}")
+        print("     4D eig   :", [mp.nstr(e,8) for e in ev4])
+
+===== N-2026-11-12-1-checker-b.py =====
+# B: Radau/BDF integration from interior + 20 random simplex starts; period, swings, section check
+import numpy as np, sys, time
+sys.path.insert(0,'/home/claude/night1112/checker')
+from common import *
+from scipy.integrate import solve_ivp
+from scipy.optimize import brentq
+from multiprocessing import Pool
+CLAIM = {'2045':43.5483838,'301417':5.0012035,'384616':277.1509408,'456280':88.5270387,'616482':171.2382391}
+def analyse(d, y0, method, nper=14, rtol=1e-10, atol=1e-13):
+    f,J,_,_ = make(d); Tg = CLAIM[d]   # claimed period used ONLY to set integration length
+    sol = solve_ivp(f,(0,nper*Tg),y0,method=method,jac=J,rtol=rtol,atol=atol,dense_output=True)
+    if not sol.success: return dict(ok=False,msg=sol.message)
+    t0 = (nper-5)*Tg; mask = sol.t>=t0
+    tt = sol.t[mask]; C = sol.y[0][mask]
+    # refine extrema using dense grid
+    tg = np.linspace(t0, sol.t[-1], 400001); Y = sol.sol(tg); Cg = Y[0]
+    cmin, cmax = Cg.min(), Cg.max(); mid = 0.5*(cmin+cmax)
+    if cmax-cmin < 1e-6: return dict(ok=True, rest=True, y=sol.y[:,-1], cmin=cmin, cmax=cmax)
+    s = Cg-mid; idx = np.where((s[:-1]<0)&(s[1:]>=0))[0]
+    tc = np.array([brentq(lambda t: sol.sol(t)[0]-mid, tg[i], tg[i+1], xtol=1e-13) for i in idx])
+    per = np.diff(tc); sec = np.array([sol.sol(t) for t in tc])
+    frac = np.mean(Cg[(tg>=tc[0])&(tg<tc[-1])]>mid) if len(tc)>1 else np.nan
+    V = 1-Y.sum(0)
+    return dict(ok=True, rest=False, per=per, sec=sec, cmin=cmin, cmax=cmax, frac=frac, nsteps=len(sol.t),
+                Lr=(Y[1].min(),Y[1].max()), Pr=(Y[2].min(),Y[2].max()), Vr=(V.min(),V.max()))
+def run(d):
+    rng = np.random.default_rng(int(d)+777)
+    starts = [('int1',[0.25,0.25,0.25],'Radau'),('int2',[0.02,0.70,0.10],'Radau'),('int1b',[0.25,0.25,0.25],'BDF'),('int2b',[0.02,0.70,0.10],'BDF')]
+    for i in range(20):
+        w = rng.dirichlet(np.ones(4)*(0.3 if i%2 else 1.0)); starts.append((f'rnd{i}',[w[0],w[2],w[3]],'Radau'))
+    out=[f"=== draw {d} ==="]; res=[]
+    t0=time.time()
+    for name,y0,meth in starts:
+        r = analyse(d,y0,meth, rtol=(1e-10 if meth=='Radau' else 1e-11))
+        if not r['ok']: out.append(f"  {name} FAILED {r['msg']}"); continue
+        if r['rest']: out.append(f"  {name} {meth} -> REST y={r['y']}"); continue
+        p=r['per']; s=r['sec']
+        res.append((p.mean(), r['cmin'], r['cmax'], r['frac']))
+        out.append(f"  {name:6s}{meth:6s} n={len(p)} period={p.mean():.7f} spread={np.ptp(p):.1e} C[{r['cmin']:.5f},{r['cmax']:.5f}] fracHi={r['frac']:.4f} "
+                   f"secL={s[-1,1]:.8f} secP={s[-1,2]:.8f} secSpread={np.ptp(s[:,1:],axis=0).max():.1e} "
+                   f"L[{r['Lr'][0]:.4f},{r['Lr'][1]:.4f}] P[{r['Pr'][0]:.4f},{r['Pr'][1]:.4f}] V[{r['Vr'][0]:.4f},{r['Vr'][1]:.4f}]")
+    a=np.array(res)
+    out.append(f"  SUMMARY {d}: nstarts={len(a)} period mean={a[:,0].mean():.7f} min={a[:,0].min():.7f} max={a[:,0].max():.7f} claimed={CLAIM[d]} "
+               f"Cmin={a[:,1].mean():.5f} Cmax={a[:,2].mean():.5f} (start-to-start ptp {np.ptp(a[:,1]):.1e},{np.ptp(a[:,2]):.1e}) frac={a[:,3].mean():.4f}  [{time.time()-t0:.0f}s]")
+    return "\n".join(out)
+if __name__=='__main__':
+    ds = sys.argv[1:] or DRAWS
+    with Pool(2) as p:
+        for o in p.imap(run, ds): print(o, flush=True)
+
+===== N-2026-11-12-1-checker-c.py =====
+# C: Floquet logs via variational eq. in reduced 3D class coords with periodic QR; trace integral; cycle anatomy for claim 5
+import numpy as np, sys
+sys.path.insert(0,'/home/claude/night1112/checker')
+from common import *
+from scipy.integrate import solve_ivp
+from scipy.optimize import brentq
+CLAIM = {'2045':43.5483838,'301417':5.0012035,'384616':277.1509408,'456280':88.5270387,'616482':171.2382391}
+def run(d):
+    f,J,rho,drho = make(d); (k1,k2,k3,k5,k6,k7,k8,k10),m,kr = par(d)
+    Tg=CLAIM[d]  # used only to set integration length
+    sol = solve_ivp(f,(0,8*Tg),[0.25,0.25,0.25],method='Radau',jac=J,rtol=1e-11,atol=1e-14,dense_output=True)
+    tg=np.linspace(4*Tg,8*Tg,400001); Cg=sol.sol(tg)[0]; mid=0.5*(Cg.min()+Cg.max())
+    s=Cg-mid; idx=np.where((s[:-1]<0)&(s[1:]>=0))[0]
+    tc=[brentq(lambda t: sol.sol(t)[0]-mid,tg[i],tg[i+1],xtol=1e-13) for i in idx]
+    T=tc[-1]-tc[-2]; y0=sol.sol(tc[-1])
+    def F(t,z):
+        y=z[:3]; M=z[3:12].reshape(3,3); Jm=J(t,y)
+        return np.concatenate([f(t,y),(Jm@M).ravel(),[np.trace(Jm)]])
+    def JF(t,z):   # approximate block Jacobian (only affects Newton convergence, not accuracy)
+        Jm=J(t,z[:3]); A=np.zeros((13,13)); A[:3,:3]=Jm; A[3:12,3:12]=np.kron(Jm,np.eye(3)); return A
+    nseg=int(np.ceil(T/float(sys.argv[2]) if len(sys.argv)>2 else T/0.05))
+    res=[]; Q=np.eye(3); y=y0.copy()
+    for rep in range(0 if (len(sys.argv)>3 and sys.argv[3]=='noqr') else 2):
+        logs=np.zeros(3); tr=0.0; y_start=y.copy()
+        for i in range(nseg):
+            z0=np.concatenate([y,Q.ravel(),[0.0]])
+            s2=solve_ivp(F,(0,T/nseg),z0,method='Radau',jac=JF,rtol=1e-10,atol=1e-14)
+            z=s2.y[:,-1]; y=z[:3]; Q,R=np.linalg.qr(z[3:12].reshape(3,3))
+            sg=np.sign(np.diag(R)); Q=Q*sg; logs+=np.log(np.abs(np.diag(R))); tr+=z[12]
+        res.append((logs.copy(),tr,np.linalg.norm(y-y_start)))
+    out=[f"=== draw {d}: T={T:.7f} (nseg={nseg}) ==="]
+    for logs,tr,cl in res:
+        out.append(f"  QR logs = {logs}  sum={logs.sum():.4f}  trace integral={tr:.4f}  closure |y(T)-y(0)|={cl:.1e}")
+    tt=np.linspace(tc[-2],tc[-1],400001); Y=sol.sol(tt); C,L,P=Y; V=1-Y.sum(0)
+    hi=C>mid; dt=tt[1]-tt[0]
+    rr=np.array([rho(c) for c in C[::40]]); V4=V[::40]; dt4=dt*40
+    out.append(f"  swings: C[{C.min():.4f},{C.max():.4f}] V[{V.min():.4f},{V.max():.4f}] L[{L.min():.4f},{L.max():.4f}] P[{P.min():.4f},{P.max():.4f}]  fracHi={hi.mean():.4f}")
+    n=len(C)
+    out.append(f"  phase of extrema (fraction of period after upward mid-crossing): Cmax {np.argmax(C)/n:.3f} Cmin {np.argmin(C)/n:.3f} Vmin {np.argmin(V)/n:.3f} Vmax {np.argmax(V)/n:.3f} Lmax {np.argmax(L)/n:.3f} Lmin {np.argmin(L)/n:.3f} Pmax {np.argmax(P)/n:.3f} Pmin {np.argmin(P)/n:.3f}")
+    iC=C.sum()*dt
+    out.append(f"  per-cycle fluxes: C->L {k1*iC:.4f}  C->V {k2*iC:.4f}  C->P {k7*iC:.4f} | L->V {k5*L.sum()*dt:.4f} L->C {k6*L.sum()*dt:.4f} P->V {k8*P.sum()*dt:.4f} | V->C seed {k10*V.sum()*dt:.4f} recruit {(rr*V4).sum()*dt4:.4f}")
+    out.append(f"  rates: k5+k6={k5+k6:.5f} k8={k8:.5f} k10={k10:.5f} k2={k2:.5f} k1={k1:.5f} k7={k7:.5f} k3={k3:.4f}; T*(k5+k6)={T*(k5+k6):.3f} T*k8={T*k8:.3f} T*k10={T*k10:.3f} T*k2={T*k2:.3f}")
+    out.append(f"  holdings: k1/(k5+k6)={k1/(k5+k6):.4f} k7/k8={k7/k8:.4f}  k3/k10={k3/k10:.1f} kr={kr} m={m}; L return split to C: k6/(k5+k6)={k6/(k5+k6):.3f}")
+    return "\n".join(out)
+if __name__=='__main__':
+    print(run(sys.argv[1]),flush=True)
+
+===== N-2026-11-12-1-checker-d.py =====
+# D: elasticities of period w.r.t. each rate (one-sided, factor EPS = argv[1]); nan = oscillation lost
+import numpy as np, sys
+sys.path.insert(0,'/home/claude/night1112/checker')
+import common
+from common import *
+from scipy.integrate import solve_ivp
+from scipy.optimize import brentq
+CLAIM = {'2045':43.5483838,'301417':5.0012035,'384616':277.1509408,'456280':88.5270387,'616482':171.2382391}
+EPS=float(sys.argv[1]) if len(sys.argv)>1 else 1.02
+names=['k1','k2','k3','k5','k6','k7','k8','k10']
+def period(d):
+    f,J,_,_=make(d); Tg=CLAIM[d]
+    sol=solve_ivp(f,(0,9*Tg),[0.25,0.25,0.25],method='Radau',jac=J,rtol=1e-9,atol=1e-12,dense_output=True)
+    tg=np.linspace(5*Tg,9*Tg,200001); Cg=sol.sol(tg)[0]; mid=0.5*(Cg.min()+Cg.max())
+    if np.ptp(Cg)<1e-6: return np.nan
+    s=Cg-mid; idx=np.where((s[:-1]<0)&(s[1:]>=0))[0]
+    tc=[brentq(lambda t: sol.sol(t)[0]-mid,tg[i],tg[i+1],xtol=1e-12) for i in idx]
+    return tc[-1]-tc[-2]
+for d in DRAWS:
+    base=list(common.D_[d]['k']); T0=period(d); el=[]
+    for i in range(8):
+        k=list(base); k[i]*=EPS; common.D_[d]['k']=k; el.append(np.log(period(d)/T0)/np.log(EPS))
+    # joint k5,k6
+    k=list(base); k[3]*=EPS; k[4]*=EPS; common.D_[d]['k']=k; e56=np.log(period(d)/T0)/np.log(EPS)
+    common.D_[d]['k']=base
+    print(f"draw {d}: T={T0:.5f}  dlnT/dlnk: "+"  ".join(f"{n}={e:+.3f}" for n,e in zip(names,el))+f"  (k5&k6 jointly={e56:+.3f})  sum={sum(el):+.3f}",flush=True)
+
+===== N-2026-11-12-1-checker-e.py =====
+# E: central-difference elasticities (factor 1 +/- 5e-4) for k10, k3-free check: slow-pool return rate, and all-rates scaling sanity (must be -1)
+import numpy as np, sys
+sys.path.insert(0,'/home/claude/night1112/checker')
+import common
+from common import *
+from scipy.integrate import solve_ivp
+from scipy.optimize import brentq
+CLAIM = {'2045':43.5483838,'301417':5.0012035,'384616':277.1509408,'456280':88.5270387,'616482':171.2382391}
+SLOW = {'2045':[3,4],'616482':[3,4],'301417':[6],'384616':[6],'456280':[6]}
+def period(d):
+    f,J,_,_=make(d); Tg=CLAIM[d]
+    sol=solve_ivp(f,(0,9*Tg),[0.25,0.25,0.25],method='Radau',jac=J,rtol=1e-10,atol=1e-13,dense_output=True)
+    tg=np.linspace(5*Tg,9*Tg,200001); Cg=sol.sol(tg)[0]; mid=0.5*(Cg.min()+Cg.max())
+    if np.ptp(Cg)<1e-6: return np.nan
+    s=Cg-mid; idx=np.where((s[:-1]<0)&(s[1:]>=0))[0]
+    tc=[brentq(lambda t: sol.sol(t)[0]-mid,tg[i],tg[i+1],xtol=1e-13) for i in idx]
+    return tc[-1]-tc[-2]
+def el(d,base,idxs,h=5e-4):
+    T=[]
+    for s in (1-h,1+h):
+        k=list(base)
+        for i in idxs: k[i]*=s
+        common.D_[d]['k']=k; T.append(period(d))
+    common.D_[d]['k']=base
+    return np.log(T[1]/T[0])/np.log((1+h)/(1-h)), T
+for d in sys.argv[1:] or DRAWS:
+    base=list(common.D_[d]['k'])
+    a,Ta=el(d,base,range(8)); s,Ts=el(d,base,SLOW[d]); k,Tk=el(d,base,[7])
+    print(f"draw {d}: all-rates scaling elasticity={a:+.4f} (must be -1) | slow-pool return rate={s:+.3f} T-,T+={Ts} | k10={k:+.3f} T-,T+={Tk}",flush=True)
+
+===== N-2026-11-12-1-checker-f.py =====
+# F: draw 2045 - near-balance-1 start at base parameters; and what the attractor is at k10*(1-5e-4)
+import numpy as np, sys
+sys.path.insert(0,'/home/claude/night1112/checker')
+import common
+from common import *
+from scipy.integrate import solve_ivp
+from scipy.optimize import brentq
+d='2045'; base=list(common.D_[d]['k'])
+def bal(lo,hi):
+    (k1,k2,k3,k5,k6,k7,k8,k10),m,kr=par(d); f,J,rho,_=make(d)
+    c=1+k1/(k5+k6)+k7/k8; Dd=k2+k7+k1*k5/(k5+k6)
+    x=brentq(lambda x:(k10+rho(x))*(1-c*x)-Dd*x,lo,hi,xtol=1e-15)
+    return np.array([x,k1*x/(k5+k6),k7*x/k8])
+def windows(y0,tend,label):
+    f,J,_,_=make(d)
+    sol=solve_ivp(f,(0,tend),y0,method='Radau',jac=J,rtol=1e-10,atol=1e-14,dense_output=True)
+    for a,b in [(0.5,0.6),(0.7,0.8),(0.9,1.0)]:
+        tg=np.linspace(a*tend,b*tend,200001); C=sol.sol(tg)[0]; mid=0.5*(C.min()+C.max()); s=C-mid
+        idx=np.where((s[:-1]<0)&(s[1:]>=0))[0]; per=np.diff(tg[idx])
+        print(f"  {label} t in [{a*tend:.0f},{b*tend:.0f}]: C[{C.min():.6f},{C.max():.6f}] mean return time={per.mean() if len(per) else float('nan'):.4f} (n={len(per)}, ptp={np.ptp(per) if len(per) else 0:.1e})",flush=True)
+print("base parameters, start = balance1 + 1e-6*(1,-0.4,-0.3) in (C,L,P):")
+b1=bal(0.02,0.035); windows(b1+1e-6*np.array([1,-0.4,-0.3]),4000,'near-bal1')
+for fac in (0.9995,0.999,1.0005):
+    k=list(base); k[7]*=fac; common.D_[d]['k']=k
+    b1=bal(0.02,0.035); Jm=make(d)[1](0,b1); print(f"k10 x {fac}: balance1 x={b1[0]:.6f} eig={np.linalg.eigvals(Jm)}")
+    windows([0.25,0.25,0.25],3000,'interior(.25)')
+common.D_[d]['k']=base
+k=list(base); k[0]*=1.002; common.D_[d]['k']=k
+b1=bal(0.02,0.035); print(f"k1 x 1.002: balance1 x={b1[0]:.6f} eig={np.linalg.eigvals(make(d)[1](0,b1))}"); windows([0.25,0.25,0.25],3000,'interior(.25)')
+

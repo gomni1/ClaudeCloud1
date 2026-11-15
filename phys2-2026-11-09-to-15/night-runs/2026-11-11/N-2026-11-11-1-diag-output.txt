@@ -1,0 +1,8 @@
+S1 +Re u crossings 19 yT [39.4258, 1146.2457, 84.7389, 13.5598] reldist(low,mid,high) [9.7991, 6.5239, 0.1007]
+S2 -Re u crossings 20 yT [39.4257, 1146.2432, 84.7387, 13.5598] reldist(low,mid,high) [9.7991, 6.5239, 0.1007]
+S3 +Im u crossings 16 yT [39.4263, 1146.2611, 84.7401, 13.56] reldist(low,mid,high) [9.7992, 6.524, 0.1006]
+S4 -Im u crossings 16 yT [39.4264, 1146.2634, 84.7402, 13.56] reldist(low,mid,high) [9.7993, 6.524, 0.1006]
+S5 +w mid crossings 0 yT [39.6824, 1153.7064, 85.2905, 13.6482] reldist(low,mid,high) [9.8652, 6.5712, 0.0948]
+S6 -w mid crossings 0 yT [39.7028, 1154.2996, 85.3343, 13.6552] reldist(low,mid,high) [9.8705, 6.5749, 0.0943]
+slowest eigenvalue at high-Void balance -0.00010758915006711985 ; exp(lam*2e4) = 0.11627665141085393
+expected relative V offset if started at the low-Void V: -0.11252336376466088

@@ -1,0 +1,20 @@
+N-2026-11-14-2 — what "no third-order term" forces on the readout. Proof and checker's verdict (summary).
+Written by Claude (PHYS2 Night Run, 14 Nov 2026).
+
+SETTING. R = sum over open slits of R_i, R_i plane vectors (A1). P = P(R), same function whichever slits are open, P >= 0, P(0) = 0, regular (A2; "regular" = continuous, or measurable, or bounded above on some open set). I3 = P(R1+R2+R3) - P(R1+R2) - P(R1+R3) - P(R2+R3) + P(R1) + P(R2) + P(R3) - P(0).
+
+T1. I3 = 0 for all triples  <=>  P is a positive semidefinite quadratic form.
+ Proof (the checker's route, cleaner than the queue's). Put B(a,b) = P(a+b) - P(a) - P(b). Then I3(a,b,c) = B(a+b,c) - B(a,c) - B(b,c). So I3 = 0 says B is additive in each argument (and symmetric). Let q(x) = B(x,x)/2. Then P - q is additive: P = l + q. Non-negativity: P(tx) = t*l(x) + t^2*q(x) >= 0 for rational t of both signs forces l = 0. Regularity makes the biadditive B bilinear, so q is a quadratic form. Converse: a quadratic form has only pair cross terms.
+ (The queue's route also works: Delta_a Delta_b Delta_c P(x) = I3(a,b,c+x) - I3(a,b,x), so base point 0 suffices for Frechet's equation.)
+ Regularity is needed: with f a discontinuous additive function (Hamel basis), P = f(R)^2 is non-negative, P(0)=0, I3 = 0, not a quadratic form.
+T2. If also P is unchanged when all contributions are turned together (A3): P = beta*|R|^2. Unchanged for doubled-angle vectors (a turn by phi turns the doubled vector by 2*phi; all of SO(2) is covered).
+T3 (local; radius corrected by the checker). If I3 = 0 only for |R_i| <= r, P is fixed as l + q on the reachable set |R| <= 3r and nothing is said beyond. Needs the R_i to fill an open 2-D set; if only phases vary (fixed |R_i|) the argument does not apply as it stands (not proved either way).
+Remarks accepted from the checker.
+ - A bounded probability cannot satisfy T1 globally (a non-zero quadratic form is unbounded): T1 is about an unnormalised rate; for a click probability only the local version has content.
+ - If the readout may also read an additive count n (histories or open slits), (R, n) is additive in R^3 and the same theorem gives P = beta*|R|^2 + alpha*n + gamma*n^2: a phase-blind background and a phase-blind pair term; the |R|^2 dependence cannot change.
+ - Saturating detector P = f(|R|^2), f'(0) != 0: kappa3 scales as 1/s (first order in intensity/saturation), so it vanishes at low intensity.
+ - Nothing selects dimension 2: the theorem holds for R_i in R^d.
+ - Sensitivity: P = |R|^(2+eps) gives kappa3 about 0.22*eps (median) to 1.4*eps (max), so an observed bound of 1e-2 bounds the exponent to about 2 +/- 0.01 or somewhat better; it does not give exactly 2. (Checker's computation; its script is N-2026-11-14-2-checker.py.)
+ - Observational register, from the checker's memory: real three-slit set-ups have a small non-zero I3 because one slit's contribution depends on which others are open (looped paths; about 1e-6 to 1e-3 by geometry). A1 is therefore only approximate even in standard quantum mechanics.
+Literature. Located by search (titles only, papers not opened): Sorkin gr-qc/9401003; Barnum-Mueller-Ududec; Ududec-Barnum-Emerson arXiv:0912.0203; Sawant et al. arXiv:1308.2022; Sinha et al. arXiv:1412.2198; Kauten et al. NJP 2017. From memory: Sorkin's result is the set-level analogue (I3 = 0 <=> the measure comes from a symmetric bi-additive interference function); the GPT papers are different and stronger; nearest amplitude-level analogue Goyal-Knuth-Skilling 2010. No paper stating exactly T1+T2 was found; it is a short corollary of classical functional-equation results (Frechet; Jordan-von Neumann), not new.
+CHECKER VERDICT: PARTLY CONFIRMED (T1, T2, numerics confirmed; T3 radius corrected; escape list and scope sentence corrected as above).

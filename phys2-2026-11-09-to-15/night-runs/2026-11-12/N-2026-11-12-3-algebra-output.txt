@@ -1,0 +1,15 @@
+conservation: d(T1+T2)/dt - (k12 - k9 P1 - u9 P2) = 0
+planted failure (upper gains 2U): residual = C2*P1*kappa
+(a) upper rates at the empty upper level: [0, 0, 0, 0]
+(a) upper rates with only Void present: [V2*(rho2 + sigma*x1), -V2*(rho2 + sigma*x1), 0, 0]
+(b) upper total balance factor: -C2*(C2*kappa*u7*u9 - k12*kappa*u8 - k12*kappa*u9 + k9*u7*u9)/((u8 + u9)*(C2*kappa + k9))
+(b) roots in C2: [0, k12*u8/(u7*u9) + k12/u7 - k9/kappa]  ; 10 Nov form c*k12 - k9/kappa = k12*u8/(u7*u9) + k12/u7 - k9/kappa
+(b) at C2 = 0: dC2/dt = V2*(rho2 + sigma*x1) -> V2 = 0 if sigma*x1 + rho2 > 0
+(c) A is Metzler (off-diagonals >= 0): True
+(c) det A = s*(u5 + u6)*(-k12*kappa*u8 - k12*kappa*u9 + k9*u7*u9)/k9
+(c) det A + [s (u5+u6) u7 u9 / k9]*(kappa*c*k12 - k9) = 0  (0 means det A has the sign of k9 - kappa*c*k12 for every s > 0)
+(a2) with passive share eps: upper rates at the empty upper level: [0, P1*epsilon*k9, 0, 0]
+(b2) balance numerator in C2: -C2**2*kappa*u7*u9 + C2*(k12*kappa*u8 + k12*kappa*u9 - k9*u7*u9) + epsilon*k12*k9*u8 + epsilon*k12*k9*u9
+(b2) coefficients: [-kappa*u7*u9, k12*kappa*u8 + k12*kappa*u9 - k9*u7*u9, epsilon*k12*k9*u8 + epsilon*k12*k9*u9]
+(b2) product of roots = epsilon*k12*k9*(-u8 - u9)/(kappa*u7*u9) (negative => exactly one positive root for every kappa >= 0)
+(b2) conservation with passive share: d(T1+T2)/dt - (k12 - (1-eps) k9 P1 - u9 P2) = 0  (the passive share eps*k9*P1 is part of the lower exit k9*P1, so each unit is still counted once)

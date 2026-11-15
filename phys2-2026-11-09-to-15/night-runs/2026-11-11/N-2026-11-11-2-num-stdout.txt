@@ -1,0 +1,2 @@
+pilot {'draws': 2000, 'seconds': 0.54, 'three': 41}
+{'n_draws': 949427, 'n_three': 20000, 'identity_flags': 0, 'max_relerr': 2.672008780232714e-13, 'middle_stable': 0, 'min_middle_maxre': 0.0069375380649275035, 'outer_unstable_low': 7, 'outer_unstable_high': 546, 'Hp_sign_pattern_violations': 0, 'P2_tested': 200, 'P2_tripped': 200, 'pilot': {'draws': 2000, 'seconds': 0.54, 'three': 41}, 'seconds': 239.1}

@@ -1,0 +1,10 @@
+plant {'|R|^4 at (1,0)x3 (must be 36)': 36.0, '|R|^2 at (1,0)x3 (must be 0)': 0.0} PASS
+|R|^1                          max|I3|/max|P| = 5.311e-01   min P = 0.0111
+|R|^1.5                        max|I3|/max|P| = 1.993e-01   min P = 0.00117
+|R|^2                          max|I3|/max|P| = 2.634e-16   min P = 0.000124
+|R|^2.5                        max|I3|/max|P| = 1.148e-01   min P = 1.3e-05
+|R|^3                          max|I3|/max|P| = 2.177e-01   min P = 1.37e-06
+|R|^4                          max|I3|/max|P| = 4.358e-01   min P = 1.53e-08
+aniso quad Rx^2+3Ry^2+RxRy     max|I3|/max|P| = 3.687e-16   min P = 0.00027
+|R|^2 + e.R                    max|I3|/max|P| = 2.506e-16   min P = -0.25
+1-exp(-|R|^2)                  max|I3|/max|P| = 2.956e+00   min P = 0.000124

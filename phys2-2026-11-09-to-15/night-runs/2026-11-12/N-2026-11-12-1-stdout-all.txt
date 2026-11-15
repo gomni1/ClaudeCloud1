@@ -1,0 +1,219 @@
+===== N-2026-11-12-1-verify-stdout.txt =====
+2045 19 3 3 [0.008922660008968603, 23.520922906712066, 24.5974982768588] tau 119.96399594438849
+301417 18 5 3 [0.4020288297434257, 1.6840799759796803, 0.6386023645736378] tau 4.968907832933333
+384616 14 4 3 [0.007731107044189167, 0.5080362033356861, 0.6224430854324128] tau 253.2220376178083
+456280 15 5 3 [0.67074251811449, 3.207880979557465, 1.9762306162317917] tau 94.80076300377188
+616482 12 4 3 [0.26060167467045664, 0.6746454972915435, 0.04407992116972968] tau 190.12246799342202
+2045 matches the 11 Nov handoff rates: True
+
+===== N-2026-11-12-1-plants-stdout.txt =====
+   round 1: rmaxA 2.528e-01 crossings 40 cycle {'p': 1, 'period': 0.999999999943153, 'state_spread': 2.2797401744156787e-09, 'rt_spread': 3.930722414448324e-10}
+cycle mu=1: steady cycle 0.999999999943153 {'nseg': 2, 'logs': [-2.5144220039981364e-11, -2.0000000014167894], 'logs_prev': [-2.582637437454232e-10, -2.000000002042465], 'trivial_ok': True, 'conv': 3.128377554788443e-10, 'conv_ok': True, 'trace_integral': -2.0000000014162476, 'trace_relerr': 1.2843059939769335e-11, 'trace_ok': True, 'stable': True} 0.1
+stiff: {'nseg': 195, 'logs': [-5.773159728050838e-15, -800.0000000437875], 'logs_prev': [-5.773159728050843e-15, -800.0000000420415], 'trivial_ok': True, 'conv': 2.1825030670412658e-12, 'conv_ok': True, 'trace_integral': -799.9999999999982, 'trace_relerr': 5.473665964927944e-11, 'trace_ok': True, 'stable': True} 1.1
+   round 1: rmaxA 2.098e-09 crossings 40 cycle None
+   round 2: rmaxA 2.098e-09 crossings 40 cycle None
+   round 3: rmaxA 2.097e-09 crossings 40 cycle None
+   round 4: rmaxA 2.098e-09 crossings 40 cycle None
+damped: unresolved None literal(ii): None 1.7
+markov rest: at rest balance 0 literal(ii): True 4.6
+   round 1: rmaxA 2.721e-01 crossings 40 cycle None
+   round 2: rmaxA 2.721e-01 crossings 40 cycle None
+   round 3: rmaxA 2.721e-01 crossings 40 cycle None
+   round 4: rmaxA 2.721e-01 crossings 40 cycle None
+torus: other sustained motion [0.9999999999790816, 1.0000000000078444] [5.608846720406291e-13, 1.9678869644934593e-10, 1.994846126175129, 1.9990615397259328] 5.0
+
+===== N-2026-11-12-1-pilot-stdout.txt =====
+  draw 2045 start interior-a
+   round 1: rmaxA 8.195e-01 crossings 40 cycle {'p': 1, 'period': 43.54838380008747, 'state_spread': 3.4815733629400825e-11, 'rt_spread': 3.322963778940516e-09}
+  -> steady cycle 43.54838380008747 (5s)
+  floquet {'nseg': 1569, 'logs': [-5.793763998340751e-06, -728.6580942292757, -2509.648244613246], 'logs_prev': [-5.794233721045927e-06, -728.6580942286198, -2509.6482446129726], 'trivial_ok': True, 'conv': 4.69722705176423e-10, 'conv_ok': True, 'trace_integral': -3238.30634467879, 'trace_relerr': 1.3125480071550198e-11, 'trace_ok': True, 'stable': True, 'seconds': 16.3}
+pilot seconds 21.1
+
+real	0m24.352s
+user	0m24.178s
+sys	0m0.044s
+
+===== N-2026-11-12-1-draw-2045-stdout.txt =====
+  draw 2045 start interior-a
+   round 1: rmaxA 8.195e-01 crossings 40 cycle {'p': 1, 'period': 43.54838380008747, 'state_spread': 3.4815733629400825e-11, 'rt_spread': 3.322963778940516e-09}
+  -> steady cycle 43.54838380008747 (5s)
+  draw 2045 start interior-b
+   round 1: rmaxA 8.195e-01 crossings 40 cycle {'p': 1, 'period': 43.5483837630768, 'state_spread': 5.0250470451373985e-11, 'rt_spread': 5.076568061191732e-09}
+  -> steady cycle 43.5483837630768 (5s)
+  draw 2045 start low+
+   round 1: rmaxA 8.195e-01 crossings 40 cycle {'p': 1, 'period': 43.548383792865174, 'state_spread': 6.893774440186462e-11, 'rt_spread': 1.1172350987959003e-08}
+  -> steady cycle 43.548383792865174 (4s)
+  draw 2045 start low-
+   round 1: rmaxA 8.195e-01 crossings 40 cycle {'p': 1, 'period': 43.548383843399584, 'state_spread': 2.0348656093460704e-10, 'rt_spread': 7.874323524845e-09}
+  -> steady cycle 43.548383843399584 (5s)
+  draw 2045 start mid+
+   round 1: rmaxA 8.195e-01 crossings 40 cycle {'p': 1, 'period': 43.54838378033204, 'state_spread': 4.818823118313276e-11, 'rt_spread': 4.4722903015064185e-09}
+  -> steady cycle 43.54838378033204 (5s)
+  draw 2045 start mid-
+   round 1: rmaxA 8.195e-01 crossings 40 cycle {'p': 1, 'period': 43.548383777622654, 'state_spread': 4.665734465447713e-11, 'rt_spread': 4.257136176536065e-09}
+  -> steady cycle 43.548383777622654 (5s)
+  draw 2045 start high+
+   round 1: rmaxA 8.195e-01 crossings 40 cycle {'p': 1, 'period': 43.54838378420012, 'state_spread': 1.061199739194052e-10, 'rt_spread': 3.96370621478977e-09}
+  -> steady cycle 43.54838378420012 (5s)
+  draw 2045 start high-
+   round 1: rmaxA 8.195e-01 crossings 40 cycle {'p': 1, 'period': 43.54838375236053, 'state_spread': 4.932376729271937e-11, 'rt_spread': 5.4822741427655425e-09}
+  -> steady cycle 43.54838375236053 (5s)
+  floquet {'nseg': 1569, 'logs': [-5.793763998340751e-06, -728.6580942292757, -2509.648244613246], 'logs_prev': [-5.794233721045927e-06, -728.6580942286198, -2509.6482446129726], 'trivial_ok': True, 'conv': 4.69722705176423e-10, 'conv_ok': True, 'trace_integral': -3238.30634467879, 'trace_relerr': 1.3125480071550198e-11, 'trace_ok': True, 'stable': True, 'seconds': 16.8}
+
+===== N-2026-11-12-1-draw-301417-stdout.txt =====
+  draw 301417 start interior-a
+   round 1: rmaxA 9.714e-01 crossings 40 cycle {'p': 1, 'period': 5.001203512030595, 'state_spread': 1.9242157867083165e-10, 'rt_spread': 2.3610029061756706e-09}
+  -> steady cycle 5.001203512030595 (1s)
+  draw 301417 start interior-b
+   round 1: rmaxA 9.714e-01 crossings 40 cycle {'p': 1, 'period': 5.001203512254169, 'state_spread': 1.5805468045471116e-10, 'rt_spread': 2.1203971536915174e-09}
+  -> steady cycle 5.001203512254169 (1s)
+  draw 301417 start low+
+   round 1: rmaxA 9.714e-01 crossings 40 cycle {'p': 1, 'period': 5.001203511940403, 'state_spread': 1.7231965854236364e-10, 'rt_spread': 2.1999587895539587e-09}
+  -> steady cycle 5.001203511940403 (1s)
+  draw 301417 start low-
+   round 1: rmaxA 9.714e-01 crossings 40 cycle {'p': 1, 'period': 5.0012035112039355, 'state_spread': 2.409576982387307e-10, 'rt_spread': 2.6966279839658915e-09}
+  -> steady cycle 5.0012035112039355 (1s)
+  draw 301417 start mid+
+   round 1: rmaxA 9.714e-01 crossings 40 cycle {'p': 1, 'period': 5.001203509098303, 'state_spread': 1.2600359644565629e-10, 'rt_spread': 3.6577780090505817e-09}
+  -> steady cycle 5.001203509098303 (1s)
+  draw 301417 start mid-
+   round 1: rmaxA 9.714e-01 crossings 40 cycle {'p': 1, 'period': 5.001203509919516, 'state_spread': 1.9726381639273427e-10, 'rt_spread': 2.3425559736235675e-09}
+  -> steady cycle 5.001203509919516 (1s)
+  draw 301417 start high+
+   round 1: rmaxA 9.714e-01 crossings 40 cycle {'p': 1, 'period': 5.001203512901824, 'state_spread': 1.1561207546861851e-10, 'rt_spread': 1.5956427020904896e-09}
+  -> steady cycle 5.001203512901824 (1s)
+  draw 301417 start high-
+   round 1: rmaxA 9.714e-01 crossings 40 cycle {'p': 1, 'period': 5.001203509876551, 'state_spread': 1.6587192730455058e-10, 'rt_spread': 3.865377048081015e-09}
+  -> steady cycle 5.001203509876551 (1s)
+  floquet {'nseg': 222, 'logs': [-6.324194412599127e-07, -26.463740005641306, -201.3061036034327], 'logs_prev': [-6.324207846297725e-07, -26.463740005612248, -201.3061036033955], 'trivial_ok': True, 'conv': 1.3433698597964394e-12, 'conv_ok': True, 'trace_integral': -227.76984424139334, 'trace_relerr': 4.3948425634340925e-13, 'trace_ok': True, 'stable': True, 'seconds': 1.8}
+
+===== N-2026-11-12-1-draw-384616-stdout.txt =====
+  draw 384616 start interior-a
+   round 1: rmaxA 8.115e-01 crossings 40 cycle {'p': 1, 'period': 277.15094085805623, 'state_spread': 2.5866697672682903e-11, 'rt_spread': 1.0432425044492626e-09}
+  -> steady cycle 277.15094085805623 (2s)
+  draw 384616 start interior-b
+   round 1: rmaxA 8.115e-01 crossings 40 cycle {'p': 1, 'period': 277.1509408085264, 'state_spread': 4.9393877876724446e-11, 'rt_spread': 2.5407878023491685e-09}
+  -> steady cycle 277.1509408085264 (2s)
+  draw 384616 start low+
+   round 1: rmaxA 8.115e-01 crossings 40 cycle {'p': 1, 'period': 277.15094079049595, 'state_spread': 1.3935075315885115e-11, 'rt_spread': 1.3083684167284677e-09}
+  -> steady cycle 277.15094079049595 (2s)
+  draw 384616 start low-
+   round 1: rmaxA 8.115e-01 crossings 40 cycle {'p': 1, 'period': 277.15094084688343, 'state_spread': 1.9802381956424142e-11, 'rt_spread': 1.2200018633684798e-09}
+  -> steady cycle 277.15094084688343 (2s)
+  draw 384616 start mid+
+   round 1: rmaxA 8.115e-01 crossings 40 cycle {'p': 1, 'period': 277.1509408380295, 'state_spread': 9.779066445503304e-12, 'rt_spread': 1.992854791693652e-09}
+  -> steady cycle 277.1509408380295 (2s)
+  draw 384616 start mid-
+   round 1: rmaxA 8.115e-01 crossings 40 cycle {'p': 1, 'period': 277.150940860256, 'state_spread': 8.059219958056474e-12, 'rt_spread': 6.094036829671105e-10}
+  -> steady cycle 277.150940860256 (2s)
+  draw 384616 start high+
+   round 1: rmaxA 8.115e-01 crossings 40 cycle {'p': 1, 'period': 277.1509408909736, 'state_spread': 1.814337569072677e-11, 'rt_spread': 1.1753066591879884e-09}
+  -> steady cycle 277.1509408909736 (2s)
+  draw 384616 start high-
+   round 1: rmaxA 8.115e-01 crossings 40 cycle {'p': 1, 'period': 277.1509408232805, 'state_spread': 1.3049950009502709e-11, 'rt_spread': 1.9227994896752617e-09}
+  -> steady cycle 277.1509408232805 (2s)
+  floquet {'nseg': 509, 'logs': [-1.0953511104805358e-06, -120.53218644459648, -1506.5513681459972], 'logs_prev': [-1.0953028910520857e-06, -120.53218644465944, -1506.5513681455204], 'trivial_ok': True, 'conv': 4.8219428450124724e-11, 'conv_ok': True, 'trace_integral': -1627.0835555694482, 'trace_relerr': 7.159834774944701e-11, 'trace_ok': True, 'stable': True, 'seconds': 5.4}
+
+===== N-2026-11-12-1-draw-456280-stdout.txt =====
+  draw 456280 start interior-a
+   round 1: rmaxA 7.049e-01 crossings 40 cycle {'p': 1, 'period': 88.52703866845552, 'state_spread': 2.2132629062809883e-11, 'rt_spread': 1.5464495541502141e-09}
+  -> steady cycle 88.52703866845552 (3s)
+  draw 456280 start interior-b
+   round 1: rmaxA 7.049e-01 crossings 40 cycle {'p': 1, 'period': 88.52703866668769, 'state_spread': 1.61286539679395e-11, 'rt_spread': 1.3381207335143387e-09}
+  -> steady cycle 88.52703866668769 (3s)
+  draw 456280 start low+
+   round 1: rmaxA 7.049e-01 crossings 40 cycle {'p': 1, 'period': 88.52703868697056, 'state_spread': 2.7546465108940765e-11, 'rt_spread': 9.609960489547128e-10}
+  -> steady cycle 88.52703868697056 (3s)
+  draw 456280 start low-
+   round 1: rmaxA 7.049e-01 crossings 40 cycle {'p': 1, 'period': 88.5270386954453, 'state_spread': 2.9179186844530136e-11, 'rt_spread': 8.045696447576945e-10}
+  -> steady cycle 88.5270386954453 (3s)
+  draw 456280 start mid+
+   round 1: rmaxA 7.049e-01 crossings 40 cycle {'p': 1, 'period': 88.52703869420505, 'state_spread': 1.0672240868814242e-11, 'rt_spread': 1.076471734030854e-09}
+  -> steady cycle 88.52703869420505 (3s)
+  draw 456280 start mid-
+   round 1: rmaxA 7.049e-01 crossings 40 cycle {'p': 1, 'period': 88.52703866572718, 'state_spread': 1.5831003175037495e-11, 'rt_spread': 2.2932608093548038e-09}
+  -> steady cycle 88.52703866572718 (3s)
+  draw 456280 start high+
+   round 1: rmaxA 7.049e-01 crossings 40 cycle {'p': 1, 'period': 88.5270386837686, 'state_spread': 1.9506896098420157e-11, 'rt_spread': 9.897211393569565e-10}
+  -> steady cycle 88.5270386837686 (3s)
+  draw 456280 start high-
+   round 1: rmaxA 7.049e-01 crossings 40 cycle {'p': 1, 'period': 88.52703868938686, 'state_spread': 3.103678425375733e-11, 'rt_spread': 8.915462596323898e-10}
+  -> steady cycle 88.52703868938686 (3s)
+  floquet {'nseg': 1625, 'logs': [-2.2403630310918743e-06, -453.203316539933, -4593.075741872455], 'logs_prev': [-2.2404742536785704e-06, -453.20331654006634, -4593.075741873842], 'trivial_ok': True, 'conv': 1.1122258669615803e-10, 'conv_ok': True, 'trace_integral': -5046.279060380988, 'trace_relerr': 5.385421220287123e-11, 'trace_ok': True, 'stable': True, 'seconds': 16.9}
+
+===== N-2026-11-12-1-draw-616482-stdout.txt =====
+  draw 616482 start interior-a
+   round 1: rmaxA 5.998e-01 crossings 40 cycle {'p': 1, 'period': 171.23823909092516, 'state_spread': 2.3238438950912155e-11, 'rt_spread': 1.3862660373159695e-09}
+  -> steady cycle 171.23823909092516 (2s)
+  draw 616482 start interior-b
+   round 1: rmaxA 5.998e-01 crossings 40 cycle {'p': 1, 'period': 171.23823909539638, 'state_spread': 1.6817880421626796e-11, 'rt_spread': 1.8570368932066163e-09}
+  -> steady cycle 171.23823909539638 (2s)
+  draw 616482 start low+
+   round 1: rmaxA 5.998e-01 crossings 40 cycle {'p': 1, 'period': 171.23823909178495, 'state_spread': 3.620603816756329e-11, 'rt_spread': 1.0532486102225472e-09}
+  -> steady cycle 171.23823909178495 (2s)
+  draw 616482 start low-
+   round 1: rmaxA 5.998e-01 crossings 40 cycle {'p': 1, 'period': 171.23823906163565, 'state_spread': 1.0743156364512174e-11, 'rt_spread': 1.6573751532021146e-09}
+  -> steady cycle 171.23823906163565 (2s)
+  draw 616482 start mid+
+   round 1: rmaxA 5.998e-01 crossings 40 cycle {'p': 1, 'period': 171.23823909289436, 'state_spread': 1.595987231262086e-11, 'rt_spread': 1.45401675978627e-09}
+  -> steady cycle 171.23823909289436 (2s)
+  draw 616482 start mid-
+   round 1: rmaxA 5.998e-01 crossings 40 cycle {'p': 1, 'period': 171.23823906616326, 'state_spread': 2.272915189394098e-11, 'rt_spread': 1.319705042351008e-09}
+  -> steady cycle 171.23823906616326 (2s)
+  draw 616482 start high+
+   round 1: rmaxA 5.998e-01 crossings 40 cycle {'p': 1, 'period': 171.238239057996, 'state_spread': 2.966690781924797e-11, 'rt_spread': 1.0146037172890804e-09}
+  -> steady cycle 171.238239057996 (2s)
+  draw 616482 start high-
+   round 1: rmaxA 5.998e-01 crossings 40 cycle {'p': 1, 'period': 171.23823906219346, 'state_spread': 2.8026470033637452e-11, 'rt_spread': 1.948305975991617e-09}
+  -> steady cycle 171.23823906219346 (2s)
+  floquet {'nseg': 2234, 'logs': [-6.087539980159651e-07, -188.48349490365507, -9790.092709431643], 'logs_prev': [-6.08744531088723e-07, -188.48349490366346, -9790.092709434515], 'trivial_ok': True, 'conv': 9.466927242129941e-12, 'conv_ok': True, 'trace_integral': -9978.576203993092, 'trace_relerr': 9.530020764241065e-11, 'trace_ok': True, 'stable': True, 'seconds': 27.4}
+
+===== N-2026-11-12-1-summary-stdout.txt =====
+== draw 2045 m 19 kr 3 kr/m 0.158
+  k: {'k1': 0.47206, 'k2': 0.026205, 'k3': 33.768, 'k5': 0.042259, 'k6': 0.030727, 'k7': 36.37, 'k8': 59.879, 'k10': 0.82292} c 8.075 D 36.67
+  x*: ['0.02881', '0.05107', '0.06022'] ['2 unstable, complex pair', '1 unstable, all real', '2 unstable, all real']
+  ratios: {'k8/(k5+k6)': 820.4, 'k1/(k5+k6)': 6.468, 'k7/k8': 0.6074, 'k3/k10': 41.03} tau 120
+  verdicts: {'steady cycle'} p {1} rounds {1} n starts 8
+  period 43.54838379 spread 2.1e-09 ; Theta*(k5+k6) 3.178 Theta*k8 2608 Theta*k10 35.84
+  swing C,V,L,P min ['0.0117', '0.2728', '0.1861', '0.0071'] max ['0.3025', '0.7686', '0.5096', '0.1793'] spread 3.6e-11 fracC>sec 0.083
+  floquet logs ['-0.000006', '-728.658094', '-2509.648245'] per time ['-0.0000', '-16.7322', '-57.6290'] {'trivial_ok': True, 'conv_ok': True, 'trace_ok': True, 'trace_relerr': 1.3125480071550198e-11, 'nseg': 1569} detect limit 857 secs 56
+== draw 301417 m 18 kr 5 kr/m 0.278
+  k: {'k1': 0.024467, 'k2': 0.084768, 'k3': 90.827, 'k5': 0.039721, 'k6': 40.114, 'k7': 5.9669, 'k8': 1.1506, 'k10': 0.29753} c 6.186 D 6.052
+  x*: ['0.04963', '0.05103', '0.14826'] ['2 unstable, complex pair', '1 unstable, all real', '2 unstable, complex pair']
+  ratios: {'k8/(k5+k6)': 0.02865, 'k1/(k5+k6)': 0.0006093, 'k7/k8': 5.186, 'k3/k10': 305.3} tau 4.969
+  verdicts: {'steady cycle'} p {1} rounds {1} n starts 8
+  period 5.00120351 spread 7.6e-10 ; Theta*(k5+k6) 200.8 Theta*k8 5.754 Theta*k10 1.488
+  swing C,V,L,P min ['0.0252', '0.0070', '0.0000', '0.2314'] max ['0.5886', '0.7244', '0.0003', '0.7902'] spread 1.6e-10 fracC>sec 0.037
+  floquet logs ['-0.000001', '-26.463740', '-201.306104'] per time ['-0.0000', '-5.2915', '-40.2515'] {'trivial_ok': True, 'conv_ok': True, 'trace_ok': True, 'trace_relerr': 4.3948425634340925e-13, 'nseg': 222} detect limit 35 secs 12
+== draw 384616 m 14 kr 4 kr/m 0.286
+  k: {'k1': 0.018578, 'k2': 0.55002, 'k3': 2.8452, 'k5': 0.013313, 'k6': 5.4033, 'k7': 0.057445, 'k8': 0.012224, 'k10': 0.031467} c 5.703 D 0.6075
+  x*: ['0.05280', '0.07255', '0.13152'] ['2 unstable, complex pair', '1 unstable, all real', '2 unstable, all real']
+  ratios: {'k8/(k5+k6)': 0.002257, 'k1/(k5+k6)': 0.00343, 'k7/k8': 4.699, 'k3/k10': 90.42} tau 253.2
+  verdicts: {'steady cycle'} p {1} rounds {1} n starts 8
+  period 277.15094084 spread 3.6e-10 ; Theta*(k5+k6) 1501 Theta*k8 3.388 Theta*k10 8.721
+  swing C,V,L,P min ['0.0185', '0.0886', '0.0001', '0.2451'] max ['0.5828', '0.7036', '0.0020', '0.6816'] spread 8.2e-10 fracC>sec 0.065
+  floquet logs ['-0.000001', '-120.532186', '-1506.551368'] per time ['-0.0000', '-0.4349', '-5.4359'] {'trivial_ok': True, 'conv_ok': True, 'trace_ok': True, 'trace_relerr': 7.159834774944701e-11, 'nseg': 509} detect limit 1809 secs 21
+== draw 456280 m 15 kr 5 kr/m 0.333
+  k: {'k1': 3.5962, 'k2': 1.3029, 'k3': 20.096, 'k5': 52.217, 'k6': 0.038021, 'k7': 0.083124, 'k8': 0.034682, 'k10': 0.50353} c 3.466 D 4.98
+  x*: ['0.09783', '0.11414', '0.22770'] ['2 unstable, all real', '1 unstable, all real', '2 unstable, all real']
+  ratios: {'k8/(k5+k6)': 0.0006637, 'k1/(k5+k6)': 0.06882, 'k7/k8': 2.397, 'k3/k10': 39.91} tau 94.8
+  verdicts: {'steady cycle'} p {1} rounds {1} n starts 8
+  period 88.52703868 spread 3.4e-10 ; Theta*(k5+k6) 4626 Theta*k8 3.07 Theta*k10 44.58
+  swing C,V,L,P min ['0.0430', '0.1212', '0.0030', '0.2303'] max ['0.5777', '0.6716', '0.0397', '0.5529'] spread 4.6e-11 fracC>sec 0.161
+  floquet logs ['-0.000002', '-453.203317', '-4593.075742'] per time ['-0.0000', '-5.1194', '-51.8833'] {'trivial_ok': True, 'conv_ok': True, 'trace_ok': True, 'trace_relerr': 5.385421220287123e-11, 'nseg': 1625} detect limit 677 secs 38
+== draw 616482 m 12 kr 4 kr/m 0.333
+  k: {'k1': 0.029614, 'k2': 0.061448, 'k3': 3.4728, 'k5': 0.012109, 'k6': 0.010373, 'k7': 2.1756, 'k8': 57.211, 'k10': 0.21515} c 2.355 D 2.253
+  x*: ['0.11681', '0.12861', '0.26672'] ['2 unstable, all real', '1 unstable, all real', '2 unstable, complex pair']
+  ratios: {'k8/(k5+k6)': 2545.0, 'k1/(k5+k6)': 1.317, 'k7/k8': 0.03803, 'k3/k10': 16.14} tau 190.1
+  verdicts: {'steady cycle'} p {1} rounds {1} n starts 8
+  period 171.23823908 spread 2.2e-10 ; Theta*(k5+k6) 3.85 Theta*k8 9797 Theta*k10 36.84
+  swing C,V,L,P min ['0.0639', '0.3092', '0.1484', '0.0024'] max ['0.4907', '0.7414', '0.3534', '0.0187'] spread 3.5e-11 fracC>sec 0.273
+  floquet logs ['-0.000001', '-188.483495', '-9790.092709'] per time ['-0.0000', '-1.1007', '-57.1724'] {'trivial_ok': True, 'conv_ok': True, 'trace_ok': True, 'trace_relerr': 9.530020764241065e-11, 'nseg': 2234} detect limit 1358 secs 45
+
+===== N-2026-11-12-2-scaling-stdout.txt =====
+2045 {'period_T1': 43.54838380008747, 'verdict_T73': 'steady cycle', 'period_T73': 43.548383831127616, 'ratio_T': 1.0000000007127738, 'check_i_pass': True, 'verdict_2x': 'steady cycle', 'period_2x': 21.774191900043736, 'ratio_s': 0.5, 'check_ii_pass': True, 'plant_check_i_on_2x_run_pass': False}
+301417 {'period_T1': 5.001203512030595, 'verdict_T73': 'steady cycle', 'period_T73': 5.001203515050221, 'ratio_T': 1.00000000060378, 'check_i_pass': True, 'verdict_2x': 'steady cycle', 'period_2x': 2.5006017560152975, 'ratio_s': 0.5, 'check_ii_pass': True, 'plant_check_i_on_2x_run_pass': False}
+384616 {'period_T1': 277.15094085805623, 'verdict_T73': 'steady cycle', 'period_T73': 277.15094079892305, 'ratio_T': 0.999999999786639, 'check_i_pass': True, 'verdict_2x': 'steady cycle', 'period_2x': 138.57547042902812, 'ratio_s': 0.5, 'check_ii_pass': True, 'plant_check_i_on_2x_run_pass': False}
+456280 {'period_T1': 88.52703866845552, 'verdict_T73': 'steady cycle', 'period_T73': 88.52703869723814, 'ratio_T': 1.0000000003251281, 'check_i_pass': True, 'verdict_2x': 'steady cycle', 'period_2x': 44.26351933422776, 'ratio_s': 0.5, 'check_ii_pass': True, 'plant_check_i_on_2x_run_pass': False}
+616482 {'period_T1': 171.23823909092516, 'verdict_T73': 'steady cycle', 'period_T73': 171.23823910742067, 'ratio_T': 1.0000000000963307, 'check_i_pass': True, 'verdict_2x': 'steady cycle', 'period_2x': 85.61911954546258, 'ratio_s': 0.5, 'check_ii_pass': True, 'plant_check_i_on_2x_run_pass': False}
+

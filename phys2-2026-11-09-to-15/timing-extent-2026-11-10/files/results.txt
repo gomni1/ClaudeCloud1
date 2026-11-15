@@ -1,0 +1,343 @@
+=== P1 NULL ===
+DRIVE axis: strata 456, classified 176, labels {'UNSTABLE': 252, 'NONE': 104, 'UNCLASSIFIED': 28, 'MIXED': 71, 'TRADE': 1}
+  TRADE or CO-SHRINK among classified: 1 = 0.57%  (must be <= 2%) -> PASS
+WINDOW axis Ev-B: strata 480, classified 384, labels {'WINDOW-ARTEFACT': 384, 'UNCLASSIFIED': 96}
+  WINDOW-ARTEFACT among classified: 384 = 100.00%  (must be >= 90%) -> PASS
+    null WINDOW across_comp L=16: {'WINDOW-ARTEFACT': 96, 'UNCLASSIFIED': 24}
+    null WINDOW across_comp L=64: {'WINDOW-ARTEFACT': 96, 'UNCLASSIFIED': 24}
+    null WINDOW across_all L=16: {'WINDOW-ARTEFACT': 96, 'UNCLASSIFIED': 24}
+    null WINDOW across_all L=64: {'WINDOW-ARTEFACT': 96, 'UNCLASSIFIED': 24}
+
+=== P2-P4 PLANTED (200 synthetic strata each, 8 cells, 5% multiplicative noise per half) ===
+P2 planted floor (dt*dx = 3): {'TRADE': 200}; planted infimum 3 > 0 -> FLOOR; cross-check false CONFLICT in 35/200 -> PASS
+P3 planted tendency (dx ~ dt^-1/2): {'TRADE': 197, 'UNSTABLE': 3}; planted infimum 0 -> TENDENCY; product trends with axis in 198/200 -> PASS
+P4 planted co-shrink: {'CO-SHRINK': 200} -> PASS
+
+=== P5 ANALYTIC (single unit, Ev-A in-window cells) ===
+event-time variance vs exact truncated form: K = 1161 tests; exceed max(5%, 3 SE): 8 (allowed <= 10 under C1); exceed max(5%, 5 SE): 0; median |z| 0.72, 99th pct |z| 2.86 -> PASS (literal v3 wording, zero exceedances: FAIL)
+    exceedance: cell 298 D=16 sim 25.796 exact 30.067 dev/SE 3.47 dev/exact 0.142
+    exceedance: cell 429 D=2 sim 45.191 exact 56.132 dev/SE 4.15 dev/exact 0.195
+    exceedance: cell 429 D=4 sim 59.98 exact 73.96 dev/SE 4.38 dev/exact 0.189
+    exceedance: cell 429 D=8 sim 92.429 exact 109.38 dev/SE 3.84 dev/exact 0.155
+    exceedance: cell 529 D=32 sim 18.932 exact 20.998 dev/SE 3.25 dev/exact 0.098
+    exceedance: cell 658 D=2 sim 21.043 exact 25.318 dev/SE 4.11 dev/exact 0.169
+    exceedance: cell 679 D=2 sim 2.2618 exact 2.5659 dev/SE 3.01 dev/exact 0.119
+    exceedance: cell 679 D=4 sim 3.5448 exact 4.1062 dev/SE 4.41 dev/exact 0.137
+pulse-end across variance vs exact closed form: K = 323 tests; exceed max(5%, 3 SE): 0 (allowed <= 5 under C1); exceed max(5%, 5 SE): 0; median |z| 0.78, 99th pct |z| 2.24 -> PASS
+completion fraction, sim vs exact (all single-unit cells with tau > D, n = 1776): max |z| 6.33, share > 3: 0.0039
+  asymptotic ratio exact/(k2m2D/p3), mean reversals a_d*D in [0,0.1): n=366 median 9.69 range 2.09..76.38
+  asymptotic ratio exact/(k2m2D/p3), mean reversals a_d*D in [0.1,1): n=600 median 2.07 range 0.44..4.48
+  asymptotic ratio exact/(k2m2D/p3), mean reversals a_d*D in [1,5): n=175 median 1.16 range 0.51..1.36
+  asymptotic ratio exact/(k2m2D/p3), mean reversals a_d*D in [5,1000000000.0): n=20 median 1.04 range 0.74..1.07
+  asymptotic ratio exact Var(x_tau)/(k2m2tau/E3), mean reversals in pulse in [0,1): n=147 median 2.31 range 0.19..34.11
+  asymptotic ratio exact Var(x_tau)/(k2m2tau/E3), mean reversals in pulse in [1,5): n=182 median 1.13 range 0.66..1.69
+  asymptotic ratio exact Var(x_tau)/(k2m2tau/E3), mean reversals in pulse in [5,1000000000.0): n=151 median 1.00 range 0.93..1.15
+
+=== P6 tau-INDEPENDENCE of Ev-A timing ===
+    exceedance: (0.05, 2, 1, 16) tau=32 corrected ratio 1.0567 vs pooled 0.9785, z 3.01
+    exceedance: (0.05, 2, 1, 16) tau=96 corrected ratio 0.8579 vs pooled 0.9785, z 3.30
+    exceedance: (0.05, 0.75, 4, 2) tau=128 corrected ratio 0.8051 vs pooled 0.9771, z 3.98
+    exceedance: (0.05, 0.75, 4, 4) tau=128 corrected ratio 0.8110 vs pooled 0.9672, z 4.04
+    exceedance: (0.05, 0.75, 4, 8) tau=128 corrected ratio 0.8451 vs pooled 0.9748, z 3.67
+    exceedance: (0.2, 1.5, 1, 32) tau=128 corrected ratio 0.9016 vs pooled 0.9938, z 3.53
+    exceedance: (0.2, 2.5, 1, 32) tau=64 corrected ratio 0.9374 vs pooled 1.0271, z 3.06
+    exceedance: (0.2, 0.5, 4, 2) tau=96 corrected ratio 0.8311 vs pooled 0.9656, z 3.56
+    exceedance: (0.2, 1, 4, 4) tau=128 corrected ratio 0.8633 vs pooled 0.9660, z 3.66
+    exceedance: (0.2, 2, 4, 4) tau=48 corrected ratio 0.8912 vs pooled 0.9954, z 3.10
+P6: 1150 comparisons in 202 groups; exceed 3 SE: 10 (allowed <= 10 under C1); exceed 5 SE: 0 -> PASS (literal v3 wording: FAIL)
+
+=== CLASSIFICATION ===
+
+Verdict per (candidate, event, axis, inheritance):
+  ('E2 (rho=0)', 'Ev-A', 'DRIVE', 'nominal'): VERDICT CO-SHRINK | classified 208 of 276 | CO-SHRINK 208, UNCLASSIFIED 68
+  ('E2 (rho=0)', 'Ev-A', 'DRIVE', 'realised'): VERDICT CO-SHRINK | classified 208 of 276 | CO-SHRINK 208, UNCLASSIFIED 68
+  ('E2 (rho=0)', 'Ev-B', 'DRIVE', 'nominal'): VERDICT UNDECIDED | classified 0 of 160 | UNCLASSIFIED 160
+  ('E2 (rho=0)', 'Ev-B', 'DRIVE', 'realised'): VERDICT UNDECIDED | classified 0 of 160 | UNCLASSIFIED 160
+  ('E2 (rho=0)', 'Ev-B', 'WINDOW', 'nominal'): VERDICT UNDECIDED | classified 0 of 136 | UNCLASSIFIED 136
+  ('E2 (rho=0)', 'Ev-B', 'WINDOW', 'realised'): VERDICT UNDECIDED | classified 0 of 136 | UNCLASSIFIED 136
+  ('E3 (0<rho<1)', 'Ev-A', 'DRIVE', 'nominal'): VERDICT CO-SHRINK | classified 318 of 552 | CO-SHRINK 318, UNCLASSIFIED 234
+  ('E3 (0<rho<1)', 'Ev-A', 'DRIVE', 'realised'): VERDICT CO-SHRINK | classified 318 of 552 | CO-SHRINK 318, UNCLASSIFIED 234
+  ('E3 (0<rho<1)', 'Ev-B', 'DRIVE', 'nominal'): VERDICT UNDECIDED | classified 0 of 796 | UNCLASSIFIED 796
+  ('E3 (0<rho<1)', 'Ev-B', 'DRIVE', 'realised'): VERDICT UNDECIDED | classified 0 of 796 | UNCLASSIFIED 796
+  ('E3 (0<rho<1)', 'Ev-B', 'WINDOW', 'nominal'): VERDICT WINDOW-ARTEFACT | classified 36 of 604 | UNCLASSIFIED 568, WINDOW-ARTEFACT 36
+  ('E3 (0<rho<1)', 'Ev-B', 'WINDOW', 'realised'): VERDICT WINDOW-ARTEFACT | classified 36 of 604 | UNCLASSIFIED 568, WINDOW-ARTEFACT 36
+  ('single-unit control (E1)', 'Ev-A', 'DRIVE', 'nominal'): VERDICT CO-SHRINK | classified 280 of 436 | CO-SHRINK 280, UNCLASSIFIED 156
+  ('single-unit control (E1)', 'Ev-A', 'DRIVE', 'realised'): VERDICT CO-SHRINK | classified 280 of 436 | CO-SHRINK 280, UNCLASSIFIED 156
+  ('single-unit control (E1)', 'Ev-B', 'DRIVE', 'nominal'): VERDICT MIXED | classified 124 of 900 | CO-SHRINK 56, MIXED 16, NONE 20, TRADE 32, UNCLASSIFIED 728, UNSTABLE 48
+  ('single-unit control (E1)', 'Ev-B', 'DRIVE', 'realised'): VERDICT MIXED | classified 124 of 900 | CO-SHRINK 56, MIXED 16, NONE 20, TRADE 32, UNCLASSIFIED 728, UNSTABLE 48
+  ('single-unit control (E1)', 'Ev-B', 'WINDOW', 'nominal'): VERDICT WINDOW-ARTEFACT | classified 259 of 912 | UNCLASSIFIED 644, UNSTABLE 9, WINDOW-ARTEFACT 259
+  ('single-unit control (E1)', 'Ev-B', 'WINDOW', 'realised'): VERDICT WINDOW-ARTEFACT | classified 250 of 912 | MIXED 1, NONE 5, TRADE 23, UNCLASSIFIED 644, UNSTABLE 18, WINDOW-ARTEFACT 221
+
+Split by extent family (across / within):
+  ('E2 (rho=0)', 'Ev-A', 'DRIVE', 'nominal', 'across'): VERDICT CO-SHRINK | classified 104 of 138 | CO-SHRINK 104, UNCLASSIFIED 34
+  ('E2 (rho=0)', 'Ev-A', 'DRIVE', 'nominal', 'within'): VERDICT CO-SHRINK | classified 104 of 138 | CO-SHRINK 104, UNCLASSIFIED 34
+  ('E2 (rho=0)', 'Ev-A', 'DRIVE', 'realised', 'across'): VERDICT CO-SHRINK | classified 104 of 138 | CO-SHRINK 104, UNCLASSIFIED 34
+  ('E2 (rho=0)', 'Ev-A', 'DRIVE', 'realised', 'within'): VERDICT CO-SHRINK | classified 104 of 138 | CO-SHRINK 104, UNCLASSIFIED 34
+  ('E2 (rho=0)', 'Ev-B', 'DRIVE', 'nominal', 'across'): VERDICT UNDECIDED | classified 0 of 80 | UNCLASSIFIED 80
+  ('E2 (rho=0)', 'Ev-B', 'DRIVE', 'nominal', 'within'): VERDICT UNDECIDED | classified 0 of 80 | UNCLASSIFIED 80
+  ('E2 (rho=0)', 'Ev-B', 'DRIVE', 'realised', 'across'): VERDICT UNDECIDED | classified 0 of 80 | UNCLASSIFIED 80
+  ('E2 (rho=0)', 'Ev-B', 'DRIVE', 'realised', 'within'): VERDICT UNDECIDED | classified 0 of 80 | UNCLASSIFIED 80
+  ('E2 (rho=0)', 'Ev-B', 'WINDOW', 'nominal', 'across'): VERDICT UNDECIDED | classified 0 of 68 | UNCLASSIFIED 68
+  ('E2 (rho=0)', 'Ev-B', 'WINDOW', 'nominal', 'within'): VERDICT UNDECIDED | classified 0 of 68 | UNCLASSIFIED 68
+  ('E2 (rho=0)', 'Ev-B', 'WINDOW', 'realised', 'across'): VERDICT UNDECIDED | classified 0 of 68 | UNCLASSIFIED 68
+  ('E2 (rho=0)', 'Ev-B', 'WINDOW', 'realised', 'within'): VERDICT UNDECIDED | classified 0 of 68 | UNCLASSIFIED 68
+  ('E3 (0<rho<1)', 'Ev-A', 'DRIVE', 'nominal', 'across'): VERDICT CO-SHRINK | classified 159 of 276 | CO-SHRINK 159, UNCLASSIFIED 117
+  ('E3 (0<rho<1)', 'Ev-A', 'DRIVE', 'nominal', 'within'): VERDICT CO-SHRINK | classified 159 of 276 | CO-SHRINK 159, UNCLASSIFIED 117
+  ('E3 (0<rho<1)', 'Ev-A', 'DRIVE', 'realised', 'across'): VERDICT CO-SHRINK | classified 159 of 276 | CO-SHRINK 159, UNCLASSIFIED 117
+  ('E3 (0<rho<1)', 'Ev-A', 'DRIVE', 'realised', 'within'): VERDICT CO-SHRINK | classified 159 of 276 | CO-SHRINK 159, UNCLASSIFIED 117
+  ('E3 (0<rho<1)', 'Ev-B', 'DRIVE', 'nominal', 'across'): VERDICT UNDECIDED | classified 0 of 398 | UNCLASSIFIED 398
+  ('E3 (0<rho<1)', 'Ev-B', 'DRIVE', 'nominal', 'within'): VERDICT UNDECIDED | classified 0 of 398 | UNCLASSIFIED 398
+  ('E3 (0<rho<1)', 'Ev-B', 'DRIVE', 'realised', 'across'): VERDICT UNDECIDED | classified 0 of 398 | UNCLASSIFIED 398
+  ('E3 (0<rho<1)', 'Ev-B', 'DRIVE', 'realised', 'within'): VERDICT UNDECIDED | classified 0 of 398 | UNCLASSIFIED 398
+  ('E3 (0<rho<1)', 'Ev-B', 'WINDOW', 'nominal', 'across'): VERDICT WINDOW-ARTEFACT | classified 18 of 302 | UNCLASSIFIED 284, WINDOW-ARTEFACT 18
+  ('E3 (0<rho<1)', 'Ev-B', 'WINDOW', 'nominal', 'within'): VERDICT WINDOW-ARTEFACT | classified 18 of 302 | UNCLASSIFIED 284, WINDOW-ARTEFACT 18
+  ('E3 (0<rho<1)', 'Ev-B', 'WINDOW', 'realised', 'across'): VERDICT WINDOW-ARTEFACT | classified 18 of 302 | UNCLASSIFIED 284, WINDOW-ARTEFACT 18
+  ('E3 (0<rho<1)', 'Ev-B', 'WINDOW', 'realised', 'within'): VERDICT WINDOW-ARTEFACT | classified 18 of 302 | UNCLASSIFIED 284, WINDOW-ARTEFACT 18
+  ('single-unit control (E1)', 'Ev-A', 'DRIVE', 'nominal', 'across'): VERDICT CO-SHRINK | classified 280 of 436 | CO-SHRINK 280, UNCLASSIFIED 156
+  ('single-unit control (E1)', 'Ev-A', 'DRIVE', 'realised', 'across'): VERDICT CO-SHRINK | classified 280 of 436 | CO-SHRINK 280, UNCLASSIFIED 156
+  ('single-unit control (E1)', 'Ev-B', 'DRIVE', 'nominal', 'across'): VERDICT MIXED | classified 124 of 900 | CO-SHRINK 56, MIXED 16, NONE 20, TRADE 32, UNCLASSIFIED 728, UNSTABLE 48
+  ('single-unit control (E1)', 'Ev-B', 'DRIVE', 'realised', 'across'): VERDICT MIXED | classified 124 of 900 | CO-SHRINK 56, MIXED 16, NONE 20, TRADE 32, UNCLASSIFIED 728, UNSTABLE 48
+  ('single-unit control (E1)', 'Ev-B', 'WINDOW', 'nominal', 'across'): VERDICT WINDOW-ARTEFACT | classified 259 of 912 | UNCLASSIFIED 644, UNSTABLE 9, WINDOW-ARTEFACT 259
+  ('single-unit control (E1)', 'Ev-B', 'WINDOW', 'realised', 'across'): VERDICT WINDOW-ARTEFACT | classified 250 of 912 | MIXED 1, NONE 5, TRADE 23, UNCLASSIFIED 644, UNSTABLE 18, WINDOW-ARTEFACT 221
+
+Split by extent type:
+  ('E2 (rho=0)', 'Ev-A', 'DRIVE', 'nominal', 'across'): VERDICT CO-SHRINK | classified 104 of 138 | CO-SHRINK 104, UNCLASSIFIED 34
+  ('E2 (rho=0)', 'Ev-A', 'DRIVE', 'nominal', 'within'): VERDICT CO-SHRINK | classified 104 of 138 | CO-SHRINK 104, UNCLASSIFIED 34
+  ('E2 (rho=0)', 'Ev-A', 'DRIVE', 'realised', 'across'): VERDICT CO-SHRINK | classified 104 of 138 | CO-SHRINK 104, UNCLASSIFIED 34
+  ('E2 (rho=0)', 'Ev-A', 'DRIVE', 'realised', 'within'): VERDICT CO-SHRINK | classified 104 of 138 | CO-SHRINK 104, UNCLASSIFIED 34
+  ('E2 (rho=0)', 'Ev-B', 'DRIVE', 'nominal', 'across_all'): VERDICT UNDECIDED | classified 0 of 40 | UNCLASSIFIED 40
+  ('E2 (rho=0)', 'Ev-B', 'DRIVE', 'nominal', 'across_comp'): VERDICT UNDECIDED | classified 0 of 40 | UNCLASSIFIED 40
+  ('E2 (rho=0)', 'Ev-B', 'DRIVE', 'nominal', 'within_all'): VERDICT UNDECIDED | classified 0 of 40 | UNCLASSIFIED 40
+  ('E2 (rho=0)', 'Ev-B', 'DRIVE', 'nominal', 'within_comp'): VERDICT UNDECIDED | classified 0 of 40 | UNCLASSIFIED 40
+  ('E2 (rho=0)', 'Ev-B', 'DRIVE', 'realised', 'across_all'): VERDICT UNDECIDED | classified 0 of 40 | UNCLASSIFIED 40
+  ('E2 (rho=0)', 'Ev-B', 'DRIVE', 'realised', 'across_comp'): VERDICT UNDECIDED | classified 0 of 40 | UNCLASSIFIED 40
+  ('E2 (rho=0)', 'Ev-B', 'DRIVE', 'realised', 'within_all'): VERDICT UNDECIDED | classified 0 of 40 | UNCLASSIFIED 40
+  ('E2 (rho=0)', 'Ev-B', 'DRIVE', 'realised', 'within_comp'): VERDICT UNDECIDED | classified 0 of 40 | UNCLASSIFIED 40
+  ('E2 (rho=0)', 'Ev-B', 'WINDOW', 'nominal', 'across_all'): VERDICT UNDECIDED | classified 0 of 34 | UNCLASSIFIED 34
+  ('E2 (rho=0)', 'Ev-B', 'WINDOW', 'nominal', 'across_comp'): VERDICT UNDECIDED | classified 0 of 34 | UNCLASSIFIED 34
+  ('E2 (rho=0)', 'Ev-B', 'WINDOW', 'nominal', 'within_all'): VERDICT UNDECIDED | classified 0 of 34 | UNCLASSIFIED 34
+  ('E2 (rho=0)', 'Ev-B', 'WINDOW', 'nominal', 'within_comp'): VERDICT UNDECIDED | classified 0 of 34 | UNCLASSIFIED 34
+  ('E2 (rho=0)', 'Ev-B', 'WINDOW', 'realised', 'across_all'): VERDICT UNDECIDED | classified 0 of 34 | UNCLASSIFIED 34
+  ('E2 (rho=0)', 'Ev-B', 'WINDOW', 'realised', 'across_comp'): VERDICT UNDECIDED | classified 0 of 34 | UNCLASSIFIED 34
+  ('E2 (rho=0)', 'Ev-B', 'WINDOW', 'realised', 'within_all'): VERDICT UNDECIDED | classified 0 of 34 | UNCLASSIFIED 34
+  ('E2 (rho=0)', 'Ev-B', 'WINDOW', 'realised', 'within_comp'): VERDICT UNDECIDED | classified 0 of 34 | UNCLASSIFIED 34
+  ('E3 (0<rho<1)', 'Ev-A', 'DRIVE', 'nominal', 'across'): VERDICT CO-SHRINK | classified 159 of 276 | CO-SHRINK 159, UNCLASSIFIED 117
+  ('E3 (0<rho<1)', 'Ev-A', 'DRIVE', 'nominal', 'within'): VERDICT CO-SHRINK | classified 159 of 276 | CO-SHRINK 159, UNCLASSIFIED 117
+  ('E3 (0<rho<1)', 'Ev-A', 'DRIVE', 'realised', 'across'): VERDICT CO-SHRINK | classified 159 of 276 | CO-SHRINK 159, UNCLASSIFIED 117
+  ('E3 (0<rho<1)', 'Ev-A', 'DRIVE', 'realised', 'within'): VERDICT CO-SHRINK | classified 159 of 276 | CO-SHRINK 159, UNCLASSIFIED 117
+  ('E3 (0<rho<1)', 'Ev-B', 'DRIVE', 'nominal', 'across_all'): VERDICT UNDECIDED | classified 0 of 199 | UNCLASSIFIED 199
+  ('E3 (0<rho<1)', 'Ev-B', 'DRIVE', 'nominal', 'across_comp'): VERDICT UNDECIDED | classified 0 of 199 | UNCLASSIFIED 199
+  ('E3 (0<rho<1)', 'Ev-B', 'DRIVE', 'nominal', 'within_all'): VERDICT UNDECIDED | classified 0 of 199 | UNCLASSIFIED 199
+  ('E3 (0<rho<1)', 'Ev-B', 'DRIVE', 'nominal', 'within_comp'): VERDICT UNDECIDED | classified 0 of 199 | UNCLASSIFIED 199
+  ('E3 (0<rho<1)', 'Ev-B', 'DRIVE', 'realised', 'across_all'): VERDICT UNDECIDED | classified 0 of 199 | UNCLASSIFIED 199
+  ('E3 (0<rho<1)', 'Ev-B', 'DRIVE', 'realised', 'across_comp'): VERDICT UNDECIDED | classified 0 of 199 | UNCLASSIFIED 199
+  ('E3 (0<rho<1)', 'Ev-B', 'DRIVE', 'realised', 'within_all'): VERDICT UNDECIDED | classified 0 of 199 | UNCLASSIFIED 199
+  ('E3 (0<rho<1)', 'Ev-B', 'DRIVE', 'realised', 'within_comp'): VERDICT UNDECIDED | classified 0 of 199 | UNCLASSIFIED 199
+  ('E3 (0<rho<1)', 'Ev-B', 'WINDOW', 'nominal', 'across_all'): VERDICT WINDOW-ARTEFACT | classified 9 of 151 | UNCLASSIFIED 142, WINDOW-ARTEFACT 9
+  ('E3 (0<rho<1)', 'Ev-B', 'WINDOW', 'nominal', 'across_comp'): VERDICT WINDOW-ARTEFACT | classified 9 of 151 | UNCLASSIFIED 142, WINDOW-ARTEFACT 9
+  ('E3 (0<rho<1)', 'Ev-B', 'WINDOW', 'nominal', 'within_all'): VERDICT WINDOW-ARTEFACT | classified 9 of 151 | UNCLASSIFIED 142, WINDOW-ARTEFACT 9
+  ('E3 (0<rho<1)', 'Ev-B', 'WINDOW', 'nominal', 'within_comp'): VERDICT WINDOW-ARTEFACT | classified 9 of 151 | UNCLASSIFIED 142, WINDOW-ARTEFACT 9
+  ('E3 (0<rho<1)', 'Ev-B', 'WINDOW', 'realised', 'across_all'): VERDICT WINDOW-ARTEFACT | classified 9 of 151 | UNCLASSIFIED 142, WINDOW-ARTEFACT 9
+  ('E3 (0<rho<1)', 'Ev-B', 'WINDOW', 'realised', 'across_comp'): VERDICT WINDOW-ARTEFACT | classified 9 of 151 | UNCLASSIFIED 142, WINDOW-ARTEFACT 9
+  ('E3 (0<rho<1)', 'Ev-B', 'WINDOW', 'realised', 'within_all'): VERDICT WINDOW-ARTEFACT | classified 9 of 151 | UNCLASSIFIED 142, WINDOW-ARTEFACT 9
+  ('E3 (0<rho<1)', 'Ev-B', 'WINDOW', 'realised', 'within_comp'): VERDICT WINDOW-ARTEFACT | classified 9 of 151 | UNCLASSIFIED 142, WINDOW-ARTEFACT 9
+  ('single-unit control (E1)', 'Ev-A', 'DRIVE', 'nominal', 'across'): VERDICT CO-SHRINK | classified 280 of 436 | CO-SHRINK 280, UNCLASSIFIED 156
+  ('single-unit control (E1)', 'Ev-A', 'DRIVE', 'realised', 'across'): VERDICT CO-SHRINK | classified 280 of 436 | CO-SHRINK 280, UNCLASSIFIED 156
+  ('single-unit control (E1)', 'Ev-B', 'DRIVE', 'nominal', 'across_all'): VERDICT MIXED | classified 62 of 450 | CO-SHRINK 28, MIXED 8, NONE 10, TRADE 16, UNCLASSIFIED 364, UNSTABLE 24
+  ('single-unit control (E1)', 'Ev-B', 'DRIVE', 'nominal', 'across_comp'): VERDICT MIXED | classified 62 of 450 | CO-SHRINK 28, MIXED 8, NONE 10, TRADE 16, UNCLASSIFIED 364, UNSTABLE 24
+  ('single-unit control (E1)', 'Ev-B', 'DRIVE', 'realised', 'across_all'): VERDICT MIXED | classified 63 of 450 | CO-SHRINK 28, MIXED 9, NONE 10, TRADE 16, UNCLASSIFIED 364, UNSTABLE 23
+  ('single-unit control (E1)', 'Ev-B', 'DRIVE', 'realised', 'across_comp'): VERDICT MIXED | classified 61 of 450 | CO-SHRINK 28, MIXED 7, NONE 10, TRADE 16, UNCLASSIFIED 364, UNSTABLE 25
+  ('single-unit control (E1)', 'Ev-B', 'WINDOW', 'nominal', 'across_all'): VERDICT WINDOW-ARTEFACT | classified 127 of 456 | UNCLASSIFIED 322, UNSTABLE 7, WINDOW-ARTEFACT 127
+  ('single-unit control (E1)', 'Ev-B', 'WINDOW', 'nominal', 'across_comp'): VERDICT WINDOW-ARTEFACT | classified 132 of 456 | UNCLASSIFIED 322, UNSTABLE 2, WINDOW-ARTEFACT 132
+  ('single-unit control (E1)', 'Ev-B', 'WINDOW', 'realised', 'across_all'): VERDICT WINDOW-ARTEFACT | classified 120 of 456 | MIXED 1, NONE 5, TRADE 23, UNCLASSIFIED 322, UNSTABLE 14, WINDOW-ARTEFACT 91
+  ('single-unit control (E1)', 'Ev-B', 'WINDOW', 'realised', 'across_comp'): VERDICT WINDOW-ARTEFACT | classified 130 of 456 | UNCLASSIFIED 322, UNSTABLE 4, WINDOW-ARTEFACT 130
+
+Ensemble split by rho and extent family:
+  ('rho=0.0', 'Ev-A', 'DRIVE', 'nominal', 'across'): VERDICT CO-SHRINK | classified 104 of 138 | CO-SHRINK 104, UNCLASSIFIED 34
+  ('rho=0.0', 'Ev-A', 'DRIVE', 'nominal', 'within'): VERDICT CO-SHRINK | classified 104 of 138 | CO-SHRINK 104, UNCLASSIFIED 34
+  ('rho=0.0', 'Ev-A', 'DRIVE', 'realised', 'across'): VERDICT CO-SHRINK | classified 104 of 138 | CO-SHRINK 104, UNCLASSIFIED 34
+  ('rho=0.0', 'Ev-A', 'DRIVE', 'realised', 'within'): VERDICT CO-SHRINK | classified 104 of 138 | CO-SHRINK 104, UNCLASSIFIED 34
+  ('rho=0.0', 'Ev-B', 'DRIVE', 'nominal', 'across'): VERDICT UNDECIDED | classified 0 of 80 | UNCLASSIFIED 80
+  ('rho=0.0', 'Ev-B', 'DRIVE', 'nominal', 'within'): VERDICT UNDECIDED | classified 0 of 80 | UNCLASSIFIED 80
+  ('rho=0.0', 'Ev-B', 'DRIVE', 'realised', 'across'): VERDICT UNDECIDED | classified 0 of 80 | UNCLASSIFIED 80
+  ('rho=0.0', 'Ev-B', 'DRIVE', 'realised', 'within'): VERDICT UNDECIDED | classified 0 of 80 | UNCLASSIFIED 80
+  ('rho=0.0', 'Ev-B', 'WINDOW', 'nominal', 'across'): VERDICT UNDECIDED | classified 0 of 68 | UNCLASSIFIED 68
+  ('rho=0.0', 'Ev-B', 'WINDOW', 'nominal', 'within'): VERDICT UNDECIDED | classified 0 of 68 | UNCLASSIFIED 68
+  ('rho=0.0', 'Ev-B', 'WINDOW', 'realised', 'across'): VERDICT UNDECIDED | classified 0 of 68 | UNCLASSIFIED 68
+  ('rho=0.0', 'Ev-B', 'WINDOW', 'realised', 'within'): VERDICT UNDECIDED | classified 0 of 68 | UNCLASSIFIED 68
+  ('rho=0.5', 'Ev-A', 'DRIVE', 'nominal', 'across'): VERDICT CO-SHRINK | classified 91 of 138 | CO-SHRINK 91, UNCLASSIFIED 47
+  ('rho=0.5', 'Ev-A', 'DRIVE', 'nominal', 'within'): VERDICT CO-SHRINK | classified 91 of 138 | CO-SHRINK 91, UNCLASSIFIED 47
+  ('rho=0.5', 'Ev-A', 'DRIVE', 'realised', 'across'): VERDICT CO-SHRINK | classified 91 of 138 | CO-SHRINK 91, UNCLASSIFIED 47
+  ('rho=0.5', 'Ev-A', 'DRIVE', 'realised', 'within'): VERDICT CO-SHRINK | classified 91 of 138 | CO-SHRINK 91, UNCLASSIFIED 47
+  ('rho=0.5', 'Ev-B', 'DRIVE', 'nominal', 'across'): VERDICT UNDECIDED | classified 0 of 172 | UNCLASSIFIED 172
+  ('rho=0.5', 'Ev-B', 'DRIVE', 'nominal', 'within'): VERDICT UNDECIDED | classified 0 of 172 | UNCLASSIFIED 172
+  ('rho=0.5', 'Ev-B', 'DRIVE', 'realised', 'across'): VERDICT UNDECIDED | classified 0 of 172 | UNCLASSIFIED 172
+  ('rho=0.5', 'Ev-B', 'DRIVE', 'realised', 'within'): VERDICT UNDECIDED | classified 0 of 172 | UNCLASSIFIED 172
+  ('rho=0.5', 'Ev-B', 'WINDOW', 'nominal', 'across'): VERDICT UNDECIDED | classified 0 of 136 | UNCLASSIFIED 136
+  ('rho=0.5', 'Ev-B', 'WINDOW', 'nominal', 'within'): VERDICT UNDECIDED | classified 0 of 136 | UNCLASSIFIED 136
+  ('rho=0.5', 'Ev-B', 'WINDOW', 'realised', 'across'): VERDICT UNDECIDED | classified 0 of 136 | UNCLASSIFIED 136
+  ('rho=0.5', 'Ev-B', 'WINDOW', 'realised', 'within'): VERDICT UNDECIDED | classified 0 of 136 | UNCLASSIFIED 136
+  ('rho=0.9', 'Ev-A', 'DRIVE', 'nominal', 'across'): VERDICT CO-SHRINK | classified 68 of 138 | CO-SHRINK 68, UNCLASSIFIED 70
+  ('rho=0.9', 'Ev-A', 'DRIVE', 'nominal', 'within'): VERDICT CO-SHRINK | classified 68 of 138 | CO-SHRINK 68, UNCLASSIFIED 70
+  ('rho=0.9', 'Ev-A', 'DRIVE', 'realised', 'across'): VERDICT CO-SHRINK | classified 68 of 138 | CO-SHRINK 68, UNCLASSIFIED 70
+  ('rho=0.9', 'Ev-A', 'DRIVE', 'realised', 'within'): VERDICT CO-SHRINK | classified 68 of 138 | CO-SHRINK 68, UNCLASSIFIED 70
+  ('rho=0.9', 'Ev-B', 'DRIVE', 'nominal', 'across'): VERDICT UNDECIDED | classified 0 of 226 | UNCLASSIFIED 226
+  ('rho=0.9', 'Ev-B', 'DRIVE', 'nominal', 'within'): VERDICT UNDECIDED | classified 0 of 226 | UNCLASSIFIED 226
+  ('rho=0.9', 'Ev-B', 'DRIVE', 'realised', 'across'): VERDICT UNDECIDED | classified 0 of 226 | UNCLASSIFIED 226
+  ('rho=0.9', 'Ev-B', 'DRIVE', 'realised', 'within'): VERDICT UNDECIDED | classified 0 of 226 | UNCLASSIFIED 226
+  ('rho=0.9', 'Ev-B', 'WINDOW', 'nominal', 'across'): VERDICT WINDOW-ARTEFACT | classified 18 of 166 | UNCLASSIFIED 148, WINDOW-ARTEFACT 18
+  ('rho=0.9', 'Ev-B', 'WINDOW', 'nominal', 'within'): VERDICT WINDOW-ARTEFACT | classified 18 of 166 | UNCLASSIFIED 148, WINDOW-ARTEFACT 18
+  ('rho=0.9', 'Ev-B', 'WINDOW', 'realised', 'across'): VERDICT WINDOW-ARTEFACT | classified 18 of 166 | UNCLASSIFIED 148, WINDOW-ARTEFACT 18
+  ('rho=0.9', 'Ev-B', 'WINDOW', 'realised', 'within'): VERDICT WINDOW-ARTEFACT | classified 18 of 166 | UNCLASSIFIED 148, WINDOW-ARTEFACT 18
+
+Ensemble split by N:
+  ('N=16', 'Ev-A', 'DRIVE', 'nominal'): VERDICT CO-SHRINK | classified 172 of 276 | CO-SHRINK 172, UNCLASSIFIED 104
+  ('N=16', 'Ev-A', 'DRIVE', 'realised'): VERDICT CO-SHRINK | classified 172 of 276 | CO-SHRINK 172, UNCLASSIFIED 104
+  ('N=16', 'Ev-B', 'DRIVE', 'nominal'): VERDICT UNDECIDED | classified 0 of 380 | UNCLASSIFIED 380
+  ('N=16', 'Ev-B', 'DRIVE', 'realised'): VERDICT UNDECIDED | classified 0 of 380 | UNCLASSIFIED 380
+  ('N=16', 'Ev-B', 'WINDOW', 'nominal'): VERDICT WINDOW-ARTEFACT | classified 12 of 292 | UNCLASSIFIED 280, WINDOW-ARTEFACT 12
+  ('N=16', 'Ev-B', 'WINDOW', 'realised'): VERDICT WINDOW-ARTEFACT | classified 12 of 292 | UNCLASSIFIED 280, WINDOW-ARTEFACT 12
+  ('N=256', 'Ev-A', 'DRIVE', 'nominal'): VERDICT CO-SHRINK | classified 178 of 276 | CO-SHRINK 178, UNCLASSIFIED 98
+  ('N=256', 'Ev-A', 'DRIVE', 'realised'): VERDICT CO-SHRINK | classified 178 of 276 | CO-SHRINK 178, UNCLASSIFIED 98
+  ('N=256', 'Ev-B', 'DRIVE', 'nominal'): VERDICT UNDECIDED | classified 0 of 256 | UNCLASSIFIED 256
+  ('N=256', 'Ev-B', 'DRIVE', 'realised'): VERDICT UNDECIDED | classified 0 of 256 | UNCLASSIFIED 256
+  ('N=256', 'Ev-B', 'WINDOW', 'nominal'): VERDICT WINDOW-ARTEFACT | classified 12 of 196 | UNCLASSIFIED 184, WINDOW-ARTEFACT 12
+  ('N=256', 'Ev-B', 'WINDOW', 'realised'): VERDICT WINDOW-ARTEFACT | classified 12 of 196 | UNCLASSIFIED 184, WINDOW-ARTEFACT 12
+  ('N=64', 'Ev-A', 'DRIVE', 'nominal'): VERDICT CO-SHRINK | classified 176 of 276 | CO-SHRINK 176, UNCLASSIFIED 100
+  ('N=64', 'Ev-A', 'DRIVE', 'realised'): VERDICT CO-SHRINK | classified 176 of 276 | CO-SHRINK 176, UNCLASSIFIED 100
+  ('N=64', 'Ev-B', 'DRIVE', 'nominal'): VERDICT UNDECIDED | classified 0 of 320 | UNCLASSIFIED 320
+  ('N=64', 'Ev-B', 'DRIVE', 'realised'): VERDICT UNDECIDED | classified 0 of 320 | UNCLASSIFIED 320
+  ('N=64', 'Ev-B', 'WINDOW', 'nominal'): VERDICT WINDOW-ARTEFACT | classified 12 of 252 | UNCLASSIFIED 240, WINDOW-ARTEFACT 12
+  ('N=64', 'Ev-B', 'WINDOW', 'realised'): VERDICT WINDOW-ARTEFACT | classified 12 of 252 | UNCLASSIFIED 240, WINDOW-ARTEFACT 12
+
+Single unit split by m and L:
+  ('m=0.05', 'L=16', 'Ev-A', 'DRIVE', 'nominal'): VERDICT CO-SHRINK | classified 57 of 107 | CO-SHRINK 57, UNCLASSIFIED 50
+  ('m=0.05', 'L=16', 'Ev-A', 'DRIVE', 'realised'): VERDICT CO-SHRINK | classified 57 of 107 | CO-SHRINK 57, UNCLASSIFIED 50
+  ('m=0.05', 'L=16', 'Ev-B', 'DRIVE', 'nominal'): VERDICT MIXED | classified 46 of 240 | CO-SHRINK 18, MIXED 6, NONE 6, TRADE 16, UNCLASSIFIED 172, UNSTABLE 22
+  ('m=0.05', 'L=16', 'Ev-B', 'DRIVE', 'realised'): VERDICT MIXED | classified 46 of 240 | CO-SHRINK 18, MIXED 6, NONE 6, TRADE 16, UNCLASSIFIED 172, UNSTABLE 22
+  ('m=0.05', 'L=16', 'Ev-B', 'WINDOW', 'nominal'): VERDICT WINDOW-ARTEFACT | classified 94 of 238 | UNCLASSIFIED 144, WINDOW-ARTEFACT 94
+  ('m=0.05', 'L=16', 'Ev-B', 'WINDOW', 'realised'): VERDICT WINDOW-ARTEFACT | classified 91 of 238 | TRADE 3, UNCLASSIFIED 144, UNSTABLE 3, WINDOW-ARTEFACT 88
+  ('m=0.05', 'L=64', 'Ev-A', 'DRIVE', 'nominal'): VERDICT CO-SHRINK | classified 57 of 107 | CO-SHRINK 57, UNCLASSIFIED 50
+  ('m=0.05', 'L=64', 'Ev-A', 'DRIVE', 'realised'): VERDICT CO-SHRINK | classified 57 of 107 | CO-SHRINK 57, UNCLASSIFIED 50
+  ('m=0.05', 'L=64', 'Ev-B', 'DRIVE', 'nominal'): VERDICT MIXED | classified 46 of 240 | CO-SHRINK 18, MIXED 6, NONE 6, TRADE 16, UNCLASSIFIED 172, UNSTABLE 22
+  ('m=0.05', 'L=64', 'Ev-B', 'DRIVE', 'realised'): VERDICT MIXED | classified 46 of 240 | CO-SHRINK 18, MIXED 6, NONE 6, TRADE 16, UNCLASSIFIED 172, UNSTABLE 22
+  ('m=0.05', 'L=64', 'Ev-B', 'WINDOW', 'nominal'): VERDICT WINDOW-ARTEFACT | classified 86 of 238 | UNCLASSIFIED 144, UNSTABLE 8, WINDOW-ARTEFACT 86
+  ('m=0.05', 'L=64', 'Ev-B', 'WINDOW', 'realised'): VERDICT WINDOW-ARTEFACT | classified 83 of 238 | NONE 2, TRADE 10, UNCLASSIFIED 144, UNSTABLE 11, WINDOW-ARTEFACT 71
+  ('m=0.2', 'L=16', 'Ev-A', 'DRIVE', 'nominal'): VERDICT CO-SHRINK | classified 83 of 111 | CO-SHRINK 83, UNCLASSIFIED 28
+  ('m=0.2', 'L=16', 'Ev-A', 'DRIVE', 'realised'): VERDICT CO-SHRINK | classified 83 of 111 | CO-SHRINK 83, UNCLASSIFIED 28
+  ('m=0.2', 'L=16', 'Ev-B', 'DRIVE', 'nominal'): VERDICT MIXED | classified 16 of 210 | CO-SHRINK 10, MIXED 2, NONE 4, UNCLASSIFIED 192, UNSTABLE 2
+  ('m=0.2', 'L=16', 'Ev-B', 'DRIVE', 'realised'): VERDICT MIXED | classified 16 of 210 | CO-SHRINK 10, MIXED 2, NONE 4, UNCLASSIFIED 192, UNSTABLE 2
+  ('m=0.2', 'L=16', 'Ev-B', 'WINDOW', 'nominal'): VERDICT WINDOW-ARTEFACT | classified 40 of 218 | UNCLASSIFIED 178, WINDOW-ARTEFACT 40
+  ('m=0.2', 'L=16', 'Ev-B', 'WINDOW', 'realised'): VERDICT WINDOW-ARTEFACT | classified 40 of 218 | UNCLASSIFIED 178, WINDOW-ARTEFACT 40
+  ('m=0.2', 'L=64', 'Ev-A', 'DRIVE', 'nominal'): VERDICT CO-SHRINK | classified 83 of 111 | CO-SHRINK 83, UNCLASSIFIED 28
+  ('m=0.2', 'L=64', 'Ev-A', 'DRIVE', 'realised'): VERDICT CO-SHRINK | classified 83 of 111 | CO-SHRINK 83, UNCLASSIFIED 28
+  ('m=0.2', 'L=64', 'Ev-B', 'DRIVE', 'nominal'): VERDICT MIXED | classified 16 of 210 | CO-SHRINK 10, MIXED 2, NONE 4, UNCLASSIFIED 192, UNSTABLE 2
+  ('m=0.2', 'L=64', 'Ev-B', 'DRIVE', 'realised'): VERDICT MIXED | classified 16 of 210 | CO-SHRINK 10, MIXED 2, NONE 4, UNCLASSIFIED 192, UNSTABLE 2
+  ('m=0.2', 'L=64', 'Ev-B', 'WINDOW', 'nominal'): VERDICT WINDOW-ARTEFACT | classified 39 of 218 | UNCLASSIFIED 178, UNSTABLE 1, WINDOW-ARTEFACT 39
+  ('m=0.2', 'L=64', 'Ev-B', 'WINDOW', 'realised'): VERDICT MIXED | classified 36 of 218 | MIXED 1, NONE 3, TRADE 10, UNCLASSIFIED 178, UNSTABLE 4, WINDOW-ARTEFACT 22
+
+Single unit, WINDOW axis, split by class, L, extent:
+  ('k=1', 'L=16', 'nominal', 'across_all'): VERDICT WINDOW-ARTEFACT | classified 32 of 79 | UNCLASSIFIED 47, WINDOW-ARTEFACT 32
+  ('k=1', 'L=16', 'nominal', 'across_comp'): VERDICT WINDOW-ARTEFACT | classified 32 of 79 | UNCLASSIFIED 47, WINDOW-ARTEFACT 32
+  ('k=1', 'L=16', 'realised', 'across_all'): VERDICT WINDOW-ARTEFACT | classified 32 of 79 | TRADE 3, UNCLASSIFIED 47, WINDOW-ARTEFACT 29
+  ('k=1', 'L=16', 'realised', 'across_comp'): VERDICT WINDOW-ARTEFACT | classified 32 of 79 | UNCLASSIFIED 47, WINDOW-ARTEFACT 32
+  ('k=1', 'L=64', 'nominal', 'across_all'): VERDICT WINDOW-ARTEFACT | classified 29 of 79 | UNCLASSIFIED 47, UNSTABLE 3, WINDOW-ARTEFACT 29
+  ('k=1', 'L=64', 'nominal', 'across_comp'): VERDICT WINDOW-ARTEFACT | classified 32 of 79 | UNCLASSIFIED 47, WINDOW-ARTEFACT 32
+  ('k=1', 'L=64', 'realised', 'across_all'): VERDICT MIXED | classified 26 of 79 | MIXED 1, NONE 2, TRADE 5, UNCLASSIFIED 47, UNSTABLE 6, WINDOW-ARTEFACT 18
+  ('k=1', 'L=64', 'realised', 'across_comp'): VERDICT WINDOW-ARTEFACT | classified 29 of 79 | UNCLASSIFIED 47, UNSTABLE 3, WINDOW-ARTEFACT 29
+  ('k=2', 'L=16', 'nominal', 'across_all'): VERDICT WINDOW-ARTEFACT | classified 21 of 76 | UNCLASSIFIED 55, WINDOW-ARTEFACT 21
+  ('k=2', 'L=16', 'nominal', 'across_comp'): VERDICT WINDOW-ARTEFACT | classified 21 of 76 | UNCLASSIFIED 55, WINDOW-ARTEFACT 21
+  ('k=2', 'L=16', 'realised', 'across_all'): VERDICT WINDOW-ARTEFACT | classified 19 of 76 | UNCLASSIFIED 55, UNSTABLE 2, WINDOW-ARTEFACT 19
+  ('k=2', 'L=16', 'realised', 'across_comp'): VERDICT WINDOW-ARTEFACT | classified 21 of 76 | UNCLASSIFIED 55, WINDOW-ARTEFACT 21
+  ('k=2', 'L=64', 'nominal', 'across_all'): VERDICT WINDOW-ARTEFACT | classified 21 of 76 | UNCLASSIFIED 55, WINDOW-ARTEFACT 21
+  ('k=2', 'L=64', 'nominal', 'across_comp'): VERDICT WINDOW-ARTEFACT | classified 21 of 76 | UNCLASSIFIED 55, WINDOW-ARTEFACT 21
+  ('k=2', 'L=64', 'realised', 'across_all'): VERDICT MIXED | classified 19 of 76 | NONE 3, TRADE 7, UNCLASSIFIED 55, UNSTABLE 2, WINDOW-ARTEFACT 9
+  ('k=2', 'L=64', 'realised', 'across_comp'): VERDICT WINDOW-ARTEFACT | classified 21 of 76 | UNCLASSIFIED 55, WINDOW-ARTEFACT 21
+  ('k=4', 'L=16', 'nominal', 'across_all'): VERDICT WINDOW-ARTEFACT | classified 14 of 73 | UNCLASSIFIED 59, WINDOW-ARTEFACT 14
+  ('k=4', 'L=16', 'nominal', 'across_comp'): VERDICT WINDOW-ARTEFACT | classified 14 of 73 | UNCLASSIFIED 59, WINDOW-ARTEFACT 14
+  ('k=4', 'L=16', 'realised', 'across_all'): VERDICT WINDOW-ARTEFACT | classified 13 of 73 | UNCLASSIFIED 59, UNSTABLE 1, WINDOW-ARTEFACT 13
+  ('k=4', 'L=16', 'realised', 'across_comp'): VERDICT WINDOW-ARTEFACT | classified 14 of 73 | UNCLASSIFIED 59, WINDOW-ARTEFACT 14
+  ('k=4', 'L=64', 'nominal', 'across_all'): VERDICT WINDOW-ARTEFACT | classified 10 of 73 | UNCLASSIFIED 59, UNSTABLE 4, WINDOW-ARTEFACT 10
+  ('k=4', 'L=64', 'nominal', 'across_comp'): VERDICT WINDOW-ARTEFACT | classified 12 of 73 | UNCLASSIFIED 59, UNSTABLE 2, WINDOW-ARTEFACT 12
+  ('k=4', 'L=64', 'realised', 'across_all'): VERDICT MIXED | classified 11 of 73 | TRADE 8, UNCLASSIFIED 59, UNSTABLE 3, WINDOW-ARTEFACT 3
+  ('k=4', 'L=64', 'realised', 'across_comp'): VERDICT WINDOW-ARTEFACT | classified 13 of 73 | UNCLASSIFIED 59, UNSTABLE 1, WINDOW-ARTEFACT 13
+
+Threshold sensitivity: 68 of 2564 classified-or-unstable strata change label at 0.5 or 0.7.
+  changes (label@0.6 -> label@0.5 / label@0.7): [(('TRADE', 'TRADE', 'UNSTABLE'), 21), (('CO-SHRINK', 'CO-SHRINK', 'UNSTABLE'), 16), (('UNSTABLE', 'UNSTABLE', 'MIXED'), 9), (('UNSTABLE', 'CO-SHRINK', 'MIXED'), 8), (('WINDOW-ARTEFACT', 'WINDOW-ARTEFACT', 'UNSTABLE'), 7), (('WINDOW-ARTEFACT', 'WINDOW-ARTEFACT', 'MIXED'), 3), (('MIXED', 'UNSTABLE', 'MIXED'), 2), (('UNSTABLE', 'WINDOW-ARTEFACT', 'UNSTABLE'), 1), (('TRADE', 'TRADE', 'MIXED'), 1)]
+
+=== TRADE strata (Q4) ===
+TRADE strata: 87
+  ('single-unit control (E1)', 'Ev-B', 'DRIVE', 'nominal', 'across_all', 'L=16'): n=8 | median Spearman: dx~dt -0.83, product~axis -0.99, dx~dE -1.00, dx~axis -1.00, dt~axis 0.83 | product min 0.54
+  ('single-unit control (E1)', 'Ev-B', 'DRIVE', 'nominal', 'across_all', 'L=64'): n=8 | median Spearman: dx~dt -0.83, product~axis -1.00, dx~dE -1.00, dx~axis -1.00, dt~axis 0.83 | product min 0.725
+  ('single-unit control (E1)', 'Ev-B', 'DRIVE', 'nominal', 'across_comp', 'L=16'): n=8 | median Spearman: dx~dt -0.83, product~axis -1.00, dx~dE -1.00, dx~axis -1.00, dt~axis 0.83 | product min 0.386
+  ('single-unit control (E1)', 'Ev-B', 'DRIVE', 'nominal', 'across_comp', 'L=64'): n=8 | median Spearman: dx~dt -0.83, product~axis -1.00, dx~dE -1.00, dx~axis -1.00, dt~axis 0.83 | product min 0.632
+  ('single-unit control (E1)', 'Ev-B', 'DRIVE', 'realised', 'across_all', 'L=16'): n=8 | median Spearman: dx~dt -0.83, product~axis -0.70, dx~dE -1.00, dx~axis -1.00, dt~axis 0.83 | product min 3.17
+  ('single-unit control (E1)', 'Ev-B', 'DRIVE', 'realised', 'across_all', 'L=64'): n=8 | median Spearman: dx~dt -0.80, product~axis -0.49, dx~dE -1.00, dx~axis -1.00, dt~axis 0.83 | product min 10.4
+  ('single-unit control (E1)', 'Ev-B', 'DRIVE', 'realised', 'across_comp', 'L=16'): n=8 | median Spearman: dx~dt -0.83, product~axis -0.89, dx~dE -1.00, dx~axis -1.00, dt~axis 0.83 | product min 2.9
+  ('single-unit control (E1)', 'Ev-B', 'DRIVE', 'realised', 'across_comp', 'L=64'): n=8 | median Spearman: dx~dt -0.83, product~axis -0.33, dx~dE -1.00, dx~axis -1.00, dt~axis 0.83 | product min 8.83
+  ('single-unit control (E1)', 'Ev-B', 'WINDOW', 'realised', 'across_all', 'L=16'): n=3 | median Spearman: dx~dt -0.80, product~axis 1.00, dx~dE -0.80, dx~axis -0.80, dt~axis 1.00 | product min 0
+  ('single-unit control (E1)', 'Ev-B', 'WINDOW', 'realised', 'across_all', 'L=64'): n=20 | median Spearman: dx~dt -0.96, product~axis 1.00, dx~dE -0.66, dx~axis -0.96, dt~axis 1.00 | product min 0
+DRIVE-axis sign of dx against drive energy, all classified strata (median Spearman dx~E_d, dt~E_d):
+  ('E2 (rho=0)', 'Ev-A', 'nominal', 'across'): n=104 dx~E_d -1.00, dt~E_d -1.00, dx~dE -1.00
+  ('E2 (rho=0)', 'Ev-A', 'nominal', 'within'): n=104 dx~E_d -1.00, dt~E_d -1.00, dx~dE -1.00
+  ('E2 (rho=0)', 'Ev-A', 'realised', 'across'): n=104 dx~E_d -1.00, dt~E_d -1.00, dx~dE -1.00
+  ('E2 (rho=0)', 'Ev-A', 'realised', 'within'): n=104 dx~E_d -1.00, dt~E_d -1.00, dx~dE -1.00
+  ('E3 (0<rho<1)', 'Ev-A', 'nominal', 'across'): n=159 dx~E_d -1.00, dt~E_d -1.00, dx~dE -1.00
+  ('E3 (0<rho<1)', 'Ev-A', 'nominal', 'within'): n=159 dx~E_d -1.00, dt~E_d -1.00, dx~dE -1.00
+  ('E3 (0<rho<1)', 'Ev-A', 'realised', 'across'): n=159 dx~E_d -1.00, dt~E_d -1.00, dx~dE -1.00
+  ('E3 (0<rho<1)', 'Ev-A', 'realised', 'within'): n=159 dx~E_d -1.00, dt~E_d -1.00, dx~dE -1.00
+  ('single-unit control (E1)', 'Ev-A', 'nominal', 'across'): n=280 dx~E_d -1.00, dt~E_d -1.00, dx~dE -1.00
+  ('single-unit control (E1)', 'Ev-A', 'realised', 'across'): n=280 dx~E_d -1.00, dt~E_d -1.00, dx~dE -1.00
+  ('single-unit control (E1)', 'Ev-B', 'nominal', 'across'): n=172 dx~E_d -1.00, dt~E_d -0.30, dx~dE -1.00
+  ('single-unit control (E1)', 'Ev-B', 'realised', 'across'): n=172 dx~E_d -1.00, dt~E_d -0.30, dx~dE -1.00
+
+=== Q2 single unit: across spread at lag L ===
+H-nominal: sim variance vs exact (matrix exponential), 960 cell-lags: rough z (Gaussian SE) median -0.07, 1st..99th pct -4.33..3.78
+H-realised: sim / leading-order formula, E_d*tau in [0,5): n=282 median 0.80 range 0.30..0.98
+H-realised: sim / leading-order formula, E_d*tau in [5,20): n=306 median 0.88 range 0.39..1.07
+H-realised: sim / leading-order formula, E_d*tau in [20,1000000000.0): n=372 median 0.98 range 0.51..1.17
+
+=== Q3 N-scaling (m = 0.2; slopes of log quantity against log N) ===
+  rho=0.0 across at L=16, nominal: n=72 median -0.507 IQR -0.520..-0.489
+  rho=0.0 across at L=16, realised: n=72 median -0.502 IQR -0.516..-0.489
+  rho=0.0 across at pulse end: n=72 median -0.501 IQR -0.519..-0.487
+  rho=0.0 dt (Ev-A in window at all N): n=233 median -0.506 IQR -0.521..-0.492
+  rho=0.0 dt ratio N=16 / N=1 (4.0 would be N^-1/2 ... inverse shown): n=198 median 4.099 IQR 3.955..4.213
+  rho=0.0 within at L=16, nominal: n=72 median 0.020 IQR 0.017..0.024
+  rho=0.0 within at L=16, realised: n=72 median 0.021 IQR 0.017..0.029
+  rho=0.0 within at pulse end: n=72 median 0.019 IQR 0.016..0.024
+  rho=0.5 across at L=16, nominal: n=72 median -0.058 IQR -0.074..-0.035
+  rho=0.5 across at L=16, realised: n=72 median -0.048 IQR -0.058..-0.028
+  rho=0.5 across at pulse end: n=72 median -0.056 IQR -0.069..-0.039
+  rho=0.5 dt (Ev-A in window at all N): n=225 median -0.049 IQR -0.069..-0.023
+  rho=0.5 dt ratio N=16 / N=1 (4.0 would be N^-1/2 ... inverse shown): n=198 median 2.450 IQR 2.334..2.557
+  rho=0.5 within at L=16, nominal: n=72 median 0.018 IQR 0.015..0.023
+  rho=0.5 within at L=16, realised: n=72 median 0.018 IQR 0.014..0.027
+  rho=0.5 within at pulse end: n=72 median 0.018 IQR 0.015..0.022
+  rho=0.9 across at L=16, nominal: n=72 median -0.001 IQR -0.017..0.012
+  rho=0.9 across at L=16, realised: n=72 median -0.003 IQR -0.022..0.015
+  rho=0.9 across at pulse end: n=72 median 0.006 IQR -0.010..0.017
+  rho=0.9 dt (Ev-A in window at all N): n=203 median 0.001 IQR -0.019..0.022
+  rho=0.9 dt ratio N=16 / N=1 (4.0 would be N^-1/2 ... inverse shown): n=198 median 1.188 IQR 1.128..1.238
+  rho=0.9 within at L=16, nominal: n=72 median 0.017 IQR 0.015..0.022
+  rho=0.9 within at L=16, realised: n=72 median 0.017 IQR 0.015..0.022
+  rho=0.9 within at pulse end: n=72 median 0.017 IQR 0.015..0.022
+
+=== Q6 relaxation: (time to reach (1 - 1/e) tanh(eta)) x 2 E_d, expected 1 ===
+  ('ens', 0.2, 16, 0.0): drives 12, ratio median 0.998, range 0.928..1.023 (eta <= 0.5 only: 0.928..1.023)
+  ('ens', 0.2, 16, 0.5): drives 12, ratio median 1.009, range 0.940..1.034 (eta <= 0.5 only: 0.940..1.008)
+  ('ens', 0.2, 16, 0.9): drives 12, ratio median 1.012, range 0.723..1.183 (eta <= 0.5 only: 0.723..1.183)
+  ('ens', 0.2, 64, 0.0): drives 12, ratio median 1.002, range 0.990..1.006 (eta <= 0.5 only: 0.990..1.006)
+  ('ens', 0.2, 64, 0.5): drives 12, ratio median 1.017, range 0.980..1.030 (eta <= 0.5 only: 0.980..1.009)
+  ('ens', 0.2, 64, 0.9): drives 12, ratio median 1.010, range 0.879..1.049 (eta <= 0.5 only: 0.879..1.049)
+  ('ens', 0.2, 256, 0.0): drives 12, ratio median 0.997, range 0.966..1.040 (eta <= 0.5 only: 0.966..1.040)
+  ('ens', 0.2, 256, 0.5): drives 12, ratio median 1.012, range 0.960..1.038 (eta <= 0.5 only: 0.960..1.015)
+  ('ens', 0.2, 256, 0.9): drives 12, ratio median 0.986, range 0.818..1.115 (eta <= 0.5 only: 0.818..0.987)
+  ('single', 0.05, 1, 0.0): drives 24, ratio median 0.996, range 0.890..1.098 (eta <= 0.5 only: 0.890..1.098)
+  ('single', 0.2, 1, 0.0): drives 24, ratio median 1.004, range 0.961..1.082 (eta <= 0.5 only: 0.961..1.082)
+
+=== WINDOW CENSUS (cell x D) ===
+  single: cells 480, OVER-CAP cells 220; Ev-A CENSORED 615, Ev-A CENSORED (KINEMATIC) 624, Ev-A in window 1161, Ev-B OUT OF WINDOW 1632, Ev-B in window 768
+  ens: cells 648, OVER-CAP cells 432; Ev-A CENSORED 470, Ev-A CENSORED (KINEMATIC) 756, Ev-A in window 2014, Ev-B OUT OF WINDOW 2868, Ev-B THIN 17, Ev-B in window 355
+
+cells run: null 240, single 480, ensemble 648; total worker time 2254 s

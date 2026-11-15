@@ -1,0 +1,50 @@
+== 1. no noise ==
+s (median |R_ABC|^2) = 38.57493356629072
+R2       kappa2=1.240288 kappa3=1.293e-16  max|I3|=7.461e-14
+R4       kappa2=0.921297 kappa3=5.797e-01  max|I3|=1.763e+04
+RS       kappa2=1.530859 kappa3=3.781e-01  max|I3|=7.460e-01
+C-arrow  kappa2=1.318493 kappa3=1.249e-16  max|I3|=6.040e-14
+C+ kappa2= 0.0  max|I2|= 0.0  max|I3|= 0.0  kappa3= nan
+== 2. fringes ==
+R2 ABC (19, np.float64(51.333333333333336)) AB (10, np.float64(102.66666666666667)) AC (19, np.float64(51.333333333333336))
+C-arrow ABC (9, np.float64(102.25)) AB (5, np.float64(204.0)) AC (9, np.float64(102.25))
+ratio arrow/R2 (AB) = 1.987012987012987
+far-field prediction spacing AB: R2 100.0  arrow 200.0 (paraxial, d=100)
+== 3. closed forms ==
+R4 I3 closed form max abs diff: 2.546585164964199e-11  scale 17633.092057740207
+R4 equal in-phase: I3/r^4= 36.00000000000001  I2/r^4= 14.0
+RS equal in-phase: I3 direct -0.42508303182828133  claimed -0.425083031828281 | I2 direct 0.15383097289089664  claimed 0.15383097289089664
+== 5c. conservation ==
+screen totals R2: {'': np.float64(0.0), 'A': np.float64(23280.2), 'B': np.float64(23502.9), 'C': np.float64(23280.2), 'AB': np.float64(47887.5), 'AC': np.float64(45881.6), 'BC': np.float64(47887.5), 'ABC': np.float64(71593.3)}
+sum singles= 70063.29806630005  ABC= 71593.33588519735  mean P_ABC= 71.52181407112622
+|R_slit|^2 range over screen: 18.740490366417152 24.99999005442878   per slit means [23.25695157 23.47940162 23.25695157]
+incoherent floor mean P_ABC = 15 ; ratio 4.768120938075081
+wide screen (|x|<=20000, step 7): mean |R_A|^2 = 1.5185694008126462  mean P_ABC = 4.548781409296265  (15 = conserved-on-average value)
+== 4. noise ==
+ sigma    A:k2(2000) A:k3      A:k2(200)  A:k3(200) | predA k2  exp(-4s^2L) | B:k2 mean  sd     B:k3 max  | meanP_ABC
+ 0.0000    1.2403  1.6e-15    1.2403  1.6e-15 |   1.2403  1.0000     | 1.2403  0.0000  1.3e-16 | 71.52
+ 0.0010    1.2278  1.9e-16    1.2280  2.5e-16 |   1.2276  0.9530     | 1.2400  0.0052  1.5e-16 | 68.86
+ 0.0020    1.1875  1.9e-16    1.1884  2.5e-16 |   1.1875  0.8250     | 1.2354  0.0100  1.4e-16 | 61.64
+ 0.0030    1.1142  1.9e-16    1.1149  2.8e-16 |   1.1138  0.6487     | 1.2202  0.0152  1.5e-16 | 51.66
+ 0.0050    0.8338  2.6e-16    0.8372  3.5e-16 |   0.8335  0.3005     | 1.1356  0.0225  1.5e-16 | 31.98
+ 0.0070    0.4141  4.8e-16    0.4183  6.7e-16 |   0.4130  0.0948     | 1.0533  0.0271  1.7e-16 | 20.37
+ 0.0100    0.0518  3.9e-15    0.0913  2.9e-15 |   0.0468  0.0082     | 1.0291  0.0289  1.7e-16 | 15.45
+ 0.0150    0.0253  7.8e-15    0.0788  3.3e-15 |   0.0001  0.0000     | 1.0268  0.0297  1.7e-16 | 15.00
+ 0.0200    0.0248  7.8e-15    0.0808  3.4e-15 |   0.0000  0.0000     | 1.0275  0.0294  1.7e-16 | 15.01
+ 0.0300    0.0253  7.7e-15    0.0784  3.4e-15 |   0.0000  0.0000     | 1.0262  0.0301  1.7e-16 | 15.02
+ 0.0500    0.0250  8.1e-15    0.0806  3.3e-15 |   0.0000  0.0000     | 1.0277  0.0283  1.7e-16 | 15.00
+ 0.1000    0.0250  7.8e-15    0.0791  3.5e-15 |   0.0000  0.0000     | 1.0268  0.0297  1.7e-16 | 15.01
+ 0.2000    0.0254  7.8e-15    0.0798  3.4e-15 |   0.0000  0.0000     | 1.0285  0.0291  1.7e-16 | 14.99
+ 0.5000    0.0252  7.9e-15    0.0783  3.4e-15 |   0.0000  0.0000     | 1.0282  0.0302  1.7e-16 | 15.00
+ 1.0000    0.0255  7.7e-15    0.0799  3.4e-15 |   0.0000  0.0000     | 1.0279  0.0297  1.7e-16 | 15.00
+ 1.5708    0.0253  7.6e-15    0.0778  3.4e-15 |   0.0000  0.0000     | 1.0277  0.0298  1.7e-16 | 15.00
+== 5f. variant NOT in the rule: shared first-leg jitter per slit grain is identical to rule (one history per (y,x)); 
+   but a common jitter across all 15 histories (fully shared route) leaves kappa2 unchanged:
+   sigma=0.05 common-mode jitter: reading A kappa2= 1.2402379191808628
+== sensitivity: omega variants (R2 kappa2, ABC maxima) ==
+   omega=0.6283 kappa2=1.2403 kappa3=1.3e-16 maxima ABC=(19, np.float64(51.333333333333336)) meanP=71.5
+   omega=0.7854 kappa2=1.2651 kappa3=1.3e-16 maxima ABC=(25, np.float64(41.166666666666664)) meanP=67.6
+   omega=0.4488 kappa2=1.2911 kappa3=1.3e-16 maxima ABC=(13, np.float64(71.66666666666667)) meanP=71.1
+   omega=1.0000 kappa2=1.2841 kappa3=1.3e-16 maxima ABC=(31, np.float64(32.4)) meanP=62.4
+   omega=3.1416 kappa2=1.0618 kappa3=1.4e-16 maxima ABC=(33, np.float64(20.0625)) meanP=28.1
+runtime 31.17580819129944

@@ -1,0 +1,62 @@
+{
+ "2045": {
+  "period_T1": 43.54838380008747,
+  "verdict_T73": "steady cycle",
+  "period_T73": 43.548383831127616,
+  "ratio_T": 1.0000000007127738,
+  "check_i_pass": true,
+  "verdict_2x": "steady cycle",
+  "period_2x": 21.774191900043736,
+  "ratio_s": 0.5,
+  "check_ii_pass": true,
+  "plant_check_i_on_2x_run_pass": false
+ },
+ "301417": {
+  "period_T1": 5.001203512030595,
+  "verdict_T73": "steady cycle",
+  "period_T73": 5.001203515050221,
+  "ratio_T": 1.00000000060378,
+  "check_i_pass": true,
+  "verdict_2x": "steady cycle",
+  "period_2x": 2.5006017560152975,
+  "ratio_s": 0.5,
+  "check_ii_pass": true,
+  "plant_check_i_on_2x_run_pass": false
+ },
+ "384616": {
+  "period_T1": 277.15094085805623,
+  "verdict_T73": "steady cycle",
+  "period_T73": 277.15094079892305,
+  "ratio_T": 0.999999999786639,
+  "check_i_pass": true,
+  "verdict_2x": "steady cycle",
+  "period_2x": 138.57547042902812,
+  "ratio_s": 0.5,
+  "check_ii_pass": true,
+  "plant_check_i_on_2x_run_pass": false
+ },
+ "456280": {
+  "period_T1": 88.52703866845552,
+  "verdict_T73": "steady cycle",
+  "period_T73": 88.52703869723814,
+  "ratio_T": 1.0000000003251281,
+  "check_i_pass": true,
+  "verdict_2x": "steady cycle",
+  "period_2x": 44.26351933422776,
+  "ratio_s": 0.5,
+  "check_ii_pass": true,
+  "plant_check_i_on_2x_run_pass": false
+ },
+ "616482": {
+  "period_T1": 171.23823909092516,
+  "verdict_T73": "steady cycle",
+  "period_T73": 171.23823910742067,
+  "ratio_T": 1.0000000000963307,
+  "check_i_pass": true,
+  "verdict_2x": "steady cycle",
+  "period_2x": 85.61911954546258,
+  "ratio_s": 0.5,
+  "check_ii_pass": true,
+  "plant_check_i_on_2x_run_pass": false
+ }
+}

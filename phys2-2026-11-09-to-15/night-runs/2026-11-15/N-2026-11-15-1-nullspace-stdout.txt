@@ -1,0 +1,41 @@
+plant 2: {'I3_r4_at_111': 36.0, 'I3_r2_at_111': 0.0, 'pass': True}
+plant 1: {'basis_fit_rel_err': 4.5809652045972384e-15, 'restricted_null_dirs': 12, 'restricted_unresolved': 2, 'residual_restricted': 9.339390317230583e-13, 'residual_full': 23.908311598331444, 'pass': True}
+K=30 m=0: null=2 unresolved=0 smallest: 2.94e-02 2.03e-02 1.23e-02 2.66e-17 0.00e+00
+K=30 m=1: null=1 unresolved=0 smallest: 5.45e-02 4.53e-02 3.08e-02 1.91e-02 4.08e-17
+K=30 m=2: null=1 unresolved=0 smallest: 5.22e-02 4.35e-02 2.96e-02 1.80e-02 3.96e-17
+K=30 m=3: null=0 unresolved=0 smallest: 5.21e-02 4.57e-02 3.68e-02 2.56e-02 1.67e-02
+K=30 m=4: null=0 unresolved=0 smallest: 5.53e-02 4.95e-02 4.06e-02 2.74e-02 1.76e-02
+K=30 m=5: null=0 unresolved=0 smallest: 6.05e-02 5.42e-02 4.45e-02 3.00e-02 1.91e-02
+K=30 m=6: null=0 unresolved=0 smallest: 6.30e-02 5.65e-02 4.59e-02 3.10e-02 1.98e-02
+K=30 m=7: null=0 unresolved=0 smallest: 6.12e-02 5.50e-02 4.42e-02 2.95e-02 1.90e-02
+K=30 m=8: null=0 unresolved=0 smallest: 5.79e-02 5.24e-02 4.20e-02 2.78e-02 1.78e-02
+K=20 m=0: null=2 unresolved=0 smallest: 4.24e-02 3.20e-02 1.91e-02 3.74e-17 0.00e+00
+K=20 m=1: null=1 unresolved=0 smallest: 7.68e-02 6.56e-02 4.77e-02 2.86e-02 4.25e-17
+K=20 m=2: null=1 unresolved=0 smallest: 7.26e-02 6.21e-02 4.49e-02 2.67e-02 1.12e-16
+K=20 m=3: null=0 unresolved=0 smallest: 7.42e-02 6.30e-02 4.99e-02 3.72e-02 2.31e-02
+K=20 m=4: null=0 unresolved=0 smallest: 8.17e-02 6.88e-02 5.65e-02 4.15e-02 2.49e-02
+K=20 m=5: null=0 unresolved=0 smallest: 9.33e-02 7.81e-02 6.42e-02 4.71e-02 2.80e-02
+K=20 m=6: null=0 unresolved=0 smallest: 9.64e-02 8.45e-02 6.88e-02 4.99e-02 2.97e-02
+K=20 m=7: null=0 unresolved=0 smallest: 9.41e-02 8.12e-02 6.60e-02 4.69e-02 2.78e-02
+K=20 m=8: null=0 unresolved=0 smallest: 8.39e-02 7.43e-02 6.13e-02 4.29e-02 2.53e-02
+K=40 m=0: null=2 unresolved=0 smallest: 2.01e-02 1.67e-02 8.37e-03 2.65e-17 0.00e+00
+K=40 m=1: null=1 unresolved=0 smallest: 4.02e-02 3.16e-02 2.57e-02 1.31e-02 6.15e-17
+K=40 m=2: null=1 unresolved=0 smallest: 3.93e-02 3.02e-02 2.50e-02 1.26e-02 4.75e-17
+K=40 m=3: null=0 unresolved=0 smallest: 4.15e-02 3.33e-02 2.87e-02 2.17e-02 1.19e-02
+K=40 m=4: null=0 unresolved=0 smallest: 4.43e-02 3.63e-02 2.99e-02 2.30e-02 1.23e-02
+K=40 m=5: null=0 unresolved=0 smallest: 4.76e-02 3.90e-02 3.20e-02 2.47e-02 1.32e-02
+K=40 m=6: null=0 unresolved=0 smallest: 4.87e-02 3.97e-02 3.28e-02 2.52e-02 1.35e-02
+K=40 m=7: null=0 unresolved=0 smallest: 4.78e-02 3.88e-02 3.19e-02 2.42e-02 1.31e-02
+K=40 m=8: null=0 unresolved=0 smallest: 4.58e-02 3.76e-02 3.05e-02 2.32e-02 1.25e-02
+expected null functions, residuals: {'m0_0': 7.08246234842592e-15, 'm0_1': 1.6671296853220818e-13, 'm1_0': 1.0152759355887537e-13, 'm2_0': 2.0139551945226848e-13}
+direct max|I3|/max|P|  |R|^1                            6.595e-01
+direct max|I3|/max|P|  |R|^1.5                          2.251e-01
+direct max|I3|/max|P|  |R|^2                            6.663e-16
+direct max|I3|/max|P|  |R|^2.5                          1.063e-01
+direct max|I3|/max|P|  |R|^3                            2.222e-01
+direct max|I3|/max|P|  |R|^4                            4.444e-01
+direct max|I3|/max|P|  x^2+3y^2+xy                      4.807e-16
+direct max|I3|/max|P|  |R|^2 + x (linear term)          5.776e-16
+direct max|I3|/max|P|  1-exp(-|R|^2)                    1.547e+00
+direct max|I3|/max|P|  plant f=(r^2-2)^5-5(r^2-2)^3     1.002e+00
+direct max|I3|/max|P|  Re z^3 (harmonic cubic)          2.238e-01
