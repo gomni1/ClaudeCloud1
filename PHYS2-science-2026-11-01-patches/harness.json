@@ -1,0 +1,94 @@
+[
+ {
+  "check": "H1",
+  "median_site_period": 5.181415611786738,
+  "reference": 5.200990415956872,
+  "err": 0.0037636685716776557,
+  "n_sites": 2000,
+  "passed": true,
+  "cpu_s": 82.640625,
+  "_cpu_total_s": 89.40625
+ },
+ {
+  "check": "H2",
+  "per_Omega": {
+   "200": {
+    "ssa_period": 4.532035994850097,
+    "ssa_cv": 0.5291010258251089,
+    "ssa_n": 2760,
+    "leap_period": 4.4819002632247384,
+    "leap_cv": 0.5300313575344618,
+    "leap_n": 2790,
+    "err_period": 0.011062518409458676,
+    "err_cv": 0.0017583252799447174,
+    "passed": true
+   },
+   "800": {
+    "ssa_period": 5.200990415956872,
+    "ssa_cv": 0.45562171838437054,
+    "ssa_n": 2406,
+    "leap_period": 5.194472796535753,
+    "leap_cv": 0.44175960722768254,
+    "leap_n": 2407,
+    "err_period": 0.001253149669555659,
+    "err_cv": 0.030424605758133952,
+    "passed": true
+   }
+  },
+  "passed": true,
+  "ssa_period_800": 5.200990415956872,
+  "_cpu_total_s": 89.40625
+ },
+ {
+  "check": "H3",
+  "n_frames": 5400,
+  "max_abs_total_winding": 0,
+  "passed": true,
+  "_cpu_total_s": 89.40625
+ },
+ {
+  "check": "P1",
+  "rows": [
+   {
+    "case": "tetrahedron vortex",
+    "got": [
+     1,
+     0,
+     0,
+     -1
+    ],
+    "expected": [
+     1,
+     0,
+     0,
+     -1
+    ],
+    "exact": true
+   },
+   {
+    "case": "constant field on S",
+    "got": 0,
+    "expected": 0,
+    "exact": true
+   },
+   {
+    "case": "small-gap field on S",
+    "got": 0,
+    "expected": 0,
+    "exact": true
+   }
+  ],
+  "passed": true,
+  "_cpu_total_s": 89.40625
+ },
+ {
+  "check": "P2",
+  "defect_density": 0.24981481481481482,
+  "target": 0.25,
+  "within_tolerance": true,
+  "longest_track_frames": 1,
+  "frames_for_20_periods": 636,
+  "passed": true,
+  "_cpu_total_s": 89.40625
+ }
+]
