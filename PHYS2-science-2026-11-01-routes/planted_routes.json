@@ -1,0 +1,26 @@
+[
+ {
+  "check": "P1",
+  "n_rep": 50,
+  "n_detect": 50,
+  "frac": 1.0,
+  "median_p": 3.727770900840865e-12,
+  "passed": true
+ },
+ {
+  "check": "P2",
+  "n_rep": 50,
+  "n_nonsig": 45,
+  "frac": 0.9,
+  "median_p": 0.4401302252267878,
+  "passed": true
+ },
+ {
+  "check": "P3",
+  "n_runs": 200,
+  "delta_mismatches": 0,
+  "flag_mismatches": 0,
+  "n_visited_D": 1,
+  "passed": true
+ }
+]
