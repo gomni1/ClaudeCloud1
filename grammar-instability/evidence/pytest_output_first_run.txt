@@ -1,0 +1,33 @@
+....F......                                                              [100%]
+=================================== FAILURES ===================================
+__________ test_balances_are_zeros_and_jacobian_matches_fd[variant3] ___________
+
+variant = ('closed', 'tot')
+
+    @pytest.mark.parametrize("variant", m2.VARIANTS)
+    def test_balances_are_zeros_and_jacobian_matches_fd(variant):
+        for i in range(12):
+            d = m2.draw_params(4 * i + m2.VARIANTS.index(variant))
+            par = m2.par_of(d)
+            for b in model.balances(par):
+                f = model.f_np(b, par)
+                assert np.abs(f).max() <= 1e-8 * (1 + np.abs(b).max()) * max(d["k"])
+                if variant[0] == "closed":
+                    assert b.sum() == pytest.approx(d["T"], rel=1e-10)
+                J = model.J_np(b, par)
+                hh = 1e-7 * np.maximum(np.abs(b), 1e-12)
+                Jf = np.column_stack([(model.f_np(b + hh[j] * np.eye(4)[j], par) - model.f_np(b - hh[j] * np.eye(4)[j], par))
+                                      / (2 * hh[j]) for j in range(4)])
+>               assert np.allclose(J, Jf, rtol=1e-4, atol=1e-6 * np.abs(J).max())
+E               AssertionError: assert False
+E                +  where False = <function allclose at 0x7f8d4012f870>(array([[-8.26810270e+02,  3.49560095e-02,  1.61308249e-01,\n         3.43837245e-17],\n       [ 8.25342106e+02, -3.49560...23e+00,\n         0.00000000e+00],\n       [ 1.46656376e+00,  0.00000000e+00,  0.00000000e+00,\n        -6.11539012e-01]]), array([[-8.26810270e+02,  3.49560095e-02,  1.63064675e-01,\n         0.00000000e+00],\n       [ 8.25342105e+02, -3.49560...23e+00,\n         0.00000000e+00],\n       [ 1.46656376e+00,  0.00000000e+00,  0.00000000e+00,\n        -6.11539013e-01]]), rtol=0.0001, atol=(1e-06 * np.float64(826.8102697746185)))
+E                +    where <function allclose at 0x7f8d4012f870> = np.allclose
+E                +    and   np.float64(826.8102697746185) = <built-in method max of numpy.ndarray object at 0x7f8d28675350>()
+E                +      where <built-in method max of numpy.ndarray object at 0x7f8d28675350> = array([[8.26810270e+02, 3.49560095e-02, 1.61308249e-01, 3.43837245e-17],\n       [8.25342106e+02, 3.49560095e-02, 9.703...0000000e+00, 9.86491323e+00, 0.00000000e+00],\n       [1.46656376e+00, 0.00000000e+00, 0.00000000e+00, 6.11539012e-01]]).max
+E                +        where array([[8.26810270e+02, 3.49560095e-02, 1.61308249e-01, 3.43837245e-17],\n       [8.25342106e+02, 3.49560095e-02, 9.703...0000000e+00, 9.86491323e+00, 0.00000000e+00],\n       [1.46656376e+00, 0.00000000e+00, 0.00000000e+00, 6.11539012e-01]]) = <ufunc 'absolute'>(array([[-8.26810270e+02,  3.49560095e-02,  1.61308249e-01,\n         3.43837245e-17],\n       [ 8.25342106e+02, -3.49560...23e+00,\n         0.00000000e+00],\n       [ 1.46656376e+00,  0.00000000e+00,  0.00000000e+00,\n        -6.11539012e-01]]))
+E                +          where <ufunc 'absolute'> = np.abs
+
+tests/test_a.py:34: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_a.py::test_balances_are_zeros_and_jacobian_matches_fd[variant3]
+1 failed, 10 passed in 216.78s (0:03:36)

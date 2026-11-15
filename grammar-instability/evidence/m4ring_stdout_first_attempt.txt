@@ -1,0 +1,17 @@
+Traceback (most recent call last):
+  File "/home/user/claudecloud1/grammar-instability/run_a.py", line 314, in <module>
+    STAGES[s]()
+    ~~~~~~~~~^^
+  File "/home/user/claudecloud1/grammar-instability/run_a.py", line 288, in stage_m4ring
+    v = m4.verify_ring(par, job["b"], r["D"], r.get("s_ref", r["s"]), kind)
+  File "/home/user/claudecloud1/grammar-instability/ginst/m4.py", line 134, in verify_ring
+    lam, k, w = _leading(J - s_star * np.diag(D), kind)
+                ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/claudecloud1/grammar-instability/ginst/m4.py", line 105, in _leading
+    k = idx[np.argmax(lam.real[idx])]
+            ~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/dist-packages/numpy/_core/fromnumeric.py", line 1352, in argmax
+    return _wrapfunc(a, 'argmax', axis=axis, out=out, **kwds)
+  File "/usr/local/lib/python3.13/dist-packages/numpy/_core/fromnumeric.py", line 54, in _wrapfunc
+    return bound(*args, **kwds)
+ValueError: attempt to get argmax of an empty sequence
