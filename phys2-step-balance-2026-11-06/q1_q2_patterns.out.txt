@@ -1,0 +1,25 @@
+Q1  E[(1 - s.n)/2] versus (1 - |v|)/2   (N = 2000000 samples each)
+  |v|=0.3000  predicted 0.35000 | two-point: 0.34986 (|E[s]-v|=2.9e-04) | cone: 0.35000 (|E[s]-v|=3.0e-04) | vMF: 0.34988 (|E[s]-v|=9.7e-04)
+  |v|=0.6708  predicted 0.16459 | two-point: 0.16484 (|E[s]-v|=5.1e-04) | cone: 0.16459 (|E[s]-v|=5.7e-04) | vMF: 0.16464 (|E[s]-v|=5.8e-04)
+  |v|=0.9000  predicted 0.05000 | two-point: 0.05009 (|E[s]-v|=1.8e-04) | cone: 0.05000 (|E[s]-v|=2.5e-04) | vMF: 0.04995 (|E[s]-v|=4.5e-04)
+
+Q1  1D: P(backward) = (1-v)/2 exactly; R2/R3 'uncommitted shares' (scalars, no direction)
+   v     P_b=(1-v)/2   R3: 1-v   2*P_b   R2: sqrt(1-v^2)   2*sqrt(P_f*P_b)
+  0.00   0.500000      1.000000  1.000000  1.000000         1.000000
+  0.30   0.350000      0.700000  0.700000  0.953939         0.953939
+  0.60   0.200000      0.400000  0.400000  0.800000         0.800000
+  0.90   0.050000      0.100000  0.100000  0.435890         0.435890
+  0.99   0.005000      0.010000  0.010000  0.141067         0.141067
+
+Q2  E[(1 -/+ s_i.s_j)/2] for independent patterns, versus (1 -/+ v_i.v_j)/2
+  v_i.v_j = -0.03000; predicted ALIGNED 0.48500, OPPOSED 0.51500
+  two-point x two-point  ALIGNED 0.48498  OPPOSED 0.51502   nonlinear [(1+s.s)/2]^2 0.23626
+  two-point x cone       ALIGNED 0.48501  OPPOSED 0.51499   nonlinear [(1+s.s)/2]^2 0.28426
+  two-point x vMF        ALIGNED 0.48507  OPPOSED 0.51493   nonlinear [(1+s.s)/2]^2 0.27844
+       cone x two-point  ALIGNED 0.48473  OPPOSED 0.51527   nonlinear [(1+s.s)/2]^2 0.32341
+       cone x cone       ALIGNED 0.48510  OPPOSED 0.51490   nonlinear [(1+s.s)/2]^2 0.32060
+       cone x vMF        ALIGNED 0.48511  OPPOSED 0.51489   nonlinear [(1+s.s)/2]^2 0.32111
+        vMF x two-point  ALIGNED 0.48491  OPPOSED 0.51509   nonlinear [(1+s.s)/2]^2 0.30225
+        vMF x cone       ALIGNED 0.48452  OPPOSED 0.51548   nonlinear [(1+s.s)/2]^2 0.31130
+        vMF x vMF        ALIGNED 0.48484  OPPOSED 0.51516   nonlinear [(1+s.s)/2]^2 0.31036
+  Monte Carlo standard error on each linear entry <= 3.5e-04

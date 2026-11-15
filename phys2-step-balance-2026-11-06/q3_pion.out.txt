@@ -1,0 +1,14 @@
+beta_e = 0.999973191   beta_mu = 0.271384734
+N_e/N_mu (uniform count) = 3.487903
+ALIGNED : W_e = 1.340441e-05  W_mu = 3.643076e-01  W_e/W_mu = 3.679420e-05  R = 1.283346e-04
+OPPOSED : W_e = 9.999866e-01  W_mu = 6.356924e-01  W_e/W_mu = 1.573067e+00  R = 5.486704e+00
+closed form (m_e/m_mu)^2[(m_pi^2-m_e^2)/(m_pi^2-m_mu^2)]^2 = 1.2833457598e-04
+ALIGNED minus closed form (30-digit arithmetic) = -4.854e-31
+sympy: ALIGNED ratio - closed form simplifies to 0
+sympy: ALIGNED weight W_l = m1**2/(M**2 + m1**2)   OPPOSED weight = M**2/(M**2 + m1**2)
+
+PIENU R = 1.2344e-04 +/- 2.9833e-07 (stat+syst in quadrature)
+ALIGNED/PIENU = 1.03965   pull = +16.4 sigma
+OPPOSED/PIENU = 4.4448e+04
+[control] SM R = 1.2352e-04;  SM/tree = 0.96248  -> radiative correction -3.752 %
+[control] SM vs PIENU pull = +0.27 sigma

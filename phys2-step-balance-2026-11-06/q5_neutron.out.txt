@@ -1,0 +1,30 @@
+(a) W = c*(alpha - 1/2) + 1/2  = (1/2)(1 + a c) with a = 2*alpha - 1
+(b) aSPECT 2020 (PRC 101, 055506): a = -0.1043 +/- 0.00084  ->  alpha = (1+a)/2 = 0.44785 +/- 0.00042
+(b) aSPECT reanalysis (arXiv:2308.16170): a = -0.10402 +/- 0.00082  ->  alpha = (1+a)/2 = 0.44799 +/- 0.00041
+(c) heavy recoil: angular measure dOmega_e dOmega_nu is isotropic; integral of cos(theta) over the relative angle = 0 -> <W> = 1/2 for every alpha
+(c) full recoil: <beta_e cos theta> over uniform count = -5.105e-04
+    -> <W> = 1/2 + (2 alpha - 1)<beta cos>/2 = 0.50002662  (alpha = 0.44785)
+
+observed Gamma_mu/Gamma_n = tau_n/tau_mu = 3.998214e+08
+   full kinematics: N_mu/N_n = 4.22108e+08  miss = 1.05574;  with NR Fermi: miss = 1.02106
+   (heavy-recoil variant for reference: miss = 1.05320; NR Fermi 1.01861)
+
+(d) <W_mu>/<W_n> = 1.428571
+    new miss (no Coulomb)     = 1.05574 x 1.42857 = 1.50820
+    new miss (NR Fermi, Z=1)  = 1.02106 x 1.42857 = 1.45865
+    required neutron parent-side factor F_n = 1.5082 (no Coulomb) / 1.4587 (NR Fermi)
+    equivalently <W_n> would have to be 0.7541 / 0.7293 instead of 0.5
+
+[control] PHYS2 count in f units: no Coulomb = 1.63189, f with NR Fermi = 1.68732, full SM f = 1.6887
+[control] muon side 1+delta_mu = 0.99561
+[control] V_ud^2 = 0.94815, 1+3 lambda^2 = 5.87994, (2/8) V^2(1+3l^2) = 1.39377, (1+3l^2)/4 = 1.46998
+[control] SM factor, no-Coulomb basis = 1.5049  (required 1.5082; ratio 0.99783)
+[control] SM factor, NR-Fermi basis   = 1.4555  (required 1.4587; ratio 0.99783)
+[control] SM tau_n = 4908.6 s / (V^2(1+3l^2)) = 880.46 s  vs 878.4 s
+[control] SM link alpha = (1+l^2)/(1+3l^2): alpha(l=1.2754) = 0.44671; |l| from aSPECT alpha = 1.2677
+
+<W_mu> for OPPOSED(e, nu) with massive electron (Q2: W = (1 - v_e.n_nu)/2) = 0.714271  (massless 5/7 = 0.714286)
+   -> new miss with this <W_mu> and <W_n> = 0.5: 1.50817 (no Coulomb), 1.45862 (NR Fermi)
+[control] consistency of SM constants: 2 pi^3 hbar / (G_F^2 m_e^5 f (1+RC)) = 4908.6 s (CMS 2018 quote: 4908.6 s)
+[control] SM pieces: f/fNR = 1.00082, 1/(1+delta_mu) = 1.00440, f(1+RC)/fNR/(1+delta_mu) = 1.04429
+[control] old common-W near-agreement in SM terms: 8<W_mu> = 5.7143 vs V^2(1+3l^2) = 5.5751

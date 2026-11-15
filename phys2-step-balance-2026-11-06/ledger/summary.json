@@ -1,0 +1,2187 @@
+{
+  "claims_judged": 122,
+  "register_census": {
+    "not_a_physical_claim": 15,
+    "observational": 43,
+    "effective": 56,
+    "native": 6,
+    "mixed": 2
+  },
+  "result_class_census": {
+    "hygiene": 8,
+    "structural": 39,
+    "generative": 47,
+    "discriminating": 13,
+    "not_a_result": 15
+  },
+  "rung_census": {
+    "programme": 6,
+    "instrument": 26,
+    "mechanism": 73,
+    "none": 17
+  },
+  "mechanism_vs_instrument": {
+    "mechanism": 73,
+    "instrument": 26,
+    "instrument_share": 0.263
+  },
+  "identity_predicate_census": {
+    "signature_fidelity": 18,
+    "unstated": 3,
+    "re_registration": 1,
+    "closure_class": 1
+  },
+  "register_violations": [
+    {
+      "claim_id": "step-balance-decay-weight#0004",
+      "document": "step-balance-decay-weight",
+      "section": "Step balance, orientation and the decay weight",
+      "claim": "Three parent-side inputs are taken as given: the π relation, the μ pair and relation, and the neutron's α. The only fitted number is α (Q5b).",
+      "value": 0.76
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0029",
+      "document": "step-balance-decay-weight",
+      "section": "Step balance, orientation and the decay weight / Q3. Pion (observational)",
+      "claim": "So the entire miss of (a) is what the SM attributes to radiative effects. In PHYS2 terms those are arrangements with an extra photon, plus structure-dependent pieces. A two-body count does not contain them.",
+      "value": 0.63
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0031",
+      "document": "step-balance-decay-weight",
+      "section": "Step balance, orientation and the decay weight / Q3. Pion (observational)",
+      "claim": "The neutrino's orientation equals its direction of travel: |v| = 1 forces s = n (Q1, Q6d).",
+      "value": 0.66
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0032",
+      "document": "step-balance-decay-weight",
+      "section": "Step balance, orientation and the decay weight / Q3. Pion (observational)",
+      "claim": "The lepton enters only through its mean step (Q2), so the 3D continuum of step directions versus two helicity states cannot show up here.",
+      "value": 0.68
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0038",
+      "document": "step-balance-decay-weight",
+      "section": "Step balance, orientation and the decay weight / Q4. Muon spectrum",
+      "claim": "The electron spectrum comes from integrating E₂ over [1 − x, 1].",
+      "value": 0.91
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0051",
+      "document": "step-balance-decay-weight",
+      "section": "Step balance, orientation and the decay weight / Q4. Muon spectrum",
+      "claim": "Separating the two survivors (E, with an inference flagged). The two survivors swap the neutrino spectra. In μ⁺ decay, which is the charge conjugate:",
+      "value": 0.71
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0053",
+      "document": "step-balance-decay-weight",
+      "section": "Step balance, orientation and the decay weight / Q4. Muon spectrum",
+      "claim": "Control (SM). Uniform count × OPP(e, ν_μ) equals |M|²_V−A × LIPS up to a constant over the whole Dalitz plot (sympy gives a constant ratio of 4). Put differently, the SM weight per arrangement in muon decay is the constant 8G_F²(2π)⁻⁵ times OPP(e, ν_μ).",
+      "value": 0.67
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0060",
+      "document": "step-balance-decay-weight",
+      "section": "Step balance, orientation and the decay weight / Q5. Neutron, and the consequence for the rate",
+      "claim": "Heavy recoil: the angular measure dΩ_e dΩ_ν is isotropic, so ⟨cos θ⟩ = 0 at every E_e and ⟨W⟩ = ½ for every α. A.",
+      "value": 0.7
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0062",
+      "document": "step-balance-decay-weight",
+      "section": "Step balance, orientation and the decay weight / Q5. Neutron, and the consequence for the rate",
+      "claim": "(d) ⟨W_μ⟩ = 5/7 in both Michel-matching cases (0.714271 with a massive electron), and ⟨W_n⟩ = ½, so the ratio is 10/7.",
+      "value": 0.77
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0068",
+      "document": "step-balance-decay-weight",
+      "section": "Step balance, orientation and the decay weight / Q5. Neutron, and the consequence for the rate",
+      "claim": "The ¼ is 2/8, the ratio of the SM prefactors per arrangement for the neutron and muon weights.",
+      "value": 0.61
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0101",
+      "document": "step-balance-decay-weight",
+      "section": "Step balance, orientation and the decay weight / Flags: where \"step direction = orientation\" does work it has not earned",
+      "claim": "Parity. (1 ± s_i·s_j)/2 is parity-even, and so is every observable used here (R_e/μ, ρ, a). Parity-odd correlations (neutron A and B, the muon's ξ, neutrino helicity) are out of reach of polar step vectors. Kill trigger: if no axial orientation can be built from step balance, R1 cannot address P-odd decay data.",
+      "value": 0.73
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0102",
+      "document": "step-balance-decay-weight",
+      "section": "Step balance, orientation and the decay weight / Flags: where \"step direction = orientation\" does work it has not earned",
+      "claim": "ν versus ν̄. Every massless pattern has orientation equal to its direction of travel (Q6d), so R1 cannot tell ν from ν̄. The distinction enters only through which pair and relation the parent names.",
+      "value": 0.69
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0104",
+      "document": "step-balance-decay-weight",
+      "section": "Step balance, orientation and the decay weight / Flags: where \"step direction = orientation\" does work it has not earned",
+      "claim": "Three parent inputs with no link. ALIGNED (π), OPP(e, ν_μ) (μ) and α = 0.448 (n) are each supplied and none is derived. A quick test of \"pairs from the same current are aligned\" would pick ALI(e, ν̄_e) for the muon, which Q4 refutes. No unifying rule is offered.",
+      "value": 0.71
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0107",
+      "document": "step-balance-decay-weight",
+      "section": "Step balance, orientation and the decay weight / Summary",
+      "claim": "Q3 identity — A — R_a ≡ (m_e/m_μ)²[(m_π² − m_e²)/(m_π² − m_μ²)]² — The electron's backward-step share carries the whole suppression factor.",
+      "value": 0.69
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0111",
+      "document": "step-balance-decay-weight",
+      "section": "Step balance, orientation and the decay weight / Summary",
+      "claim": "Q5(b) — E + fit — α = 0.44785(42) — The neutron is slightly opposed-dominant.",
+      "value": 0.67
+    }
+  ],
+  "anti_fitting_flags": [
+    {
+      "claim_id": "step-balance-decay-weight#0004",
+      "document": "step-balance-decay-weight",
+      "section": "Step balance, orientation and the decay weight",
+      "claim": "Three parent-side inputs are taken as given: the π relation, the μ pair and relation, and the neutron's α. The only fitted number is α (Q5b).",
+      "value": 0.6
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0070",
+      "document": "step-balance-decay-weight",
+      "section": "Step balance, orientation and the decay weight / Q5. Neutron, and the consequence for the rate",
+      "claim": "Control, the link between α and the rate: in the SM one parent number λ fixes both α = (1 + λ²)/(1 + 3λ²) and the rate factor ∝ 1 + 3λ². The aSPECT α gives |λ| = 1.2677, which reproduces aSPECT's own quoted value. PHYS2 has two parent-side inputs with no link between them.",
+      "value": 0.75
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0100",
+      "document": "step-balance-decay-weight",
+      "section": "Step balance, orientation and the decay weight / Flags: where \"step direction = orientation\" does work it has not earned",
+      "claim": "Orientation at rest (polarization). R1(ii) gives E[s] = 0 at rest, so a pattern at rest carries no net orientation for a transition to read. Yet muons from π decay keep their polarization after stopping, and their decay electrons come out asymmetric about it (ξ ≈ 1; E, from memory, not re-verified here). R1 as stated cannot represent this. The smallest missing piece is a persistent, axial quantity carried by the step sequence (for example a sense of circulation), distinct from the polar mean step.",
+      "value": 0.73
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0104",
+      "document": "step-balance-decay-weight",
+      "section": "Step balance, orientation and the decay weight / Flags: where \"step direction = orientation\" does work it has not earned",
+      "claim": "Three parent inputs with no link. ALIGNED (π), OPP(e, ν_μ) (μ) and α = 0.448 (n) are each supplied and none is derived. A quick test of \"pairs from the same current are aligned\" would pick ALI(e, ν̄_e) for the muon, which Q4 refutes. No unifying rule is offered.",
+      "value": 0.63
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0110",
+      "document": "step-balance-decay-weight",
+      "section": "Step balance, orientation and the decay weight / Summary",
+      "claim": "Q4 — A (computations); E (match) — OPP(e, ν): ρ = 3/4 (+0.89σ); OPP(ν̄, ν): ρ = 0; ALIGNED not Michel; ⟨W⟩ = 5/7 or 2/7 — Michel ρ = 3/4 reproduced; the pair is an input; KARMEN singles out OPP(e, ν_μ) (inference flagged).",
+      "value": 0.71
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0113",
+      "document": "step-balance-decay-weight",
+      "section": "Step balance, orientation and the decay weight / Summary",
+      "claim": "Q5(d) — A arithmetic; B common-prefactor rule; C remedy — miss 1.5082 / 1.4587; F_n ≈ 1.46–1.51 needed; [control] SM 1.4555, mostly (1 + 3λ²)/4 = 1.470 — Weighting breaks the rate; the old 5.6% was accidental; a parent-side factor is missing.",
+      "value": 0.6
+    }
+  ],
+  "promotion_language_flags": [
+    {
+      "claim_id": "step-balance-decay-weight#0025",
+      "document": "step-balance-decay-weight",
+      "section": "Step balance, orientation and the decay weight / Q3. Pion (observational)",
+      "claim": "The sympy residual is 0, and the 30-digit numerical residual is 5×10⁻³¹. Proved.",
+      "value": 0.81
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0085",
+      "document": "step-balance-decay-weight",
+      "section": "Step balance, orientation and the decay weight / Q6. Clock and mass",
+      "claim": "So \"ab unchanged by motion\" follows once continuum boosts are allowed; it is not an extra postulate. It is not earned on a literal lattice of one site per tick, where boosts are not symmetries.",
+      "value": 0.71
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0116",
+      "document": "step-balance-decay-weight",
+      "section": "Step balance, orientation and the decay weight / Summary",
+      "claim": "Q6(f) — E — Feynman–Hibbs 1965; Kac 1974; GJKS 1984; Beghin et al. 2001 — The clock structure is known; reading it as a decay weight is the only new use.",
+      "value": 0.62
+    }
+  ],
+  "negative_results": [
+    {
+      "claim_id": "step-balance-decay-weight#0014",
+      "document": "step-balance-decay-weight",
+      "section": "Step balance, orientation and the decay weight / Q2. Two patterns",
+      "claim": "In plain words. For two daughters stepping independently, the expected aligned or opposed weight depends only on their velocities: (1 ± v_i·v_j)/2. The shapes of the step distributions drop out, and only because the weight is linear in each step. A nonlinear weight does depend on shape. R2 and R3 give no pairwise form that sees the angle between daughters. They therefore predict no angular correlation, and the neutron's a = −0.104 excludes that.",
+      "value": 0.84
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0019",
+      "document": "step-balance-decay-weight",
+      "section": "Step balance, orientation and the decay weight / Q2. Two patterns",
+      "claim": "R2/R3. Any pairwise weight built from them has the form g(|v_i|, |v_j|) and is blind to the angle. In the heavy-recoil neutron, where the count is isotropic, such a weight gives a = 0. aSPECT measures a = −0.10430(84), which excludes this at 124σ (observational).",
+      "value": 0.9
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0030",
+      "document": "step-balance-decay-weight",
+      "section": "Step balance, orientation and the decay weight / Q3. Pion (observational)",
+      "claim": "(a) as a final number: B as stated (16σ). Fixing it is C: blocked on a PHYS2 count of radiative arrangements (π → eνγ). Nothing in R1 supplies the −3.75%.",
+      "value": 0.91
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0032",
+      "document": "step-balance-decay-weight",
+      "section": "Step balance, orientation and the decay weight / Q3. Pion (observational)",
+      "claim": "The lepton enters only through its mean step (Q2), so the 3D continuum of step directions versus two helicity states cannot show up here.",
+      "value": 0.74
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0033",
+      "document": "step-balance-decay-weight",
+      "section": "Step balance, orientation and the decay weight / Q3. Pion (observational)",
+      "claim": "The match still rests on the input choice ALIGNED, which nothing derives. Numerically, (1 − β)/2 is also the SM's wrong-helicity probability for a chiral state. The step reading reproduces that number but has not earned a spin interpretation (see Flags).",
+      "value": 0.87
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0050",
+      "document": "step-balance-decay-weight",
+      "section": "Step balance, orientation and the decay weight / Q4. Muon spectrum",
+      "claim": "ALIGNED cases: not of Michel form (they have an x⁴ term). The ρ values that match their means (−1/8, −1/8, 7/4) are all excluded.",
+      "value": 0.88
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0056",
+      "document": "step-balance-decay-weight",
+      "section": "Step balance, orientation and the decay weight / Q5. Neutron, and the consequence for the rate",
+      "claim": "In plain words. With a share α of aligned transitions, the correlation is a = 2α − 1, so aSPECT fixes α ≈ 0.448: slightly more opposed than aligned. The average weight is exactly ½ whatever α is, so α cannot affect the rate. But the muon's Michel-matching weight averages 5/7. Putting both weights in makes the muon-to-neutron rate miss much worse: 1.056 becomes 1.508, or 1.021 becomes 1.459 with the Fermi function. Agreement would need a factor of about 1.46 from the neutron's parent side, which no pairwise orientation weight can supply. In the SM that factor is mostly (1 + 3λ²)/4, the nucleon's axial structure. The old 5.6% near-agreement looks accidental.",
+      "value": 0.95
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0063",
+      "document": "step-balance-decay-weight",
+      "section": "Step balance, orientation and the decay weight / Q5. Neutron, and the consequence for the rate",
+      "claim": "New miss: 1.05574 × 10/7 = 1.5082 with no Coulomb correction. 1.02106 × 10/7 = 1.4587 with the NR Fermi function (Z = 1).",
+      "value": 0.88
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0064",
+      "document": "step-balance-decay-weight",
+      "section": "Step balance, orientation and the decay weight / Q5. Neutron, and the consequence for the rate",
+      "claim": "Required parent-side factor: F_n = 1.508 without Coulomb, 1.459 with NR Fermi. Equivalently, ⟨W_n⟩ would have to be 0.754 or 0.729. No α gives that, since every α gives ½.",
+      "value": 0.93
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0069",
+      "document": "step-balance-decay-weight",
+      "section": "Step balance, orientation and the decay weight / Q5. Neutron, and the consequence for the rate",
+      "claim": "Control, why the old agreement was close: in SM terms the common-W near-agreement is 8⟨W_μ⟩ = 40/7 = 5.714 against |V_ud|²(1 + 3λ²) = 5.575. Those are unrelated quantities, so the 5.6% was accidental.",
+      "value": 0.67
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0071",
+      "document": "step-balance-decay-weight",
+      "section": "Step balance, orientation and the decay weight / Q5. Neutron, and the consequence for the rate",
+      "claim": "The rule \"common prefactor plus a pairwise orientation weight\": B as stated (miss 1.51).",
+      "value": 0.89
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0073",
+      "document": "step-balance-decay-weight",
+      "section": "Step balance, orientation and the decay weight / Q5. Neutron, and the consequence for the rate",
+      "claim": "What failed, and what survives. The smallest failed assumption is that the parent side contributes only the orientation relation (and α) on top of a common prefactor. All the shape results survive: R_e/μ at tree level, ρ = 3/4, and a from α.",
+      "value": 0.96
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0098",
+      "document": "step-balance-decay-weight",
+      "section": "Step balance, orientation and the decay weight / Q6. Clock and mass",
+      "claim": "Not found stated anywhere (searched, not exhaustively): the explicit a = m e^(∓η) parametrisation, (E, p) = ((a + b)/2, (b − a)/2) as a 2-vector, and the harmonic-mean clock. Each follows in a few lines from the above. Treat them as re-derived, not new.",
+      "value": 0.84
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0100",
+      "document": "step-balance-decay-weight",
+      "section": "Step balance, orientation and the decay weight / Flags: where \"step direction = orientation\" does work it has not earned",
+      "claim": "Orientation at rest (polarization). R1(ii) gives E[s] = 0 at rest, so a pattern at rest carries no net orientation for a transition to read. Yet muons from π decay keep their polarization after stopping, and their decay electrons come out asymmetric about it (ξ ≈ 1; E, from memory, not re-verified here). R1 as stated cannot represent this. The smallest missing piece is a persistent, axial quantity carried by the step sequence (for example a sense of circulation), distinct from the polar mean step.",
+      "value": 0.94
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0101",
+      "document": "step-balance-decay-weight",
+      "section": "Step balance, orientation and the decay weight / Flags: where \"step direction = orientation\" does work it has not earned",
+      "claim": "Parity. (1 ± s_i·s_j)/2 is parity-even, and so is every observable used here (R_e/μ, ρ, a). Parity-odd correlations (neutron A and B, the muon's ξ, neutrino helicity) are out of reach of polar step vectors. Kill trigger: if no axial orientation can be built from step balance, R1 cannot address P-odd decay data.",
+      "value": 0.84
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0102",
+      "document": "step-balance-decay-weight",
+      "section": "Step balance, orientation and the decay weight / Flags: where \"step direction = orientation\" does work it has not earned",
+      "claim": "ν versus ν̄. Every massless pattern has orientation equal to its direction of travel (Q6d), so R1 cannot tell ν from ν̄. The distinction enters only through which pair and relation the parent names.",
+      "value": 0.86
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0103",
+      "document": "step-balance-decay-weight",
+      "section": "Step balance, orientation and the decay weight / Flags: where \"step direction = orientation\" does work it has not earned",
+      "claim": "Two states versus a continuum. The 1D clock has exactly two orientations, which matches two helicity states numerically. In 3D the orientations form a continuum, and linear weights hide that (Q2). Any nonlinear read-out, or any observable sensitive to the second moments of s, would expose it. No 3D clock with an invariant m is established here.",
+      "value": 0.89
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0104",
+      "document": "step-balance-decay-weight",
+      "section": "Step balance, orientation and the decay weight / Flags: where \"step direction = orientation\" does work it has not earned",
+      "claim": "Three parent inputs with no link. ALIGNED (π), OPP(e, ν_μ) (μ) and α = 0.448 (n) are each supplied and none is derived. A quick test of \"pairs from the same current are aligned\" would pick ALI(e, ν̄_e) for the muon, which Q4 refutes. No unifying rule is offered.",
+      "value": 0.92
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0108",
+      "document": "step-balance-decay-weight",
+      "section": "Step balance, orientation and the decay weight / Summary",
+      "claim": "Q3(a) ALIGNED — B as stated; C remedy — 1.28335×10⁻⁴; ÷ PIENU = 1.0397 (+16σ); [control] SM radiative correction −3.75% — Exact at tree level; radiative arrangements are missing.",
+      "value": 0.74
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0109",
+      "document": "step-balance-decay-weight",
+      "section": "Step balance, orientation and the decay weight / Summary",
+      "claim": "Q3(b) OPPOSED — B — 5.487 (×4.4×10⁴) — OPPOSED on (ℓ, ν) is dead for the pion.",
+      "value": 0.92
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0113",
+      "document": "step-balance-decay-weight",
+      "section": "Step balance, orientation and the decay weight / Summary",
+      "claim": "Q5(d) — A arithmetic; B common-prefactor rule; C remedy — miss 1.5082 / 1.4587; F_n ≈ 1.46–1.51 needed; [control] SM 1.4555, mostly (1 + 3λ²)/4 = 1.470 — Weighting breaks the rate; the old 5.6% was accidental; a parent-side factor is missing.",
+      "value": 0.93
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0117",
+      "document": "step-balance-decay-weight",
+      "section": "Step balance, orientation and the decay weight / Summary",
+      "claim": "If PHYS2 cannot count radiative arrangements that supply about −3.75% for π → eν, the pion stays 16σ off.",
+      "value": 0.87
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0118",
+      "document": "step-balance-decay-weight",
+      "section": "Step balance, orientation and the decay weight / Summary",
+      "claim": "If no parent-side rule produces F_n ≈ 1.46 from the neutron's structure and ties it to α, the rate comparison fails by 46–51%.",
+      "value": 0.94
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0119",
+      "document": "step-balance-decay-weight",
+      "section": "Step balance, orientation and the decay weight / Summary",
+      "claim": "If no axial orientation can be built from step balance, P-odd data is out of scope.",
+      "value": 0.65
+    }
+  ],
+  "ra1_dependent": [],
+  "a3_dependent": [],
+  "high_insertion_risk": [
+    {
+      "claim_id": "step-balance-decay-weight#0081",
+      "document": "step-balance-decay-weight",
+      "section": "Step balance, orientation and the decay weight / Q6. Clock and mass",
+      "claim": "(c) With E = (a + b)/2 and p = (b − a)/2: E² − p² = ab = m², and p/E = v. A.",
+      "value": 2.91
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0082",
+      "document": "step-balance-decay-weight",
+      "section": "Step balance, orientation and the decay weight / Q6. Clock and mass",
+      "claim": "E is the arithmetic mean of the two rates, m their geometric mean, and the reversal rate their harmonic mean (E × rate = m²).",
+      "value": 2.87
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0083",
+      "document": "step-balance-decay-weight",
+      "section": "Step balance, orientation and the decay weight / Q6. Clock and mass",
+      "claim": "A boost of rapidity θ Doppler-scales right-moving null segments by e^(θ) and left-moving ones by e^(−θ). Then a′ = a e^(−θ), b′ = b e^(θ), a′b′ = ab, and (E, p) transforms as a Lorentz 2-vector (sympy residuals 0).",
+      "value": 2.82
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0025",
+      "document": "step-balance-decay-weight",
+      "section": "Step balance, orientation and the decay weight / Q3. Pion (observational)",
+      "claim": "The sympy residual is 0, and the 30-digit numerical residual is 5×10⁻³¹. Proved.",
+      "value": 2.78
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0085",
+      "document": "step-balance-decay-weight",
+      "section": "Step balance, orientation and the decay weight / Q6. Clock and mass",
+      "claim": "So \"ab unchanged by motion\" follows once continuum boosts are allowed; it is not an extra postulate. It is not earned on a literal lattice of one site per tick, where boosts are not symmetries.",
+      "value": 2.78
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0064",
+      "document": "step-balance-decay-weight",
+      "section": "Step balance, orientation and the decay weight / Q5. Neutron, and the consequence for the rate",
+      "claim": "Required parent-side factor: F_n = 1.508 without Coulomb, 1.459 with NR Fermi. Equivalently, ⟨W_n⟩ would have to be 0.754 or 0.729. No α gives that, since every α gives ½.",
+      "value": 2.76
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0022",
+      "document": "step-balance-decay-weight",
+      "section": "Step balance, orientation and the decay weight / Q3. Pion (observational)",
+      "claim": "Derivation. The decay is back to back with |v_ν| = 1, so v_ℓ·v_ν = −β_ℓ, where β_ℓ = (m_π² − m_ℓ²)/(m_π² + m_ℓ²).",
+      "value": 2.74
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0112",
+      "document": "step-balance-decay-weight",
+      "section": "Step balance, orientation and the decay weight / Summary",
+      "claim": "Q5(c) — A (heavy recoil) — ⟨W⟩ = ½ for all α; 0.500027 with full recoil — α carries no rate information.",
+      "value": 2.74
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0080",
+      "document": "step-balance-decay-weight",
+      "section": "Step balance, orientation and the decay weight / Q6. Clock and mass",
+      "claim": "(b) With a = m e^(−η) and b = m e^(η): v = tanh η. The stationary reversal rate is P_f·a + P_b·b = 2ab/(a + b) = m/cosh η = m√(1 − v²). A. Per unit proper time, the reversal rate is m.",
+      "value": 2.72
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0024",
+      "document": "step-balance-decay-weight",
+      "section": "Step balance, orientation and the decay weight / Q3. Pion (observational)",
+      "claim": "The product N·W_aligned ∝ m_ℓ²(m_π² − m_ℓ²)². The factor (m_π² + m_ℓ²) cancels exactly, so",
+      "value": 2.71
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0110",
+      "document": "step-balance-decay-weight",
+      "section": "Step balance, orientation and the decay weight / Summary",
+      "claim": "Q4 — A (computations); E (match) — OPP(e, ν): ρ = 3/4 (+0.89σ); OPP(ν̄, ν): ρ = 0; ALIGNED not Michel; ⟨W⟩ = 5/7 or 2/7 — Michel ρ = 3/4 reproduced; the pair is an input; KARMEN singles out OPP(e, ν_μ) (inference flagged).",
+      "value": 2.7
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0078",
+      "document": "step-balance-decay-weight",
+      "section": "Step balance, orientation and the decay weight / Q6. Clock and mass",
+      "claim": "The linear backward share and the square-root clock are two read-outs of one process, one counting steps and one counting flips, so they do not conflict. In the continuum, ab staying fixed under motion follows from Lorentz-transforming the light-like step segments. Most of this is known prior art.",
+      "value": 2.68
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0087",
+      "document": "step-balance-decay-weight",
+      "section": "Step balance, orientation and the decay weight / Q6. Clock and mass",
+      "claim": "(1 − v)/2 = a/(a + b) is an occupation share: what a transition that reads the current step sees.",
+      "value": 2.66
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0036",
+      "document": "step-balance-decay-weight",
+      "section": "Step balance, orientation and the decay weight / Q4. Muon spectrum",
+      "claim": "p_i·p_j = 2(1 − E_k), so OPP(i, j) = (1 − cos θ_ij)/2 = (1 − E_k)/(E_iE_j), and ALI = 1 − OPP.",
+      "value": 2.65
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0011",
+      "document": "step-balance-decay-weight",
+      "section": "Step balance, orientation and the decay weight / Q1. One pattern",
+      "claim": "At v = 0, n is undefined and the share is ½ along every axis.",
+      "value": 2.64
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0045",
+      "document": "step-balance-decay-weight",
+      "section": "Step balance, orientation and the decay weight / Q4. Muon spectrum",
+      "claim": "(ν̄_e, ν_μ) — OPPOSED — 12x²(1−x) — yes, ρ = 0 — 3/5 — 0 — 5/7 — 2x²(3−2x) — 2x²(3−2x)",
+      "value": 2.63
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0114",
+      "document": "step-balance-decay-weight",
+      "section": "Step balance, orientation and the decay weight / Summary",
+      "claim": "Q6(a–d) — A — v = tanh η; reversal rate m√(1 − v²); E² − p² = m²; m = 0 gives speed 1 — In 1D, R1-clock carries mass, clock and dispersion consistently.",
+      "value": 2.63
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0012",
+      "document": "step-balance-decay-weight",
+      "section": "Step balance, orientation and the decay weight / Q1. One pattern",
+      "claim": "Both are scalar functions of |v| and do not change when v is rotated. Neither supplies a vector that could be dotted with another daughter's. Inside 1D R1 they reappear as functions of the step shares: 1 − v = 2P_b (the steps cancelled by opposite steps), and √(1 − v²) = 2√(P_f P_b). That is bookkeeping and does not give either of them a direction.",
+      "value": 2.62
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0107",
+      "document": "step-balance-decay-weight",
+      "section": "Step balance, orientation and the decay weight / Summary",
+      "claim": "Q3 identity — A — R_a ≡ (m_e/m_μ)²[(m_π² − m_e²)/(m_π² − m_μ²)]² — The electron's backward-step share carries the whole suppression factor.",
+      "value": 2.62
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0105",
+      "document": "step-balance-decay-weight",
+      "section": "Step balance, orientation and the decay weight / Summary",
+      "claim": "Q1 — A — backward share (1 − \\ — v\\ — )/2 for any shape; in 1D = P(backward); R2 √(1 − v²), R3 1 − v are scalars — R1 gives an orientation share a transition can read; R2/R3 give none.",
+      "value": 2.61
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0041",
+      "document": "step-balance-decay-weight",
+      "section": "Step balance, orientation and the decay weight / Q4. Muon spectrum",
+      "claim": "(e, ν̄_e) — OPPOSED — 2x²(3−2x) — yes, ρ = 3/4 — 7/10 — 3/4 — 5/7 — 2x²(3−2x) — 12x²(1−x)",
+      "value": 2.6
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0089",
+      "document": "step-balance-decay-weight",
+      "section": "Step balance, orientation and the decay weight / Q6. Clock and mass",
+      "claim": "They are different functionals of the same (a, b), and the simulation reproduces both at once.",
+      "value": 2.58
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0060",
+      "document": "step-balance-decay-weight",
+      "section": "Step balance, orientation and the decay weight / Q5. Neutron, and the consequence for the rate",
+      "claim": "Heavy recoil: the angular measure dΩ_e dΩ_ν is isotropic, so ⟨cos θ⟩ = 0 at every E_e and ⟨W⟩ = ½ for every α. A.",
+      "value": 2.57
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0037",
+      "document": "step-balance-decay-weight",
+      "section": "Step balance, orientation and the decay weight / Q4. Muon spectrum",
+      "claim": "Weighted densities: OPP(i, j) gives E_k(1 − E_k); ALI(i, j) gives E₁E₂E₃ − E_k(1 − E_k).",
+      "value": 2.54
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0001",
+      "document": "step-balance-decay-weight",
+      "section": "Step balance, orientation and the decay weight",
+      "claim": "Proofs are exact: either linearity of expectation or sympy with residual 0.",
+      "value": 2.53
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0031",
+      "document": "step-balance-decay-weight",
+      "section": "Step balance, orientation and the decay weight / Q3. Pion (observational)",
+      "claim": "The neutrino's orientation equals its direction of travel: |v| = 1 forces s = n (Q1, Q6d).",
+      "value": 2.53
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0053",
+      "document": "step-balance-decay-weight",
+      "section": "Step balance, orientation and the decay weight / Q4. Muon spectrum",
+      "claim": "Control (SM). Uniform count × OPP(e, ν_μ) equals |M|²_V−A × LIPS up to a constant over the whole Dalitz plot (sympy gives a constant ratio of 4). Put differently, the SM weight per arrangement in muon decay is the constant 8G_F²(2π)⁻⁵ times OPP(e, ν_μ).",
+      "value": 2.53
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0077",
+      "document": "step-balance-decay-weight",
+      "section": "Step balance, orientation and the decay weight / Q6. Clock and mass",
+      "claim": "Zero mass means one rate is zero, so the pattern runs one way at speed 1 forever.",
+      "value": 2.53
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0086",
+      "document": "step-balance-decay-weight",
+      "section": "Step balance, orientation and the decay weight / Q6. Clock and mass",
+      "claim": "(d) If m = 0, then ab = 0. Take a = 0: the forward state is absorbing, so P_f → 1, v → 1, and the reversal rate → 0. The pattern has one fixed orientation at speed 1 and no rest frame (η → ∞ at finite E = b/2). If m > 0, then a, b > 0, so P_f and P_b lie in (0, 1) and |v| < 1, with both orientations present. A.",
+      "value": 2.53
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0010",
+      "document": "step-balance-decay-weight",
+      "section": "Step balance, orientation and the decay weight / Q1. One pattern",
+      "claim": "In 1D, s ∈ {+n, −n}, so (1 − s·n)/2 is the indicator of a backward step. From P_f − P_b = |v| and P_f + P_b = 1 we get P_b = (1 − |v|)/2.",
+      "value": 2.51
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0007",
+      "document": "step-balance-decay-weight",
+      "section": "Step balance, orientation and the decay weight / Q1. One pattern",
+      "claim": "In plain words. Whatever the shape of a pattern's step distribution, its speed alone fixes the share of steps pointing against its travel, weighted by (1 − s·n)/2: that share is (1 − |v|)/2. In 1D it is simply the fraction of backward steps. R2 and R3 each give a number for \"turnover not spent on travel\", but it is a bare number with no direction, so a transition has nothing to align or oppose.",
+      "value": 2.49
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0009",
+      "document": "step-balance-decay-weight",
+      "section": "Step balance, orientation and the decay weight / Q1. One pattern",
+      "claim": "|s| = 1 keeps the weight in [0, 1] and gives |v| = E[s·n] ≤ 1, with |v| = 1 only if s = n almost surely. Q3 and Q4 use this for massless daughters.",
+      "value": 2.48
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0015",
+      "document": "step-balance-decay-weight",
+      "section": "Step balance, orientation and the decay weight / Q2. Two patterns",
+      "claim": "Derivation. E[s_i·s_j] = Σ_k E[s_ik s_jk] = Σ_k E[s_ik] E[s_jk] = v_i·v_j by (iv). Hence E[(1 ∓ s_i·s_j)/2] = (1 ∓ v_i·v_j)/2.",
+      "value": 2.48
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0068",
+      "document": "step-balance-decay-weight",
+      "section": "Step balance, orientation and the decay weight / Q5. Neutron, and the consequence for the rate",
+      "claim": "The ¼ is 2/8, the ratio of the SM prefactors per arrangement for the neutron and muon weights.",
+      "value": 2.46
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0084",
+      "document": "step-balance-decay-weight",
+      "section": "Step balance, orientation and the decay weight / Q6. Clock and mass",
+      "claim": "Scaling keeps exponential dwell times exponential, so a boosted telegraph process is again a telegraph process. An explicitly boosted rest-frame path gives a′ = 0.6046 (predicted 0.6065) and b′ = 1.6510 (predicted 1.6487), with KS p = 0.62.",
+      "value": 2.46
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0101",
+      "document": "step-balance-decay-weight",
+      "section": "Step balance, orientation and the decay weight / Flags: where \"step direction = orientation\" does work it has not earned",
+      "claim": "Parity. (1 ± s_i·s_j)/2 is parity-even, and so is every observable used here (R_e/μ, ρ, a). Parity-odd correlations (neutron A and B, the muon's ξ, neutrino helicity) are out of reach of polar step vectors. Kill trigger: if no axial orientation can be built from step balance, R1 cannot address P-odd decay data.",
+      "value": 2.46
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0047",
+      "document": "step-balance-decay-weight",
+      "section": "Step balance, orientation and the decay weight / Q4. Muon spectrum",
+      "claim": "⟨W⟩ is 5/7 for every OPPOSED pair and 2/7 for every ALIGNED pair. All pairs are equivalent under the uniform count.",
+      "value": 2.44
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0062",
+      "document": "step-balance-decay-weight",
+      "section": "Step balance, orientation and the decay weight / Q5. Neutron, and the consequence for the rate",
+      "claim": "(d) ⟨W_μ⟩ = 5/7 in both Michel-matching cases (0.714271 with a massive electron), and ⟨W_n⟩ = ½, so the ratio is 10/7.",
+      "value": 2.43
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0106",
+      "document": "step-balance-decay-weight",
+      "section": "Step balance, orientation and the decay weight / Summary",
+      "claim": "Q2 — A (R2/R3: B obs.) — (1 ∓ v_i·v_j)/2, independent of shape; a nonlinear weight varies 0.236–0.323 — Pairwise weights see only velocities, and only because they are linear.",
+      "value": 2.42
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0043",
+      "document": "step-balance-decay-weight",
+      "section": "Step balance, orientation and the decay weight / Q4. Muon spectrum",
+      "claim": "(e, ν_μ) — OPPOSED — 2x²(3−2x) — yes, ρ = 3/4 — 7/10 — 3/4 — 5/7 — 12x²(1−x) — 2x²(3−2x)",
+      "value": 2.41
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0029",
+      "document": "step-balance-decay-weight",
+      "section": "Step balance, orientation and the decay weight / Q3. Pion (observational)",
+      "claim": "So the entire miss of (a) is what the SM attributes to radiative effects. In PHYS2 terms those are arrangements with an extra photon, plus structure-dependent pieces. A two-body count does not contain them.",
+      "value": 2.38
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0023",
+      "document": "step-balance-decay-weight",
+      "section": "Step balance, orientation and the decay weight / Q3. Pion (observational)",
+      "claim": "Uniform count: N_ℓ = 4π p² E_ℓ/m_π, with p = (m_π² − m_ℓ²)/(2m_π) and E_ℓ = (m_π² + m_ℓ²)/(2m_π). So N_ℓ ∝ (m_π² − m_ℓ²)²(m_π² + m_ℓ²).",
+      "value": 2.32
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0076",
+      "document": "step-balance-decay-weight",
+      "section": "Step balance, orientation and the decay weight / Q6. Clock and mass",
+      "claim": "Half the sum and half the difference of the two rates behave like energy and momentum, with E² − p² = m².",
+      "value": 2.3
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0102",
+      "document": "step-balance-decay-weight",
+      "section": "Step balance, orientation and the decay weight / Flags: where \"step direction = orientation\" does work it has not earned",
+      "claim": "ν versus ν̄. Every massless pattern has orientation equal to its direction of travel (Q6d), so R1 cannot tell ν from ν̄. The distinction enters only through which pair and relation the parent names.",
+      "value": 2.29
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0040",
+      "document": "step-balance-decay-weight",
+      "section": "Step balance, orientation and the decay weight / Q4. Muon spectrum",
+      "claim": "(e, ν̄_e) — ALIGNED — 5x²(1−x)(3−x) — no — 7/12 = 0.5833 — −1/8 — 2/7 — 5x²(1−x)(3−x) — 5x⁴",
+      "value": 2.27
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0044",
+      "document": "step-balance-decay-weight",
+      "section": "Step balance, orientation and the decay weight / Q4. Muon spectrum",
+      "claim": "(ν̄_e, ν_μ) — ALIGNED — 5x⁴ — no — 5/6 — 7/4 — 2/7 — 5x²(1−x)(3−x) — 5x²(1−x)(3−x)",
+      "value": 2.27
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0014",
+      "document": "step-balance-decay-weight",
+      "section": "Step balance, orientation and the decay weight / Q2. Two patterns",
+      "claim": "In plain words. For two daughters stepping independently, the expected aligned or opposed weight depends only on their velocities: (1 ± v_i·v_j)/2. The shapes of the step distributions drop out, and only because the weight is linear in each step. A nonlinear weight does depend on shape. R2 and R3 give no pairwise form that sees the angle between daughters. They therefore predict no angular correlation, and the neutron's a = −0.104 excludes that.",
+      "value": 2.26
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0099",
+      "document": "step-balance-decay-weight",
+      "section": "Step balance, orientation and the decay weight / Q6. Clock and mass",
+      "claim": "The decay-weight reading. (1 − β)/2 equals the SM's chirality-flip probability. The identity is not new; only the reading is.",
+      "value": 2.26
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0056",
+      "document": "step-balance-decay-weight",
+      "section": "Step balance, orientation and the decay weight / Q5. Neutron, and the consequence for the rate",
+      "claim": "In plain words. With a share α of aligned transitions, the correlation is a = 2α − 1, so aSPECT fixes α ≈ 0.448: slightly more opposed than aligned. The average weight is exactly ½ whatever α is, so α cannot affect the rate. But the muon's Michel-matching weight averages 5/7. Putting both weights in makes the muon-to-neutron rate miss much worse: 1.056 becomes 1.508, or 1.021 becomes 1.459 with the Fermi function. Agreement would need a factor of about 1.46 from the neutron's parent side, which no pairwise orientation weight can supply. In the SM that factor is mostly (1 + 3λ²)/4, the nucleon's axial structure. The old 5.6% near-agreement looks accidental.",
+      "value": 2.24
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0042",
+      "document": "step-balance-decay-weight",
+      "section": "Step balance, orientation and the decay weight / Q4. Muon spectrum",
+      "claim": "(e, ν_μ) — ALIGNED — 5x²(1−x)(3−x) — no — 7/12 — −1/8 — 2/7 — 5x⁴ — 5x²(1−x)(3−x)",
+      "value": 2.23
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0092",
+      "document": "step-balance-decay-weight",
+      "section": "Step balance, orientation and the decay weight / Q6. Clock and mass",
+      "claim": "Feynman checkerboard. Feynman & Hibbs, Quantum Mechanics and Path Integrals (1965), Problem 2-6 (problem number from memory). It builds the 1+1 Dirac propagator as a sum over light-speed zigzags with amplitude iεm per reversal. Already known: speed-1 steps, and mass as the reversal amplitude or rate.",
+      "value": 2.22
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0019",
+      "document": "step-balance-decay-weight",
+      "section": "Step balance, orientation and the decay weight / Q2. Two patterns",
+      "claim": "R2/R3. Any pairwise weight built from them has the form g(|v_i|, |v_j|) and is blind to the angle. In the heavy-recoil neutron, where the count is isotropic, such a weight gives a = 0. aSPECT measures a = −0.10430(84), which excludes this at 124σ (observational).",
+      "value": 2.21
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0066",
+      "document": "step-balance-decay-weight",
+      "section": "Step balance, orientation and the decay weight / Q5. Neutron, and the consequence for the rate",
+      "claim": "The ratio 0.9978 is 878.4 s / 880.5 s: the SM's own τ_n with these λ and V_ud. That is not PHYS2's to explain.",
+      "value": 2.21
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0115",
+      "document": "step-balance-decay-weight",
+      "section": "Step balance, orientation and the decay weight / Summary",
+      "claim": "Q6(e) — A — (1 − v)/2 is an occupation share, m√(1 − v²) a rate — The linear share and the quadrature clock coexist; R2's fixed total is m.",
+      "value": 2.21
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0074",
+      "document": "step-balance-decay-weight",
+      "section": "Step balance, orientation and the decay weight / Q6. Clock and mass",
+      "claim": "In plain words. A pattern that flips between forward and backward steps at rates a and b goes forward a fraction b/(a + b) of the time and drifts at (b − a)/(a + b).",
+      "value": 2.2
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0051",
+      "document": "step-balance-decay-weight",
+      "section": "Step balance, orientation and the decay weight / Q4. Muon spectrum",
+      "claim": "Separating the two survivors (E, with an inference flagged). The two survivors swap the neutrino spectra. In μ⁺ decay, which is the charge conjugate:",
+      "value": 2.19
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0034",
+      "document": "step-balance-decay-weight",
+      "section": "Step balance, orientation and the decay weight / Q4. Muon spectrum",
+      "claim": "In plain words. Six weightings of the uniform count were computed. Three are exactly of Michel form: the two that oppose the electron to a neutrino (ρ = 3/4), and the one that opposes the two neutrinos (ρ = 0). The three aligned cases are not of Michel form. TWIST's ρ matches 3/4 within 0.9σ. The electron spectrum cannot tell OPP(e, ν̄_e) from OPP(e, ν_μ); the ν_e spectrum (KARMEN) can, and on my reading it keeps only OPP(e, ν_μ). As a control, that case equals the SM V−A distribution over the whole Dalitz plot.",
+      "value": 2.18
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0035",
+      "document": "step-balance-decay-weight",
+      "section": "Step balance, orientation and the decay weight / Q4. Muon spectrum",
+      "claim": "Take M = 2, so x = E. The uniform count is 8π² E₁E₂E₃ dE₁dE₂.",
+      "value": 2.16
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0090",
+      "document": "step-balance-decay-weight",
+      "section": "Step balance, orientation and the decay weight / Q6. Clock and mass",
+      "claim": "R3's 1 − v = 2a/(a + b) is the fraction of cancelled steps. R2's √(1 − v²) is the reversal rate divided by m.",
+      "value": 2.14
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0020",
+      "document": "step-balance-decay-weight",
+      "section": "Step balance, orientation and the decay weight / Q2. Two patterns",
+      "claim": "Class: A for the pairwise form and its mean-only dependence. B (observational) for R2/R3 as a source of correlations.",
+      "value": 2.13
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0094",
+      "document": "step-balance-decay-weight",
+      "section": "Step balance, orientation and the decay weight / Q6. Clock and mass",
+      "claim": "Gaveau, Jacobson, Kac & Schulman, PRL 53, 419 (1984). The 1+1 Dirac equation is the analytic continuation of the telegraph process. Already known: mass corresponds to the reversal rate. Their construction is limited to 1+1 dimensions.",
+      "value": 2.11
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0059",
+      "document": "step-balance-decay-weight",
+      "section": "Step balance, orientation and the decay weight / Q5. Neutron, and the consequence for the rate",
+      "claim": "The 2023 reanalysis (a = −0.10402(82), arXiv:2308.16170): α = 0.44799 ± 0.00041.",
+      "value": 2.09
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0098",
+      "document": "step-balance-decay-weight",
+      "section": "Step balance, orientation and the decay weight / Q6. Clock and mass",
+      "claim": "Not found stated anywhere (searched, not exhaustively): the explicit a = m e^(∓η) parametrisation, (E, p) = ((a + b)/2, (b − a)/2) as a 2-vector, and the harmonic-mean clock. Each follows in a few lines from the above. Treat them as re-derived, not new.",
+      "value": 2.09
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0038",
+      "document": "step-balance-decay-weight",
+      "section": "Step balance, orientation and the decay weight / Q4. Muon spectrum",
+      "claim": "The electron spectrum comes from integrating E₂ over [1 − x, 1].",
+      "value": 2.08
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0075",
+      "document": "step-balance-decay-weight",
+      "section": "Step balance, orientation and the decay weight / Q6. Clock and mass",
+      "claim": "The flip rate slows exactly like a moving clock: m√(1 − v²).",
+      "value": 2.08
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0119",
+      "document": "step-balance-decay-weight",
+      "section": "Step balance, orientation and the decay weight / Summary",
+      "claim": "If no axial orientation can be built from step balance, P-odd data is out of scope.",
+      "value": 2.07
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0028",
+      "document": "step-balance-decay-weight",
+      "section": "Step balance, orientation and the decay weight / Q3. Pion (observational)",
+      "claim": "The SM radiative correction is −3.75% (R_SM/R_a = 0.96248). SM against PIENU is +0.27σ.",
+      "value": 2.06
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0088",
+      "document": "step-balance-decay-weight",
+      "section": "Step balance, orientation and the decay weight / Q6. Clock and mass",
+      "claim": "m√(1 − v²) = 2ab/(a + b) is a transition rate: how often the orientation flips.",
+      "value": 2.06
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0039",
+      "document": "step-balance-decay-weight",
+      "section": "Step balance, orientation and the decay weight / Q4. Muon spectrum",
+      "claim": "pair — relation — electron f(x) — exact Michel? — ⟨x⟩ — ρ from ⟨x⟩ — ⟨W⟩ — ν̄_e spectrum — ν_μ spectrum",
+      "value": 2.04
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0057",
+      "document": "step-balance-decay-weight",
+      "section": "Step balance, orientation and the decay weight / Q5. Neutron, and the consequence for the rate",
+      "claim": "(a) W = α(1 + c)/2 + (1 − α)(1 − c)/2 = ½[1 + (2α − 1)c], with c = v_e·v_ν = β_e cos θ. The heavy-recoil uniform count is isotropic in θ, so comparing with dΓ ∝ 1 + aβ cos θ gives a = 2α − 1. A.",
+      "value": 2.02
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0116",
+      "document": "step-balance-decay-weight",
+      "section": "Step balance, orientation and the decay weight / Summary",
+      "claim": "Q6(f) — E — Feynman–Hibbs 1965; Kac 1974; GJKS 1984; Beghin et al. 2001 — The clock structure is known; reading it as a decay weight is the only new use.",
+      "value": 2.0
+    }
+  ],
+  "overclaims": [
+    {
+      "claim_id": "step-balance-decay-weight#0101",
+      "document": "step-balance-decay-weight",
+      "section": "Step balance, orientation and the decay weight / Flags: where \"step direction = orientation\" does work it has not earned",
+      "claim": "Parity. (1 ± s_i·s_j)/2 is parity-even, and so is every observable used here (R_e/μ, ρ, a). Parity-odd correlations (neutron A and B, the muon's ξ, neutrino helicity) are out of reach of polar step vectors. Kill trigger: if no axial orientation can be built from step balance, R1 cannot address P-odd decay data.",
+      "value": 2.7
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0102",
+      "document": "step-balance-decay-weight",
+      "section": "Step balance, orientation and the decay weight / Flags: where \"step direction = orientation\" does work it has not earned",
+      "claim": "ν versus ν̄. Every massless pattern has orientation equal to its direction of travel (Q6d), so R1 cannot tell ν from ν̄. The distinction enters only through which pair and relation the parent names.",
+      "value": 2.63
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0001",
+      "document": "step-balance-decay-weight",
+      "section": "Step balance, orientation and the decay weight",
+      "claim": "Proofs are exact: either linearity of expectation or sympy with residual 0.",
+      "value": 2.62
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0099",
+      "document": "step-balance-decay-weight",
+      "section": "Step balance, orientation and the decay weight / Q6. Clock and mass",
+      "claim": "The decay-weight reading. (1 − β)/2 equals the SM's chirality-flip probability. The identity is not new; only the reading is.",
+      "value": 2.56
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0007",
+      "document": "step-balance-decay-weight",
+      "section": "Step balance, orientation and the decay weight / Q1. One pattern",
+      "claim": "In plain words. Whatever the shape of a pattern's step distribution, its speed alone fixes the share of steps pointing against its travel, weighted by (1 − s·n)/2: that share is (1 − |v|)/2. In 1D it is simply the fraction of backward steps. R2 and R3 each give a number for \"turnover not spent on travel\", but it is a bare number with no direction, so a transition has nothing to align or oppose.",
+      "value": 2.54
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0021",
+      "document": "step-balance-decay-weight",
+      "section": "Step balance, orientation and the decay weight / Q3. Pion (observational)",
+      "claim": "In plain words. Requiring the charged lepton's step to align with the neutrino's selects the lepton's backward steps, because the neutrino flies the other way. That share is (1 − β_ℓ)/2: tiny for the fast electron, sizable for the slow muon. Times the uniform count, it reproduces the textbook tree-level suppression formula exactly, R = 1.28335×10⁻⁴. That is 4.0% above PIENU, which is the size of the SM radiative correction. The opposed case gives R ≈ 5.5, off by a factor of 44,000.",
+      "value": 2.45
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0116",
+      "document": "step-balance-decay-weight",
+      "section": "Step balance, orientation and the decay weight / Summary",
+      "claim": "Q6(f) — E — Feynman–Hibbs 1965; Kac 1974; GJKS 1984; Beghin et al. 2001 — The clock structure is known; reading it as a decay weight is the only new use.",
+      "value": 2.45
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0107",
+      "document": "step-balance-decay-weight",
+      "section": "Step balance, orientation and the decay weight / Summary",
+      "claim": "Q3 identity — A — R_a ≡ (m_e/m_μ)²[(m_π² − m_e²)/(m_π² − m_μ²)]² — The electron's backward-step share carries the whole suppression factor.",
+      "value": 2.41
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0096",
+      "document": "step-balance-decay-weight",
+      "section": "Step balance, orientation and the decay weight / Q6. Clock and mass",
+      "claim": "G. N. Ord. Showed that the checkerboard is embedded in Kac's classical process (for example Ord & Gualtieri, PRL 89, 250403 (2002), from memory).",
+      "value": 2.4
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0053",
+      "document": "step-balance-decay-weight",
+      "section": "Step balance, orientation and the decay weight / Q4. Muon spectrum",
+      "claim": "Control (SM). Uniform count × OPP(e, ν_μ) equals |M|²_V−A × LIPS up to a constant over the whole Dalitz plot (sympy gives a constant ratio of 4). Put differently, the SM weight per arrangement in muon decay is the constant 8G_F²(2π)⁻⁵ times OPP(e, ν_μ).",
+      "value": 2.37
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0114",
+      "document": "step-balance-decay-weight",
+      "section": "Step balance, orientation and the decay weight / Summary",
+      "claim": "Q6(a–d) — A — v = tanh η; reversal rate m√(1 − v²); E² − p² = m²; m = 0 gives speed 1 — In 1D, R1-clock carries mass, clock and dispersion consistently.",
+      "value": 2.37
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0085",
+      "document": "step-balance-decay-weight",
+      "section": "Step balance, orientation and the decay weight / Q6. Clock and mass",
+      "claim": "So \"ab unchanged by motion\" follows once continuum boosts are allowed; it is not an extra postulate. It is not earned on a literal lattice of one site per tick, where boosts are not symmetries.",
+      "value": 2.34
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0113",
+      "document": "step-balance-decay-weight",
+      "section": "Step balance, orientation and the decay weight / Summary",
+      "claim": "Q5(d) — A arithmetic; B common-prefactor rule; C remedy — miss 1.5082 / 1.4587; F_n ≈ 1.46–1.51 needed; [control] SM 1.4555, mostly (1 + 3λ²)/4 = 1.470 — Weighting breaks the rate; the old 5.6% was accidental; a parent-side factor is missing.",
+      "value": 2.26
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0078",
+      "document": "step-balance-decay-weight",
+      "section": "Step balance, orientation and the decay weight / Q6. Clock and mass",
+      "claim": "The linear backward share and the square-root clock are two read-outs of one process, one counting steps and one counting flips, so they do not conflict. In the continuum, ab staying fixed under motion follows from Lorentz-transforming the light-like step segments. Most of this is known prior art.",
+      "value": 2.19
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0117",
+      "document": "step-balance-decay-weight",
+      "section": "Step balance, orientation and the decay weight / Summary",
+      "claim": "If PHYS2 cannot count radiative arrangements that supply about −3.75% for π → eν, the pion stays 16σ off.",
+      "value": 2.17
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0073",
+      "document": "step-balance-decay-weight",
+      "section": "Step balance, orientation and the decay weight / Q5. Neutron, and the consequence for the rate",
+      "claim": "What failed, and what survives. The smallest failed assumption is that the parent side contributes only the orientation relation (and α) on top of a common prefactor. All the shape results survive: R_e/μ at tree level, ρ = 3/4, and a from α.",
+      "value": 2.12
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0108",
+      "document": "step-balance-decay-weight",
+      "section": "Step balance, orientation and the decay weight / Summary",
+      "claim": "Q3(a) ALIGNED — B as stated; C remedy — 1.28335×10⁻⁴; ÷ PIENU = 1.0397 (+16σ); [control] SM radiative correction −3.75% — Exact at tree level; radiative arrangements are missing.",
+      "value": 2.07
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0031",
+      "document": "step-balance-decay-weight",
+      "section": "Step balance, orientation and the decay weight / Q3. Pion (observational)",
+      "claim": "The neutrino's orientation equals its direction of travel: |v| = 1 forces s = n (Q1, Q6d).",
+      "value": 2.05
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0084",
+      "document": "step-balance-decay-weight",
+      "section": "Step balance, orientation and the decay weight / Q6. Clock and mass",
+      "claim": "Scaling keeps exponential dwell times exponential, so a boosted telegraph process is again a telegraph process. An explicitly boosted rest-frame path gives a′ = 0.6046 (predicted 0.6065) and b′ = 1.6510 (predicted 1.6487), with KS p = 0.62.",
+      "value": 2.02
+    }
+  ],
+  "low_confidence_review_queue": [
+    {
+      "claim_id": "step-balance-decay-weight#0000",
+      "question": "result_class",
+      "confidence": 0.41,
+      "claim": "Stamp: SANDBOX / DRAFT. Promotes nothing. 6 Nov 2026. Effective register, c = ħ = 1. Classes: A proved · B refuted as stated · C blocked · D not mathematical · E external fact."
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0000",
+      "question": "rung_kind",
+      "confidence": 0.47,
+      "claim": "Stamp: SANDBOX / DRAFT. Promotes nothing. 6 Nov 2026. Effective register, c = ħ = 1. Classes: A proved · B refuted as stated · C blocked · D not mathematical · E external fact."
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0001",
+      "question": "rung_kind",
+      "confidence": 0.16,
+      "claim": "Proofs are exact: either linearity of expectation or sympy with residual 0."
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0004",
+      "question": "rung_kind",
+      "confidence": 0.11,
+      "claim": "Three parent-side inputs are taken as given: the π relation, the μ pair and relation, and the neutron's α. The only fitted number is α (Q5b)."
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0006",
+      "question": "result_class",
+      "confidence": 0.41,
+      "claim": "Anchor check. The stated anchors come out only with full kinematics (proton recoil, and a massive electron in muon decay): N_μ/N_n = 4.22108×10⁸, miss 1.05574, and 1.02106 with the nonrelativistic (NR) Fermi function. Heavy-recoil counts give 1.05320 and 1.01861 instead. Q5(d) uses the full-kinematics anchors."
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0006",
+      "question": "rung_kind",
+      "confidence": 0.43,
+      "claim": "Anchor check. The stated anchors come out only with full kinematics (proton recoil, and a massive electron in muon decay): N_μ/N_n = 4.22108×10⁸, miss 1.05574, and 1.02106 with the nonrelativistic (NR) Fermi function. Heavy-recoil counts give 1.05320 and 1.01861 instead. Q5(d) uses the full-kinematics anchors."
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0007",
+      "question": "result_class",
+      "confidence": 0.47,
+      "claim": "In plain words. Whatever the shape of a pattern's step distribution, its speed alone fixes the share of steps pointing against its travel, weighted by (1 − s·n)/2: that share is (1 − |v|)/2. In 1D it is simply the fraction of backward steps. R2 and R3 each give a number for \"turnover not spent on travel\", but it is a bare number with no direction, so a transition has nothing to align or oppose."
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0008",
+      "question": "register",
+      "confidence": 0.47,
+      "claim": "E[(1 − s·n)/2] = (1 − E[s]·n)/2 = (1 − v·n)/2 = (1 − |v|)/2."
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0008",
+      "question": "rung_kind",
+      "confidence": 0.49,
+      "claim": "E[(1 − s·n)/2] = (1 − E[s]·n)/2 = (1 − v·n)/2 = (1 − |v|)/2."
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0010",
+      "question": "register",
+      "confidence": 0.51,
+      "claim": "In 1D, s ∈ {+n, −n}, so (1 − s·n)/2 is the indicator of a backward step. From P_f − P_b = |v| and P_f + P_b = 1 we get P_b = (1 − |v|)/2."
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0010",
+      "question": "rung_kind",
+      "confidence": 0.43,
+      "claim": "In 1D, s ∈ {+n, −n}, so (1 − s·n)/2 is the indicator of a backward step. From P_f − P_b = |v| and P_f + P_b = 1 we get P_b = (1 − |v|)/2."
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0011",
+      "question": "register",
+      "confidence": 0.45,
+      "claim": "At v = 0, n is undefined and the share is ½ along every axis."
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0012",
+      "question": "register",
+      "confidence": 0.4,
+      "claim": "Both are scalar functions of |v| and do not change when v is rotated. Neither supplies a vector that could be dotted with another daughter's. Inside 1D R1 they reappear as functions of the step shares: 1 − v = 2P_b (the steps cancelled by opposite steps), and √(1 − v²) = 2√(P_f P_b). That is bookkeeping and does not give either of them a direction."
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0012",
+      "question": "rung_kind",
+      "confidence": 0.27,
+      "claim": "Both are scalar functions of |v| and do not change when v is rotated. Neither supplies a vector that could be dotted with another daughter's. Inside 1D R1 they reappear as functions of the step shares: 1 − v = 2P_b (the steps cancelled by opposite steps), and √(1 − v²) = 2√(P_f P_b). That is bookkeeping and does not give either of them a direction."
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0013",
+      "question": "register",
+      "confidence": 0.42,
+      "claim": "Three step shapes with the same mean (two-point, cone, von Mises–Fisher) all give (1 − |v|)/2 within Monte Carlo error. See the Q1 output."
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0013",
+      "question": "result_class",
+      "confidence": 0.45,
+      "claim": "Three step shapes with the same mean (two-point, cone, von Mises–Fisher) all give (1 − |v|)/2 within Monte Carlo error. See the Q1 output."
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0013",
+      "question": "rung_kind",
+      "confidence": 0.39,
+      "claim": "Three step shapes with the same mean (two-point, cone, von Mises–Fisher) all give (1 − |v|)/2 within Monte Carlo error. See the Q1 output."
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0014",
+      "question": "register",
+      "confidence": 0.39,
+      "claim": "In plain words. For two daughters stepping independently, the expected aligned or opposed weight depends only on their velocities: (1 ± v_i·v_j)/2. The shapes of the step distributions drop out, and only because the weight is linear in each step. A nonlinear weight does depend on shape. R2 and R3 give no pairwise form that sees the angle between daughters. They therefore predict no angular correlation, and the neutron's a = −0.104 excludes that."
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0016",
+      "question": "register",
+      "confidence": 0.49,
+      "claim": "The condition actually needed is weaker than independence: tr Cov(s_i, s_j) = 0."
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0017",
+      "question": "register",
+      "confidence": 0.32,
+      "claim": "The shared ledger acts through v_i and v_j, which are fixed once the arrangement is fixed. The statement is conditional on the arrangement."
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0018",
+      "question": "register",
+      "confidence": 0.41,
+      "claim": "Dependence beyond the means. There is none for the linear weights: all nine pairs of shapes agree to within 3×10⁻⁴. With the means held fixed, the nonlinear [(1 + s_i·s_j)/2]² ranges from 0.236 to 0.323 across shapes."
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0018",
+      "question": "result_class",
+      "confidence": 0.19,
+      "claim": "Dependence beyond the means. There is none for the linear weights: all nine pairs of shapes agree to within 3×10⁻⁴. With the means held fixed, the nonlinear [(1 + s_i·s_j)/2]² ranges from 0.236 to 0.323 across shapes."
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0018",
+      "question": "rung_kind",
+      "confidence": 0.47,
+      "claim": "Dependence beyond the means. There is none for the linear weights: all nine pairs of shapes agree to within 3×10⁻⁴. With the means held fixed, the nonlinear [(1 + s_i·s_j)/2]² ranges from 0.236 to 0.323 across shapes."
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0020",
+      "question": "rung_kind",
+      "confidence": 0.41,
+      "claim": "Class: A for the pairwise form and its mean-only dependence. B (observational) for R2/R3 as a source of correlations."
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0022",
+      "question": "rung_kind",
+      "confidence": 0.39,
+      "claim": "Derivation. The decay is back to back with |v_ν| = 1, so v_ℓ·v_ν = −β_ℓ, where β_ℓ = (m_π² − m_ℓ²)/(m_π² + m_ℓ²)."
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0023",
+      "question": "register",
+      "confidence": 0.46,
+      "claim": "Uniform count: N_ℓ = 4π p² E_ℓ/m_π, with p = (m_π² − m_ℓ²)/(2m_π) and E_ℓ = (m_π² + m_ℓ²)/(2m_π). So N_ℓ ∝ (m_π² − m_ℓ²)²(m_π² + m_ℓ²)."
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0023",
+      "question": "result_class",
+      "confidence": 0.37,
+      "claim": "Uniform count: N_ℓ = 4π p² E_ℓ/m_π, with p = (m_π² − m_ℓ²)/(2m_π) and E_ℓ = (m_π² + m_ℓ²)/(2m_π). So N_ℓ ∝ (m_π² − m_ℓ²)²(m_π² + m_ℓ²)."
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0023",
+      "question": "rung_kind",
+      "confidence": 0.41,
+      "claim": "Uniform count: N_ℓ = 4π p² E_ℓ/m_π, with p = (m_π² − m_ℓ²)/(2m_π) and E_ℓ = (m_π² + m_ℓ²)/(2m_π). So N_ℓ ∝ (m_π² − m_ℓ²)²(m_π² + m_ℓ²)."
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0024",
+      "question": "rung_kind",
+      "confidence": 0.44,
+      "claim": "The product N·W_aligned ∝ m_ℓ²(m_π² − m_ℓ²)². The factor (m_π² + m_ℓ²) cancels exactly, so"
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0025",
+      "question": "register",
+      "confidence": 0.35,
+      "claim": "The sympy residual is 0, and the 30-digit numerical residual is 5×10⁻³¹. Proved."
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0025",
+      "question": "result_class",
+      "confidence": 0.3,
+      "claim": "The sympy residual is 0, and the 30-digit numerical residual is 5×10⁻³¹. Proved."
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0025",
+      "question": "rung_kind",
+      "confidence": 0.25,
+      "claim": "The sympy residual is 0, and the 30-digit numerical residual is 5×10⁻³¹. Proved."
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0026",
+      "question": "result_class",
+      "confidence": 0.12,
+      "claim": "Comparison (observational). PIENU measures (1.2344 ± 0.0030)×10⁻⁴, with statistical and systematic errors combined in quadrature."
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0026",
+      "question": "rung_kind",
+      "confidence": 0.49,
+      "claim": "Comparison (observational). PIENU measures (1.2344 ± 0.0030)×10⁻⁴, with statistical and systematic errors combined in quadrature."
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0027",
+      "question": "result_class",
+      "confidence": 0.34,
+      "claim": "Control (SM). R_SM = 1.2352(1)×10⁻⁴ (Cirigliano & Rosell 2007)."
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0027",
+      "question": "rung_kind",
+      "confidence": 0.31,
+      "claim": "Control (SM). R_SM = 1.2352(1)×10⁻⁴ (Cirigliano & Rosell 2007)."
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0028",
+      "question": "result_class",
+      "confidence": 0.24,
+      "claim": "The SM radiative correction is −3.75% (R_SM/R_a = 0.96248). SM against PIENU is +0.27σ."
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0028",
+      "question": "rung_kind",
+      "confidence": 0.36,
+      "claim": "The SM radiative correction is −3.75% (R_SM/R_a = 0.96248). SM against PIENU is +0.27σ."
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0029",
+      "question": "register",
+      "confidence": 0.36,
+      "claim": "So the entire miss of (a) is what the SM attributes to radiative effects. In PHYS2 terms those are arrangements with an extra photon, plus structure-dependent pieces. A two-body count does not contain them."
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0029",
+      "question": "rung_kind",
+      "confidence": 0.37,
+      "claim": "So the entire miss of (a) is what the SM attributes to radiative effects. In PHYS2 terms those are arrangements with an extra photon, plus structure-dependent pieces. A two-body count does not contain them."
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0030",
+      "question": "register",
+      "confidence": 0.42,
+      "claim": "(a) as a final number: B as stated (16σ). Fixing it is C: blocked on a PHYS2 count of radiative arrangements (π → eνγ). Nothing in R1 supplies the −3.75%."
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0030",
+      "question": "result_class",
+      "confidence": 0.37,
+      "claim": "(a) as a final number: B as stated (16σ). Fixing it is C: blocked on a PHYS2 count of radiative arrangements (π → eνγ). Nothing in R1 supplies the −3.75%."
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0031",
+      "question": "rung_kind",
+      "confidence": 0.48,
+      "claim": "The neutrino's orientation equals its direction of travel: |v| = 1 forces s = n (Q1, Q6d)."
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0032",
+      "question": "result_class",
+      "confidence": 0.34,
+      "claim": "The lepton enters only through its mean step (Q2), so the 3D continuum of step directions versus two helicity states cannot show up here."
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0032",
+      "question": "rung_kind",
+      "confidence": 0.41,
+      "claim": "The lepton enters only through its mean step (Q2), so the 3D continuum of step directions versus two helicity states cannot show up here."
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0033",
+      "question": "register",
+      "confidence": 0.41,
+      "claim": "The match still rests on the input choice ALIGNED, which nothing derives. Numerically, (1 − β)/2 is also the SM's wrong-helicity probability for a chiral state. The step reading reproduces that number but has not earned a spin interpretation (see Flags)."
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0033",
+      "question": "result_class",
+      "confidence": 0.41,
+      "claim": "The match still rests on the input choice ALIGNED, which nothing derives. Numerically, (1 − β)/2 is also the SM's wrong-helicity probability for a chiral state. The step reading reproduces that number but has not earned a spin interpretation (see Flags)."
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0033",
+      "question": "identity_predicate",
+      "confidence": 0.27,
+      "claim": "The match still rests on the input choice ALIGNED, which nothing derives. Numerically, (1 − β)/2 is also the SM's wrong-helicity probability for a chiral state. The step reading reproduces that number but has not earned a spin interpretation (see Flags)."
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0034",
+      "question": "result_class",
+      "confidence": 0.5,
+      "claim": "In plain words. Six weightings of the uniform count were computed. Three are exactly of Michel form: the two that oppose the electron to a neutrino (ρ = 3/4), and the one that opposes the two neutrinos (ρ = 0). The three aligned cases are not of Michel form. TWIST's ρ matches 3/4 within 0.9σ. The electron spectrum cannot tell OPP(e, ν̄_e) from OPP(e, ν_μ); the ν_e spectrum (KARMEN) can, and on my reading it keeps only OPP(e, ν_μ). As a control, that case equals the SM V−A distribution over the whole Dalitz plot."
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0034",
+      "question": "rung_kind",
+      "confidence": 0.41,
+      "claim": "In plain words. Six weightings of the uniform count were computed. Three are exactly of Michel form: the two that oppose the electron to a neutrino (ρ = 3/4), and the one that opposes the two neutrinos (ρ = 0). The three aligned cases are not of Michel form. TWIST's ρ matches 3/4 within 0.9σ. The electron spectrum cannot tell OPP(e, ν̄_e) from OPP(e, ν_μ); the ν_e spectrum (KARMEN) can, and on my reading it keeps only OPP(e, ν_μ). As a control, that case equals the SM V−A distribution over the whole Dalitz plot."
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0035",
+      "question": "result_class",
+      "confidence": 0.49,
+      "claim": "Take M = 2, so x = E. The uniform count is 8π² E₁E₂E₃ dE₁dE₂."
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0035",
+      "question": "rung_kind",
+      "confidence": 0.47,
+      "claim": "Take M = 2, so x = E. The uniform count is 8π² E₁E₂E₃ dE₁dE₂."
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0036",
+      "question": "result_class",
+      "confidence": 0.51,
+      "claim": "p_i·p_j = 2(1 − E_k), so OPP(i, j) = (1 − cos θ_ij)/2 = (1 − E_k)/(E_iE_j), and ALI = 1 − OPP."
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0036",
+      "question": "rung_kind",
+      "confidence": 0.31,
+      "claim": "p_i·p_j = 2(1 − E_k), so OPP(i, j) = (1 − cos θ_ij)/2 = (1 − E_k)/(E_iE_j), and ALI = 1 − OPP."
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0037",
+      "question": "rung_kind",
+      "confidence": 0.33,
+      "claim": "Weighted densities: OPP(i, j) gives E_k(1 − E_k); ALI(i, j) gives E₁E₂E₃ − E_k(1 − E_k)."
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0038",
+      "question": "result_class",
+      "confidence": 0.51,
+      "claim": "The electron spectrum comes from integrating E₂ over [1 − x, 1]."
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0038",
+      "question": "rung_kind",
+      "confidence": 0.2,
+      "claim": "The electron spectrum comes from integrating E₂ over [1 − x, 1]."
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0039",
+      "question": "register",
+      "confidence": 0.09,
+      "claim": "pair — relation — electron f(x) — exact Michel? — ⟨x⟩ — ρ from ⟨x⟩ — ⟨W⟩ — ν̄_e spectrum — ν_μ spectrum"
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0039",
+      "question": "rung_kind",
+      "confidence": 0.21,
+      "claim": "pair — relation — electron f(x) — exact Michel? — ⟨x⟩ — ρ from ⟨x⟩ — ⟨W⟩ — ν̄_e spectrum — ν_μ spectrum"
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0040",
+      "question": "register",
+      "confidence": 0.09,
+      "claim": "(e, ν̄_e) — ALIGNED — 5x²(1−x)(3−x) — no — 7/12 = 0.5833 — −1/8 — 2/7 — 5x²(1−x)(3−x) — 5x⁴"
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0040",
+      "question": "result_class",
+      "confidence": 0.29,
+      "claim": "(e, ν̄_e) — ALIGNED — 5x²(1−x)(3−x) — no — 7/12 = 0.5833 — −1/8 — 2/7 — 5x²(1−x)(3−x) — 5x⁴"
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0041",
+      "question": "register",
+      "confidence": 0.2,
+      "claim": "(e, ν̄_e) — OPPOSED — 2x²(3−2x) — yes, ρ = 3/4 — 7/10 — 3/4 — 5/7 — 2x²(3−2x) — 12x²(1−x)"
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0041",
+      "question": "result_class",
+      "confidence": 0.26,
+      "claim": "(e, ν̄_e) — OPPOSED — 2x²(3−2x) — yes, ρ = 3/4 — 7/10 — 3/4 — 5/7 — 2x²(3−2x) — 12x²(1−x)"
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0041",
+      "question": "rung_kind",
+      "confidence": 0.45,
+      "claim": "(e, ν̄_e) — OPPOSED — 2x²(3−2x) — yes, ρ = 3/4 — 7/10 — 3/4 — 5/7 — 2x²(3−2x) — 12x²(1−x)"
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0042",
+      "question": "register",
+      "confidence": 0.18,
+      "claim": "(e, ν_μ) — ALIGNED — 5x²(1−x)(3−x) — no — 7/12 — −1/8 — 2/7 — 5x⁴ — 5x²(1−x)(3−x)"
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0042",
+      "question": "result_class",
+      "confidence": 0.3,
+      "claim": "(e, ν_μ) — ALIGNED — 5x²(1−x)(3−x) — no — 7/12 — −1/8 — 2/7 — 5x⁴ — 5x²(1−x)(3−x)"
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0042",
+      "question": "rung_kind",
+      "confidence": 0.52,
+      "claim": "(e, ν_μ) — ALIGNED — 5x²(1−x)(3−x) — no — 7/12 — −1/8 — 2/7 — 5x⁴ — 5x²(1−x)(3−x)"
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0043",
+      "question": "register",
+      "confidence": 0.14,
+      "claim": "(e, ν_μ) — OPPOSED — 2x²(3−2x) — yes, ρ = 3/4 — 7/10 — 3/4 — 5/7 — 12x²(1−x) — 2x²(3−2x)"
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0043",
+      "question": "result_class",
+      "confidence": 0.31,
+      "claim": "(e, ν_μ) — OPPOSED — 2x²(3−2x) — yes, ρ = 3/4 — 7/10 — 3/4 — 5/7 — 12x²(1−x) — 2x²(3−2x)"
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0043",
+      "question": "rung_kind",
+      "confidence": 0.53,
+      "claim": "(e, ν_μ) — OPPOSED — 2x²(3−2x) — yes, ρ = 3/4 — 7/10 — 3/4 — 5/7 — 12x²(1−x) — 2x²(3−2x)"
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0044",
+      "question": "register",
+      "confidence": 0.18,
+      "claim": "(ν̄_e, ν_μ) — ALIGNED — 5x⁴ — no — 5/6 — 7/4 — 2/7 — 5x²(1−x)(3−x) — 5x²(1−x)(3−x)"
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0044",
+      "question": "result_class",
+      "confidence": 0.3,
+      "claim": "(ν̄_e, ν_μ) — ALIGNED — 5x⁴ — no — 5/6 — 7/4 — 2/7 — 5x²(1−x)(3−x) — 5x²(1−x)(3−x)"
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0044",
+      "question": "rung_kind",
+      "confidence": 0.53,
+      "claim": "(ν̄_e, ν_μ) — ALIGNED — 5x⁴ — no — 5/6 — 7/4 — 2/7 — 5x²(1−x)(3−x) — 5x²(1−x)(3−x)"
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0045",
+      "question": "register",
+      "confidence": 0.19,
+      "claim": "(ν̄_e, ν_μ) — OPPOSED — 12x²(1−x) — yes, ρ = 0 — 3/5 — 0 — 5/7 — 2x²(3−2x) — 2x²(3−2x)"
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0045",
+      "question": "result_class",
+      "confidence": 0.31,
+      "claim": "(ν̄_e, ν_μ) — OPPOSED — 12x²(1−x) — yes, ρ = 0 — 3/5 — 0 — 5/7 — 2x²(3−2x) — 2x²(3−2x)"
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0045",
+      "question": "rung_kind",
+      "confidence": 0.48,
+      "claim": "(ν̄_e, ν_μ) — OPPOSED — 12x²(1−x) — yes, ρ = 0 — 3/5 — 0 — 5/7 — 2x²(3−2x) — 2x²(3−2x)"
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0046",
+      "question": "register",
+      "confidence": 0.29,
+      "claim": "With no weight, the anchor is reproduced: (10/7)x²(6 − 6x + x²), mean 2/3."
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0046",
+      "question": "result_class",
+      "confidence": 0.46,
+      "claim": "With no weight, the anchor is reproduced: (10/7)x²(6 − 6x + x²), mean 2/3."
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0046",
+      "question": "rung_kind",
+      "confidence": 0.23,
+      "claim": "With no weight, the anchor is reproduced: (10/7)x²(6 − 6x + x²), mean 2/3."
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0047",
+      "question": "register",
+      "confidence": 0.47,
+      "claim": "⟨W⟩ is 5/7 for every OPPOSED pair and 2/7 for every ALIGNED pair. All pairs are equivalent under the uniform count."
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0047",
+      "question": "result_class",
+      "confidence": 0.42,
+      "claim": "⟨W⟩ is 5/7 for every OPPOSED pair and 2/7 for every ALIGNED pair. All pairs are equivalent under the uniform count."
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0047",
+      "question": "rung_kind",
+      "confidence": 0.28,
+      "claim": "⟨W⟩ is 5/7 for every OPPOSED pair and 2/7 for every ALIGNED pair. All pairs are equivalent under the uniform count."
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0048",
+      "question": "result_class",
+      "confidence": 0.25,
+      "claim": "An independent RAMBO Monte Carlo with explicit angles agrees on ⟨x⟩ and ⟨W⟩ to within 3×10⁻⁴."
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0048",
+      "question": "rung_kind",
+      "confidence": 0.35,
+      "claim": "An independent RAMBO Monte Carlo with explicit angles agrees on ⟨x⟩ and ⟨W⟩ to within 3×10⁻⁴."
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0048",
+      "question": "identity_predicate",
+      "confidence": 0.47,
+      "claim": "An independent RAMBO Monte Carlo with explicit angles agrees on ⟨x⟩ and ⟨W⟩ to within 3×10⁻⁴."
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0049",
+      "question": "result_class",
+      "confidence": 0.16,
+      "claim": "Comparison (observational). TWIST measures ρ = 0.74977 ± 0.00026."
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0050",
+      "question": "rung_kind",
+      "confidence": 0.36,
+      "claim": "ALIGNED cases: not of Michel form (they have an x⁴ term). The ρ values that match their means (−1/8, −1/8, 7/4) are all excluded."
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0051",
+      "question": "register",
+      "confidence": 0.3,
+      "claim": "Separating the two survivors (E, with an inference flagged). The two survivors swap the neutrino spectra. In μ⁺ decay, which is the charge conjugate:"
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0051",
+      "question": "result_class",
+      "confidence": 0.46,
+      "claim": "Separating the two survivors (E, with an inference flagged). The two survivors swap the neutrino spectra. In μ⁺ decay, which is the charge conjugate:"
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0051",
+      "question": "rung_kind",
+      "confidence": 0.28,
+      "claim": "Separating the two survivors (E, with an inference flagged). The two survivors swap the neutrino spectra. In μ⁺ decay, which is the charge conjugate:"
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0052",
+      "question": "rung_kind",
+      "confidence": 0.51,
+      "claim": "KARMEN measures ω_L = 0.027 (+0.038/−0.033 stat, ±0.031 syst), with ω_L ≤ 0.113 at 90% CL. The SM value is ω_L = 0. KARMEN calls ω_L the ν_e analogue of ρ, and its Eq. 4 is normalised so that pure g^V_LR gives 3/4. Reading ω_L into the same functional form as ρ, 12y²(1 − y) corresponds to ω_L = 0 and 2y²(3 − 2y) to ω_L = 3/4. KARMEN does not print G₂(x), so this mapping is my inference. Under it, OPP(e, ν̄_e) is excluded and OPP(e, ν_μ) survives."
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0053",
+      "question": "register",
+      "confidence": 0.47,
+      "claim": "Control (SM). Uniform count × OPP(e, ν_μ) equals |M|²_V−A × LIPS up to a constant over the whole Dalitz plot (sympy gives a constant ratio of 4). Put differently, the SM weight per arrangement in muon decay is the constant 8G_F²(2π)⁻⁵ times OPP(e, ν_μ)."
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0053",
+      "question": "result_class",
+      "confidence": 0.54,
+      "claim": "Control (SM). Uniform count × OPP(e, ν_μ) equals |M|²_V−A × LIPS up to a constant over the whole Dalitz plot (sympy gives a constant ratio of 4). Put differently, the SM weight per arrangement in muon decay is the constant 8G_F²(2π)⁻⁵ times OPP(e, ν_μ)."
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0053",
+      "question": "rung_kind",
+      "confidence": 0.39,
+      "claim": "Control (SM). Uniform count × OPP(e, ν_μ) equals |M|²_V−A × LIPS up to a constant over the whole Dalitz plot (sympy gives a constant ratio of 4). Put differently, the SM weight per arrangement in muon decay is the constant 8G_F²(2π)⁻⁵ times OPP(e, ν_μ)."
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0053",
+      "question": "identity_predicate",
+      "confidence": 0.34,
+      "claim": "Control (SM). Uniform count × OPP(e, ν_μ) equals |M|²_V−A × LIPS up to a constant over the whole Dalitz plot (sympy gives a constant ratio of 4). Put differently, the SM weight per arrangement in muon decay is the constant 8G_F²(2π)⁻⁵ times OPP(e, ν_μ)."
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0054",
+      "question": "result_class",
+      "confidence": 0.22,
+      "claim": "The match to TWIST: E (observational), with two degenerate survivors."
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0056",
+      "question": "result_class",
+      "confidence": 0.42,
+      "claim": "In plain words. With a share α of aligned transitions, the correlation is a = 2α − 1, so aSPECT fixes α ≈ 0.448: slightly more opposed than aligned. The average weight is exactly ½ whatever α is, so α cannot affect the rate. But the muon's Michel-matching weight averages 5/7. Putting both weights in makes the muon-to-neutron rate miss much worse: 1.056 becomes 1.508, or 1.021 becomes 1.459 with the Fermi function. Agreement would need a factor of about 1.46 from the neutron's parent side, which no pairwise orientation weight can supply. In the SM that factor is mostly (1 + 3λ²)/4, the nucleon's axial structure. The old 5.6% near-agreement looks accidental."
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0057",
+      "question": "register",
+      "confidence": 0.47,
+      "claim": "(a) W = α(1 + c)/2 + (1 − α)(1 − c)/2 = ½[1 + (2α − 1)c], with c = v_e·v_ν = β_e cos θ. The heavy-recoil uniform count is isotropic in θ, so comparing with dΓ ∝ 1 + aβ cos θ gives a = 2α − 1. A."
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0057",
+      "question": "rung_kind",
+      "confidence": 0.45,
+      "claim": "(a) W = α(1 + c)/2 + (1 − α)(1 − c)/2 = ½[1 + (2α − 1)c], with c = v_e·v_ν = β_e cos θ. The heavy-recoil uniform count is isotropic in θ, so comparing with dΓ ∝ 1 + aβ cos θ gives a = 2α − 1. A."
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0058",
+      "question": "result_class",
+      "confidence": 0.21,
+      "claim": "aSPECT 2020 (a = −0.10430(84), PRC 101, 055506): α = 0.44785 ± 0.00042."
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0058",
+      "question": "rung_kind",
+      "confidence": 0.28,
+      "claim": "aSPECT 2020 (a = −0.10430(84), PRC 101, 055506): α = 0.44785 ± 0.00042."
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0059",
+      "question": "result_class",
+      "confidence": 0.34,
+      "claim": "The 2023 reanalysis (a = −0.10402(82), arXiv:2308.16170): α = 0.44799 ± 0.00041."
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0059",
+      "question": "rung_kind",
+      "confidence": 0.36,
+      "claim": "The 2023 reanalysis (a = −0.10402(82), arXiv:2308.16170): α = 0.44799 ± 0.00041."
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0060",
+      "question": "rung_kind",
+      "confidence": 0.41,
+      "claim": "Heavy recoil: the angular measure dΩ_e dΩ_ν is isotropic, so ⟨cos θ⟩ = 0 at every E_e and ⟨W⟩ = ½ for every α. A."
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0060",
+      "question": "identity_predicate",
+      "confidence": 0.45,
+      "claim": "Heavy recoil: the angular measure dΩ_e dΩ_ν is isotropic, so ⟨cos θ⟩ = 0 at every E_e and ⟨W⟩ = ½ for every α. A."
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0061",
+      "question": "register",
+      "confidence": 0.41,
+      "claim": "Full recoil: ⟨β cos θ⟩ = −5.1×10⁻⁴, so ⟨W⟩ = 0.5000266 at the fitted α. The result is exact only in the stated limit; the deviation is 3×10⁻⁵."
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0061",
+      "question": "rung_kind",
+      "confidence": 0.32,
+      "claim": "Full recoil: ⟨β cos θ⟩ = −5.1×10⁻⁴, so ⟨W⟩ = 0.5000266 at the fitted α. The result is exact only in the stated limit; the deviation is 3×10⁻⁵."
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0062",
+      "question": "register",
+      "confidence": 0.44,
+      "claim": "(d) ⟨W_μ⟩ = 5/7 in both Michel-matching cases (0.714271 with a massive electron), and ⟨W_n⟩ = ½, so the ratio is 10/7."
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0062",
+      "question": "rung_kind",
+      "confidence": 0.25,
+      "claim": "(d) ⟨W_μ⟩ = 5/7 in both Michel-matching cases (0.714271 with a massive electron), and ⟨W_n⟩ = ½, so the ratio is 10/7."
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0062",
+      "question": "identity_predicate",
+      "confidence": 0.48,
+      "claim": "(d) ⟨W_μ⟩ = 5/7 in both Michel-matching cases (0.714271 with a massive electron), and ⟨W_n⟩ = ½, so the ratio is 10/7."
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0064",
+      "question": "result_class",
+      "confidence": 0.41,
+      "claim": "Required parent-side factor: F_n = 1.508 without Coulomb, 1.459 with NR Fermi. Equivalently, ⟨W_n⟩ would have to be 0.754 or 0.729. No α gives that, since every α gives ½."
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0065",
+      "question": "result_class",
+      "confidence": 0.37,
+      "claim": "Control, the SM factor on the same basis: F_SM = [|V_ud|²(1 + 3λ²)/4] × [f(1 + RC)/f_PHYS2] / (1 + δ_μ) = 1.3938 × 1.0443 = 1.4555, against 1.4587 required."
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0066",
+      "question": "result_class",
+      "confidence": 0.41,
+      "claim": "The ratio 0.9978 is 878.4 s / 880.5 s: the SM's own τ_n with these λ and V_ud. That is not PHYS2's to explain."
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0067",
+      "question": "result_class",
+      "confidence": 0.19,
+      "claim": "The pieces: (1 + 3λ²)/4 = 1.470; |V_ud|² = 0.948; 1 + RC = 1.0389; full f over the NR-Fermi count = 1.0008; muon 1/(1 + δ_μ) = 1.0044."
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0067",
+      "question": "rung_kind",
+      "confidence": 0.47,
+      "claim": "The pieces: (1 + 3λ²)/4 = 1.470; |V_ud|² = 0.948; 1 + RC = 1.0389; full f over the NR-Fermi count = 1.0008; muon 1/(1 + δ_μ) = 1.0044."
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0068",
+      "question": "register",
+      "confidence": 0.4,
+      "claim": "The ¼ is 2/8, the ratio of the SM prefactors per arrangement for the neutron and muon weights."
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0068",
+      "question": "rung_kind",
+      "confidence": 0.31,
+      "claim": "The ¼ is 2/8, the ratio of the SM prefactors per arrangement for the neutron and muon weights."
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0069",
+      "question": "result_class",
+      "confidence": 0.22,
+      "claim": "Control, why the old agreement was close: in SM terms the common-W near-agreement is 8⟨W_μ⟩ = 40/7 = 5.714 against |V_ud|²(1 + 3λ²) = 5.575. Those are unrelated quantities, so the 5.6% was accidental."
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0069",
+      "question": "rung_kind",
+      "confidence": 0.45,
+      "claim": "Control, why the old agreement was close: in SM terms the common-W near-agreement is 8⟨W_μ⟩ = 40/7 = 5.714 against |V_ud|²(1 + 3λ²) = 5.575. Those are unrelated quantities, so the 5.6% was accidental."
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0071",
+      "question": "register",
+      "confidence": 0.35,
+      "claim": "The rule \"common prefactor plus a pairwise orientation weight\": B as stated (miss 1.51)."
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0071",
+      "question": "result_class",
+      "confidence": 0.32,
+      "claim": "The rule \"common prefactor plus a pairwise orientation weight\": B as stated (miss 1.51)."
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0071",
+      "question": "identity_predicate",
+      "confidence": 0.38,
+      "claim": "The rule \"common prefactor plus a pairwise orientation weight\": B as stated (miss 1.51)."
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0073",
+      "question": "result_class",
+      "confidence": 0.49,
+      "claim": "What failed, and what survives. The smallest failed assumption is that the parent side contributes only the orientation relation (and α) on top of a common prefactor. All the shape results survive: R_e/μ at tree level, ρ = 3/4, and a from α."
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0074",
+      "question": "register",
+      "confidence": 0.37,
+      "claim": "In plain words. A pattern that flips between forward and backward steps at rates a and b goes forward a fraction b/(a + b) of the time and drifts at (b − a)/(a + b)."
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0074",
+      "question": "result_class",
+      "confidence": 0.54,
+      "claim": "In plain words. A pattern that flips between forward and backward steps at rates a and b goes forward a fraction b/(a + b) of the time and drifts at (b − a)/(a + b)."
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0076",
+      "question": "register",
+      "confidence": 0.36,
+      "claim": "Half the sum and half the difference of the two rates behave like energy and momentum, with E² − p² = m²."
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0077",
+      "question": "identity_predicate",
+      "confidence": 0.23,
+      "claim": "Zero mass means one rate is zero, so the pattern runs one way at speed 1 forever."
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0078",
+      "question": "register",
+      "confidence": 0.3,
+      "claim": "The linear backward share and the square-root clock are two read-outs of one process, one counting steps and one counting flips, so they do not conflict. In the continuum, ab staying fixed under motion follows from Lorentz-transforming the light-like step segments. Most of this is known prior art."
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0078",
+      "question": "result_class",
+      "confidence": 0.5,
+      "claim": "The linear backward share and the square-root clock are two read-outs of one process, one counting steps and one counting flips, so they do not conflict. In the continuum, ab staying fixed under motion follows from Lorentz-transforming the light-like step segments. Most of this is known prior art."
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0078",
+      "question": "rung_kind",
+      "confidence": 0.4,
+      "claim": "The linear backward share and the square-root clock are two read-outs of one process, one counting steps and one counting flips, so they do not conflict. In the continuum, ab staying fixed under motion follows from Lorentz-transforming the light-like step segments. Most of this is known prior art."
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0079",
+      "question": "register",
+      "confidence": 0.19,
+      "claim": "(a) Dwell times are exponential with means 1/a (forward) and 1/b (backward). The forward fraction is (1/a)/(1/a + 1/b) = b/(a + b), and v = P_f − P_b = (b − a)/(a + b). A (sympy; the simulation agrees to about 0.3%)."
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0081",
+      "question": "register",
+      "confidence": 0.41,
+      "claim": "(c) With E = (a + b)/2 and p = (b − a)/2: E² − p² = ab = m², and p/E = v. A."
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0081",
+      "question": "rung_kind",
+      "confidence": 0.32,
+      "claim": "(c) With E = (a + b)/2 and p = (b − a)/2: E² − p² = ab = m², and p/E = v. A."
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0082",
+      "question": "register",
+      "confidence": 0.35,
+      "claim": "E is the arithmetic mean of the two rates, m their geometric mean, and the reversal rate their harmonic mean (E × rate = m²)."
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0082",
+      "question": "rung_kind",
+      "confidence": 0.23,
+      "claim": "E is the arithmetic mean of the two rates, m their geometric mean, and the reversal rate their harmonic mean (E × rate = m²)."
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0083",
+      "question": "register",
+      "confidence": 0.5,
+      "claim": "A boost of rapidity θ Doppler-scales right-moving null segments by e^(θ) and left-moving ones by e^(−θ). Then a′ = a e^(−θ), b′ = b e^(θ), a′b′ = ab, and (E, p) transforms as a Lorentz 2-vector (sympy residuals 0)."
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0083",
+      "question": "rung_kind",
+      "confidence": 0.49,
+      "claim": "A boost of rapidity θ Doppler-scales right-moving null segments by e^(θ) and left-moving ones by e^(−θ). Then a′ = a e^(−θ), b′ = b e^(θ), a′b′ = ab, and (E, p) transforms as a Lorentz 2-vector (sympy residuals 0)."
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0083",
+      "question": "identity_predicate",
+      "confidence": 0.47,
+      "claim": "A boost of rapidity θ Doppler-scales right-moving null segments by e^(θ) and left-moving ones by e^(−θ). Then a′ = a e^(−θ), b′ = b e^(θ), a′b′ = ab, and (E, p) transforms as a Lorentz 2-vector (sympy residuals 0)."
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0084",
+      "question": "register",
+      "confidence": 0.3,
+      "claim": "Scaling keeps exponential dwell times exponential, so a boosted telegraph process is again a telegraph process. An explicitly boosted rest-frame path gives a′ = 0.6046 (predicted 0.6065) and b′ = 1.6510 (predicted 1.6487), with KS p = 0.62."
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0085",
+      "question": "result_class",
+      "confidence": 0.41,
+      "claim": "So \"ab unchanged by motion\" follows once continuum boosts are allowed; it is not an extra postulate. It is not earned on a literal lattice of one site per tick, where boosts are not symmetries."
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0085",
+      "question": "identity_predicate",
+      "confidence": 0.41,
+      "claim": "So \"ab unchanged by motion\" follows once continuum boosts are allowed; it is not an extra postulate. It is not earned on a literal lattice of one site per tick, where boosts are not symmetries."
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0087",
+      "question": "rung_kind",
+      "confidence": 0.4,
+      "claim": "(1 − v)/2 = a/(a + b) is an occupation share: what a transition that reads the current step sees."
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0089",
+      "question": "register",
+      "confidence": 0.41,
+      "claim": "They are different functionals of the same (a, b), and the simulation reproduces both at once."
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0090",
+      "question": "rung_kind",
+      "confidence": 0.32,
+      "claim": "R3's 1 − v = 2a/(a + b) is the fraction of cancelled steps. R2's √(1 − v²) is the reversal rate divided by m."
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0091",
+      "question": "result_class",
+      "confidence": 0.36,
+      "claim": "Caveat on R2: its \"fixed total\" has to be m (the geometric mean). Its \"displacement share v\" matches p/E only with total E = γm, which is not fixed."
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0093",
+      "question": "register",
+      "confidence": 0.41,
+      "claim": "Persistent random walk and the telegraph equation. G. I. Taylor (1922); S. Goldstein, Q. J. Mech. Appl. Math. 4, 129 (1951); M. Kac, Rocky Mountain J. Math. 4, 497 (1974, from 1956 lectures). Already known: (a), and the dwell and occupation results."
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0093",
+      "question": "rung_kind",
+      "confidence": 0.21,
+      "claim": "Persistent random walk and the telegraph equation. G. I. Taylor (1922); S. Goldstein, Q. J. Mech. Appl. Math. 4, 129 (1951); M. Kac, Rocky Mountain J. Math. 4, 497 (1974, from 1956 lectures). Already known: (a), and the dwell and occupation results."
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0094",
+      "question": "register",
+      "confidence": 0.5,
+      "claim": "Gaveau, Jacobson, Kac & Schulman, PRL 53, 419 (1984). The 1+1 Dirac equation is the analytic continuation of the telegraph process. Already known: mass corresponds to the reversal rate. Their construction is limited to 1+1 dimensions."
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0094",
+      "question": "result_class",
+      "confidence": 0.27,
+      "claim": "Gaveau, Jacobson, Kac & Schulman, PRL 53, 419 (1984). The 1+1 Dirac equation is the analytic continuation of the telegraph process. Already known: mass corresponds to the reversal rate. Their construction is limited to 1+1 dimensions."
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0095",
+      "question": "register",
+      "confidence": 0.41,
+      "claim": "Asymmetric telegraph process with a Lorentz transformation removing the drift. Beghin, Nieddu & Orsingher, J. Appl. Math. Stoch. Anal. 14, 11 (2001), doi:10.1155/S104895330100003X. Authors and title are from memory, and I did not read the full text. Known in substance: (b) and the boost structure."
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0096",
+      "question": "register",
+      "confidence": 0.2,
+      "claim": "G. N. Ord. Showed that the checkerboard is embedded in Kac's classical process (for example Ord & Gualtieri, PRL 89, 250403 (2002), from memory)."
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0097",
+      "question": "rung_kind",
+      "confidence": 0.19,
+      "claim": "Review and 3D. Dunkel & Hänggi, Phys. Rep. 471, 1 (2009); Serva, Lorentz-invariant processes at speed c in 3D (arXiv:2004.11983)."
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0098",
+      "question": "rung_kind",
+      "confidence": 0.37,
+      "claim": "Not found stated anywhere (searched, not exhaustively): the explicit a = m e^(∓η) parametrisation, (E, p) = ((a + b)/2, (b − a)/2) as a 2-vector, and the harmonic-mean clock. Each follows in a few lines from the above. Treat them as re-derived, not new."
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0099",
+      "question": "rung_kind",
+      "confidence": 0.25,
+      "claim": "The decay-weight reading. (1 − β)/2 equals the SM's chirality-flip probability. The identity is not new; only the reading is."
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0099",
+      "question": "identity_predicate",
+      "confidence": 0.35,
+      "claim": "The decay-weight reading. (1 − β)/2 equals the SM's chirality-flip probability. The identity is not new; only the reading is."
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0100",
+      "question": "rung_kind",
+      "confidence": 0.44,
+      "claim": "Orientation at rest (polarization). R1(ii) gives E[s] = 0 at rest, so a pattern at rest carries no net orientation for a transition to read. Yet muons from π decay keep their polarization after stopping, and their decay electrons come out asymmetric about it (ξ ≈ 1; E, from memory, not re-verified here). R1 as stated cannot represent this. The smallest missing piece is a persistent, axial quantity carried by the step sequence (for example a sense of circulation), distinct from the polar mean step."
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0100",
+      "question": "identity_predicate",
+      "confidence": 0.4,
+      "claim": "Orientation at rest (polarization). R1(ii) gives E[s] = 0 at rest, so a pattern at rest carries no net orientation for a transition to read. Yet muons from π decay keep their polarization after stopping, and their decay electrons come out asymmetric about it (ξ ≈ 1; E, from memory, not re-verified here). R1 as stated cannot represent this. The smallest missing piece is a persistent, axial quantity carried by the step sequence (for example a sense of circulation), distinct from the polar mean step."
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0101",
+      "question": "register",
+      "confidence": 0.3,
+      "claim": "Parity. (1 ± s_i·s_j)/2 is parity-even, and so is every observable used here (R_e/μ, ρ, a). Parity-odd correlations (neutron A and B, the muon's ξ, neutrino helicity) are out of reach of polar step vectors. Kill trigger: if no axial orientation can be built from step balance, R1 cannot address P-odd decay data."
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0101",
+      "question": "rung_kind",
+      "confidence": 0.43,
+      "claim": "Parity. (1 ± s_i·s_j)/2 is parity-even, and so is every observable used here (R_e/μ, ρ, a). Parity-odd correlations (neutron A and B, the muon's ξ, neutrino helicity) are out of reach of polar step vectors. Kill trigger: if no axial orientation can be built from step balance, R1 cannot address P-odd decay data."
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0101",
+      "question": "identity_predicate",
+      "confidence": 0.51,
+      "claim": "Parity. (1 ± s_i·s_j)/2 is parity-even, and so is every observable used here (R_e/μ, ρ, a). Parity-odd correlations (neutron A and B, the muon's ξ, neutrino helicity) are out of reach of polar step vectors. Kill trigger: if no axial orientation can be built from step balance, R1 cannot address P-odd decay data."
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0102",
+      "question": "result_class",
+      "confidence": 0.31,
+      "claim": "ν versus ν̄. Every massless pattern has orientation equal to its direction of travel (Q6d), so R1 cannot tell ν from ν̄. The distinction enters only through which pair and relation the parent names."
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0103",
+      "question": "register",
+      "confidence": 0.41,
+      "claim": "Two states versus a continuum. The 1D clock has exactly two orientations, which matches two helicity states numerically. In 3D the orientations form a continuum, and linear weights hide that (Q2). Any nonlinear read-out, or any observable sensitive to the second moments of s, would expose it. No 3D clock with an invariant m is established here."
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0103",
+      "question": "result_class",
+      "confidence": 0.26,
+      "claim": "Two states versus a continuum. The 1D clock has exactly two orientations, which matches two helicity states numerically. In 3D the orientations form a continuum, and linear weights hide that (Q2). Any nonlinear read-out, or any observable sensitive to the second moments of s, would expose it. No 3D clock with an invariant m is established here."
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0104",
+      "question": "register",
+      "confidence": 0.21,
+      "claim": "Three parent inputs with no link. ALIGNED (π), OPP(e, ν_μ) (μ) and α = 0.448 (n) are each supplied and none is derived. A quick test of \"pairs from the same current are aligned\" would pick ALI(e, ν̄_e) for the muon, which Q4 refutes. No unifying rule is offered."
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0104",
+      "question": "rung_kind",
+      "confidence": 0.35,
+      "claim": "Three parent inputs with no link. ALIGNED (π), OPP(e, ν_μ) (μ) and α = 0.448 (n) are each supplied and none is derived. A quick test of \"pairs from the same current are aligned\" would pick ALI(e, ν̄_e) for the muon, which Q4 refutes. No unifying rule is offered."
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0105",
+      "question": "rung_kind",
+      "confidence": 0.52,
+      "claim": "Q1 — A — backward share (1 − \\ — v\\ — )/2 for any shape; in 1D = P(backward); R2 √(1 − v²), R3 1 − v are scalars — R1 gives an orientation share a transition can read; R2/R3 give none."
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0106",
+      "question": "result_class",
+      "confidence": 0.45,
+      "claim": "Q2 — A (R2/R3: B obs.) — (1 ∓ v_i·v_j)/2, independent of shape; a nonlinear weight varies 0.236–0.323 — Pairwise weights see only velocities, and only because they are linear."
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0106",
+      "question": "rung_kind",
+      "confidence": 0.43,
+      "claim": "Q2 — A (R2/R3: B obs.) — (1 ∓ v_i·v_j)/2, independent of shape; a nonlinear weight varies 0.236–0.323 — Pairwise weights see only velocities, and only because they are linear."
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0107",
+      "question": "register",
+      "confidence": 0.41,
+      "claim": "Q3 identity — A — R_a ≡ (m_e/m_μ)²[(m_π² − m_e²)/(m_π² − m_μ²)]² — The electron's backward-step share carries the whole suppression factor."
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0107",
+      "question": "result_class",
+      "confidence": 0.5,
+      "claim": "Q3 identity — A — R_a ≡ (m_e/m_μ)²[(m_π² − m_e²)/(m_π² − m_μ²)]² — The electron's backward-step share carries the whole suppression factor."
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0108",
+      "question": "rung_kind",
+      "confidence": 0.48,
+      "claim": "Q3(a) ALIGNED — B as stated; C remedy — 1.28335×10⁻⁴; ÷ PIENU = 1.0397 (+16σ); [control] SM radiative correction −3.75% — Exact at tree level; radiative arrangements are missing."
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0108",
+      "question": "identity_predicate",
+      "confidence": 0.41,
+      "claim": "Q3(a) ALIGNED — B as stated; C remedy — 1.28335×10⁻⁴; ÷ PIENU = 1.0397 (+16σ); [control] SM radiative correction −3.75% — Exact at tree level; radiative arrangements are missing."
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0109",
+      "question": "register",
+      "confidence": 0.3,
+      "claim": "Q3(b) OPPOSED — B — 5.487 (×4.4×10⁴) — OPPOSED on (ℓ, ν) is dead for the pion."
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0109",
+      "question": "rung_kind",
+      "confidence": 0.4,
+      "claim": "Q3(b) OPPOSED — B — 5.487 (×4.4×10⁴) — OPPOSED on (ℓ, ν) is dead for the pion."
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0110",
+      "question": "result_class",
+      "confidence": 0.3,
+      "claim": "Q4 — A (computations); E (match) — OPP(e, ν): ρ = 3/4 (+0.89σ); OPP(ν̄, ν): ρ = 0; ALIGNED not Michel; ⟨W⟩ = 5/7 or 2/7 — Michel ρ = 3/4 reproduced; the pair is an input; KARMEN singles out OPP(e, ν_μ) (inference flagged)."
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0110",
+      "question": "rung_kind",
+      "confidence": 0.36,
+      "claim": "Q4 — A (computations); E (match) — OPP(e, ν): ρ = 3/4 (+0.89σ); OPP(ν̄, ν): ρ = 0; ALIGNED not Michel; ⟨W⟩ = 5/7 or 2/7 — Michel ρ = 3/4 reproduced; the pair is an input; KARMEN singles out OPP(e, ν_μ) (inference flagged)."
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0111",
+      "question": "register",
+      "confidence": 0.45,
+      "claim": "Q5(b) — E + fit — α = 0.44785(42) — The neutron is slightly opposed-dominant."
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0111",
+      "question": "result_class",
+      "confidence": 0.34,
+      "claim": "Q5(b) — E + fit — α = 0.44785(42) — The neutron is slightly opposed-dominant."
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0111",
+      "question": "rung_kind",
+      "confidence": 0.21,
+      "claim": "Q5(b) — E + fit — α = 0.44785(42) — The neutron is slightly opposed-dominant."
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0112",
+      "question": "register",
+      "confidence": 0.42,
+      "claim": "Q5(c) — A (heavy recoil) — ⟨W⟩ = ½ for all α; 0.500027 with full recoil — α carries no rate information."
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0112",
+      "question": "result_class",
+      "confidence": 0.4,
+      "claim": "Q5(c) — A (heavy recoil) — ⟨W⟩ = ½ for all α; 0.500027 with full recoil — α carries no rate information."
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0112",
+      "question": "identity_predicate",
+      "confidence": 0.42,
+      "claim": "Q5(c) — A (heavy recoil) — ⟨W⟩ = ½ for all α; 0.500027 with full recoil — α carries no rate information."
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0113",
+      "question": "result_class",
+      "confidence": 0.37,
+      "claim": "Q5(d) — A arithmetic; B common-prefactor rule; C remedy — miss 1.5082 / 1.4587; F_n ≈ 1.46–1.51 needed; [control] SM 1.4555, mostly (1 + 3λ²)/4 = 1.470 — Weighting breaks the rate; the old 5.6% was accidental; a parent-side factor is missing."
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0114",
+      "question": "result_class",
+      "confidence": 0.52,
+      "claim": "Q6(a–d) — A — v = tanh η; reversal rate m√(1 − v²); E² − p² = m²; m = 0 gives speed 1 — In 1D, R1-clock carries mass, clock and dispersion consistently."
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0114",
+      "question": "identity_predicate",
+      "confidence": 0.35,
+      "claim": "Q6(a–d) — A — v = tanh η; reversal rate m√(1 − v²); E² − p² = m²; m = 0 gives speed 1 — In 1D, R1-clock carries mass, clock and dispersion consistently."
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0115",
+      "question": "rung_kind",
+      "confidence": 0.29,
+      "claim": "Q6(e) — A — (1 − v)/2 is an occupation share, m√(1 − v²) a rate — The linear share and the quadrature clock coexist; R2's fixed total is m."
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0116",
+      "question": "register",
+      "confidence": 0.54,
+      "claim": "Q6(f) — E — Feynman–Hibbs 1965; Kac 1974; GJKS 1984; Beghin et al. 2001 — The clock structure is known; reading it as a decay weight is the only new use."
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0116",
+      "question": "result_class",
+      "confidence": 0.35,
+      "claim": "Q6(f) — E — Feynman–Hibbs 1965; Kac 1974; GJKS 1984; Beghin et al. 2001 — The clock structure is known; reading it as a decay weight is the only new use."
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0116",
+      "question": "rung_kind",
+      "confidence": 0.13,
+      "claim": "Q6(f) — E — Feynman–Hibbs 1965; Kac 1974; GJKS 1984; Beghin et al. 2001 — The clock structure is known; reading it as a decay weight is the only new use."
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0117",
+      "question": "identity_predicate",
+      "confidence": 0.41,
+      "claim": "If PHYS2 cannot count radiative arrangements that supply about −3.75% for π → eν, the pion stays 16σ off."
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0118",
+      "question": "register",
+      "confidence": 0.52,
+      "claim": "If no parent-side rule produces F_n ≈ 1.46 from the neutron's structure and ties it to α, the rate comparison fails by 46–51%."
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0119",
+      "question": "register",
+      "confidence": 0.41,
+      "claim": "If no axial orientation can be built from step balance, P-odd data is out of scope."
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0119",
+      "question": "rung_kind",
+      "confidence": 0.52,
+      "claim": "If no axial orientation can be built from step balance, P-odd data is out of scope."
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0120",
+      "question": "register",
+      "confidence": 0.44,
+      "claim": "Verify the ω_L ↔ shape mapping against Greub et al.'s G₂(x)."
+    },
+    {
+      "claim_id": "step-balance-decay-weight#0121",
+      "question": "register",
+      "confidence": 0.41,
+      "claim": "Find a 3D step process with an invariant m (Serva 2020 is a lead)."
+    }
+  ],
+  "duplicate_finding_candidates": []
+}
